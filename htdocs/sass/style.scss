@@ -1,0 +1,37 @@
+/*############################################################################
+                                STYLE
+############################################################################*/
+
+body { 
+    color: $disabled; 
+    @include back();
+    
+    #machine { 
+        @include gradient-rounded-box(); 
+        width: $machine-width; 
+        margin: 50px auto;
+        
+        #machine-body { 
+            height: $machine-height;
+            text-align: center;
+                
+            @import "puncher.scss";
+            #tools-container { 
+                border-top: 1px solid $border-color;
+                height: $tools-height; 
+                overflow: hidden; 
+                
+                ul { height: 100%; }
+                li { 
+                    height: 100%; 
+                    display: inline-block; 
+                    width: $machine-width * 0.245 - 4 * 1; 
+                    text-align: center; 
+                    border-left: 1px solid $border-color;
+                }
+                li:first-child { border: none;}
+                li:hover { color: white;}
+            } 
+        }
+    }
+}
