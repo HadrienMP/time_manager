@@ -2,7 +2,8 @@
                                 VARIABLES
 ############################################################################*/
 
-$border-color: #111;
+$original-border-color: #111;
+$border-color: rgba(33,33,33,0.2);
 $box-bottom-color:rgb(33,33,33);
 $box-top-color:rgb(64,64,64);
 $serious-warning-color: #FF2E0A;
@@ -15,6 +16,7 @@ $machine-width: 400px;
 $machine-height: 170px;
 $tools-height: $machine-height * 0.25;
 $puncher-container-height: $machine-height * 0.75;
+$content-width: $machine-width * 0.95;
 
 $puncher-height : 132px;
 $puncher-section-size : 100px;

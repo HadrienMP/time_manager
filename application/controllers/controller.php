@@ -7,8 +7,8 @@ class Controller extends CI_Controller {
         $this->load->spark('Twiggy/0.8.5');
     }
 	
-	public function index()
+	public function stats()
 	{
-		$this->twiggy->display();
+		$this->twiggy->template('stats')->display();
 	} 
 }
