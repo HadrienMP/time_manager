@@ -11,8 +11,10 @@ body {
         height: $machine-height;
         text-align: center;
 		border: 1px $border-color solid;
+		border-bottom: 0;
 		border-radius: 10px;
 		@include box-shadow(0px 6px 0px $border-color);
+		background: $box-background-color;
             
         @import "puncher.scss";
         @import "tools.scss";
@@ -32,4 +34,19 @@ body {
 		position: relative;
 		z-index: 3;
     }
+	
+	#navigation {
+		position: absolute;
+		top: 0px;
+		text-align: right;
+		width: 100%;
+		padding: 5px 0;
+		@include my-box-shadow();
+		background: $box-background-color;
+		@include box-shadow(inset 0px -1px 3px $border-color);
+		
+		li {
+			display: inline-block;
+		}
+	}
 }

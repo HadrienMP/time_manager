@@ -1,9 +1,8 @@
 #tools-container { 
-	border-top: 1px solid $border-color;
+	//border-top: 1px solid $border-color;
 	height: $tools-height; 
 	overflow: hidden; 
     border-radius: 0 0 10px 10px;
-	background: #ddd;
 	position: relative;
 	z-index: 2;
 	
@@ -11,12 +10,12 @@
 		height: 100%; 
 		
 		li { 
-			@include box-shadow(inset 0px 3px 3px #e9e9e9);
 			height: 100%; 
 			display: block;
 			float: left;
 			width: $machine-width * 0.25; 
 			text-align: center;
+			@include my-box-shadow();
 			
 			a { 
 				display: block; 
@@ -27,7 +26,7 @@
 		}
 		li:first-child { border: none;}
 		li:hover { 
-			@include box-shadow(inset 0px 3px 3px $border-color);
+			@include box-shadow(inset 0px 3px 3px $border-color, inset 0px 0px 0px $border-color);
 			@include hover-effect();
 		}
 	}

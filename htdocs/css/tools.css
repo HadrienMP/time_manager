@@ -1,16 +1,12 @@
 /*
-Syntax error: Undefined variable: "$border-color".
-        on line 2 of C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss
+Syntax error: Undefined variable: "$tools-height".
+        on line 3 of C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss
 
 1: C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss
 
 Backtrace:
-C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss:2
+C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss:3
 C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.8/lib/sass/script/variable.rb:49:in `_perform'
-C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.8/lib/sass/script/node.rb:40:in `perform'
-C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.8/lib/sass/script/list.rb:70:in `block in _perform'
-C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.8/lib/sass/script/list.rb:70:in `map'
-C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.8/lib/sass/script/list.rb:70:in `_perform'
 C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.8/lib/sass/script/node.rb:40:in `perform'
 C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.8/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
 C:/Ruby200/lib/ruby/gems/2.0.0/gems/sass-3.2.8/lib/sass/tree/visitors/base.rb:37:in `visit'
@@ -80,4 +76,4 @@ C:/Ruby200/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$border-color\".\A         on line 2 of C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss\A \A 1: C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss"; }
+  content: "Syntax error: Undefined variable: \"$tools-height\".\A         on line 3 of C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss\A \A 1: C:/BitNami/wampstack-2/apps/time_manager/htdocs/sass/tools.scss"; }
