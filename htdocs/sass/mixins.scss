@@ -17,6 +17,10 @@
     //background: url(../images/metal-texture.jpg);
     background: #ddd;
 }
+@mixin hover-effect {
+	@include text-shadow(white 0px 0px 6px);
+	color: white;
+}
 @function white($opacity){
     @return rgba(255,255,255,$opacity)
 }
