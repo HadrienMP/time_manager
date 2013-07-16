@@ -2,6 +2,11 @@
                                 STYLE
 ############################################################################*/
 
+html {
+	font-family: "MS Shell Dlg";
+	font-size: 10pt;
+}
+
 body { 
     @include back();
     
@@ -52,38 +57,68 @@ body {
     
     #other-info {
         @extend #machine;
-        @include other-info-box-shadow();
         height: auto;
-        min-height: $machine-height;
         
         form {
-            margin: 20px 15px 0;
-            padding-bottom: 20px;
+			text-align: justify;
             
-            input { border-radius: 8px; }
-            
-            table { 
-                width: 100%;
-                td { 
-                    padding-bottom: 15px;
-                    
-                    input { width: 100%;}
-                    input[type="checkbox"] { width: auto;}
-                }
-            }
-            p, ul { display: inline-block; width: 49.3%;}
-            .left { text-align: left; }
-            .right { 
-                text-align: right;
-                
-                li { 
-                    display: inline; 
-                    border-left: 1px solid $border-color;
-                    padding: 0 5px;
-                }
-                li:first-child { border: none;}
-            }
-            input[type="submit"] { margin-top: 15px;}
+			.form-wrapper {
+				border-radius: 10px 10px 0 0;
+				@include my-box-shadow();
+				padding: 15px;
+				
+				table { 
+					width: 100%;
+					td { 
+						padding-bottom: 8px;
+						
+						input { 
+							border-radius: 10px;
+							background: $background-color;
+							padding-left: 2%;
+							width: 98%;
+						}
+					}
+					td.error {
+						padding: 0;
+						color: red;
+						text-align: right;
+					}
+				}
+				p, ul { display: block;}
+				.left { float: left; text-align: left; }
+				.right { 
+					text-align: right;
+					
+					li { 
+						display: inline; 
+					}
+					li:first-child:after { content: " | ";}
+				}
+			}
+			.buttons-bar {
+				@extend #tools-container;
+				
+				input { 
+					@include my-box-shadow();
+					background: none;
+					border: none;
+					height: $tools-height;
+					display: block;
+					float: left;
+					width: 100%;
+					border-left: 1px solid $border-color;
+					color: #333;
+					font-family: inherit;
+					font-size: inherit;
+				}
+				input:hover {
+					@include box-shadow(inset 0px 3px 3px $border-color, inset 0px 0px 0px $border-color);
+					@include hover-effect();
+					cursor: pointer;
+				}
+				input:first-child { border-left: none;}
+			}
         }
     }
 }
