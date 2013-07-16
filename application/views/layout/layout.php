@@ -1,0 +1,1 @@
+<!DOCTYPE html><html>	<head>		<!-- Meta data -->		<meta charset="utf-8" />		<title><?php echo $title; ?></title>                <link rel="stylesheet" href="/css/screen.css">	</head>	<body>		<div id="wrapper">            <?php echo $content; ?>        </div>	</body></html>
