@@ -18,9 +18,6 @@ body {
             
         @import "puncher.scss";
         @import "tools.scss";
-        
-        a, a:visited, a:focus { text-decoration: none; color: #333;}
-        a:hover { @include hover-effect();}
     }
     
     #content {
@@ -33,20 +30,30 @@ body {
         background: white(1);
 		position: relative;
 		z-index: 3;
+        padding: 5px 10px;
+        
+        #stats {
+            dd, dt { display: inline-block; width: 49%; margin-bottom: 10px;}
+        }
     }
 	
 	#navigation {
 		position: absolute;
-		top: 0px;
+		bottom: 0px;
 		text-align: right;
 		width: 100%;
-		padding: 5px 0;
 		@include my-box-shadow();
 		background: $box-background-color;
 		@include box-shadow(inset 0px -1px 3px $border-color);
 		
 		li {
 			display: inline-block;
+            padding: 5px 10px 10px;
+            border-left: 1px solid $border-color;
+            height: 100%;
 		}
 	}
+        
+    a, a:visited, a:focus { text-decoration: none; color: #333;}
+    a:hover { @include hover-effect();}
 }
