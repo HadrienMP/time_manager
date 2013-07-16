@@ -79,15 +79,14 @@ $captcha = array(
 	</tr>
 	<?php }
 	} ?>
-
-	<tr>
-		<td colspan="3">
-			<?php echo form_checkbox($remember); ?>
-			<?php echo form_label('Remember me', $remember['id']); ?>
-			<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?>
-			<?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?>
-		</td>
-	</tr>
 </table>
+<p class="left">
+    <?php echo form_checkbox($remember); ?>
+    <?php echo form_label('Remember me', $remember['id']); ?>
+</p>
+<ul class="right">
+    <li><?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?></li>
+    <li><?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?></li>
+</ul>
 <?php echo form_submit('submit', 'Let me in'); ?>
 <?php echo form_close(); ?>

@@ -49,4 +49,41 @@ body {
 			display: inline-block;
 		}
 	}
+    
+    #other-info {
+        @extend #machine;
+        @include other-info-box-shadow();
+        height: auto;
+        min-height: $machine-height;
+        
+        form {
+            margin: 20px 15px 0;
+            padding-bottom: 20px;
+            
+            input { border-radius: 8px; }
+            
+            table { 
+                width: 100%;
+                td { 
+                    padding-bottom: 15px;
+                    
+                    input { width: 100%;}
+                    input[type="checkbox"] { width: auto;}
+                }
+            }
+            p, ul { display: inline-block; width: 49.3%;}
+            .left { text-align: left; }
+            .right { 
+                text-align: right;
+                
+                li { 
+                    display: inline; 
+                    border-left: 1px solid $border-color;
+                    padding: 0 5px;
+                }
+                li:first-child { border: none;}
+            }
+            input[type="submit"] { margin-top: 15px;}
+        }
+    }
 }
