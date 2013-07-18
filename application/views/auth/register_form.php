@@ -36,6 +36,7 @@ $captcha = array(
 );
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
+<div class="form-wrapper">
 <table>
 	<?php if ($use_username) { ?>
 	<tr>
@@ -96,5 +97,8 @@ $captcha = array(
 	<?php }
 	} ?>
 </table>
-<?php echo form_submit('register', 'Register'); ?>
+</div>
+<div class="buttons-bar">
+	<?php echo form_submit('register', 'Register'); ?>
+</div>
 <?php echo form_close(); ?>
