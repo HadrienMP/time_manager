@@ -72,14 +72,17 @@ $captcha = array(
 	<?php if ($captcha_registration) {
 		if ($use_recaptcha) { ?>
 	<tr>
-		<td colspan="2">
-			<div id="recaptcha_image"></div>
-		</td>
 		<td>
 			<a href="javascript:Recaptcha.reload()">Get another CAPTCHA</a>
 			<div class="recaptcha_only_if_image"><a href="javascript:Recaptcha.switch_type('audio')">Get an audio CAPTCHA</a></div>
 			<div class="recaptcha_only_if_audio"><a href="javascript:Recaptcha.switch_type('image')">Get an image CAPTCHA</a></div>
 		</td>
+		<td colspan="">
+			<div id="recaptcha_image"></div>
+		</td>
+	</tr>
+	<tr>
+        <td class="error" colspan="2"><?php echo form_error('recaptcha_response_field'); ?></td>
 	</tr>
 	<tr>
 		<td>
