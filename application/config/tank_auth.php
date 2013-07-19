@@ -7,8 +7,8 @@
 | These details are used in emails sent by authentication library.
 |--------------------------------------------------------------------------
 */
-$config['website_name'] = 'Your project';
-$config['webmaster_email'] = 'webmaster@your-site.com';
+$config['website_name'] = 'Time Manager';
+$config['webmaster_email'] = 'webmaster@hadrienmp.fr';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ $config['captcha_registration'] = TRUE;
 $config['email_activation'] = TRUE;
 $config['email_activation_expire'] = 60*60*24*2;
 $config['email_account_details'] = TRUE;
-$config['use_username'] = TRUE;
+$config['use_username'] = FALSE;
 
 $config['username_min_length'] = 4;
 $config['username_max_length'] = 20;

@@ -56,7 +56,7 @@ if (defined('ENVIRONMENT'))
  * as this file.
  *
  */
-	$system_path = 'C:/BitNami/wampstack-2/apps/time_manager/system';
+	$system_path = 'C:/BitNami/wampstack-5.4.13-1/apps/time_manager/system';
 
 /*
  *---------------------------------------------------------------
@@ -72,7 +72,7 @@ if (defined('ENVIRONMENT'))
  * NO TRAILING SLASH!
  *
  */
-	$application_folder = 'C:/BitNami/wampstack-2/apps/time_manager/application';
+	$application_folder = 'C:/BitNami/wampstack-5.4.13-1/apps/time_manager/application';
 
 /*
  * --------------------------------------------------------------------
