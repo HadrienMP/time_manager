@@ -72,13 +72,23 @@ $captcha = array(
 	<?php if ($captcha_registration) {
 		if ($use_recaptcha) { ?>
 	<tr>
-		<td>
-			<a href="javascript:Recaptcha.reload()">Get another CAPTCHA</a>
-			<div class="recaptcha_only_if_image"><a href="javascript:Recaptcha.switch_type('audio')">Get an audio CAPTCHA</a></div>
-			<div class="recaptcha_only_if_audio"><a href="javascript:Recaptcha.switch_type('image')">Get an image CAPTCHA</a></div>
-		</td>
-		<td colspan="">
+		<td colspan="2">
 			<div id="recaptcha_image"></div>
+            <div id="recaptcha-tools">
+                <a href="javascript:Recaptcha.reload()" title="Get an other CAPTCHA">
+                    <img src="/images/icons/exchange32.png" alt="Get an other CAPTCHA" />
+                </a>
+                <div class="recaptcha_only_if_image">
+                    <a href="javascript:Recaptcha.switch_type('audio')" title="Get an audio CAPTCHA">
+                        <img src="/images/icons/speaker32.png" alt="Get an audio CAPTCHA" />
+                    </a>
+                </div>
+                <div class="recaptcha_only_if_audio">
+                    <a href="javascript:Recaptcha.switch_type('image')" title="Get an image CAPTCHA" >
+                        <img src="/images/icons/linedpaper32.png" alt="Get an image CAPTCHA" />
+                    </a>
+                </div>
+            </div>
 		</td>
 	</tr>
 	<tr>
@@ -90,7 +100,6 @@ $captcha = array(
 			<div class="recaptcha_only_if_audio">Enter the numbers you hear</div>
 		</td>
 		<td><input type="text" id="recaptcha_response_field" name="recaptcha_response_field" /></td>
-		<td style="color: red;"><?php echo form_error('recaptcha_response_field'); ?></td>
 		<?php echo $recaptcha_html; ?>
 	</tr>
 	<?php } else { ?>

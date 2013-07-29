@@ -74,6 +74,7 @@ body {
 						
 						input { 
 							border-radius: 10px;
+                            border-color: $input-border-color;
 							background: $background-color;
 							padding-left: 2%;
 							width: 98%;
@@ -119,6 +120,35 @@ body {
 				}
 				input:first-child { border-left: none;}
 			}
+            
+            #recaptcha_image { 
+                border: inset 2px $input-border-color; 
+                border-radius: 15px; 
+                background: white;
+                padding: 5px;
+                float: left;
+            }
+            #recaptcha-tools {
+                float: right;
+                
+                a {
+					@include my-box-shadow();
+                    display: block;
+                    padding: 5px;
+                    border-radius: 5px; 
+                    border: 1px inset $border-color;
+                    margin-bottom: 5px;
+                    
+                    img { 
+                        width: 20px; 
+                        height: 20px; 
+                    }
+                }
+                a:hover {
+					@include box-shadow(inset 0px 3px 3px $border-color, inset 0px 0px 0px $border-color);
+					@include hover-effect();
+                }
+            }
         }
     }
 }
