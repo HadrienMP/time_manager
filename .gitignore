@@ -1,2 +1,4 @@
 /.buildcomplete
 .sass-cache
+/.pydevproject
+/.project
