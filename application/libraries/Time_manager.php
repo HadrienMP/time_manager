@@ -26,6 +26,14 @@ class Time_manager
 		log_message('debug', "\tArrivée dans la librairie");
 		return $this->ci->checks->get_last_check($user_id);
 	}
+    
+    public function check($user_id) {
+        log_message('debug', $user_id);
+        // The check type is out if the last check is in and vice versa
+        $is_check_in = !$this->is_user_checked_in($user_id);
+        log_message('debug', 'Is check in : '.$is_check_in);
+        $this->ci->checks->create($is_check_in, $user_id);
+    }
 	
 }
 
