@@ -9,146 +9,50 @@ html {
 
 body { 
     @include back();
-    
-    #machine { 
-        width: $machine-width; 
-        margin: 50px auto 0;
-        height: $machine-height;
-        text-align: center;
-		border: 1px $border-color solid;
-		border-bottom: 0;
-		border-radius: 10px;
-		@include box-shadow(0px 6px 0px $border-color);
-		background: $box-background-color;
-            
-        @import "puncher.scss";
-        @import "tools.scss";
-        
-        a, a:visited, a:focus { text-decoration: none; color: #333;}
-        a:hover { @include hover-effect();}
-    }
-    
-    #content {
-        width: $content-width;
-        margin: 3px auto;
-        min-height: 150px;
-        border-radius: 0 0 10px 10px;
-        border: white-shadow(0.1) solid 1px;
-        @include box-shadow(0px 3px 0px white-shadow(0.1));
-        background: white(1);
-		position: relative;
-		z-index: 3;
-    }
-	
-	#navigation {
-		position: absolute;
-		top: 0px;
-		text-align: right;
-		width: 100%;
-		padding: 5px 0;
-		@include my-box-shadow();
-		background: $box-background-color;
-		@include box-shadow(inset 0px -1px 3px $border-color);
-		
-		li {
-			display: inline-block;
-		}
-	}
-    
-    #other-info {
-        @extend #machine;
-        height: auto;
-        
-        form {
-			text-align: justify;
-            
-			.form-wrapper {
-				border-radius: 10px 10px 0 0;
-				@include my-box-shadow();
-				padding: 15px;
-				
-				table { 
-					width: 100%;
-					td { 
-						padding-bottom: 8px;
-						
-						input { 
-							border-radius: 10px;
-                            border-color: $input-border-color;
-							background: $background-color;
-							padding-left: 2%;
-							width: 98%;
-						}
-					}
-					td.error {
-						padding: 0;
-						color: red;
-						text-align: right;
-					}
-				}
-				p, ul { display: block;}
-				.left { float: left; text-align: left; }
-				.right { 
-					text-align: right;
-					
-					li { 
-						display: inline; 
-					}
-					li:first-child:after { content: " | ";}
-				}
-			}
-			.buttons-bar {
-				@extend #tools-container;
-				
-				input { 
-					@include my-box-shadow();
-					background: none;
-					border: none;
-					height: $tools-height;
-					display: block;
-					float: left;
-					width: 100%;
-					border-left: 1px solid $border-color;
-					color: #333;
-					font-family: inherit;
-					font-size: inherit;
-				}
-				input:hover {
-					@include box-shadow(inset 0px 3px 3px $border-color, inset 0px 0px 0px $border-color);
-					@include hover-effect();
-					cursor: pointer;
-				}
-				input:first-child { border-left: none;}
-			}
-            
-            #recaptcha_image { 
-                border: inset 2px $input-border-color; 
-                border-radius: 15px; 
-                background: white;
-                padding: 5px;
-                float: left;
-            }
-            #recaptcha-tools {
-                float: right;
-                
-                a {
-					@include my-box-shadow();
-                    display: block;
-                    padding: 5px;
-                    border-radius: 5px; 
-                    border: 1px inset $border-color;
-                    margin-bottom: 5px;
-                    
-                    img { 
-                        width: 20px; 
-                        height: 20px; 
-                    }
-                }
-                a:hover {
-					@include box-shadow(inset 0px 3px 3px $border-color, inset 0px 0px 0px $border-color);
-					@include hover-effect();
-                }
-            }
-        }
-    }
 }
+#machine { 
+  width: $machine-width; 
+  margin: 50px auto 0;
+  height: $machine-height;
+  text-align: center;
+  border: 1px $border-color solid;
+  border-bottom: 0;
+  border-radius: 10px;
+  @include box-shadow(0px 6px 0px $border-color);
+  background: $box-background-color;
+        
+  @import "puncher.scss";
+  @import "tools.scss";
+    
+  a, a:visited, a:focus { text-decoration: none; color: #333;}
+  a:hover { @include hover-effect();}
+}
+
+#content {
+    width: $content-width;
+    margin: 3px auto;
+    min-height: 150px;
+    border-radius: 0 0 10px 10px;
+    border: white-shadow(0.1) solid 1px;
+    @include box-shadow(0px 3px 0px white-shadow(0.1));
+    background: white(1);
+position: relative;
+z-index: 3;
+}
+
+#navigation {
+	position: absolute;
+	top: 0px;
+	text-align: right;
+	width: 100%;
+	padding: 5px 0;
+	@include my-box-shadow();
+	background: $box-background-color;
+	@include box-shadow(inset 0px -1px 3px $border-color);
+	
+	li {
+		display: inline-block;
+	}
+}
+  
+@import "other-info.scss";

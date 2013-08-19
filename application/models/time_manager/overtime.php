@@ -4,7 +4,7 @@
  * Overtime
  *
  *
- * @package	Time_Manager
+ * @package	Time_manager
  * @author	HadrienMP
  */
 class Overtime extends CI_Model

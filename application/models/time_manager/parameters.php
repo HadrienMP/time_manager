@@ -4,7 +4,7 @@
  * Parameters
  *
  *
- * @package	Time_Manager
+ * @package	Time_manager
  * @author	HadrienMP
  */
 class Parameters extends CI_Model

@@ -1,1 +1,477 @@
-html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font:inherit;font-size:100%;vertical-align:baseline}html{line-height:1}ol,ul{list-style:none}table{border-collapse:collapse;border-spacing:0}caption,th,td{text-align:left;font-weight:normal;vertical-align:middle}q,blockquote{quotes:none}q:before,q:after,blockquote:before,blockquote:after{content:"";content:none}a img{border:none}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary{display:block}@font-face{font-family:"FontAwesome";src:url("../fonts/fontawesome-webfont.eot");src:url("../fonts/fontawesome-webfont.eot?#iefix") format("eot"),url("../fonts/fontawesome-webfont.woff") format("woff"),url("../fonts/fontawesome-webfont.ttf") format("truetype"),url("../fonts/fontawesome-webfont.svg#FontAwesome") format("svg");font-weight:normal;font-style:normal}.box{display:inline-block;border:1px solid rgba(33,33,33,0.2);font-size:65px;text-decoration:none;color:#999;-webkit-box-shadow:0px 5px 0px rgba(33,33,33,0.2);-moz-box-shadow:0px 5px 0px rgba(33,33,33,0.2);box-shadow:0px 5px 0px rgba(33,33,33,0.2);background:-webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(12%, #212121), color-stop(65%, #404040));background:-webkit-linear-gradient(bottom, #212121 12%,#404040 65%);background:-moz-linear-gradient(bottom, #212121 12%,#404040 65%);background:-o-linear-gradient(bottom, #212121 12%,#404040 65%);background:linear-gradient(bottom, #212121 12%,#404040 65%)}.box-active{color:#fff;-webkit-box-shadow:0px 0px 30px #26b3f7;-moz-box-shadow:0px 0px 30px #26b3f7;box-shadow:0px 0px 30px #26b3f7}.over-time .box-active{-webkit-box-shadow:0px 0px 30px #ffba19;-moz-box-shadow:0px 0px 30px #ffba19;box-shadow:0px 0px 30px #ffba19}.over-time-for-day .box-active{-webkit-box-shadow:0px 0px 30px #ff2e0a;-moz-box-shadow:0px 0px 30px #ff2e0a;box-shadow:0px 0px 30px #ff2e0a}.corner-left{border-radius:30px 0 0 30px}.corner-right{border-radius:0 30px 30px 0}.progress-label{text-align:center;width:100%;float:left;margin-top:5px;text-shadow:1px 1px 0 rgba(33,33,33,0.2)}.hidden{display:none}html{font-family:"MS Shell Dlg";font-size:10pt}body{background:#eee}body #machine,body #other-info{width:400px;margin:50px auto 0;height:170px;text-align:center;border:1px rgba(33,33,33,0.2) solid;border-bottom:0;border-radius:10px;-webkit-box-shadow:0px 6px 0px rgba(33,33,33,0.2);-moz-box-shadow:0px 6px 0px rgba(33,33,33,0.2);box-shadow:0px 6px 0px rgba(33,33,33,0.2);background:#ddd}body #machine #puncher-container,body #other-info #puncher-container{height:127.5px;width:100%;position:relative;z-index:1;border-radius:10px 10px 0 0;-webkit-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2)}body #machine #puncher-container a,body #other-info #puncher-container a{display:block;padding-top:30px;height:100%;width:100%;font-size:80px;font-family:"FontAwesome";text-shadow:#e9e9e9 0px 3px 2px,#aaa 0px -2px 1px}body #machine #puncher-container a:hover,body #other-info #puncher-container a:hover{text-shadow:#fff 0px 0px 6px;color:white}body #machine #puncher-container:hover,body #other-info #puncher-container:hover{-webkit-box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2)}body #machine #tools-container,body #other-info #tools-container,body #machine #other-info form .buttons-bar,body #other-info form #machine .buttons-bar,body #other-info form .buttons-bar{height:42.5px;overflow:hidden;border-radius:0 0 10px 10px;position:relative;z-index:2}body #machine #tools-container ul,body #other-info #tools-container ul,body #machine #other-info form .buttons-bar ul,body #other-info form #machine .buttons-bar ul,body #other-info form .buttons-bar ul{height:100%}body #machine #tools-container ul li,body #other-info #tools-container ul li,body #machine #other-info form .buttons-bar ul li,body #other-info form #machine .buttons-bar ul li,body #other-info form .buttons-bar ul li{height:100%;display:block;float:left;width:100px;text-align:center;-webkit-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2)}body #machine #tools-container ul li a,body #other-info #tools-container ul li a,body #machine #other-info form .buttons-bar ul li a,body #other-info form #machine .buttons-bar ul li a,body #other-info form .buttons-bar ul li a{display:block;height:100%;width:100%;padding-top:12px}body #machine #tools-container ul li:first-child,body #other-info #tools-container ul li:first-child,body #machine #other-info form .buttons-bar ul li:first-child,body #other-info form #machine .buttons-bar ul li:first-child,body #other-info form .buttons-bar ul li:first-child{border:none}body #machine #tools-container ul li:hover,body #other-info #tools-container ul li:hover,body #machine #other-info form .buttons-bar ul li:hover,body #other-info form #machine .buttons-bar ul li:hover,body #other-info form .buttons-bar ul li:hover{-webkit-box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);text-shadow:#fff 0px 0px 6px;color:white}body #machine a,body #other-info a,body #machine a:visited,body #other-info a:visited,body #machine a:focus,body #other-info a:focus{text-decoration:none;color:#333}body #machine a:hover,body #other-info a:hover{text-shadow:#fff 0px 0px 6px;color:white}body #content{width:380px;margin:3px auto;min-height:150px;border-radius:0 0 10px 10px;border:rgba(150,150,150,0.1) solid 1px;-webkit-box-shadow:0px 3px 0px rgba(150,150,150,0.1);-moz-box-shadow:0px 3px 0px rgba(150,150,150,0.1);box-shadow:0px 3px 0px rgba(150,150,150,0.1);background:#fff;position:relative;z-index:3}body #navigation{position:absolute;top:0px;text-align:right;width:100%;padding:5px 0;-webkit-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);background:#ddd;-webkit-box-shadow:inset 0px -1px 3px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px -1px 3px rgba(33,33,33,0.2);box-shadow:inset 0px -1px 3px rgba(33,33,33,0.2)}body #navigation li{display:inline-block}body #other-info{height:auto}body #other-info form{text-align:justify}body #other-info form .form-wrapper{border-radius:10px 10px 0 0;-webkit-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);padding:15px}body #other-info form .form-wrapper table{width:100%}body #other-info form .form-wrapper table td{padding-bottom:8px}body #other-info form .form-wrapper table td input{border-radius:10px;border-color:#eee;background:#eee;padding-left:2%;width:98%}body #other-info form .form-wrapper table td.error{padding:0;color:red;text-align:right}body #other-info form .form-wrapper p,body #other-info form .form-wrapper ul{display:block}body #other-info form .form-wrapper .left{float:left;text-align:left}body #other-info form .form-wrapper .right{text-align:right}body #other-info form .form-wrapper .right li{display:inline}body #other-info form .form-wrapper .right li:first-child:after{content:" | "}body #other-info form .buttons-bar input{-webkit-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);background:none;border:none;height:42.5px;display:block;float:left;width:100%;border-left:1px solid rgba(33,33,33,0.2);color:#333;font-family:inherit;font-size:inherit}body #other-info form .buttons-bar input:hover{-webkit-box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);text-shadow:#fff 0px 0px 6px;color:white;cursor:pointer}body #other-info form .buttons-bar input:first-child{border-left:none}body #other-info form #recaptcha_image{border:inset 2px #eee;border-radius:15px;background:white;padding:5px;float:left}body #other-info form #recaptcha-tools{float:right}body #other-info form #recaptcha-tools a{-webkit-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px #e9e9e9,inset 0px -1px 1px rgba(33,33,33,0.2);display:block;padding:5px;border-radius:5px;border:1px inset rgba(33,33,33,0.2);margin-bottom:5px}body #other-info form #recaptcha-tools a img{width:20px;height:20px}body #other-info form #recaptcha-tools a:hover{-webkit-box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);-moz-box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);box-shadow:inset 0px 3px 3px rgba(33,33,33,0.2),inset 0px 0px 0px rgba(33,33,33,0.2);text-shadow:#fff 0px 0px 6px;color:white}
+/* line 17, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, C:/Ruby200/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/*############################################################################
+                                VARIABLES
+############################################################################*/
+/** Font-Face **/
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix") format("eot"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#FontAwesome") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/*############################################################################
+                                MIXINS
+############################################################################*/
+/* line 1, ../sass/general.scss */
+.box {
+  display: inline-block;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  font-size: 65px;
+  text-decoration: none;
+  color: #999999;
+  -webkit-box-shadow: 0px 5px 0px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: 0px 5px 0px rgba(33, 33, 33, 0.2);
+  box-shadow: 0px 5px 0px rgba(33, 33, 33, 0.2);
+  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(12%, #212121), color-stop(65%, #404040));
+  background: -webkit-linear-gradient(bottom, #212121 12%, #404040 65%);
+  background: -moz-linear-gradient(bottom, #212121 12%, #404040 65%);
+  background: -o-linear-gradient(bottom, #212121 12%, #404040 65%);
+  background: linear-gradient(bottom, #212121 12%, #404040 65%);
+}
+
+/* line 10, ../sass/general.scss */
+.box-active {
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 30px #26b3f7;
+  -moz-box-shadow: 0px 0px 30px #26b3f7;
+  box-shadow: 0px 0px 30px #26b3f7;
+}
+
+/* line 11, ../sass/general.scss */
+.over-time .box-active {
+  -webkit-box-shadow: 0px 0px 30px #ffba19;
+  -moz-box-shadow: 0px 0px 30px #ffba19;
+  box-shadow: 0px 0px 30px #ffba19;
+}
+
+/* line 12, ../sass/general.scss */
+.over-time-for-day .box-active {
+  -webkit-box-shadow: 0px 0px 30px #ff2e0a;
+  -moz-box-shadow: 0px 0px 30px #ff2e0a;
+  box-shadow: 0px 0px 30px #ff2e0a;
+}
+
+/* line 13, ../sass/general.scss */
+.corner-left {
+  border-radius: 30px 0 0 30px;
+}
+
+/* line 14, ../sass/general.scss */
+.corner-right {
+  border-radius: 0 30px 30px 0;
+}
+
+/* line 15, ../sass/general.scss */
+.progress-label {
+  text-align: center;
+  width: 100%;
+  float: left;
+  margin-top: 5px;
+  text-shadow: 1px 1px 0 rgba(33, 33, 33, 0.2);
+}
+
+/* line 17, ../sass/general.scss */
+.hidden {
+  display: none;
+}
+
+/*############################################################################
+                                STYLE
+############################################################################*/
+/* line 5, ../sass/style.scss */
+html {
+  font-family: "MS Shell Dlg";
+  font-size: 10pt;
+}
+
+/* line 10, ../sass/style.scss */
+body {
+  background: #eeeeee;
+}
+
+/* line 13, ../sass/style.scss */
+#machine, #other-info {
+  width: 400px;
+  margin: 50px auto 0;
+  height: 170px;
+  text-align: center;
+  border: 1px rgba(33, 33, 33, 0.2) solid;
+  border-bottom: 0;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  background: #dddddd;
+}
+/* line 30, ../sass/puncher.scss */
+#machine #puncher-container, #other-info #puncher-container {
+  height: 127.5px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+}
+/* line 34, ../sass/puncher.scss */
+#machine #puncher-container a, #other-info #puncher-container a {
+  display: block;
+  padding-top: 30px;
+  height: 100%;
+  width: 100%;
+  font-size: 80px;
+  font-family: "FontAwesome";
+  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
+  text-shadow: white 0px 0px 6px;
+  color: white;
+}
+/* line 37, ../sass/puncher.scss */
+.checked_in #machine #puncher-container a, .checked_in #other-info #puncher-container a {
+  display: block;
+  padding-top: 30px;
+  height: 100%;
+  width: 100%;
+  font-size: 80px;
+  font-family: "FontAwesome";
+  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
+}
+/* line 40, ../sass/puncher.scss */
+.checked_in #machine #puncher-container a:hover, .checked_in #other-info #puncher-container a:hover {
+  display: block;
+  padding-top: 30px;
+  height: 100%;
+  width: 100%;
+  font-size: 80px;
+  font-family: "FontAwesome";
+  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
+  text-shadow: white 0px 0px 6px;
+  color: white;
+}
+/* line 45, ../sass/puncher.scss */
+#machine #puncher-container a:hover, #other-info #puncher-container a:hover {
+  display: block;
+  padding-top: 30px;
+  height: 100%;
+  width: 100%;
+  font-size: 80px;
+  font-family: "FontAwesome";
+  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
+}
+/* line 50, ../sass/puncher.scss */
+.checked_in #machine #puncher-container, .checked_in #other-info #puncher-container {
+  height: 127.5px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
+}
+/* line 52, ../sass/puncher.scss */
+.checked_in #machine #puncher-container:hover, .checked_in #other-info #puncher-container:hover {
+  height: 127.5px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+}
+/* line 56, ../sass/puncher.scss */
+#machine #puncher-container:hover, #other-info #puncher-container:hover {
+  height: 127.5px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
+}
+/* line 1, ../sass/tools.scss */
+#machine #tools-container, #other-info #tools-container, #other-info form .buttons-bar {
+  height: 42.5px;
+  overflow: hidden;
+  border-radius: 0 0 10px 10px;
+  position: relative;
+  z-index: 2;
+}
+/* line 9, ../sass/tools.scss */
+#machine #tools-container ul, #other-info #tools-container ul, #other-info form .buttons-bar ul {
+  height: 100%;
+}
+/* line 12, ../sass/tools.scss */
+#machine #tools-container ul li, #other-info #tools-container ul li, #other-info form .buttons-bar ul li {
+  height: 100%;
+  display: block;
+  float: left;
+  width: 100px;
+  text-align: center;
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+}
+/* line 20, ../sass/tools.scss */
+#machine #tools-container ul li a, #other-info #tools-container ul li a, #other-info form .buttons-bar ul li a {
+  display: block;
+  height: 100%;
+  width: 100%;
+  padding-top: 12px;
+}
+/* line 27, ../sass/tools.scss */
+#machine #tools-container ul li:first-child, #other-info #tools-container ul li:first-child, #other-info form .buttons-bar ul li:first-child {
+  border: none;
+}
+/* line 28, ../sass/tools.scss */
+#machine #tools-container ul li:hover, #other-info #tools-container ul li:hover, #other-info form .buttons-bar ul li:hover {
+  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  text-shadow: white 0px 0px 6px;
+  color: white;
+}
+/* line 27, ../sass/style.scss */
+#machine a, #other-info a, #machine a:visited, #other-info a:visited, #machine a:focus, #other-info a:focus {
+  text-decoration: none;
+  color: #333;
+}
+/* line 28, ../sass/style.scss */
+#machine a:hover, #other-info a:hover {
+  text-shadow: white 0px 0px 6px;
+  color: white;
+}
+
+/* line 31, ../sass/style.scss */
+#content {
+  width: 380px;
+  margin: 3px auto;
+  min-height: 150px;
+  border-radius: 0 0 10px 10px;
+  border: rgba(150, 150, 150, 0.1) solid 1px;
+  -webkit-box-shadow: 0px 3px 0px rgba(150, 150, 150, 0.1);
+  -moz-box-shadow: 0px 3px 0px rgba(150, 150, 150, 0.1);
+  box-shadow: 0px 3px 0px rgba(150, 150, 150, 0.1);
+  background: white;
+  position: relative;
+  z-index: 3;
+}
+
+/* line 43, ../sass/style.scss */
+#navigation {
+  position: absolute;
+  top: 0px;
+  text-align: right;
+  width: 100%;
+  padding: 5px 0;
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  background: #dddddd;
+  -webkit-box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
+}
+/* line 53, ../sass/style.scss */
+#navigation li {
+  display: inline-block;
+}
+
+/* line 1, ../sass/other-info.scss */
+#other-info {
+  height: auto;
+}
+/* line 4, ../sass/other-info.scss */
+#other-info form {
+  text-align: justify;
+}
+/* line 6, ../sass/other-info.scss */
+#other-info form .form-wrapper {
+  border-radius: 10px 10px 0 0;
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  padding: 15px;
+}
+/* line 10, ../sass/other-info.scss */
+#other-info form .form-wrapper table {
+  width: 100%;
+}
+/* line 12, ../sass/other-info.scss */
+#other-info form .form-wrapper table td {
+  padding-bottom: 8px;
+}
+/* line 14, ../sass/other-info.scss */
+#other-info form .form-wrapper table td input {
+  border-radius: 10px;
+  border-color: #eeeeee;
+  background: #eeeeee;
+  padding-left: 2%;
+  width: 98%;
+}
+/* line 22, ../sass/other-info.scss */
+#other-info form .form-wrapper table td.error {
+  padding: 0;
+  color: red;
+  text-align: right;
+}
+/* line 28, ../sass/other-info.scss */
+#other-info form .form-wrapper p, #other-info form .form-wrapper ul {
+  display: block;
+}
+/* line 29, ../sass/other-info.scss */
+#other-info form .form-wrapper .left {
+  float: left;
+  text-align: left;
+}
+/* line 30, ../sass/other-info.scss */
+#other-info form .form-wrapper .right {
+  text-align: right;
+}
+/* line 32, ../sass/other-info.scss */
+#other-info form .form-wrapper .right li {
+  display: inline;
+}
+/* line 35, ../sass/other-info.scss */
+#other-info form .form-wrapper .right li:first-child:after {
+  content: " | ";
+}
+/* line 40, ../sass/other-info.scss */
+#other-info form .buttons-bar input {
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  background: none;
+  border: none;
+  height: 42.5px;
+  display: block;
+  float: left;
+  width: 100%;
+  border-left: 1px solid rgba(33, 33, 33, 0.2);
+  color: #333;
+  font-family: inherit;
+  font-size: inherit;
+}
+/* line 53, ../sass/other-info.scss */
+#other-info form .buttons-bar input:hover {
+  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  text-shadow: white 0px 0px 6px;
+  color: white;
+  cursor: pointer;
+}
+/* line 58, ../sass/other-info.scss */
+#other-info form .buttons-bar input:first-child {
+  border-left: none;
+}
+/* line 60, ../sass/other-info.scss */
+#other-info form #recaptcha_image {
+  border: inset 2px #eeeeee;
+  border-radius: 15px;
+  background: white;
+  padding: 5px;
+  float: left;
+}
+/* line 67, ../sass/other-info.scss */
+#other-info form #recaptcha-tools {
+  float: right;
+}
+/* line 69, ../sass/other-info.scss */
+#other-info form #recaptcha-tools a {
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  display: block;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px inset rgba(33, 33, 33, 0.2);
+  margin-bottom: 5px;
+}
+/* line 76, ../sass/other-info.scss */
+#other-info form #recaptcha-tools a img {
+  width: 20px;
+  height: 20px;
+}
+/* line 81, ../sass/other-info.scss */
+#other-info form #recaptcha-tools a:hover {
+  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+  text-shadow: white 0px 0px 6px;
+  color: white;
+}
