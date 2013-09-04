@@ -23,26 +23,19 @@ class Manager extends CI_Controller {
 			$this->twiggy->set("checked_in", $checked_in, $global = FALSE);
 		}
 	}
-    
-    private function _post_action() {
-        // Store the current url to be able to go back when check-in occurs
-        $this->session->set_userdata('previous_url');
-    }
 	
 	public function stats()
 	{
 		$this->_pre_action();
-		log_message('debug', 'Affichage du template');
+        $stats = $this->time_manager->calculate_stats($this->tank_auth->get_user_id());
+        $this->twiggy->set('stats', $stats);
     	$this->twiggy->template('stats')->display();
-        // $this->_post_action();
 	}
     
     public function punch()
     {
         $this->_pre_action();
-        log_message('debug', $this->tank_auth->get_user_id());
         $this->time_manager->check($this->tank_auth->get_user_id());
-        log_message('debug', 'checked');
         redirect('');
     }
 }

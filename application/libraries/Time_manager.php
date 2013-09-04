@@ -23,18 +23,56 @@ class Time_manager
 	 * @return boolean true if last check is a check in false otherwise
 	 */
 	public function is_user_checked_in($user_id) {
-		log_message('debug', "\tArrivée dans la librairie");
 		return $this->ci->checks->get_last_check($user_id);
 	}
     
+    /**
+     * Checks the user in
+     * @param $user_id
+     */
     public function check($user_id) {
-        log_message('debug', $user_id);
         // The check type is out if the last check is in and vice versa
         $is_check_in = !$this->is_user_checked_in($user_id);
-        log_message('debug', 'Is check in : '.$is_check_in);
         $this->ci->checks->create($is_check_in, $user_id);
     }
 	
+    /**
+     * Calculates the statistics of the user based on his punches
+     */
+    public function calculate_stats($user_id) {
+        $checks = $this->ci->checks->get_checks($user_id);
+        log_message('debug', print_r($checks,true));
+        $stats = array();
+        $stats['total_time'] = $this->calculate_total_time($checks);
+        return $stats;
+    }
+    
+    private function calculate_total_time($checks) {
+        log_message('debug', "Début de calcul de total time");
+        $total_time = 0;
+        $last_check_in_time = NULL;
+        foreach ($checks as $check) {
+            $time = strtotime($check['date']);
+            // If the check is a check in, save the time
+            if ($check['check_in']) {
+                $last_check_in_time = $time;
+            }
+            else if ($last_check_in_time != NULL) {
+                // The total time is increased with the time difference between check in and check out
+                $total_time += $time - $last_check_in_time;
+            }
+        }
+        
+        // If the last check is a check in : calculate the current time
+        $number_of_checks = count($checks);
+        if ($number_of_checks > 0 && $checks[count($checks) - 1]['check_in']) {
+           $total_time += time() - $last_check_in_time;
+        }
+        
+        log_message('debug', "Fin de calcul de total time");
+        
+        return $total_time;
+    }
 }
 
 /* End of file Time_manager.php */

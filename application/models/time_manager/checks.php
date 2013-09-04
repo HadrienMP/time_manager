@@ -12,7 +12,25 @@ require_once("periods.php");
 class Checks extends CI_Model
 {
 	const TABLE_NAME = "checks";	
-	function get_checks($user_id, $period = Periods::ALL_TIME) {}
+    
+    /**
+     * Gets all the checks of a user for a certain period of time.
+     * @param $user_id
+     * @param $period
+     * @return an array of checks
+     */
+	function get_checks($user_id, $period = Periods::ALL_TIME) {
+        $checks = NULL;
+        if (!empty($user_id)) {
+			$this->db->order_by("date", "desc");
+			$query = $this->db->get(Checks::TABLE_NAME,1,0);
+            $checks = $query->result_array();
+		}
+        else {
+            log_message('error', "User id vide");
+        }
+        return $checks;
+    }
 	
 	/**
 	 * Returns the last check value
