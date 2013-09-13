@@ -43,8 +43,18 @@ class Time_manager
         $checks = $this->ci->checks->get_checks($user_id);
         log_message('debug', print_r($checks,true));
         $stats = array();
-        $stats['total_time'] = $this->calculate_total_time($checks);
+        $stats['total_time_t'] = $this->calculate_total_time($checks);
+        $stats['total_time'] = $this->duration_to_string($stats['total_time_t']) ;
         return $stats;
+    }
+    
+    public function duration_to_string($timestamp) {
+        $seconds = $timestamp;
+        $minutes = (int) ($seconds / 60);
+        $hours = (int) ($minutes / 60);
+        $seconds = $seconds - $minutes * 60 ;
+        $minutes = $minutes - $hours * 60;
+        return $hours.'h '.$minutes.'m '.$seconds.'s';
     }
     
     private function calculate_total_time($checks) {

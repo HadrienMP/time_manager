@@ -23,7 +23,7 @@ class Checks extends CI_Model
         $checks = NULL;
         if (!empty($user_id)) {
 			$this->db->order_by("date", "desc");
-			$query = $this->db->get(Checks::TABLE_NAME,1,0);
+			$query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
 		}
         else {

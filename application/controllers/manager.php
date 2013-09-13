@@ -31,6 +31,19 @@ class Manager extends CI_Controller {
         $this->twiggy->set('stats', $stats);
     	$this->twiggy->template('stats')->display();
 	}
+	
+	public function preferences()
+	{
+		$this->_pre_action();
+        
+        $this->load->helper(array('form', 'url'));
+		$this->load->library('form_validation');
+
+		if ($this->form_validation->run() == FALSE)
+		{
+            $this->twiggy->template('preferences')->display();
+        }
+	}
     
     public function punch()
     {
