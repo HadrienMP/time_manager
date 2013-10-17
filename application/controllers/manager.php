@@ -7,9 +7,17 @@ class Manager extends CI_Controller {
         
         $this->load->spark('Twiggy/0.8.5');
 		$this->load->helper('url');
+		$this->load->helper('time_manager_helper');
 		$this->load->library('tank_auth');
 		$this->load->library('time_manager');
         $this->load->library('session');
+        $this->load->library('form_validation');
+        
+        // Register available functions
+        $this->twiggy->register_function('form_error');
+        $this->twiggy->register_function('validation_errors');
+        $this->twiggy->register_function('set_value');
+        $this->twiggy->register_function('has_errors');
     }
 	
 	private function _pre_action() {
@@ -27,6 +35,7 @@ class Manager extends CI_Controller {
 	public function stats()
 	{
 		$this->_pre_action();
+        
         $stats = $this->time_manager->calculate_stats($this->tank_auth->get_user_id());
         $this->twiggy->set('stats', $stats);
     	$this->twiggy->template('stats')->display();
@@ -36,13 +45,30 @@ class Manager extends CI_Controller {
 	{
 		$this->_pre_action();
         
-        $this->load->helper(array('form', 'url'));
-		$this->load->library('form_validation');
+        $preferences = array(
+            'hours' => '',
+            'minutes' => '',
+            'seconds' => '',
+        );
+        
+        if ($this->input->post()) {
+            $this->load->helper(array('form', 'url'));
 
-		if ($this->form_validation->run() == FALSE)
-		{
-            $this->twiggy->template('preferences')->display();
+            if ($this->form_validation->run('preferences') == TRUE)
+            {
+                // TODO: Save preferences in DB
+            } else {
+                $preferences['hours']=set_value('hours');
+                $preferences['minutes']=set_value('minutes');
+                $preferences['seconds']=set_value('seconds');
+            }
+        } else {
+            // TODO: Load preferences from DB
         }
+        
+        $this->twiggy->set($preferences, NULL);
+        $this->twiggy->template('preferences')->display();
+        
 	}
     
     public function punch()
