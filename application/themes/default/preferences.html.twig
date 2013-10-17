@@ -1,9 +1,15 @@
 {% extends _layout %}
 {% block content %}
 
-<div class="errors">
+<div class="wrong">
     {{ validation_errors() }}
 </div>
+
+{% if success == true %}
+<div class="success">
+    <p>Vos préférences ont bien été enregistrées</p>
+</div>
+{% endif %}
 
 <form id="preferences" method="post" action="/preferences">
     <fieldset>

@@ -144,11 +144,11 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 /* line 19, ../sass/general.scss */
 .wrong {
   color: red;
+  font-weight: bold;
 }
 
 /* line 20, ../sass/general.scss */
 input.wrong {
-  color: red;
   border-color: red;
 }
 

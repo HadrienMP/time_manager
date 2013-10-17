@@ -49,6 +49,7 @@ class Manager extends CI_Controller {
             'hours' => '',
             'minutes' => '',
             'seconds' => '',
+            'success' => FALSE,
         );
         
         if ($this->input->post()) {
@@ -57,6 +58,7 @@ class Manager extends CI_Controller {
             if ($this->form_validation->run('preferences') == TRUE)
             {
                 // TODO: Save preferences in DB
+                $preferences['success']=TRUE;
             } else {
                 $preferences['hours']=set_value('hours');
                 $preferences['minutes']=set_value('minutes');

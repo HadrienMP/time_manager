@@ -16,5 +16,5 @@
 
 .hidden {display: none;}
 
-.wrong { color: $error-text-color; }
-input.wrong { color: $error-text-color; border-color: $error-border-color;}
+.wrong { color: $error-text-color; font-weight: bold;}
+input.wrong { border-color: $error-border-color;}
