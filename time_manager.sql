@@ -1,55 +1,6 @@
 CREATE SCHEMA IF NOT EXISTS `time_manager` DEFAULT CHARACTER SET utf8 ;
 USE `time_manager` ;
 
--- -----------------------------------------------------
--- Table `time_manager`.`overtime`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `time_manager`.`overtime` (
-  `id` INT NOT NULL AUTO_INCREMENT ,
-  `amount` INT NULL DEFAULT 0 ,
-  `users_id` INT(11) NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `fk_overtime_users_idx` (`users_id` ASC) ,
-  CONSTRAINT `fk_overtime_users`
-    FOREIGN KEY (`users_id` )
-    REFERENCES `time_manager`.`users` (`id` )
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-USE `time_manager` ;
-
--- -----------------------------------------------------
--- Table `time_manager`.`checks`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `time_manager`.`checks` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT ,
-  `user_id` INT(11) NOT NULL ,
-  `check_in` TINYINT(1) NOT NULL ,
-  `date` DATETIME  NOT NULL ,
-  PRIMARY KEY (`id`) ,
-  INDEX `IDX_9F8C0079A76ED395` (`user_id` ASC) ,
-  CONSTRAINT `FK_9F8C0079A76ED395`
-    FOREIGN KEY (`user_id` )
-    REFERENCES `time_manager`.`users` (`id` ))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
--- -----------------------------------------------------
--- Table `time_manager`.`parameters`
--- -----------------------------------------------------
-CREATE  TABLE IF NOT EXISTS `time_manager`.`parameters` (
-  `id` INT(11) NOT NULL AUTO_INCREMENT ,
-  `user_id` INT(11) NOT NULL ,
-  `stats_period` INT(11) NOT NULL DEFAULT 0 ,
-  PRIMARY KEY (`id`) ,
-  INDEX `IDX_69348FEA76ED395` (`user_id` ASC) ,
-  CONSTRAINT `FK_69348FEA76ED395`
-    FOREIGN KEY (`user_id` )
-    REFERENCES `time_manager`.`users` (`id` ))
-ENGINE = InnoDB
-DEFAULT CHARACTER SET = utf8;
-
 -- --------------------------------------------------------
 
 --
@@ -132,3 +83,54 @@ CREATE TABLE IF NOT EXISTS `users` (
   `modified` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
+
+-- -----------------------------------------------------
+-- Table `time_manager`.`overtime`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `time_manager`.`overtime` (
+  `id` INT NOT NULL AUTO_INCREMENT ,
+  `amount` INT NULL DEFAULT 0 ,
+  `users_id` INT(11) NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `fk_overtime_users_idx` (`users_id` ASC) ,
+  CONSTRAINT `fk_overtime_users`
+    FOREIGN KEY (`users_id` )
+    REFERENCES `time_manager`.`users` (`id` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION)
+ENGINE = InnoDB;
+
+USE `time_manager` ;
+
+-- -----------------------------------------------------
+-- Table `time_manager`.`checks`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `time_manager`.`checks` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `user_id` INT(11) NOT NULL ,
+  `check_in` TINYINT(1) NOT NULL ,
+  `date` DATETIME  NOT NULL ,
+  PRIMARY KEY (`id`) ,
+  INDEX `IDX_9F8C0079A76ED395` (`user_id` ASC) ,
+  CONSTRAINT `FK_9F8C0079A76ED395`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `time_manager`.`users` (`id` ))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+-- -----------------------------------------------------
+-- Table `time_manager`.`parameters`
+-- -----------------------------------------------------
+CREATE  TABLE IF NOT EXISTS `time_manager`.`parameters` (
+  `id` INT(11) NOT NULL AUTO_INCREMENT ,
+  `user_id` INT(11) NOT NULL ,
+  `stats_period` INT(11) NOT NULL DEFAULT 0 ,
+  PRIMARY KEY (`id`) ,
+  INDEX `IDX_69348FEA76ED395` (`user_id` ASC) ,
+  CONSTRAINT `FK_69348FEA76ED395`
+    FOREIGN KEY (`user_id` )
+    REFERENCES `time_manager`.`users` (`id` ))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8;
+
+
