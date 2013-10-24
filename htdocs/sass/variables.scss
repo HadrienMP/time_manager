@@ -4,6 +4,7 @@
 
 $original-border-color: #111;
 $border-color: rgba(33,33,33,0.2);
+$input-border-color: #eee;
 $box-bottom-color:rgb(33,33,33);
 $box-top-color:rgb(64,64,64);
 $serious-warning-color: #FF2E0A;
@@ -12,18 +13,22 @@ $light-color: #26B3F7;
 $disabled : #999;
 $ui-button-text: #ddd;
 $box-background-color: #ddd;
+$background-color: #eee;
 
 $machine-width: 400px;
 $machine-height: 170px;
 $tools-height: $machine-height * 0.25;
 $puncher-container-height: $machine-height * 0.75;
-$content-width: $machine-width * 0.90;
+$content-width: $machine-width * 0.95;
 
 $puncher-height : 132px;
 $puncher-section-size : 100px;
 $panel-button-width : 100px;
 $open-panel-width : 280px;
 $open-panel-content-width : $open-panel-width - (60 + 15);
+
+$error-text-color:red;
+$error-border-color:red;
 
 
 /** Font-Face **/

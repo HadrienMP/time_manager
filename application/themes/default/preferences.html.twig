@@ -1,0 +1,35 @@
+{% extends _layout %}
+{% block content %}
+
+<div class="wrong">
+    {{ validation_errors() }}
+</div>
+
+{% if success == true %}
+<div class="success">
+    <p>Vos préférences ont bien été enregistrées</p>
+</div>
+{% endif %}
+
+<form id="preferences" method="post" action="/preferences">
+    <fieldset>
+        <legend>Heures / Jour</legend>
+        
+        <!-- HEURES -->
+        <input type="text" id="hours" name="hours" size="2" maxlength="2" 
+                value="{{ hours }}" class="{{ has_errors(form_error('hours')) }}" />
+        <label for="hours">h</label>
+        
+        <!-- MINUTES -->
+        <input type="text" id="minutes" name="minutes" size="2" maxlength="2" 
+                value="{{ minutes }}" class="{{ has_errors(form_error('minutes')) }}" />
+        <label for="hours">m</label>
+        
+        <!-- SECONDES -->
+        <input type="text" id="seconds" name="seconds" size="2" maxlength="2" 
+                value="{{ seconds }}" class="{{ has_errors(form_error('seconds')) }}" />
+        <label for="hours">s</label>
+    </fieldset>
+    <input type="submit" value="Enregistrer" />
+</form>
+{% endblock %}

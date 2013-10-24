@@ -38,11 +38,11 @@
 |
 */
 
-$route['default_controller'] = "controller/stats";
+$route['default_controller'] = "manager/stats";
 $route['404_override'] = '';
 
-$route['stats'] = "controller";
-
+$route['stats'] = "manager/stats";
+$route['preferences'] = "manager/preferences";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

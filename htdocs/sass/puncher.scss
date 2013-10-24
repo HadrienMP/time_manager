@@ -1,24 +1,59 @@
+// SOME MORE MIXINS
+@mixin box-off() {
+  height: $puncher-container-height; 
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  border-radius: 10px 10px 0 0;
+  @include my-box-shadow();
+}
+@mixin box-on() {
+  @include box-off();
+  @include box-shadow(inset 0px 3px 3px $border-color);
+}
+@mixin link-on() {
+  display: block;
+  padding-top: 30px;
+  height: 100%;
+  width: 100%;
+  font-size: 80px;
+  font-family: "FontAwesome";
+  @include text-shadow(#e9e9e9 0px 3px 2px, #aaa 0px -2px 1px ); 
+}
+@mixin link-off() {
+  @include link-on();
+  @include hover-effect();
+}
+
+// PUNCHER STYLES
+
 #puncher-container { 
-    height: $puncher-container-height; 
-    width: 100%;
-	position: relative;
-	z-index: 1;
-    border-radius: 10px 10px 0 0;
-	@include my-box-shadow();
+  
+  @include box-off();
     
     a {
-        display: block;
-		padding-top: 30px;
-        height: 100%;
-        width: 100%;
-        font-size: 80px;
-        font-family: "FontAwesome";
-		@include text-shadow(#e9e9e9 0px 3px 2px, #aaa 0px -2px 1px );
+      @include link-off();
+      
+      .checked_in & {
+        @include link-on();
+        
+        &:hover {
+          @include link-off();
+        }
+      }
+      
+      &:hover {
+        @include link-on();
+      }
     }
-	a:hover {
-		@include hover-effect();
-	}
-}
-#puncher-container:hover {
-	@include box-shadow(inset 0px 3px 3px $border-color);
+    
+    .checked_in & {
+      @include box-on();
+      &:hover {
+        @include box-off();
+      }
+    }
+    &:hover {
+      @include box-on();
+    }
 }
