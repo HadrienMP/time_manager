@@ -2380,3 +2380,180 @@ DEBUG - 2013-10-17 06:45:37 --> Form Validation Class Initialized
 DEBUG - 2013-10-17 06:45:37 --> Language file loaded: language/english/form_validation_lang.php
 DEBUG - 2013-10-17 06:45:37 --> Final output sent to browser
 DEBUG - 2013-10-17 06:45:37 --> Total execution time: 0.3434
+DEBUG - 2013-10-17 06:53:02 --> Config Class Initialized
+DEBUG - 2013-10-17 06:53:02 --> Hooks Class Initialized
+DEBUG - 2013-10-17 06:53:02 --> Utf8 Class Initialized
+DEBUG - 2013-10-17 06:53:02 --> UTF-8 Support Enabled
+DEBUG - 2013-10-17 06:53:02 --> URI Class Initialized
+DEBUG - 2013-10-17 06:53:02 --> Router Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> No URI present. Default controller set.
+DEBUG - 2013-10-17 06:53:03 --> Output Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Security Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Input Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-17 06:53:03 --> Language Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Loader Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Controller Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Config file loaded: C:\BitNami\wampstack-5.4.13-1\apps\time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-17 06:53:03 --> Twiggy: library initialized
+DEBUG - 2013-10-17 06:53:03 --> Helper loaded: url_helper
+DEBUG - 2013-10-17 06:53:03 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-17 06:53:03 --> Config file loaded: C:\BitNami\wampstack-5.4.13-1\apps\time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-17 06:53:03 --> Session Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Helper loaded: string_helper
+DEBUG - 2013-10-17 06:53:03 --> Database Driver Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Session routines successfully run
+DEBUG - 2013-10-17 06:53:03 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-17 06:53:03 --> Helper loaded: form_helper
+DEBUG - 2013-10-17 06:53:03 --> Form Validation Class Initialized
+DEBUG - 2013-10-17 06:53:03 --> Array
+(
+    [0] => Array
+        (
+            [id] => 6
+            [user_id] => 1
+            [check_in] => 0
+            [date] => 2013-10-17 04:46:51
+        )
+
+    [1] => Array
+        (
+            [id] => 5
+            [user_id] => 1
+            [check_in] => 1
+            [date] => 2013-10-16 03:53:03
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [user_id] => 1
+            [check_in] => 0
+            [date] => 2013-09-13 06:06:31
+        )
+
+    [3] => Array
+        (
+            [id] => 3
+            [user_id] => 1
+            [check_in] => 1
+            [date] => 2013-09-05 02:24:16
+        )
+
+    [4] => Array
+        (
+            [id] => 2
+            [user_id] => 1
+            [check_in] => 0
+            [date] => 2013-09-04 04:35:49
+        )
+
+    [5] => Array
+        (
+            [id] => 1
+            [user_id] => 1
+            [check_in] => 1
+            [date] => 2013-09-03 04:35:47
+        )
+
+)
+
+DEBUG - 2013-10-17 06:53:03 --> Début de calcul de total time
+DEBUG - 2013-10-17 06:53:03 --> Fin de calcul de total time
+DEBUG - 2013-10-17 06:53:03 --> Final output sent to browser
+DEBUG - 2013-10-17 06:53:03 --> Total execution time: 0.7715
+DEBUG - 2013-10-17 06:53:04 --> Config Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Hooks Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Utf8 Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> UTF-8 Support Enabled
+DEBUG - 2013-10-17 06:53:05 --> URI Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Router Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Output Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Security Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Input Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-17 06:53:05 --> Language Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Loader Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Controller Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Config file loaded: C:\BitNami\wampstack-5.4.13-1\apps\time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-17 06:53:05 --> Twiggy: library initialized
+DEBUG - 2013-10-17 06:53:05 --> Helper loaded: url_helper
+DEBUG - 2013-10-17 06:53:05 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-17 06:53:05 --> Config file loaded: C:\BitNami\wampstack-5.4.13-1\apps\time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-17 06:53:05 --> Session Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Helper loaded: string_helper
+DEBUG - 2013-10-17 06:53:05 --> Database Driver Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Session routines successfully run
+DEBUG - 2013-10-17 06:53:05 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-17 06:53:05 --> Helper loaded: form_helper
+DEBUG - 2013-10-17 06:53:05 --> Form Validation Class Initialized
+DEBUG - 2013-10-17 06:53:05 --> Final output sent to browser
+DEBUG - 2013-10-17 06:53:05 --> Total execution time: 0.4423
+DEBUG - 2013-10-17 06:53:11 --> Config Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Hooks Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Utf8 Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> UTF-8 Support Enabled
+DEBUG - 2013-10-17 06:53:11 --> URI Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Router Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Output Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Security Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Input Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-17 06:53:11 --> Language Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Loader Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Controller Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Config file loaded: C:\BitNami\wampstack-5.4.13-1\apps\time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-17 06:53:11 --> Twiggy: library initialized
+DEBUG - 2013-10-17 06:53:11 --> Helper loaded: url_helper
+DEBUG - 2013-10-17 06:53:11 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-17 06:53:11 --> Config file loaded: C:\BitNami\wampstack-5.4.13-1\apps\time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-17 06:53:11 --> Session Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Helper loaded: string_helper
+DEBUG - 2013-10-17 06:53:11 --> Database Driver Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Session routines successfully run
+DEBUG - 2013-10-17 06:53:11 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-17 06:53:11 --> Helper loaded: form_helper
+DEBUG - 2013-10-17 06:53:11 --> Form Validation Class Initialized
+DEBUG - 2013-10-17 06:53:11 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-17 06:53:11 --> Final output sent to browser
+DEBUG - 2013-10-17 06:53:11 --> Total execution time: 0.3839
+DEBUG - 2013-10-17 06:53:14 --> Config Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Hooks Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Utf8 Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> UTF-8 Support Enabled
+DEBUG - 2013-10-17 06:53:14 --> URI Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Router Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Output Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Security Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Input Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-17 06:53:14 --> Language Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Loader Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Controller Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Config file loaded: C:\BitNami\wampstack-5.4.13-1\apps\time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-17 06:53:14 --> Twiggy: library initialized
+DEBUG - 2013-10-17 06:53:14 --> Helper loaded: url_helper
+DEBUG - 2013-10-17 06:53:14 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-17 06:53:14 --> Config file loaded: C:\BitNami\wampstack-5.4.13-1\apps\time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-17 06:53:14 --> Session Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Helper loaded: string_helper
+DEBUG - 2013-10-17 06:53:14 --> Database Driver Class Initialized
+DEBUG - 2013-10-17 06:53:14 --> Session routines successfully run
+DEBUG - 2013-10-17 06:53:14 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:15 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:15 --> Model Class Initialized
+DEBUG - 2013-10-17 06:53:15 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-17 06:53:15 --> Helper loaded: form_helper
+DEBUG - 2013-10-17 06:53:15 --> Form Validation Class Initialized
+DEBUG - 2013-10-17 06:53:15 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-17 06:53:15 --> Final output sent to browser
+DEBUG - 2013-10-17 06:53:15 --> Total execution time: 0.4304

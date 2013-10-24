@@ -45,12 +45,7 @@ class Manager extends CI_Controller {
 	{
 		$this->_pre_action();
         
-        $preferences = array(
-            'hours' => '',
-            'minutes' => '',
-            'seconds' => '',
-            'success' => FALSE,
-        );
+        $preferences = array();
         
         if ($this->input->post()) {
             $this->load->helper(array('form', 'url'));
