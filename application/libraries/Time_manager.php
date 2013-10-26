@@ -11,21 +11,23 @@
 class Time_manager
 {
 
-	function __construct()
-	{
-		$this->ci =& get_instance();
-		$this->ci->load->database();
-		$this->ci->load->model('time_manager/checks');
-	}
-	/**
-	 * Determines if user checked in
-	 * @param $user_id
-	 * @return boolean true if last check is a check in false otherwise
-	 */
-	public function is_user_checked_in($user_id) {
-		return $this->ci->checks->get_last_check($user_id);
-	}
-    
+    function __construct()
+    {
+        $this->ci =& get_instance();
+        $this->ci->load->database();
+        $this->ci->load->model('time_manager/checks');
+        $this->ci->load->model('time_manager/parameters');
+        $this->ci->load->helper('time_manager_helper');
+    }
+    /**
+     * Determines if user checked in
+     * @param $user_id
+     * @return boolean true if last check is a check in false otherwise
+     */
+    public function is_user_checked_in($user_id) {
+        return $this->ci->checks->get_last_check($user_id);
+    }
+
     /**
      * Checks the user in
      * @param $user_id
@@ -35,7 +37,7 @@ class Time_manager
         $is_check_in = !$this->is_user_checked_in($user_id);
         $this->ci->checks->create($is_check_in, $user_id);
     }
-	
+
     /**
      * Calculates the statistics of the user based on his punches
      */
@@ -47,7 +49,7 @@ class Time_manager
         $stats['total_time'] = $this->duration_to_string($stats['total_time_t']) ;
         return $stats;
     }
-    
+
     public function duration_to_string($timestamp) {
         $seconds = $timestamp;
         $minutes = (int) ($seconds / 60);
@@ -56,9 +58,8 @@ class Time_manager
         $minutes = $minutes - $hours * 60;
         return $hours.'h '.$minutes.'m '.$seconds.'s';
     }
-    
+
     private function calculate_total_time($checks) {
-        log_message('debug', "Début de calcul de total time");
         $total_time = 0;
         $last_check_in_time = NULL;
         foreach ($checks as $check) {
@@ -72,16 +73,27 @@ class Time_manager
                 $total_time += $time - $last_check_in_time;
             }
         }
-        
+
         // If the last check is a check in : calculate the current time
         $number_of_checks = count($checks);
         if ($number_of_checks > 0 && $checks[count($checks) - 1]['check_in']) {
-           $total_time += time() - $last_check_in_time;
+            $total_time += time() - $last_check_in_time;
         }
-        
-        log_message('debug', "Fin de calcul de total time");
-        
+
         return $total_time;
+    }
+
+    public function get_preferences($user_id) {
+        $parameters = $this->ci->parameters->get_parameters($user_id);
+        $preferences =  duration_to_preferences(@$parameters['working_time']);
+        $preferences['stats_period'] = @$parameters['stats_period'];
+        return $preferences;
+    }
+
+    public function save_preferences($preferences, $user_id) {
+        // Convert the 'working time' array from preferences to a duration (in minutes)
+        $duration = preferences_to_duration($preferences);
+        $this->ci->parameters->set_parameters($duration, $user_id);
     }
 }
 
