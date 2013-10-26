@@ -1,0 +1,26 @@
+{% extends _layout %}
+{% block content %}
+<<<<<<< HEAD
+    <dl id="stats">
+        <dt title="Temps passé dans la journée">Temps passé&nbsp;:</dt>
+        <dd id="time-spent">{{ time_spent }}</dd>
+        <dt title="Temps restant à effectuer dans la journée">Temps restant&nbsp;:</dt>
+        <dd id="time-left">{{ time_left }}</dd>
+        <dt title="Heure de fin de journée estimée">Heure de fin estimée&nbsp;:</dt>
+        <dd id="end-time">{{ end_time }}</dd>
+        <dt title="Heures supplémentaires effectuées">Heures sup&nbsp;:</dt>
+        <dd id="over-time">{{ over_time }}</dd>
+        <dt title="Heures supplémentaires effectuées dans la journée">Heures sup de la journée&nbsp;:</dt>
+        <dd id="over-time-today">{{ over_time_today }}</dd>
+        <dt title="Heure de fin pour récupérer les heures supplémentaires">Pour récupération&nbsp;:</dt>
+        <dd id="end-time-no-over-time">{{ end_time_no_over_time }}</dd>
+    </dl>
+=======
+<table>
+    <tr>
+        <td>Temps Passé&nbsp;:</td>
+        <td>{{stats.total_time}}</td>
+    </tr>
+</table>
+>>>>>>> 9e127308c013cb5cbc1d0655f4587d50be4fa544
+{% endblock %}

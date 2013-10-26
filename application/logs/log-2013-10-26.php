@@ -5715,3 +5715,436 @@ DEBUG - 2013-10-26 18:05:20 --> Get preferences, user_id - 1, preferences - Arra
 
 DEBUG - 2013-10-26 18:05:20 --> Final output sent to browser
 DEBUG - 2013-10-26 18:05:20 --> Total execution time: 0.0091
+DEBUG - 2013-10-26 18:08:45 --> Config Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:08:45 --> URI Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Router Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Output Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Security Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Input Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:08:45 --> Language Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:08:45 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:08:45 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:08:45 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:08:45 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:08:45 --> Session Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:08:45 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Session routines successfully run
+DEBUG - 2013-10-26 18:08:45 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:08:45 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:08:45 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:08:45 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-26 18:08:45 --> Final output sent to browser
+DEBUG - 2013-10-26 18:08:45 --> Total execution time: 0.2642
+DEBUG - 2013-10-26 18:08:55 --> Config Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:08:55 --> URI Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Router Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Output Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Security Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Input Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:08:55 --> Language Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:08:55 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:08:55 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:08:55 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:08:55 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:08:55 --> Session Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:08:55 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Session routines successfully run
+DEBUG - 2013-10-26 18:08:55 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:08:55 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:08:55 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:08:55 --> Final output sent to browser
+DEBUG - 2013-10-26 18:08:55 --> Total execution time: 0.0122
+DEBUG - 2013-10-26 18:08:58 --> Config Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:08:58 --> URI Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Router Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Output Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Security Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Input Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:08:58 --> Language Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:08:58 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:08:58 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:08:58 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:08:58 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:08:58 --> Session Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:08:58 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Session routines successfully run
+DEBUG - 2013-10-26 18:08:58 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Model Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:08:58 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:08:58 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:08:58 --> Array
+(
+    [0] => Array
+        (
+            [id] => 6
+            [user_id] => 1
+            [check_in] => 0
+            [date] => 2013-10-26 11:14:53
+        )
+
+    [1] => Array
+        (
+            [id] => 5
+            [user_id] => 1
+            [check_in] => 1
+            [date] => 2013-10-26 11:13:32
+        )
+
+    [2] => Array
+        (
+            [id] => 4
+            [user_id] => 1
+            [check_in] => 0
+            [date] => 2013-10-26 11:13:29
+        )
+
+    [3] => Array
+        (
+            [id] => 3
+            [user_id] => 1
+            [check_in] => 1
+            [date] => 2013-10-26 11:13:23
+        )
+
+    [4] => Array
+        (
+            [id] => 2
+            [user_id] => 1
+            [check_in] => 0
+            [date] => 2013-10-22 20:03:42
+        )
+
+    [5] => Array
+        (
+            [id] => 1
+            [user_id] => 1
+            [check_in] => 1
+            [date] => 2013-10-22 20:03:22
+        )
+
+)
+
+DEBUG - 2013-10-26 18:08:58 --> Final output sent to browser
+DEBUG - 2013-10-26 18:08:58 --> Total execution time: 0.0108
+DEBUG - 2013-10-26 18:09:03 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:03 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:03 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:03 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:03 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:03 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:03 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:03 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:03 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:03 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:03 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:03 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:03 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:03 --> Total execution time: 0.0096
+DEBUG - 2013-10-26 18:09:21 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:21 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:21 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:21 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:21 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:21 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:21 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:21 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:21 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:21 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:21 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:21 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:21 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-26 18:09:21 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:21 --> Total execution time: 0.0087
+DEBUG - 2013-10-26 18:09:27 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:27 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:27 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:27 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:27 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:27 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:27 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:27 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:27 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:27 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:27 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:27 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:27 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-26 18:09:27 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:27 --> Total execution time: 0.0118
+DEBUG - 2013-10-26 18:09:30 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:30 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:30 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:30 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:30 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:30 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:30 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:30 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:30 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:30 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:30 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:30 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:30 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-26 18:09:30 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:30 --> Total execution time: 0.0113
+DEBUG - 2013-10-26 18:09:33 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:33 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:33 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:33 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:33 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:33 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:33 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:33 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:33 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:33 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:33 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:33 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:33 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-26 18:09:33 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:33 --> Total execution time: 0.0111
+DEBUG - 2013-10-26 18:09:36 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:36 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:36 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:36 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:36 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:36 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:36 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:36 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:36 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:36 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:36 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:36 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:36 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-26 18:09:36 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:36 --> Total execution time: 0.0108
+DEBUG - 2013-10-26 18:09:40 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:40 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:40 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:40 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:40 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:40 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:40 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:40 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:40 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:40 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:40 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:40 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:40 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-26 18:09:40 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:40 --> Total execution time: 0.0111
+DEBUG - 2013-10-26 18:09:47 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:47 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:47 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:47 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:47 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:47 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:47 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:47 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:47 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Session garbage collection performed.
+DEBUG - 2013-10-26 18:09:47 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:47 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:47 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:47 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:47 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2013-10-26 18:09:47 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:47 --> Total execution time: 0.1930
+DEBUG - 2013-10-26 18:09:49 --> Config Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Hooks Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Utf8 Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> UTF-8 Support Enabled
+DEBUG - 2013-10-26 18:09:49 --> URI Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Router Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Output Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Security Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Input Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Global POST and COOKIE data sanitized
+DEBUG - 2013-10-26 18:09:49 --> Language Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Loader Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Controller Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Config file loaded: /var/www/time_manager/sparks/Twiggy/0.8.5/config/twiggy.php
+DEBUG - 2013-10-26 18:09:49 --> Twiggy: library initialized
+DEBUG - 2013-10-26 18:09:49 --> Helper loaded: url_helper
+DEBUG - 2013-10-26 18:09:49 --> Helper loaded: time_manager_helper
+DEBUG - 2013-10-26 18:09:49 --> Config file loaded: /var/www/time_manager/application/config/tank_auth.php
+DEBUG - 2013-10-26 18:09:49 --> Session Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Helper loaded: string_helper
+DEBUG - 2013-10-26 18:09:49 --> Database Driver Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Session routines successfully run
+DEBUG - 2013-10-26 18:09:49 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Model Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2013-10-26 18:09:49 --> Helper loaded: form_helper
+DEBUG - 2013-10-26 18:09:49 --> Form Validation Class Initialized
+DEBUG - 2013-10-26 18:09:49 --> Final output sent to browser
+DEBUG - 2013-10-26 18:09:49 --> Total execution time: 0.0109
