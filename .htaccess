@@ -1,0 +1,5 @@
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteCond $1 !^(img|index\.php|css|captcha|images|fonts)
+RewriteRule ^(.*)$ /htdocs/index.php/$1 [PT]
+</IfModule>
