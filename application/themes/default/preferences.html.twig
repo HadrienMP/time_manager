@@ -1,9 +1,11 @@
 {% extends _layout %}
 {% block content %}
 
+{% if validation_errors() is not empty %}
 <div class="wrong">
     {{ validation_errors() }}
 </div>
+{% endif %}
 
 {% if success == true %}
 <div class="success">
@@ -24,11 +26,6 @@
         <input type="text" id="minutes" name="minutes" size="2" maxlength="2" 
                 value="{{ minutes }}" class="{{ has_errors(form_error('minutes')) }}" />
         <label for="hours">m</label>
-        
-        <!-- SECONDES -->
-        <input type="text" id="seconds" name="seconds" size="2" maxlength="2" 
-                value="{{ seconds }}" class="{{ has_errors(form_error('seconds')) }}" />
-        <label for="hours">s</label>
     </fieldset>
     <input type="submit" value="Enregistrer" />
 </form>

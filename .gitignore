@@ -3,3 +3,6 @@
 /.pydevproject
 /.project
 /time_manager.mwb.bak
+.project
+.buildpath
+.settings

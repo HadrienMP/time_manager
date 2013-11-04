@@ -70,7 +70,6 @@ class Manager extends CI_Controller {
         return array(
                 'hours' => set_value('hours'),
                 'minutes' => set_value('minutes'),
-                'seconds' => set_value('seconds'),
                 );
     }
 

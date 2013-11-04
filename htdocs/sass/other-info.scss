@@ -1,12 +1,15 @@
 #other-info {
   @extend #machine;
   height: auto;
+  
   form {
     text-align: justify;
+    
     .form-wrapper {
       border-radius: 10px 10px 0 0;
       @include my-box-shadow();
       padding: 15px;
+      
       table { 
         width: 100%;
         td { 
@@ -19,12 +22,14 @@
             width: 98%;
           }
         }
+        
         td.error {
           padding: 0;
           color: red;
           text-align: right;
         }
       }
+      
       p, ul { display: block;}
       .left { float: left; text-align: left; }
       .right { 
@@ -35,6 +40,7 @@
         li:first-child:after { content: " | ";}
       }
     }
+    
     .buttons-bar {
       @extend #tools-container;
       input { 
@@ -50,13 +56,16 @@
         font-family: inherit;
         font-size: inherit;
       }
+      
       input:hover {
         @include box-shadow(inset 0px 3px 3px $border-color, inset 0px 0px 0px $border-color);
         @include hover-effect();
         cursor: pointer;
       }
+      
       input:first-child { border-left: none;}
     }
+    
     #recaptcha_image { 
       border: inset 2px $input-border-color; 
       border-radius: 15px; 
@@ -64,8 +73,10 @@
       padding: 5px;
       float: left;
     }
+    
     #recaptcha-tools {
       float: right;
+      
       a {
         @include my-box-shadow();
         display: block;
@@ -73,11 +84,13 @@
         border-radius: 5px; 
         border: 1px inset $border-color;
         margin-bottom: 5px;
+        
         img { 
           width: 20px; 
           height: 20px; 
         }
       }
+      
       a:hover {
         @include box-shadow(inset 0px 3px 3px $border-color, inset 0px 0px 0px $border-color);
         @include hover-effect();

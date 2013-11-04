@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,49 +20,52 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
 
+/*############################################################################
+                                MIXINS
+############################################################################*/
 /*############################################################################
                                 VARIABLES
 ############################################################################*/
@@ -75,9 +78,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-style: normal;
 }
 
-/*############################################################################
-                                MIXINS
-############################################################################*/
 /* line 1, ../sass/general.scss */
 .box {
   display: inline-block;
@@ -145,11 +145,19 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .wrong {
   color: red;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /* line 20, ../sass/general.scss */
 input.wrong {
   border-color: red;
+}
+
+/* line 21, ../sass/general.scss */
+.success {
+  color: green;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 /*############################################################################
@@ -307,8 +315,13 @@ body {
 /* line 27, ../sass/tools.scss */
 #machine #tools-container ul li:first-child, #other-info #tools-container ul li:first-child, #other-info form .buttons-bar ul li:first-child {
   border: none;
+  border-radius: 0 0 0 10px;
 }
 /* line 28, ../sass/tools.scss */
+#machine #tools-container ul li:last-child, #other-info #tools-container ul li:last-child, #other-info form .buttons-bar ul li:last-child {
+  border-radius: 0 0 10px 0;
+}
+/* line 29, ../sass/tools.scss */
 #machine #tools-container ul li:hover, #other-info #tools-container ul li:hover, #other-info form .buttons-bar ul li:hover {
   -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
@@ -329,7 +342,7 @@ body {
 
 /* line 31, ../sass/style.scss */
 #content {
-  width: 380px;
+  width: 360px;
   margin: 3px auto;
   min-height: 150px;
   border-radius: 0 0 10px 10px;
@@ -340,9 +353,31 @@ body {
   background: white;
   position: relative;
   z-index: 3;
+  padding: 10px;
+}
+/* line 46, ../sass/style.scss */
+#content form fieldset {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 5px;
+  padding: 5px;
+  margin-bottom: 10px;
+}
+/* line 52, ../sass/style.scss */
+#content form fieldset legend {
+  font-weight: bold;
+  padding: 0 5px;
+}
+/* line 58, ../sass/style.scss */
+#content form input {
+  text-align: center;
+}
+/* line 59, ../sass/style.scss */
+#content form input[type="submit"] {
+  border-radius: 8px;
+  font-weight: bold;
 }
 
-/* line 43, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 #navigation {
   position: absolute;
   top: 0px;
@@ -357,7 +392,7 @@ body {
   -moz-box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
   box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
 }
-/* line 53, ../sass/style.scss */
+/* line 73, ../sass/style.scss */
 #navigation li {
   display: inline-block;
 }
@@ -366,11 +401,11 @@ body {
 #other-info {
   height: auto;
 }
-/* line 4, ../sass/other-info.scss */
+/* line 5, ../sass/other-info.scss */
 #other-info form {
   text-align: justify;
 }
-/* line 6, ../sass/other-info.scss */
+/* line 8, ../sass/other-info.scss */
 #other-info form .form-wrapper {
   border-radius: 10px 10px 0 0;
   -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
@@ -378,15 +413,15 @@ body {
   box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
   padding: 15px;
 }
-/* line 10, ../sass/other-info.scss */
+/* line 13, ../sass/other-info.scss */
 #other-info form .form-wrapper table {
   width: 100%;
 }
-/* line 12, ../sass/other-info.scss */
+/* line 15, ../sass/other-info.scss */
 #other-info form .form-wrapper table td {
   padding-bottom: 8px;
 }
-/* line 14, ../sass/other-info.scss */
+/* line 17, ../sass/other-info.scss */
 #other-info form .form-wrapper table td input {
   border-radius: 10px;
   border-color: #eeeeee;
@@ -394,34 +429,34 @@ body {
   padding-left: 2%;
   width: 98%;
 }
-/* line 22, ../sass/other-info.scss */
+/* line 26, ../sass/other-info.scss */
 #other-info form .form-wrapper table td.error {
   padding: 0;
   color: red;
   text-align: right;
 }
-/* line 28, ../sass/other-info.scss */
+/* line 33, ../sass/other-info.scss */
 #other-info form .form-wrapper p, #other-info form .form-wrapper ul {
   display: block;
 }
-/* line 29, ../sass/other-info.scss */
+/* line 34, ../sass/other-info.scss */
 #other-info form .form-wrapper .left {
   float: left;
   text-align: left;
 }
-/* line 30, ../sass/other-info.scss */
+/* line 35, ../sass/other-info.scss */
 #other-info form .form-wrapper .right {
   text-align: right;
 }
-/* line 32, ../sass/other-info.scss */
+/* line 37, ../sass/other-info.scss */
 #other-info form .form-wrapper .right li {
   display: inline;
 }
-/* line 35, ../sass/other-info.scss */
+/* line 40, ../sass/other-info.scss */
 #other-info form .form-wrapper .right li:first-child:after {
   content: " | ";
 }
-/* line 40, ../sass/other-info.scss */
+/* line 46, ../sass/other-info.scss */
 #other-info form .buttons-bar input {
   -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
@@ -437,7 +472,7 @@ body {
   font-family: inherit;
   font-size: inherit;
 }
-/* line 53, ../sass/other-info.scss */
+/* line 60, ../sass/other-info.scss */
 #other-info form .buttons-bar input:hover {
   -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
@@ -446,11 +481,11 @@ body {
   color: white;
   cursor: pointer;
 }
-/* line 58, ../sass/other-info.scss */
+/* line 66, ../sass/other-info.scss */
 #other-info form .buttons-bar input:first-child {
   border-left: none;
 }
-/* line 60, ../sass/other-info.scss */
+/* line 69, ../sass/other-info.scss */
 #other-info form #recaptcha_image {
   border: inset 2px #eeeeee;
   border-radius: 15px;
@@ -458,11 +493,11 @@ body {
   padding: 5px;
   float: left;
 }
-/* line 67, ../sass/other-info.scss */
+/* line 77, ../sass/other-info.scss */
 #other-info form #recaptcha-tools {
   float: right;
 }
-/* line 69, ../sass/other-info.scss */
+/* line 80, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a {
   -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
@@ -473,12 +508,12 @@ body {
   border: 1px inset rgba(33, 33, 33, 0.2);
   margin-bottom: 5px;
 }
-/* line 76, ../sass/other-info.scss */
+/* line 88, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a img {
   width: 20px;
   height: 20px;
 }
-/* line 81, ../sass/other-info.scss */
+/* line 94, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a:hover {
   -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
