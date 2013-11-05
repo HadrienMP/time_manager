@@ -50,13 +50,12 @@ body {
             margin-bottom: 10px;
             
             legend {
-                font-weight: bold;
                 padding: 0 5px;
             }
         }
         
         input { text-align: center; }
-        input[type="submit"] { border-radius: 8px; font-weight: bold; }
+        input[type="submit"] { border-radius: 8px;}
     }
     
     .stats {
