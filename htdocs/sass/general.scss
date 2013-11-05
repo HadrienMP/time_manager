@@ -19,3 +19,8 @@
 .wrong { color: $error-text-color; font-weight: bold; margin-bottom: 10px;}
 input.wrong { border-color: $error-border-color;}
 .success { color: $success-text-color; font-weight: bold; margin-bottom: 10px;}
+
+input { 
+    border-radius: 10px;
+    border-color: $input-border-color;
+}

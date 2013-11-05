@@ -43,45 +43,16 @@ class Time_manager
      */
     public function calculate_stats($user_id) {
         $checks = $this->ci->checks->get_checks($user_id);
+        $working_time = $this->ci->parameters->get_working_time($user_id);
         log_message('debug', print_r($checks,true));
         
         $stats = array();
-        $stats['total_time_t'] = $this->calculate_total_time($checks);
-        $stats['total_time'] = $this->duration_to_string($stats['total_time_t']) ;
+        $stats['total_time_t'] = calculate_total_time($checks);
+        $stats['total_time'] = duration_to_string($stats['total_time_t']);
+        $stats['time_left_t'] = calculate_time_left($stats['total_time_t'], $working_time);
+        $stats['time_left'] = duration_to_string($stats['time_left_t']);
+        $stats['end_time'] = calculate_end_time($stats['time_left_t']);
         return $stats;
-    }
-
-    public function duration_to_string($timestamp) {
-        $seconds = $timestamp;
-        $minutes = (int) ($seconds / 60);
-        $hours = (int) ($minutes / 60);
-        $seconds = $seconds - $minutes * 60 ;
-        $minutes = $minutes - $hours * 60;
-        return $hours.'h '.$minutes.'min '.$seconds.'s';
-    }
-
-    private function calculate_total_time($checks) {
-        $total_time = 0;
-        $last_check_in_time = NULL;
-        foreach ($checks as $check) {
-            $time = strtotime($check['date']);
-            // If the check is a check in, save the time
-            if ($check['check_in']) {
-                $last_check_in_time = $time;
-            }
-            else if ($last_check_in_time != NULL) {
-                // The total time is increased with the time difference between check in and check out
-                $total_time += $time - $last_check_in_time;
-            }
-        }
-
-        // If the last check is a check in : calculate the current time
-        $number_of_checks = count($checks);
-        if ($number_of_checks > 0 && $checks[count($checks) - 1]['check_in']) {
-            $total_time += time() - $last_check_in_time;
-        }
-
-        return $total_time;
     }
 
     public function get_preferences($user_id) {

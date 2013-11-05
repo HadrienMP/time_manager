@@ -3,8 +3,8 @@
 ############################################################################*/
 
 @mixin back {
-    //background: url(../images/brushed_alu.png);
-    background: $background-color;
+    background: url(../images/brushed_alu.png);
+    //background: $background-color;
 }
 @mixin back-content {
     background: url(../images/escheresque_ste.png) !important;

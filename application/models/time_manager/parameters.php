@@ -12,6 +12,22 @@ require_once("periods.php");
 class Parameters extends CI_Model
 {	
     const TABLE_NAME = "parameters";
+    
+    public function get_working_time($user_id) {
+        $result = NULL;
+
+        if (isset($user_id)) {
+            $this->db->select('working_time');
+            $query = $this->db->get(Parameters::TABLE_NAME, 1, 0);
+            if ($query->num_rows() == 1) $result = $query->row()->working_time;
+        } 
+        else {
+            log_message('error', "User id vide");
+        }
+
+        // Working time is stored in minutes no in seconds to save space
+        return $result * 60;
+    }
 
     /*
      * Gets the preferences of the user from the db

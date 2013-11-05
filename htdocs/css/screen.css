@@ -1,4 +1,4 @@
-/* line 17, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -160,6 +160,12 @@ input.wrong {
   margin-bottom: 10px;
 }
 
+/* line 23, ../sass/general.scss */
+input {
+  border-radius: 10px;
+  border-color: #eeeeee;
+}
+
 /*############################################################################
                                 STYLE
 ############################################################################*/
@@ -171,7 +177,7 @@ html {
 
 /* line 10, ../sass/style.scss */
 body {
-  background: #eeeeee;
+  background: url(../images/brushed_alu.png);
 }
 
 /* line 13, ../sass/style.scss */
@@ -188,7 +194,7 @@ body {
   box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
   background: #dddddd;
 }
-/* line 30, ../sass/puncher.scss */
+/* line 35, ../sass/puncher.scss */
 #machine #puncher-container, #other-info #puncher-container {
   height: 127.5px;
   width: 100%;
@@ -199,7 +205,7 @@ body {
   -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
   box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
 }
-/* line 34, ../sass/puncher.scss */
+/* line 39, ../sass/puncher.scss */
 #machine #puncher-container a, #other-info #puncher-container a {
   display: block;
   padding-top: 30px;
@@ -207,11 +213,10 @@ body {
   width: 100%;
   font-size: 80px;
   font-family: "FontAwesome";
-  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
-  text-shadow: white 0px 0px 6px;
   color: white;
+  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
 }
-/* line 37, ../sass/puncher.scss */
+/* line 42, ../sass/puncher.scss */
 .checked_in #machine #puncher-container a, .checked_in #other-info #puncher-container a {
   display: block;
   padding-top: 30px;
@@ -219,9 +224,11 @@ body {
   width: 100%;
   font-size: 80px;
   font-family: "FontAwesome";
-  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
+  text-shadow: white 0px 0px 6px;
+  color: white;
+  padding-top: 35px;
 }
-/* line 40, ../sass/puncher.scss */
+/* line 45, ../sass/puncher.scss */
 .checked_in #machine #puncher-container a:hover, .checked_in #other-info #puncher-container a:hover {
   display: block;
   padding-top: 30px;
@@ -229,11 +236,10 @@ body {
   width: 100%;
   font-size: 80px;
   font-family: "FontAwesome";
-  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
-  text-shadow: white 0px 0px 6px;
   color: white;
+  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
 }
-/* line 45, ../sass/puncher.scss */
+/* line 50, ../sass/puncher.scss */
 #machine #puncher-container a:hover, #other-info #puncher-container a:hover {
   display: block;
   padding-top: 30px;
@@ -241,9 +247,11 @@ body {
   width: 100%;
   font-size: 80px;
   font-family: "FontAwesome";
-  text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
+  text-shadow: white 0px 0px 6px;
+  color: white;
+  padding-top: 35px;
 }
-/* line 50, ../sass/puncher.scss */
+/* line 55, ../sass/puncher.scss */
 .checked_in #machine #puncher-container, .checked_in #other-info #puncher-container {
   height: 127.5px;
   width: 100%;
@@ -257,7 +265,7 @@ body {
   -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
   box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
 }
-/* line 52, ../sass/puncher.scss */
+/* line 57, ../sass/puncher.scss */
 .checked_in #machine #puncher-container:hover, .checked_in #other-info #puncher-container:hover {
   height: 127.5px;
   width: 100%;
@@ -268,7 +276,7 @@ body {
   -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
   box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
 }
-/* line 56, ../sass/puncher.scss */
+/* line 61, ../sass/puncher.scss */
 #machine #puncher-container:hover, #other-info #puncher-container:hover {
   height: 127.5px;
   width: 100%;
@@ -427,40 +435,38 @@ body {
 }
 /* line 17, ../sass/other-info.scss */
 #other-info form .form-wrapper table td input {
-  border-radius: 10px;
-  border-color: #eeeeee;
   background: #eeeeee;
   padding-left: 2%;
   width: 98%;
 }
-/* line 26, ../sass/other-info.scss */
+/* line 24, ../sass/other-info.scss */
 #other-info form .form-wrapper table td.error {
   padding: 0;
   color: red;
   text-align: right;
 }
-/* line 33, ../sass/other-info.scss */
+/* line 31, ../sass/other-info.scss */
 #other-info form .form-wrapper p, #other-info form .form-wrapper ul {
   display: block;
 }
-/* line 34, ../sass/other-info.scss */
+/* line 32, ../sass/other-info.scss */
 #other-info form .form-wrapper .left {
   float: left;
   text-align: left;
 }
-/* line 35, ../sass/other-info.scss */
+/* line 33, ../sass/other-info.scss */
 #other-info form .form-wrapper .right {
   text-align: right;
 }
-/* line 37, ../sass/other-info.scss */
+/* line 35, ../sass/other-info.scss */
 #other-info form .form-wrapper .right li {
   display: inline;
 }
-/* line 40, ../sass/other-info.scss */
+/* line 38, ../sass/other-info.scss */
 #other-info form .form-wrapper .right li:first-child:after {
   content: " | ";
 }
-/* line 46, ../sass/other-info.scss */
+/* line 44, ../sass/other-info.scss */
 #other-info form .buttons-bar input {
   -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
@@ -476,7 +482,7 @@ body {
   font-family: inherit;
   font-size: inherit;
 }
-/* line 60, ../sass/other-info.scss */
+/* line 58, ../sass/other-info.scss */
 #other-info form .buttons-bar input:hover {
   -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
@@ -485,11 +491,11 @@ body {
   color: white;
   cursor: pointer;
 }
-/* line 66, ../sass/other-info.scss */
+/* line 64, ../sass/other-info.scss */
 #other-info form .buttons-bar input:first-child {
   border-left: none;
 }
-/* line 69, ../sass/other-info.scss */
+/* line 67, ../sass/other-info.scss */
 #other-info form #recaptcha_image {
   border: inset 2px #eeeeee;
   border-radius: 15px;
@@ -497,11 +503,11 @@ body {
   padding: 5px;
   float: left;
 }
-/* line 77, ../sass/other-info.scss */
+/* line 75, ../sass/other-info.scss */
 #other-info form #recaptcha-tools {
   float: right;
 }
-/* line 80, ../sass/other-info.scss */
+/* line 78, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a {
   -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
@@ -512,12 +518,12 @@ body {
   border: 1px inset rgba(33, 33, 33, 0.2);
   margin-bottom: 5px;
 }
-/* line 88, ../sass/other-info.scss */
+/* line 86, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a img {
   width: 20px;
   height: 20px;
 }
-/* line 94, ../sass/other-info.scss */
+/* line 92, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a:hover {
   -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
