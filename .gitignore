@@ -6,3 +6,4 @@
 .project
 .buildpath
 .settings
+log-*.php

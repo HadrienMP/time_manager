@@ -44,6 +44,7 @@ class Time_manager
     public function calculate_stats($user_id) {
         $checks = $this->ci->checks->get_checks($user_id);
         log_message('debug', print_r($checks,true));
+        
         $stats = array();
         $stats['total_time_t'] = $this->calculate_total_time($checks);
         $stats['total_time'] = $this->duration_to_string($stats['total_time_t']) ;

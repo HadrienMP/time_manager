@@ -22,7 +22,7 @@ class Checks extends CI_Model
     function get_checks($user_id, $period = Periods::ALL_TIME) {
         $checks = NULL;
         if (!empty($user_id)) {
-            $this->db->order_by("date", "desc");
+            $this->db->order_by("date", "asc");
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
         }
