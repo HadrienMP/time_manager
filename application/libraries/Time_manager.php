@@ -57,7 +57,7 @@ class Time_manager
         $hours = (int) ($minutes / 60);
         $seconds = $seconds - $minutes * 60 ;
         $minutes = $minutes - $hours * 60;
-        return $hours.'h '.$minutes.'m '.$seconds.'s';
+        return $hours.'h '.$minutes.'min '.$seconds.'s';
     }
 
     private function calculate_total_time($checks) {

@@ -376,8 +376,12 @@ body {
   border-radius: 8px;
   font-weight: bold;
 }
-
 /* line 63, ../sass/style.scss */
+#content .stats td {
+  padding: 0 5px 0;
+}
+
+/* line 67, ../sass/style.scss */
 #navigation {
   position: absolute;
   top: 0px;
@@ -392,7 +396,7 @@ body {
   -moz-box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
   box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
 }
-/* line 73, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 #navigation li {
   display: inline-block;
 }

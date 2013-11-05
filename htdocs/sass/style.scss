@@ -58,6 +58,10 @@ body {
         input { text-align: center; }
         input[type="submit"] { border-radius: 8px; font-weight: bold; }
     }
+    
+    .stats {
+        td {padding: 0 5px 0;}
+    }
 }
 
 #navigation {
