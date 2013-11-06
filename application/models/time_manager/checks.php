@@ -23,8 +23,10 @@ class Checks extends CI_Model
         $checks = NULL;
         if (!empty($user_id)) {
             $this->db->order_by("date", "asc");
+            $this->db->where("date >=", $this->yesterday());
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
+            log_message('debug', print_r($query, TRUE));
         }
         else {
             log_message('error', "User id vide");
@@ -42,6 +44,7 @@ class Checks extends CI_Model
         if (!empty($user_id)) {
             $this->db->select('check_in');
             $this->db->order_by("date", "desc");
+            $this->db->where("date >=", $this->yesterday());
             $query = $this->db->get(Checks::TABLE_NAME,1,0);
             if ($query->num_rows() == 1) $result = $query->row()->check_in;
         }
@@ -50,9 +53,15 @@ class Checks extends CI_Model
         }
         return $result;
     }
+    
     function update_checks($ids) {}
     function delete_checks($ids) {}
 
+    /**
+     * Creates a check in for the user specified
+     * @param boolean $is_check_in true for in false for out
+     * @param unknown $user_id the user's id
+     */
     function create($is_check_in, $user_id) {
         log_message('debug', $user_id);
         log_message('debug', 'Is check in : '.$is_check_in);
@@ -69,5 +78,12 @@ class Checks extends CI_Model
             log_message('error', "User id vide");
         }
     }
+    
+    /** 
+     * @return a mysql date for today at midnight
+     */
+    private function yesterday() {
+    	return date("Y-m-d H:i:s" ,strtotime('today midnight'));
+    } 
 }
 

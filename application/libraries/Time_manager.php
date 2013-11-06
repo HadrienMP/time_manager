@@ -19,6 +19,7 @@ class Time_manager
         $this->ci->load->model('time_manager/parameters');
         $this->ci->load->helper('time_manager_helper');
     }
+    
     /**
      * Determines if user checked in
      * @param $user_id
@@ -40,6 +41,7 @@ class Time_manager
 
     /**
      * Calculates the statistics of the user based on his punches
+     * @param integer user_id the user's id
      */
     public function calculate_stats($user_id) {
         $checks = $this->ci->checks->get_checks($user_id);
@@ -47,7 +49,7 @@ class Time_manager
         log_message('debug', print_r($checks,true));
         
         $stats = array();
-        $stats['total_time_t'] = calculate_total_time($checks);
+        $stats['total_time_t'] = calculate_time_spent($checks);
         $stats['total_time'] = duration_to_string($stats['total_time_t']);
         $stats['time_left_t'] = calculate_time_left($stats['total_time_t'], $working_time);
         $stats['time_left'] = duration_to_string($stats['time_left_t']);
@@ -55,6 +57,12 @@ class Time_manager
         return $stats;
     }
 
+    /**
+     * Gets the preferences of the user
+     * It converts the preferences in the db to a readable format for the app
+     * @param integer $user_id the user's id
+     * @return array the preferences array of the user
+     */
     public function get_preferences($user_id) {
         $parameters = $this->ci->parameters->get_parameters($user_id);
         $preferences =  duration_to_preferences(@$parameters['working_time']);
@@ -62,6 +70,12 @@ class Time_manager
         return $preferences;
     }
 
+    /**
+     * Save the preferences of the user
+     * Transforms the preferences to a storable format in the db
+     * @param array $preferences the preferences array
+     * @param integer $user_id the user's id
+     */
     public function save_preferences($preferences, $user_id) {
         // Convert the 'working time' array from preferences to a duration (in minutes)
         $duration = preferences_to_duration($preferences);

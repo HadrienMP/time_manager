@@ -33,7 +33,7 @@ function duration_to_string($timestamp) {
     return $hours.'h '.$minutes.'min '.$seconds.'s';
 }
 
-function calculate_total_time($checks) {
+function calculate_time_spent($checks) {
     $total_time = 0;
     $last_check_in_time = NULL;
     
