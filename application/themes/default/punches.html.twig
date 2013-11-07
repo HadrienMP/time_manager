@@ -1,4 +1,19 @@
 {% extends _layout %}
 {% block content %}
-{{ checks }}
+
+<div id="checks-nav-button">
+    <a href="" id="previous">Previous</a>
+    <a href="" id="next">Next</a>
+</div>
+
+{% for date, check in checks %}
+    <div class="checks">
+        <p class="check_date">{{ date }}</p>
+        <ul class="check_list">
+            {% for sub_check in check %}
+                <li>{{ sub_check.date }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endfor %}
 {% endblock %}

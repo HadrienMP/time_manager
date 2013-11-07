@@ -82,7 +82,7 @@ class Manager extends CI_Controller {
         $this->_pre_action();
         $checks = $this->time_manager->get_all_checks($this->tank_auth->get_user_id());
 
-        $this->twiggy->set('checks', print_r($checks, TRUE), NULL);
+        $this->twiggy->set('checks', $checks, NULL);
         $this->twiggy->template('punches')->display();
     }
 	
