@@ -20,6 +20,9 @@ class Manager extends CI_Controller {
         $this->twiggy->register_function('has_errors');
     }
 
+    /**
+     * Pre controller hook that checks if the user is logged in
+     */
     private function _pre_action() {
         if (!$this->tank_auth->is_logged_in()) {
             redirect('/auth/login/');
@@ -32,6 +35,9 @@ class Manager extends CI_Controller {
         }
     }
 
+    /**
+     * Stats screen
+     */
     public function stats()
     {
         $this->_pre_action();
@@ -41,6 +47,9 @@ class Manager extends CI_Controller {
         $this->twiggy->template('stats')->display();
     }
 
+    /**
+     * Preferences screen
+     */
     public function preferences()
     {
         $this->_pre_action();
@@ -65,7 +74,22 @@ class Manager extends CI_Controller {
         $this->twiggy->template('preferences')->display();
 
     }
+    
+    /**
+     * Punches screen
+     */
+    public function punches() {
+        $this->_pre_action();
+        $checks = $this->time_manager->get_all_checks($this->tank_auth->get_user_id());
 
+        $this->twiggy->set('checks', print_r($checks, TRUE), NULL);
+        $this->twiggy->template('punches')->display();
+    }
+	
+    /**
+     * Utility function to fill the preferences array based on the data of the form
+     * @return array the preferences array to be stored in the db
+     */
     private function fill_preferences_array() {
         return array(
                 'hours' => set_value('hours'),
@@ -73,6 +97,9 @@ class Manager extends CI_Controller {
                 );
     }
 
+    /**
+     * The punch function, supposed to redirect to the last screen
+     */
     public function punch()
     {
         $this->_pre_action();

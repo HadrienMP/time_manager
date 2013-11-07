@@ -44,17 +44,28 @@ class Time_manager
      * @param integer user_id the user's id
      */
     public function calculate_stats($user_id) {
-        $checks = $this->ci->checks->get_checks($user_id);
+        $checks = $this->ci->checks->get_todays_checks($user_id);
         $working_time = $this->ci->parameters->get_working_time($user_id);
         log_message('debug', print_r($checks,true));
         
         $stats = array();
-        $stats['total_time_t'] = calculate_time_spent($checks);
-        $stats['total_time'] = duration_to_string($stats['total_time_t']);
-        $stats['time_left_t'] = calculate_time_left($stats['total_time_t'], $working_time);
+        $stats['time_spent_t'] = calculate_time_spent_today($checks);
+        $stats['time_spent'] = duration_to_string($stats['time_spent_t']);
+        $stats['time_left_t'] = calculate_time_left($stats['time_spent_t'], $working_time);
         $stats['time_left'] = duration_to_string($stats['time_left_t']);
         $stats['end_time'] = calculate_end_time($stats['time_left_t']);
         return $stats;
+    }
+    
+    /**
+     * Gets all the checks from the db and rearranges them in a manageable way
+     * @param number $user_id the user's id
+     */
+    public function get_all_checks($user_id) {
+    	$checks = $this->ci->checks->get_checks($user_id);
+    	log_message('debug', print_r($checks, TRUE));
+    	log_message('debug', print_r(rearrange_db_checks($checks), TRUE));
+    	return rearrange_db_checks($checks);
     }
 
     /**

@@ -16,10 +16,31 @@ class Checks extends CI_Model
     /**
      * Gets all the checks of a user for a certain period of time.
      * @param $user_id
-     * @param $period
+     * @param $time_period
      * @return an array of checks
      */
-    function get_checks($user_id, $period = Periods::ALL_TIME) {
+    function get_checks($user_id, $time_period = Periods::ALL_TIME) {
+        $checks = NULL;
+        if (!empty($user_id)) {
+            $this->db->order_by("date", "asc");
+            // TODO: Handle time period
+//             $this->db->where("date >=", $this->yesterday());
+            $query = $this->db->get(Checks::TABLE_NAME);
+            $checks = $query->result_array();
+            log_message('debug', print_r($query, TRUE));
+        }
+        else {
+            log_message('error', "User id vide");
+        }
+        return $checks;
+    }
+
+    /**
+     * Gets all the checks of a user for the present day
+     * @param $user_id
+     * @return an array of checks
+     */
+    function get_todays_checks($user_id) {
         $checks = NULL;
         if (!empty($user_id)) {
             $this->db->order_by("date", "asc");
