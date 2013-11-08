@@ -363,24 +363,39 @@ body {
   z-index: 3;
   padding: 10px;
 }
-/* line 46, ../sass/style.scss */
+/* line 45, ../sass/style.scss */
 #content form fieldset {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
 }
-/* line 52, ../sass/style.scss */
+/* line 51, ../sass/style.scss */
 #content form fieldset legend {
   padding: 0 5px;
 }
-/* line 57, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 #content form input {
   text-align: center;
 }
-/* line 58, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 #content form input[type="submit"] {
-  border-radius: 8px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+  background: #ddd;
+  -webkit-box-shadow: 0 0 0 rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: 0 0 0 rgba(33, 33, 33, 0.2);
+  box-shadow: 0 0 0 rgba(33, 33, 33, 0.2);
+  padding: 5px 10px;
+}
+/* line 58, ../sass/style.scss */
+#content form input[type="submit"]:hover {
+  text-shadow: white 0px 0px 6px;
+  color: white;
 }
 /* line 62, ../sass/style.scss */
 #content .stats td {
@@ -394,11 +409,30 @@ body {
   -webkit-box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
   box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  cursor: pointer;
   background: #ddd;
+  -webkit-box-shadow: 0 0 0 rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: 0 0 0 rgba(33, 33, 33, 0.2);
+  box-shadow: 0 0 0 rgba(33, 33, 33, 0.2);
   padding: 5px 10px;
+  float: right;
+}
+/* line 72, ../sass/style.scss */
+#content #punches #checks-nav-button a:first-child {
+  float: left;
+}
+/* line 73, ../sass/style.scss */
+#content #punches #checks-nav-button a:hover {
+  text-shadow: white 0px 0px 6px;
+  color: white;
+}
+/* line 75, ../sass/style.scss */
+#content #punches p.check_date {
+  text-align: center;
+  padding: 5px 0 10px;
 }
 
-/* line 72, ../sass/style.scss */
+/* line 79, ../sass/style.scss */
 #navigation {
   position: absolute;
   top: 0px;
@@ -413,7 +447,7 @@ body {
   -moz-box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
   box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
 }
-/* line 82, ../sass/style.scss */
+/* line 89, ../sass/style.scss */
 #navigation li {
   display: inline-block;
 }

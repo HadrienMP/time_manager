@@ -15,6 +15,7 @@
 	@include box-shadow(0px 6px 0px $border-color);
     //@include background(linear-gradient(bottom, $box-bottom-color 12%, $box-top-color 65%));
     //background: url(../images/metal-texture.jpg);
+    cursor: pointer;
     background: #ddd;
 }
 @mixin hover-effect {
@@ -36,4 +37,9 @@
 }
 @function white-shadow($opacity) {
     @return rgba(150,150,150,$opacity)
+}
+@mixin button {
+    @include gradient-rounded-box(); 
+    @include box-shadow(0 0 0 $border-color); 
+    padding: 5px 10px;
 }

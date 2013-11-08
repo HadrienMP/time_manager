@@ -42,7 +42,6 @@ body {
     padding: 10px;
     
     form {
-    
         fieldset {
             border: 1px solid $border-color;
             border-radius: 5px;
@@ -55,7 +54,8 @@ body {
         }
         
         input { text-align: center; }
-        input[type="submit"] { border-radius: 8px;}
+        input[type="submit"] { @include button() }
+        input[type="submit"]:hover { @include hover-effect();}
     }
     
     .stats {
@@ -64,8 +64,15 @@ body {
     
     #punches {
         #checks-nav-button {
-            a { text-decoration: none; @include gradient-rounded-box(); padding: 5px 10px;}
+            a { 
+                text-decoration: none; 
+                @include button();
+                float: right;
+            }
+            a:first-child { float: left;}
+            a:hover { @include hover-effect(); }
         }
+        p.check_date { text-align: center; padding: 5px 0 10px;}
     }
 }
 
