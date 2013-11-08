@@ -61,6 +61,12 @@ body {
     .stats {
         td {padding: 0 5px 0;}
     }
+    
+    #punches {
+        #checks-nav-button {
+            a { text-decoration: none; @include gradient-rounded-box(); padding: 5px 10px;}
+        }
+    }
 }
 
 #navigation {
