@@ -4,7 +4,7 @@ RewriteBase /htdocs
 RewriteCond %{ENV:REDIRECT_STATUS} 200
 RewriteRule .* - [L]
 
-RewriteCond $1 !^(img|index\.php|css|captcha|images|fonts)
+RewriteCond $1 !^(img|index\.php|css|captcha|images|fonts|js)
 RewriteRule ^(.*)$ index.php/$1 [PT]
 
 RewriteRule ^(css|img|images|fonts)/(.*)$ $1/$2 [PT]
