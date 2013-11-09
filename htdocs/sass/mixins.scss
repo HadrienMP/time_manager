@@ -19,18 +19,18 @@
     background: #ddd;
 }
 @mixin hover-effect {
-	@include text-shadow(white 0px 0px 6px);
-	color: white;
+	@include text-shadow($light-color 0px 0px 10px);
+	color: $light-color;
 }
 @mixin hover-effect-checked-in {
   @include text-shadow($light-color 0px 0px 6px);
   color: $light-color;
 }
 @mixin other-info-box-shadow {
-	@include box-shadow(inset 0px 3px 3px #e9e9e9, inset 0px -3px 3px $border-color, 0px 6px 0px $border-color);
+	@include box-shadow(inset 0px 3px 3px $light-box-color, inset 0px -3px 3px $border-color, 0px 6px 0px $border-color);
 }
 @mixin my-box-shadow {
-	@include box-shadow(inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px $border-color);
+	@include box-shadow(inset 0px 3px 3px $light-box-color, inset 0px -1px 1px $border-color);
 }
 @function white($opacity){
     @return rgba(255,255,255,$opacity)
@@ -40,6 +40,10 @@
 }
 @mixin button {
     @include gradient-rounded-box(); 
-    @include box-shadow(0 0 0 $border-color); 
+    @include box-shadow(inset 0 3px 2px $light-box-color, inset 0 -1px 1px $border-color); 
     padding: 5px 10px;
+}
+@mixin button-hover-effect {
+    @include hover-effect();
+    @include box-shadow(inset 0 2px 2px $border-color, inset 0 -1px 1px $light-box-color); 
 }

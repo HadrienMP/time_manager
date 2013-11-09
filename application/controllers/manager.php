@@ -18,6 +18,7 @@ class Manager extends CI_Controller {
         $this->twiggy->register_function('validation_errors');
         $this->twiggy->register_function('set_value');
         $this->twiggy->register_function('has_errors');
+        $this->twiggy->register_function('no_slash');
     }
 
     /**

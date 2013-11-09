@@ -10,6 +10,10 @@ function has_errors($errors) {
     return '';
 }
 
+function no_slash($var) {
+	return str_replace("/","",$var);
+}
+
 /*
  * ---------------------------------------------------------------------------
  * 
@@ -49,6 +53,14 @@ function mysql_to_php_date($date) {
 	return date("d/m/Y",$new);
 }
 
+function mysql_date_to_time_array($date) {
+	$new = strtotime($date);
+	return array(
+		'hour' => date("H",$new),
+		'minute' => date("i",$new)
+	);
+}
+
 /*
  * ---------------------------------------------------------------------------
 *
@@ -66,10 +78,11 @@ function mysql_to_php_date($date) {
  * }
  * @param unknown $checks
  */
-function rearrange_db_checks($checks) {
+function db_to_form_checks($checks) {
 	$rearranged = array();
 
 	foreach ($checks as $check) {
+		$check = array_merge($check, mysql_date_to_time_array($check['date']));
 		$rearranged[mysql_to_php_date($check['date'])][] = $check;
 	}
 	

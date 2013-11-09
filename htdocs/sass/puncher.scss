@@ -23,10 +23,11 @@
   @include my-link();
   @include hover-effect();
   padding-top: 35px;
+  @include text-shadow( $light-color 0px 0px 15px ); 
 }
 @mixin link-off() {
   @include my-link();
-  color: white;
+  color: $light-off;
   @include text-shadow(#e9e9e9 0px 3px 2px, #aaa 0px -2px 1px ); 
 }
 
