@@ -64,8 +64,8 @@ class Time_manager
     public function get_all_checks($user_id) {
     	$checks = $this->ci->checks->get_checks($user_id);
     	log_message('debug', print_r($checks, TRUE));
-    	log_message('debug', print_r(rearrange_db_checks($checks), TRUE));
-    	return rearrange_db_checks($checks);
+    	log_message('debug', print_r(db_to_form_checks($checks), TRUE));
+    	return db_to_form_checks($checks);
     }
 
     /**

@@ -19,8 +19,8 @@
     background: #ddd;
 }
 @mixin hover-effect {
-	@include text-shadow(white 0px 0px 6px);
-	color: white;
+	@include text-shadow($light-color 0px 0px 10px);
+	color: $light-color;
 }
 @mixin hover-effect-checked-in {
   @include text-shadow($light-color 0px 0px 6px);
