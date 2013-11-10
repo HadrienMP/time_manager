@@ -105,6 +105,7 @@ class Manager extends CI_Controller {
     {
         $this->_pre_action();
         $this->time_manager->check($this->tank_auth->get_user_id());
-        redirect('');
+        log_message('debug', print_r($_SERVER, true));
+        redirect($_SERVER['HTTP_REFERER']);
     }
 }
