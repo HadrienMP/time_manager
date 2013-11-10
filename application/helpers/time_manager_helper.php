@@ -42,9 +42,9 @@ function duration_to_preferences($duration) {
 function duration_to_string($timestamp) {
     $seconds = $timestamp;
     $minutes = (int) ($seconds / 60);
-    $hours = (int) ($minutes / 60);
-    $seconds = $seconds - $minutes * 60 ;
-    $minutes = $minutes - $hours * 60;
+    $hours = str_pad((int) ($minutes / 60), 2, "0", STR_PAD_LEFT);
+    $seconds = str_pad($seconds - $minutes * 60 , 2, "0", STR_PAD_LEFT);
+    $minutes = str_pad($minutes - $hours * 60, 2, "0", STR_PAD_LEFT);
     return $hours.':'.$minutes.':'.$seconds;
 }
 
