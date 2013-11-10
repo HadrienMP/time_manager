@@ -81,7 +81,30 @@ class Manager extends CI_Controller {
      */
     public function punches() {
         $this->_pre_action();
+        
         $checks = $this->time_manager->get_all_checks($this->tank_auth->get_user_id());
+        
+        if ($this->input->post()) {
+        	
+        	log_message('debug', print_r($this->input->post(), TRUE));
+        	
+        	/*
+        	 * Foreach field, set code igniter validation rules
+        	 */
+        	foreach(array_keys($this->input->post()) as $field_name) {
+        		if (preg_match("/minute/", $field_name)) {
+        			$this->form_validation->set_rules($field_name, "Minutes", "less_than[60]|greater_than[0]");
+        		} else if (preg_match("/hour/", $field_name)) {
+        			$this->form_validation->set_rules($field_name, "Heures", "less_than[24]|greater_than[0]");
+        		}
+        	}
+        	
+        	if ($this->form_validation->run('preferences') == TRUE) {
+//                 $this->time_manager->update_checks($checks, $this->tank_auth->get_user_id());
+                $this->twiggy->set('success', TRUE);
+        		
+        	}
+        }
 
         $this->twiggy->set('checks', $checks, NULL);
         $this->twiggy->template('punches')->display();

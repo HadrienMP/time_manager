@@ -14,65 +14,77 @@
 
 {% block content %}
 
-	<div id="punches">
-	    <div id="checks-nav-button">
-	        <a href="" id="previous">&lt;&lt;</a>
-	        <a href="" id="next">&gt;&gt;</a>
-	    </div>
-	
-	    <form id="punches" method="post" action="/punches">
+{% if validation_errors() is not empty %}
+<div class="wrong">
+    {{ validation_errors() }}
+</div>
+{% endif %}
+
+{% if success == true %}
+<div class="success">
+    <p>Vos modifications ont bien été enregistrées</p>
+</div>
+{% endif %}
+
+<div id="punches">
+    <div id="checks-nav-button">
+        <a href="" id="previous">&lt;&lt;</a>
+        <a href="" id="next">&gt;&gt;</a>
+    </div>
+
+    <form id="punches" method="post" action="/punches">
+    
+    	{# Foreach day #}
+	    {% for date, day_checks in checks %}
 	    
-	    	{# Foreach day #}
-		    {% for date, day_checks in checks %}
-		    
-	        <div class="day">
-	        	
-	            <p class="check_date">{{ date }}</p>
-	            
-	            <div class="inputs_holder">
-	            	<table class="inputs">
-		            	{# Foreach check in a day #}
-			            {% for check in day_checks %}
-			            <tr class="check_time">
-			            	
-			            	<td>
-				            	{# Check Type Label #}
-				            	{% if check.check_in %}
-				            		<p>Check In</p>
-				            	{% else %}
-				            		<p>Check Out</p>
-				            	{% endif %}
-			            	</td>
-				            
-				            <td>
-				            	{# Hour Field #}
-				            	<input type="text" 
-				            		name="{{ no_slash(date) }}_hour_{{ check.id }}"
-				            		  id="{{ no_slash(date) }}_hour_{{ check.id }}" 
-				            		value="{{ check.hour }}" maxlength="2" size="2" />
-				            		
-			            		<label for="{{ no_slash(date) }}_hour_{{ check.id }}">h</label>
+        <div class="day">
+        	
+            <p class="check_date">{{ date }}</p>
+            
+            <div class="inputs_holder">
+            	<table class="inputs">
+	            	{# Foreach check in a day #}
+		            {% for check in day_checks %}
+		            <tr class="check_time">
+		            	
+		            	<td>
+			            	{# Check Type Label #}
+			            	{% if check.check_in %}
+			            		<p>Check In</p>
+			            	{% else %}
+			            		<p>Check Out</p>
+			            	{% endif %}
+		            	</td>
+			            
+			            <td>
+			            	{# Hour Field #}
+			            	<input type="text" 
+			            		name="{{ no_slash(date) }}_hour_{{ check.id }}"
+			            		  id="{{ no_slash(date) }}_hour_{{ check.id }}" 
+			            		value="{{ check.hour }}" maxlength="2" size="2" />
 			            		
-				            	{# Minute Field #}
-				            	<input type="text" 
-				            		name="{{ no_slash(date) }}_minute_{{ check.id }}"
-				            		  id="{{ no_slash(date) }}_minute_{{ check.id }}" 
-				            		value="{{ check.minute }}" maxlength="2" size="2" />
-				            		
-			            		<label for="{{ no_slash(date) }}_minute_{{ check.id }}">min</label>
-		            		</td>
-					        
-					        <td>
-					        	{# Delete #}
-						        <input type="checkbox"
-				            		name="{{ no_slash(date) }}_delete_{{ check.id }}"
-				            		  id="{{ no_slash(date) }}_delete_{{ check.id }}" 
-						        	/>
-				            		
-			            		<label for="{{ no_slash(date) }}_delete_{{ check.id }}">X</label>
-			            	</td>
-			            </tr>		
-			            {% endfor %}
+		            		<label for="{{ no_slash(date) }}_hour_{{ check.id }}">h</label>
+		            		
+			            	{# Minute Field #}
+			            	<input type="text" 
+			            		name="{{ no_slash(date) }}_minute_{{ check.id }}"
+			            		  id="{{ no_slash(date) }}_minute_{{ check.id }}" 
+			            		value="{{ check.minute }}" maxlength="2" size="2" />
+			            		
+		            		<label for="{{ no_slash(date) }}_minute_{{ check.id }}">min</label>
+	            		</td>
+				        
+				        <td>
+				        	{# Delete #}
+					        <input type="checkbox"
+			            		name="{{ no_slash(date) }}_delete_{{ check.id }}"
+			            		  id="{{ no_slash(date) }}_delete_{{ check.id }}" 
+					        	/>
+			            		
+		            		<label for="{{ no_slash(date) }}_delete_{{ check.id }}">X</label>
+		            	</td>
+		            </tr>		
+		            {% endfor %}
 	            	</table>
             	</div>
 	            
