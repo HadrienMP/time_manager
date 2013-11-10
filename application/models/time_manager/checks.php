@@ -25,6 +25,7 @@ class Checks extends CI_Model
             $this->db->order_by("date", "asc");
             // TODO: Handle time period
 //             $this->db->where("date >=", $this->yesterday());
+            $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
             log_message('debug', print_r($query, TRUE));
@@ -45,6 +46,7 @@ class Checks extends CI_Model
         if (!empty($user_id)) {
             $this->db->order_by("date", "asc");
             $this->db->where("date >=", $this->yesterday());
+            $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
             log_message('debug', print_r($query, TRUE));
@@ -66,6 +68,7 @@ class Checks extends CI_Model
             $this->db->select('check_in');
             $this->db->order_by("date", "desc");
             $this->db->where("date >=", $this->yesterday());
+            $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME,1,0);
             if ($query->num_rows() == 1) $result = $query->row()->check_in;
         }

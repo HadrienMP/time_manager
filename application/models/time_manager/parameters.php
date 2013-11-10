@@ -18,6 +18,7 @@ class Parameters extends CI_Model
 
         if (isset($user_id)) {
             $this->db->select('working_time');
+            $this->db->where("user_id", $user_id);
             $query = $this->db->get(Parameters::TABLE_NAME, 1, 0);
             if ($query->num_rows() == 1) $result = $query->row()->working_time;
         } 
@@ -39,6 +40,7 @@ class Parameters extends CI_Model
         if (isset($user_id)) {
             $this->db->select('working_time');
             $this->db->select('stats_period');
+            $this->db->where("user_id", $user_id);
             $query = $this->db->get(Parameters::TABLE_NAME, 1, 0);
             if ($query->num_rows() == 1) $result = $query->row_array();
         } 
