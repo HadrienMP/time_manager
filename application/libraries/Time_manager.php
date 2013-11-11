@@ -67,6 +67,10 @@ class Time_manager
     	log_message('debug', print_r(db_to_form_checks($checks), TRUE));
     	return db_to_form_checks($checks);
     }
+    
+    public function update_checks($checks, $user_id) {
+    	$this->ci->checks->update_checks(form_to_db_checks($checks), $user_id);
+    }
 
     /**
      * Gets the preferences of the user

@@ -88,19 +88,44 @@ class Manager extends CI_Controller {
         	
         	log_message('debug', print_r($this->input->post(), TRUE));
         	
+        	$prevalidation = TRUE;
+        	
         	/*
-        	 * Foreach field, set code igniter validation rules
+        	 * Foreach field, set code igniter validation rules and update the checks array
         	 */
-        	foreach(array_keys($this->input->post()) as $field_name) {
+        	foreach($this->input->post() as $field_name => $field_value) {
+        		
         		if (preg_match("/minute/", $field_name)) {
+        			// Form Validation
         			$this->form_validation->set_rules($field_name, "Minutes", "less_than[60]|greater_than[0]");
+        			
+        			// Update values in array
+        			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_minute_key
+					$parts = explode("_", $field_name);
+					if ($this->is_check_field_name_ok($parts)) {
+						$checks[to_slash($parts[0])][$parts[2]]['minute'] = $field_value;
+					} else {
+						$prevalidation = FALSE;
+					}
+					
         		} else if (preg_match("/hour/", $field_name)) {
+        			
         			$this->form_validation->set_rules($field_name, "Heures", "less_than[24]|greater_than[0]");
+        			
+        			// Update values in array
+        			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_hour_key
+					$parts = explode("_", $field_name);
+					if ($this->is_check_field_name_ok($parts)) {
+						$checks[to_slash($parts[0])][$parts[2]]['hour'] = $field_value; 
+        			} else {
+						$prevalidation = FALSE;
+					}
+        			
         		}
         	}
         	
-        	if ($this->form_validation->run('preferences') == TRUE) {
-//                 $this->time_manager->update_checks($checks, $this->tank_auth->get_user_id());
+        	if ($this->form_validation->run('preferences') == TRUE && $prevalidation == TRUE) {
+                $this->time_manager->update_checks($checks, $this->tank_auth->get_user_id());
                 $this->twiggy->set('success', TRUE);
         		
         	}
@@ -108,6 +133,17 @@ class Manager extends CI_Controller {
 
         $this->twiggy->set('checks', $checks, NULL);
         $this->twiggy->template('punches')->display();
+    }
+    
+    /**
+     * Checks if the result of an explode on check's field name is well formed
+     * @param unknown $parts the result of an explode on check's field name
+     * @return boolean true is parts are something like 24102013, anything, 33
+     */
+    private function is_check_field_name_ok($parts) {
+    	return count($parts) == 3 
+    		&& strlen($parts[0]) == 8 && is_numeric($parts[0])
+    		&& is_numeric($parts[2]) && $parts[2] >= 0;
     }
 	
     /**

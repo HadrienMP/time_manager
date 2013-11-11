@@ -14,6 +14,10 @@ function no_slash($var) {
 	return str_replace("/","",$var);
 }
 
+function to_slash($var) {
+	return substr($var, 0, 2).'/'.substr($var, 2, 2).'/'.substr($var, 4, 4);
+}
+
 /*
  * ---------------------------------------------------------------------------
  * 
@@ -71,11 +75,30 @@ function mysql_date_to_time_array($date) {
 
 /**
  * Reorders the checks from the db to an array like so : 
- * {
- * 		'07/11/13' : [db_check_array, db_check_array, db_check_array, db_check_array],  
- * 		'06/11/13' : [db_check_array, db_check_array, db_check_array, db_check_array],  
- * 		'05/11/13' : [db_check_array, db_check_array, db_check_array, db_check_array],  
- * }
+ * (
+ *    [22/10/2013] => Array
+ *        (
+ *          [0] => Array
+ *                (
+ *                    [id] => 1
+ *                    [user_id] => 1
+ *                    [check_in] => 1
+ *                    [date] => 2013-10-22 20:03:22
+ *                    [hour] => 20
+ *                    [minute] => 03
+ *                )
+ *
+ *            [1] => Array
+ *                (
+ *                    [id] => 2
+ *                    [user_id] => 1
+ *                    [check_in] => 0
+ *                    [date] => 2013-10-22 20:03:42
+ *                    [hour] => 20
+ *                    [minute] => 03
+ *                )
+ *
+ *        )
  * @param unknown $checks
  */
 function db_to_form_checks($checks) {
@@ -89,6 +112,29 @@ function db_to_form_checks($checks) {
 	return $rearranged;
 }
 
+/**
+ * The same as db_to_form_checks but in reverse
+ * @param unknown $checks
+ */
+function form_to_db_checks($checks) {
+	
+	$rearranged = array();
+	
+	foreach ($checks as $day_checks) {
+		foreach ($day_checks as $check) {
+			$date = new DateTime($check['date']);
+			$date->setTime($check.hour, $check.minute);
+			$check['date'] = $date->format("Y-m-d H:i:s");
+			unset($check['hour']);
+			unset($check['minute']);
+			$rearranged[] = $check;
+		}
+	}
+	
+	log_message('debug', $rearranged);
+	
+	return $rearranged;
+}
 /*
  * ---------------------------------------------------------------------------
  * 

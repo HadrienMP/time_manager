@@ -78,7 +78,9 @@ class Checks extends CI_Model
         return $result;
     }
     
-    function update_checks($ids) {}
+    function update_checks($checks, $user_id) {
+    	$this->db->update_batch(Checks::TABLE_NAME, $checks, 'id');
+    }
     function delete_checks($ids) {}
 
     /**

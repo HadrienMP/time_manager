@@ -44,7 +44,7 @@
             <div class="inputs_holder">
             	<table class="inputs">
 	            	{# Foreach check in a day #}
-		            {% for check in day_checks %}
+		            {% for key, check in day_checks %}
 		            <tr class="check_time">
 		            	
 		            	<td>
@@ -58,7 +58,7 @@
 			            
 			            <td>
 			            	{# Hour Field #}
-			            	{% set hour_field_name = no_slash(date) ~ '_hour_' ~ check.id %}
+			            	{% set hour_field_name = no_slash(date) ~ '_hour_' ~ key %}
 			            	<input type="text" 
 			            		name="{{ hour_field_name }}"
 			            		id="{{ hour_field_name }}" 
@@ -69,7 +69,7 @@
 		            		<label for="{{ hour_field_name }}">h</label>
 		            		
 			            	{# Minute Field #}
-			            	{% set min_field_name = no_slash(date) ~ '_minute_' ~ check.id %}
+			            	{% set min_field_name = no_slash(date) ~ '_minute_' ~ key %}
 			            	<input type="text" 
 			            		name="{{ min_field_name }}"
 			            		  id="{{ min_field_name }}" 
@@ -82,12 +82,13 @@
 				        
 				        <td>
 				        	{# Delete #}
+			            	{% set delete_field_name = no_slash(date) ~ '_delete_' ~ key %}
 					        <input type="checkbox"
-			            		name="{{ no_slash(date) }}_delete_{{ check.id }}"
-			            		  id="{{ no_slash(date) }}_delete_{{ check.id }}" 
+			            		name="{{ delete_field_name }}"
+			            		  id="{{ delete_field_name }}" 
 					        	/>
 			            		
-		            		<label for="{{ no_slash(date) }}_delete_{{ check.id }}">X</label>
+		            		<label for="{{ delete_field_name }}">X</label>
 		            	</td>
 		            </tr>		
 		            {% endfor %}
