@@ -145,7 +145,6 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
 .wrong {
   color: red;
   font-weight: bold;
-  margin-bottom: 10px;
 }
 
 /* line 20, ../sass/general.scss */
@@ -154,13 +153,18 @@ input.wrong {
 }
 
 /* line 21, ../sass/general.scss */
+div.wrong {
+  margin-bottom: 10px;
+}
+
+/* line 22, ../sass/general.scss */
 .success {
   color: green;
   font-weight: bold;
   margin-bottom: 10px;
 }
 
-/* line 23, ../sass/general.scss */
+/* line 24, ../sass/general.scss */
 input {
   border-radius: 10px;
   border-color: #eeeeee;

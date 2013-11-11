@@ -58,18 +58,24 @@
 			            
 			            <td>
 			            	{# Hour Field #}
+			            	{% set hour_field_name = no_slash(date) ~ '_hour_' ~ check.id %}
 			            	<input type="text" 
-			            		name="{{ no_slash(date) }}_hour_{{ check.id }}"
-			            		  id="{{ no_slash(date) }}_hour_{{ check.id }}" 
-			            		value="{{ check.hour }}" maxlength="2" size="2" />
+			            		name="{{ hour_field_name }}"
+			            		id="{{ hour_field_name }}" 
+			            		value="{{ check.hour }}" maxlength="2" size="2"
+			            		class="{{ has_errors(form_error(hour_field_name)) }}"
+		            		/>
 			            		
-		            		<label for="{{ no_slash(date) }}_hour_{{ check.id }}">h</label>
+		            		<label for="{{ hour_field_name }}">h</label>
 		            		
 			            	{# Minute Field #}
+			            	{% set min_field_name = no_slash(date) ~ '_minute_' ~ check.id %}
 			            	<input type="text" 
-			            		name="{{ no_slash(date) }}_minute_{{ check.id }}"
-			            		  id="{{ no_slash(date) }}_minute_{{ check.id }}" 
-			            		value="{{ check.minute }}" maxlength="2" size="2" />
+			            		name="{{ min_field_name }}"
+			            		  id="{{ min_field_name }}" 
+			            		value="{{ check.minute }}" maxlength="2" size="2"
+			            		class="{{ has_errors(form_error(min_field_name)) }}" 
+		            		/>
 			            		
 		            		<label for="{{ no_slash(date) }}_minute_{{ check.id }}">min</label>
 	            		</td>

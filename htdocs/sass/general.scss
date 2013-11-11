@@ -16,8 +16,9 @@
 
 .hidden {display: none;}
 
-.wrong { color: $error-text-color; font-weight: bold; margin-bottom: 10px;}
+.wrong { color: $error-text-color; font-weight: bold;}
 input.wrong { border-color: $error-border-color;}
+div.wrong {margin-bottom: 10px;}
 .success { color: $success-text-color; font-weight: bold; margin-bottom: 10px;}
 
 input { 
