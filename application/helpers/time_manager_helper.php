@@ -123,15 +123,13 @@ function form_to_db_checks($checks) {
 	foreach ($checks as $day_checks) {
 		foreach ($day_checks as $check) {
 			$date = new DateTime($check['date']);
-			$date->setTime($check.hour, $check.minute);
+			$date->setTime($check['hour'], $check['minute']);
 			$check['date'] = $date->format("Y-m-d H:i:s");
 			unset($check['hour']);
 			unset($check['minute']);
 			$rearranged[] = $check;
 		}
 	}
-	
-	log_message('debug', $rearranged);
 	
 	return $rearranged;
 }

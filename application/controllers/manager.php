@@ -97,7 +97,7 @@ class Manager extends CI_Controller {
         		
         		if (preg_match("/minute/", $field_name)) {
         			// Form Validation
-        			$this->form_validation->set_rules($field_name, "Minutes", "less_than[60]|greater_than[0]");
+        			$this->form_validation->set_rules($field_name, "Minutes", "less_than[60]|greater_than[-1]");
         			
         			// Update values in array
         			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_minute_key
