@@ -89,13 +89,15 @@ class Manager extends CI_Controller {
         	log_message('debug', print_r($this->input->post(), TRUE));
         	
         	$prevalidation = TRUE;
-        	
+        	$ids_to_delete = array();
+            
         	/*
         	 * Foreach field, set code igniter validation rules and update the checks array
         	 */
         	foreach($this->input->post() as $field_name => $field_value) {
-        		
-        		if (preg_match("/minute/", $field_name)) {
+                
+        		if (preg_match("/minute/", $field_name)) 
+                {
         			// Form Validation
         			$this->form_validation->set_rules($field_name, "Minutes", "less_than[60]|greater_than[-1]");
         			
@@ -106,10 +108,10 @@ class Manager extends CI_Controller {
 						$checks[to_slash($parts[0])][$parts[2]]['minute'] = $field_value;
 					} else {
 						$prevalidation = FALSE;
-					}
-					
-        		} else if (preg_match("/hour/", $field_name)) {
-        			
+					}	
+        		} 
+                else if (preg_match("/hour/", $field_name)) 
+                {	
         			$this->form_validation->set_rules($field_name, "Heures", "less_than[24]|greater_than[0]");
         			
         			// Update values in array
@@ -120,12 +122,27 @@ class Manager extends CI_Controller {
         			} else {
 						$prevalidation = FALSE;
 					}
-        			
+        		}
+                else if (preg_match("/delete/", $field_name)) 
+                {	
+        			// Update values in array
+        			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_hour_key
+					$parts = explode("_", $field_name);
+					if ($this->is_check_field_name_ok($parts)) {
+                        log_message('debug', print_r($ids_to_delete, TRUE));
+						$ids_to_delete[] = $checks[to_slash($parts[0])][$parts[2]]['id'];
+                        unset($checks[to_slash($parts[0])][$parts[2]]);
+        			} else {
+						$prevalidation = FALSE;
+					}
         		}
         	}
         	
-        	if ($this->form_validation->run('preferences') == TRUE && $prevalidation == TRUE) {
-                $this->time_manager->update_checks($checks, $this->tank_auth->get_user_id());
+            /*
+             * Validate and save the punches
+             */
+        	if ($this->form_validation->run() == TRUE && $prevalidation == TRUE) {
+                $this->time_manager->update_checks($checks, $ids_to_delete, $this->tank_auth->get_user_id());
                 $this->twiggy->set('success', TRUE);
         		
         	}

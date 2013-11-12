@@ -68,8 +68,8 @@ class Time_manager
     	return db_to_form_checks($checks);
     }
     
-    public function update_checks($checks, $user_id) {
-    	$this->ci->checks->update_checks(form_to_db_checks($checks), $user_id);
+    public function update_checks($checks, $ids_to_delete, $user_id) {
+    	$this->ci->checks->update_checks(form_to_db_checks($checks), $ids_to_delete, $user_id);
     }
 
     /**
