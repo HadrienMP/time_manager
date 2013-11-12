@@ -63,7 +63,7 @@
 			            		name="{{ hour_field_name }}"
 			            		id="{{ hour_field_name }}" 
 			            		value="{{ check.hour }}" maxlength="2" size="2"
-			            		class="{{ has_errors(form_error(hour_field_name)) }}"
+			            		class="hour {{ has_errors(form_error(hour_field_name)) }}"
 		            		/>
 			            		
 		            		<label for="{{ hour_field_name }}">h</label>
@@ -74,7 +74,7 @@
 			            		name="{{ min_field_name }}"
 			            		  id="{{ min_field_name }}" 
 			            		value="{{ check.minute }}" maxlength="2" size="2"
-			            		class="{{ has_errors(form_error(min_field_name)) }}" 
+			            		class="minute {{ has_errors(form_error(min_field_name)) }}" 
 		            		/>
 			            		
 		            		<label for="{{ no_slash(date) }}_minute_{{ check.id }}">min</label>
@@ -92,16 +92,16 @@
 		            	</td>
 		            </tr>		
 		            {% endfor %}
-	            	</table>
-            	</div>
-	            
-	        </div>
-	        
-		    {% endfor %}
-		    
-    		<input type="reset" value="Réinitialiser" />
-		    <input type="submit" value="Modifier" />
-		    
-	    </form>
-	</div>
+                    <tr><td colspan="3" style="padding: 0;"><a href="" class="button add">+</a></td></tr>
+                </table>
+            </div>
+        </div>
+        
+        {% endfor %}
+        
+        <input type="reset" value="Réinitialiser" />
+        <input type="submit" value="Modifier" />
+        
+    </form>
+</div>
 {% endblock %}
