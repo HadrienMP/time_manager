@@ -24,7 +24,7 @@ class Manager extends CI_Controller {
     /**
      * Pre controller hook that checks if the user is logged in
      */
-    private function _pre_action() {
+    private function _pre_action($page = null) {
         if (!$this->tank_auth->is_logged_in()) {
             redirect('/auth/login/');
         } 
@@ -33,6 +33,7 @@ class Manager extends CI_Controller {
             $checked_in = $this->time_manager->is_user_checked_in($this->tank_auth->get_user_id());
             $checked_in = $checked_in ? "checked_in" : "";
             $this->twiggy->set("checked_in", $checked_in, $global = FALSE);
+            $this->twiggy->set("active", $page);
         }
     }
 
@@ -41,7 +42,7 @@ class Manager extends CI_Controller {
      */
     public function stats()
     {
-        $this->_pre_action();
+        $this->_pre_action(__FUNCTION__);
 
         $stats = $this->time_manager->calculate_stats($this->tank_auth->get_user_id());
         $this->twiggy->set('stats', $stats);
@@ -53,7 +54,7 @@ class Manager extends CI_Controller {
      */
     public function preferences()
     {
-        $this->_pre_action();
+        $this->_pre_action(__FUNCTION__);
 
         if ($this->input->post()) {
             $this->load->helper(array('form', 'url'));
@@ -80,7 +81,7 @@ class Manager extends CI_Controller {
      * Punches screen
      */
     public function punches() {
-        $this->_pre_action();
+        $this->_pre_action(__FUNCTION__);
         
         $checks = $this->time_manager->get_all_checks($this->tank_auth->get_user_id());
         

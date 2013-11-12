@@ -26,7 +26,7 @@
 		}
 		li:first-child { border: none; border-radius: 0 0 0 10px;}
         li:last-child { border-radius: 0 0 10px 0;}
-		li:hover { 
+		li:hover, .active { 
 			@include box-shadow(inset 0px 3px 3px $border-color, inset 0px 0px 0px $border-color);
 			@include hover-effect();
 		}
