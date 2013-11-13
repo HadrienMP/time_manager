@@ -30,7 +30,7 @@
 	@include box-shadow(inset 0px 3px 3px $light-box-color, inset 0px -3px 3px $border-color, 0px 6px 0px $border-color);
 }
 @mixin my-box-shadow {
-	@include box-shadow(inset 0px 3px 3px $light-box-color, inset 0px -1px 1px $border-color);
+	@include box-shadow(inset 0px 3px 3px $light-box-color);
 }
 @function white($opacity){
     @return rgba(255,255,255,$opacity)

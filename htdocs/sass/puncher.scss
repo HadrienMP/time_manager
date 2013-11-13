@@ -9,7 +9,7 @@
 }
 @mixin box-on() {
   @include box-off();
-  @include box-shadow(inset 0px 3px 3px $border-color);
+  @include box-shadow(inset 0px 3px 3px $border-color, inset 0 -2px 3px $light-box-color);
 }
 @mixin my-link() {
   display: block;
@@ -36,6 +36,7 @@
 #puncher-container { 
   
   @include box-off();
+  border-bottom: 1px solid $border-color;
     
     a {
       @include link-off();

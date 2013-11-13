@@ -1,4 +1,4 @@
-/* line 17, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -200,16 +200,17 @@ body {
 }
 /* line 36, ../sass/puncher.scss */
 #machine #puncher-container, #other-info #puncher-container {
-  height: 127.5px;
+  height: 124.5px;
   width: 100%;
   position: relative;
   z-index: 1;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px #e9e9e9;
+  border-bottom: 1px solid rgba(33, 33, 33, 0.2);
 }
-/* line 40, ../sass/puncher.scss */
+/* line 41, ../sass/puncher.scss */
 #machine #puncher-container a, #other-info #puncher-container a {
   display: block;
   padding-top: 30px;
@@ -220,7 +221,7 @@ body {
   color: #eeeeee;
   text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
 }
-/* line 43, ../sass/puncher.scss */
+/* line 44, ../sass/puncher.scss */
 .checked_in #machine #puncher-container a, .checked_in #other-info #puncher-container a {
   display: block;
   padding-top: 30px;
@@ -233,7 +234,7 @@ body {
   padding-top: 35px;
   text-shadow: white 0px 0px 15px;
 }
-/* line 46, ../sass/puncher.scss */
+/* line 47, ../sass/puncher.scss */
 .checked_in #machine #puncher-container a:hover, .checked_in #other-info #puncher-container a:hover {
   display: block;
   padding-top: 30px;
@@ -244,7 +245,7 @@ body {
   color: #eeeeee;
   text-shadow: #e9e9e9 0px 3px 2px, #aaaaaa 0px -2px 1px;
 }
-/* line 51, ../sass/puncher.scss */
+/* line 52, ../sass/puncher.scss */
 #machine #puncher-container a:hover, #other-info #puncher-container a:hover {
   display: block;
   padding-top: 30px;
@@ -257,89 +258,96 @@ body {
   padding-top: 35px;
   text-shadow: white 0px 0px 15px;
 }
-/* line 56, ../sass/puncher.scss */
+/* line 57, ../sass/puncher.scss */
 .checked_in #machine #puncher-container, .checked_in #other-info #puncher-container {
-  height: 127.5px;
+  height: 124.5px;
   width: 100%;
   position: relative;
   z-index: 1;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px #e9e9e9;
+  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0 -2px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0 -2px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0 -2px 3px #e9e9e9;
 }
-/* line 58, ../sass/puncher.scss */
+/* line 59, ../sass/puncher.scss */
 .checked_in #machine #puncher-container:hover, .checked_in #other-info #puncher-container:hover {
-  height: 127.5px;
+  height: 124.5px;
   width: 100%;
   position: relative;
   z-index: 1;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px #e9e9e9;
 }
-/* line 62, ../sass/puncher.scss */
+/* line 63, ../sass/puncher.scss */
 #machine #puncher-container:hover, #other-info #puncher-container:hover {
-  height: 127.5px;
+  height: 124.5px;
   width: 100%;
   position: relative;
   z-index: 1;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px #e9e9e9;
+  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0 -2px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0 -2px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0 -2px 3px #e9e9e9;
 }
 /* line 1, ../sass/tools.scss */
 #machine #tools-container, #other-info #tools-container, #other-info form .buttons-bar {
-  height: 42.5px;
+  border-top: 1px solid rgba(33, 33, 33, 0.2);
+  height: 38.5px;
   overflow: hidden;
   border-radius: 0 0 10px 10px;
   position: relative;
   z-index: 2;
+  margin-top: 5px;
 }
-/* line 9, ../sass/tools.scss */
+/* line 10, ../sass/tools.scss */
 #machine #tools-container ul, #other-info #tools-container ul, #other-info form .buttons-bar ul {
   height: 100%;
 }
-/* line 12, ../sass/tools.scss */
+/* line 13, ../sass/tools.scss */
 #machine #tools-container ul li, #other-info #tools-container ul li, #other-info form .buttons-bar ul li {
   height: 100%;
   display: block;
   float: left;
   width: 100px;
   text-align: center;
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0 -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0 -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0 -1px 1px rgba(33, 33, 33, 0.2);
 }
-/* line 20, ../sass/tools.scss */
+/* line 21, ../sass/tools.scss */
 #machine #tools-container ul li a, #other-info #tools-container ul li a, #other-info form .buttons-bar ul li a {
   display: block;
   height: 100%;
   width: 100%;
   padding-top: 12px;
 }
-/* line 27, ../sass/tools.scss */
+/* line 28, ../sass/tools.scss */
 #machine #tools-container ul li:first-child, #other-info #tools-container ul li:first-child, #other-info form .buttons-bar ul li:first-child {
   border: none;
   border-radius: 0 0 0 10px;
 }
-/* line 28, ../sass/tools.scss */
+/* line 29, ../sass/tools.scss */
 #machine #tools-container ul li:last-child, #other-info #tools-container ul li:last-child, #other-info form .buttons-bar ul li:last-child {
   border-radius: 0 0 10px 0;
 }
-/* line 29, ../sass/tools.scss */
-#machine #tools-container ul li:hover, #other-info #tools-container ul li:hover, #other-info form .buttons-bar ul li:hover, #machine #tools-container ul .active, #other-info #tools-container ul .active, #other-info form .buttons-bar ul .active {
-  -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
+/* line 30, ../sass/tools.scss */
+#machine #tools-container ul li:hover, #other-info #tools-container ul li:hover, #other-info form .buttons-bar ul li:hover, #machine #tools-container ul li.active, #other-info #tools-container ul li.active, #other-info form .buttons-bar ul li.active {
+  -webkit-box-shadow: inset 0px 2px 2px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0px 2px 2px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0px 2px 2px rgba(33, 33, 33, 0.2);
+  text-shadow: white 0px 0px 10px;
+  color: white;
+}
+/* line 34, ../sass/tools.scss */
+#machine #tools-container ul li.active a, #other-info #tools-container ul li.active a, #other-info form .buttons-bar ul li.active a {
   text-shadow: white 0px 0px 10px;
   color: white;
 }
@@ -534,9 +542,9 @@ body {
   text-align: right;
   width: 100%;
   padding: 5px 0;
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px #e9e9e9;
   background: #dddddd;
   -webkit-box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
@@ -558,9 +566,9 @@ body {
 /* line 8, ../sass/other-info.scss */
 #other-info form .form-wrapper {
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px #e9e9e9;
   padding: 15px;
 }
 /* line 13, ../sass/other-info.scss */
@@ -606,12 +614,12 @@ body {
 }
 /* line 44, ../sass/other-info.scss */
 #other-info form .buttons-bar input {
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px #e9e9e9;
   background: none;
   border: none;
-  height: 42.5px;
+  height: 38.5px;
   display: block;
   float: left;
   width: 100%;
@@ -647,9 +655,9 @@ body {
 }
 /* line 78, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a {
-  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  -moz-box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
-  box-shadow: inset 0px 3px 3px #e9e9e9, inset 0px -1px 1px rgba(33, 33, 33, 0.2);
+  -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
+  -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
+  box-shadow: inset 0px 3px 3px #e9e9e9;
   display: block;
   padding: 5px;
   border-radius: 5px;
