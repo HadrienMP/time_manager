@@ -96,46 +96,55 @@ class Manager extends CI_Controller {
         	 * Foreach field, set code igniter validation rules and update the checks array
         	 */
         	foreach($this->input->post() as $field_name => $field_value) {
+            
+                /*
+                 * Prevalidation and preformatting of the array in case of added punches
+                 */
+                // The field name should look like this : 25102013_minute_25 (mmddyyyy)_hour_key
+                $parts = explode("_", $field_name);
+                if (!$this->is_check_field_name_ok($parts)) 
+                {
+                    $prevalidation = FALSE;
+                }
+                else if ($this->is_new_check($parts, $checks)
+                    && isset($checks[to_slash($parts[0])][$parts[2] - 1]))
+                {
+                    $checks[to_slash($parts[0])][$parts[2]]= $checks[to_slash($parts[0])][$parts[2] - 1];
+                }
                 
+                /*
+                 * Validation rules and checks' array modifs
+                 */
         		if (preg_match("/minute/", $field_name)) 
                 {
         			// Form Validation
         			$this->form_validation->set_rules($field_name, "Minutes", "less_than[60]|greater_than[-1]");
         			
-        			// Update values in array
-        			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_minute_key
-					$parts = explode("_", $field_name);
-					if ($this->is_check_field_name_ok($parts, $checks)) {
+					if ($prevalidation) {
 						$checks[to_slash($parts[0])][$parts[2]]['minute'] = $field_value;
-					} else {
-						$prevalidation = FALSE;
-					}	
+					}
         		} 
                 else if (preg_match("/hour/", $field_name)) 
                 {	
         			$this->form_validation->set_rules($field_name, "Heures", "less_than[24]|greater_than[0]");
         			
-        			// Update values in array
-        			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_hour_key
-					$parts = explode("_", $field_name);
-					if ($this->is_check_field_name_ok($parts, $checks)) {
+					if ($prevalidation) {
 						$checks[to_slash($parts[0])][$parts[2]]['hour'] = $field_value; 
-        			} else {
-						$prevalidation = FALSE;
-					}
+        			}
         		}
                 else if (preg_match("/delete/", $field_name)) 
-                {	
-        			// Update values in array
-        			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_hour_key
-					$parts = explode("_", $field_name);
-					if ($this->is_check_field_name_ok($parts, $checks)) {
-                        log_message('debug', print_r($ids_to_delete, TRUE));
-						$ids_to_delete[] = $checks[to_slash($parts[0])][$parts[2]]['id'];
+                {	                    
+					if ($prevalidation) 
+                    {
+                        // If the field is new, then the deletion has no effect on the checks' array
+                        // and the prevalidation passes
+                        if (!$this->is_new_check($parts, $checks)) 
+                        {
+                            log_message('debug', print_r($ids_to_delete, TRUE));
+                            $ids_to_delete[] = $checks[to_slash($parts[0])][$parts[2]]['id'];
+                        }
                         unset($checks[to_slash($parts[0])][$parts[2]]);
-        			} else {
-						$prevalidation = FALSE;
-					}
+        			}
         		}
         	}
         	
@@ -158,12 +167,21 @@ class Manager extends CI_Controller {
      * @param unknown $parts the result of an explode on check's field name
      * @return boolean true is parts are something like 24102013, anything, 33
      */
-    private function is_check_field_name_ok($parts, $checks) {
+    private function is_check_field_name_ok($parts) {
     	return count($parts) == 3 
     		&& strlen($parts[0]) == 8 && is_numeric($parts[0])
-    		&& is_numeric($parts[2]) && $parts[2] >= 0 
-            && isset($checks[to_slash($parts[0])]) 
-            && isset($checks[to_slash($parts[0])][$parts[2]]);
+    		&& is_numeric($parts[2]) && $parts[2] >= 0;
+    }
+    
+    /**
+     * Checks if the check which field name is given exists in the checks' array
+     * or if it was added through the UI
+     * @param array $parts the result of an explode on check's field name
+     * @param array $checks the checks known
+     * @return boolean true or false
+     */
+    private function is_new_check($parts, $checks) {
+        return isset($checks[to_slash($parts[0])]) && isset($checks[to_slash($parts[0])][$parts[2]]);
     }
 	
     /**

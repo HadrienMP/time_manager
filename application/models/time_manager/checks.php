@@ -82,8 +82,10 @@ class Checks extends CI_Model
         log_message('debug', print_r($checks, TRUE));
         
         // Delete
-        $this->db->where_in('id', $ids_to_delete);
-        $this->db->delete(Checks::TABLE_NAME);
+        if (isset($ids_to_delete) && count($ids_to_delete)) {
+            $this->db->where_in('id', $ids_to_delete);
+            $this->db->delete(Checks::TABLE_NAME);
+        }
         
         // Update
     	$this->db->update_batch(Checks::TABLE_NAME, $checks, 'id');
