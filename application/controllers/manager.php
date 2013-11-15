@@ -105,7 +105,7 @@ class Manager extends CI_Controller {
         			// Update values in array
         			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_minute_key
 					$parts = explode("_", $field_name);
-					if ($this->is_check_field_name_ok($parts)) {
+					if ($this->is_check_field_name_ok($parts, $checks)) {
 						$checks[to_slash($parts[0])][$parts[2]]['minute'] = $field_value;
 					} else {
 						$prevalidation = FALSE;
@@ -118,7 +118,7 @@ class Manager extends CI_Controller {
         			// Update values in array
         			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_hour_key
 					$parts = explode("_", $field_name);
-					if ($this->is_check_field_name_ok($parts)) {
+					if ($this->is_check_field_name_ok($parts, $checks)) {
 						$checks[to_slash($parts[0])][$parts[2]]['hour'] = $field_value; 
         			} else {
 						$prevalidation = FALSE;
@@ -129,7 +129,7 @@ class Manager extends CI_Controller {
         			// Update values in array
         			// The field name looks like this : 25102013_minute_25 (mmddyyyy)_hour_key
 					$parts = explode("_", $field_name);
-					if ($this->is_check_field_name_ok($parts)) {
+					if ($this->is_check_field_name_ok($parts, $checks)) {
                         log_message('debug', print_r($ids_to_delete, TRUE));
 						$ids_to_delete[] = $checks[to_slash($parts[0])][$parts[2]]['id'];
                         unset($checks[to_slash($parts[0])][$parts[2]]);
@@ -158,10 +158,12 @@ class Manager extends CI_Controller {
      * @param unknown $parts the result of an explode on check's field name
      * @return boolean true is parts are something like 24102013, anything, 33
      */
-    private function is_check_field_name_ok($parts) {
+    private function is_check_field_name_ok($parts, $checks) {
     	return count($parts) == 3 
     		&& strlen($parts[0]) == 8 && is_numeric($parts[0])
-    		&& is_numeric($parts[2]) && $parts[2] >= 0;
+    		&& is_numeric($parts[2]) && $parts[2] >= 0 
+            && isset($checks[to_slash($parts[0])]) 
+            && isset($checks[to_slash($parts[0])][$parts[2]]);
     }
 	
     /**

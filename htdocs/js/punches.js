@@ -28,6 +28,7 @@ function add_row() {
     
     hour = new_tr.find('input.hour');
     minute = new_tr.find('input.minute');
+    $delete = new_tr.find('input.delete');
     
     hour_name = hour.attr('name');
     m_hour = hour_name.split('_');
@@ -41,6 +42,12 @@ function add_row() {
     new_name = m_minute[0] + "_" + m_minute[1] + "_" + new_key;
     minute.attr('name', new_name);
     minute.attr('id', new_name);
+    
+    delete_name = $delete.attr('name');
+    m_delete = delete_name.split('_');
+    new_name = m_delete[0] + "_" + m_delete[1] + "_" + new_key;
+    $delete.attr('name', new_name);
+    $delete.attr('id', new_name);
     
     minute.val( new String(parseInt(minute.val()) + 1).lpad('0', 2) );
     

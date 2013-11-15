@@ -85,8 +85,9 @@
 			            	{% set delete_field_name = no_slash(date) ~ '_delete_' ~ key %}
 					        <input type="checkbox"
 			            		name="{{ delete_field_name }}"
-			            		  id="{{ delete_field_name }}" 
-					        	/>
+			            		id="{{ delete_field_name }}" 
+                                class="delete"
+                            />
 			            		
 		            		<label for="{{ delete_field_name }}">X</label>
 		            	</td>
