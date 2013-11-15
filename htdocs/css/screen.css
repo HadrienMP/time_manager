@@ -1,4 +1,4 @@
-/* line 17, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../usr/share/compass/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -627,8 +627,9 @@ body {
   color: #333;
   font-family: inherit;
   font-size: inherit;
+  border-radius: 0px;
 }
-/* line 58, ../sass/other-info.scss */
+/* line 59, ../sass/other-info.scss */
 #other-info form .buttons-bar input:hover {
   -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
@@ -637,11 +638,11 @@ body {
   color: white;
   cursor: pointer;
 }
-/* line 64, ../sass/other-info.scss */
+/* line 65, ../sass/other-info.scss */
 #other-info form .buttons-bar input:first-child {
   border-left: none;
 }
-/* line 67, ../sass/other-info.scss */
+/* line 68, ../sass/other-info.scss */
 #other-info form #recaptcha_image {
   border: inset 2px #eeeeee;
   border-radius: 15px;
@@ -649,11 +650,11 @@ body {
   padding: 5px;
   float: left;
 }
-/* line 75, ../sass/other-info.scss */
+/* line 76, ../sass/other-info.scss */
 #other-info form #recaptcha-tools {
   float: right;
 }
-/* line 78, ../sass/other-info.scss */
+/* line 79, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a {
   -webkit-box-shadow: inset 0px 3px 3px #e9e9e9;
   -moz-box-shadow: inset 0px 3px 3px #e9e9e9;
@@ -664,12 +665,12 @@ body {
   border: 1px inset rgba(33, 33, 33, 0.2);
   margin-bottom: 5px;
 }
-/* line 86, ../sass/other-info.scss */
+/* line 87, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a img {
   width: 20px;
   height: 20px;
 }
-/* line 92, ../sass/other-info.scss */
+/* line 93, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a:hover {
   -webkit-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 3px 3px rgba(33, 33, 33, 0.2), inset 0px 0px 0px rgba(33, 33, 33, 0.2);
