@@ -1,10 +1,23 @@
 time_manager
 ============
 
+Ce site web vous permet de suivre votre temps de travail.
 This website holds a tool to allow you to follow their worktime. 
 
 Stats
 -----
+
+Grâce à une série de check in et check out, time_manager calcule plusieurs informations : 
+* Le temps passé aujourd'hui
+* Le temps restant aujourd'hui
+* L'heure de fin estimée
+* Le nombre d'heures supplémentaires :
+ * Aujourd'hui
+ * Cette semaine
+ * Ce mois
+* Le nombre moyen d'heures travaillées :
+ *  Par jour
+ *  Par semaine
 
 Through a serie of check in and check out, the website is able to calculate the following informations : 
 * How long you've worked today 
