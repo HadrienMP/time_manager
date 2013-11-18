@@ -87,8 +87,6 @@ class Manager extends CI_Controller {
         
         if ($this->input->post()) {
         	
-        	log_message('debug', print_r($this->input->post(), TRUE));
-        	
         	$prevalidation = TRUE;
         	$ids_to_delete = array();
             
@@ -133,14 +131,13 @@ class Manager extends CI_Controller {
         			}
         		}
                 else if (preg_match("/delete/", $field_name)) 
-                {	                    
+                {
 					if ($prevalidation) 
                     {
                         // If the field is new, then the deletion has no effect on the checks' array
                         // and the prevalidation passes
                         if (!$this->is_new_check($parts, $checks)) 
                         {
-                            log_message('debug', print_r($ids_to_delete, TRUE));
                             $ids_to_delete[] = $checks[to_slash($parts[0])][$parts[2]]['id'];
                         }
                         unset($checks[to_slash($parts[0])][$parts[2]]);
@@ -181,7 +178,7 @@ class Manager extends CI_Controller {
      * @return boolean true or false
      */
     private function is_new_check($parts, $checks) {
-        return isset($checks[to_slash($parts[0])]) && isset($checks[to_slash($parts[0])][$parts[2]]);
+        return !(isset($checks[to_slash($parts[0])]) && isset($checks[to_slash($parts[0])][$parts[2]]));
     }
 	
     /**
@@ -202,7 +199,6 @@ class Manager extends CI_Controller {
     {
         $this->_pre_action();
         $this->time_manager->check($this->tank_auth->get_user_id());
-        log_message('debug', print_r($_SERVER, true));
         redirect($_SERVER['HTTP_REFERER']);
     }
 }

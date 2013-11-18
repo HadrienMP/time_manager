@@ -46,7 +46,6 @@ class Time_manager
     public function calculate_stats($user_id) {
         $checks = $this->ci->checks->get_todays_checks($user_id);
         $working_time = $this->ci->parameters->get_working_time($user_id);
-        log_message('debug', print_r($checks,true));
         
         $stats = array();
         $stats['time_spent_t'] = calculate_time_spent_today($checks);
@@ -63,12 +62,12 @@ class Time_manager
      */
     public function get_all_checks($user_id) {
     	$checks = $this->ci->checks->get_checks($user_id);
-    	log_message('debug', print_r($checks, TRUE));
-    	log_message('debug', print_r(db_to_form_checks($checks), TRUE));
     	return db_to_form_checks($checks);
     }
     
     public function update_checks($checks, $ids_to_delete, $user_id) {
+        log_message('debug', 'Library : update_checks, checks : '.print_r($checks, TRUE));
+        log_message('debug', 'Library : update_checks, ids to delete : '.print_r($ids_to_delete, TRUE));
     	$this->ci->checks->update_checks(form_to_db_checks($checks), $ids_to_delete, $user_id);
     }
 

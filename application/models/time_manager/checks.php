@@ -28,7 +28,6 @@ class Checks extends CI_Model
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
-            log_message('debug', print_r($query, TRUE));
         }
         else {
             log_message('error', "User id vide");
@@ -49,7 +48,6 @@ class Checks extends CI_Model
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
-            log_message('debug', print_r($query, TRUE));
         }
         else {
             log_message('error', "User id vide");
@@ -79,7 +77,8 @@ class Checks extends CI_Model
     }
     
     function update_checks($checks, $ids_to_delete, $user_id) {
-        log_message('debug', print_r($checks, TRUE));
+        log_message('debug', 'update_checks, checks : '.print_r($checks, TRUE));
+        log_message('debug', 'update_checks, ids to delete : '.print_r($ids_to_delete, TRUE));
         
         // Delete
         if (isset($ids_to_delete) && count($ids_to_delete)) {
@@ -98,8 +97,7 @@ class Checks extends CI_Model
      * @param unknown $user_id the user's id
      */
     function create($is_check_in, $user_id) {
-        log_message('debug', $user_id);
-        log_message('debug', 'Is check in : '.$is_check_in);
+    
         if (!empty($user_id)) {
             $data = array(
                     'check_in' => $is_check_in,
