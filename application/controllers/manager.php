@@ -83,79 +83,103 @@ class Manager extends CI_Controller {
     public function punches() {
         $this->_pre_action(__FUNCTION__);
         
-        $checks = $this->time_manager->get_all_checks($this->tank_auth->get_user_id());
+        $checks_to_display = $this->time_manager->get_all_checks($this->tank_auth->get_user_id());
         
         if ($this->input->post()) {
         	
         	$prevalidation = TRUE;
+            $is_new = FALSE;
         	$ids_to_delete = array();
+            $checks_to_update = $checks_to_display;
+            $checks_to_add = array();
             
         	/*
         	 * Foreach field, set code igniter validation rules and update the checks array
         	 */
         	foreach($this->input->post() as $field_name => $field_value) {
             
+                // The field name should look like this : 25102013_minute_25 (mmddyyyy)_hour_key
+                $parts = explode("_", $field_name);
+                $key = NULL;
+                $delete = FALSE;
+            
                 /*
                  * Prevalidation and preformatting of the array in case of added punches
                  */
-                // The field name should look like this : 25102013_minute_25 (mmddyyyy)_hour_key
-                $parts = explode("_", $field_name);
                 if (!$this->is_check_field_name_ok($parts)) 
                 {
                     $prevalidation = FALSE;
                 }
-                else if ($this->is_new_check($parts, $checks)
-                    && isset($checks[to_slash($parts[0])][$parts[2] - 1]))
+                else if ($this->is_new_check($parts, $checks_to_display))
                 {
-                    $checks[to_slash($parts[0])][$parts[2]]= $checks[to_slash($parts[0])][$parts[2] - 1];
+                    /*
+                     * Cas d'un nouveau check
+                     */
+                    $is_new = TRUE;
+                    $new_check = $checks_to_display[to_slash($parts[0])][$parts[2] - 1];
+                    
+                    // Adds the check to the list only if it hasn't already been added
+                    if (!in_array($parts[2], array_keys($checks_to_add))) {
+                        $checks_to_display[to_slash($parts[0])][$parts[2]]= $new_check;
+                        $checks_to_add[$parts[2]] = $new_check;
+                    }
                 }
                 
                 /*
                  * Validation rules and checks' array modifs
                  */
-        		if (preg_match("/minute/", $field_name)) 
-                {
-        			// Form Validation
+        		if (preg_match("/minute/", $field_name)) {
         			$this->form_validation->set_rules($field_name, "Minutes", "less_than[60]|greater_than[-1]");
-        			
-					if ($prevalidation) {
-						$checks[to_slash($parts[0])][$parts[2]]['minute'] = $field_value;
-					}
-        		} 
-                else if (preg_match("/hour/", $field_name)) 
-                {	
-        			$this->form_validation->set_rules($field_name, "Heures", "less_than[24]|greater_than[0]");
-        			
-					if ($prevalidation) {
-						$checks[to_slash($parts[0])][$parts[2]]['hour'] = $field_value; 
-        			}
+                    $key = 'minute';
+        		} else if (preg_match("/hour/", $field_name)) {	
+        			$this->form_validation->set_rules($field_name, "Heures", "less_than[24]|greater_than[-1]");
+                    $key = 'hour';
+        		} else if (preg_match("/delete/", $field_name)) {
+                    $delete = TRUE;
         		}
-                else if (preg_match("/delete/", $field_name)) 
+                
+                /*
+                 * Updates the various tables to update
+                 */
+                if ($prevalidation) 
                 {
-					if ($prevalidation) 
-                    {
-                        // If the field is new, then the deletion has no effect on the checks' array
-                        // and the prevalidation passes
-                        if (!$this->is_new_check($parts, $checks)) 
-                        {
-                            $ids_to_delete[] = $checks[to_slash($parts[0])][$parts[2]]['id'];
+                    if ($key != null) {
+                        /*
+                         * UPDATE
+                         */
+                        $checks_to_display[to_slash($parts[0])][$parts[2]][$key] = $field_value; 
+                        
+                        if ($is_new) {
+                            $checks_to_add[$parts[2][$key] = $field_value;
+                        } else {
+                            $checks_to_update[to_slash($parts[0])][$parts[2]][$key] = $field_value;
                         }
-                        unset($checks[to_slash($parts[0])][$parts[2]]);
-        			}
-        		}
+                    } else if ($delete) {
+                        /*
+                         * DELETE
+                         *
+                         * If the field is new, then the deletion has no effect on the checks' array
+                         * and the prevalidation passes
+                         */
+                        if (!$is_new) {
+                            $ids_to_delete[] = $checks_to_display[to_slash($parts[0])][$parts[2]]['id'];
+                        }
+                        
+                        unset($checks_to_display[to_slash($parts[0])][$parts[2]]);
+                    }
+                }
         	}
         	
             /*
              * Validate and save the punches
              */
         	if ($this->form_validation->run() == TRUE && $prevalidation == TRUE) {
-                $this->time_manager->update_checks($checks, $ids_to_delete, $this->tank_auth->get_user_id());
+                $this->time_manager->update_checks($checks_to_update, $checks_to_add, $ids_to_delete, $this->tank_auth->get_user_id());
                 $this->twiggy->set('success', TRUE);
-        		
         	}
         }
 
-        $this->twiggy->set('checks', $checks, NULL);
+        $this->twiggy->set('checks', $checks_to_display, NULL);
         $this->twiggy->template('punches')->display();
     }
     
@@ -178,7 +202,9 @@ class Manager extends CI_Controller {
      * @return boolean true or false
      */
     private function is_new_check($parts, $checks) {
-        return !(isset($checks[to_slash($parts[0])]) && isset($checks[to_slash($parts[0])][$parts[2]]));
+        return !(isset($checks[to_slash($parts[0])]) 
+            and isset($checks[to_slash($parts[0])][$parts[2]])) 
+            and isset($checks[to_slash($parts[0])][$parts[2] - 1]);
     }
 	
     /**
