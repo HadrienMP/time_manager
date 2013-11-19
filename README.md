@@ -2,7 +2,8 @@ time_manager
 ============
 
 Ce site web vous permet de suivre votre temps de travail.
-This website holds a tool to allow you to follow their worktime. 
+
+This website holds a tool that allows you to follow your worktime. 
 
 Stats
 -----
