@@ -122,17 +122,38 @@ function form_to_db_checks($checks) {
 	
 	foreach ($checks as $day_checks) {
 		foreach ($day_checks as $check) {
-			$date = new DateTime($check['date']);
-			$date->setTime($check['hour'], $check['minute']);
-			$check['date'] = $date->format("Y-m-d H:i:s");
-			unset($check['hour']);
-			unset($check['minute']);
-			$rearranged[] = $check;
+			$rearranged[] = update_time($check);
 		}
 	}
 	
 	return $rearranged;
 }
+
+/**
+ * Prepares the checks to add for the insert in db (removes id and updates time)
+ * @param array the checks' array to update (db format)
+ */
+function prepare_checks_to_add_for_db($checks) {
+    foreach ($checks as &$check) {
+        $check = update_time($check);
+        unset($check['id']);
+    }
+    return $checks;
+}
+
+/**
+ * Updates the time of the checks set in the form in case their hour / minute changed
+ * @param $check the check to update
+ */
+function update_time($check) {
+    $date = new DateTime($check['date']);
+    $date->setTime($check['hour'], $check['minute']);
+    $check['date'] = $date->format("Y-m-d H:i:s");
+    unset($check['hour']);
+    unset($check['minute']);
+    return $check;
+}
+
 /*
  * ---------------------------------------------------------------------------
  * 
