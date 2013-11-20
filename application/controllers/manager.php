@@ -29,12 +29,19 @@ class Manager extends CI_Controller {
             redirect('/auth/login/');
         } 
         else {
-            // Determine whether the user checked in yet			
-            $checked_in = $this->time_manager->is_user_checked_in($this->tank_auth->get_user_id());
-            $checked_in = $checked_in ? "checked_in" : "";
-            $this->twiggy->set("checked_in", $checked_in, $global = FALSE);
+            // Determine whether the user checked in yet	
+            $this->update_check_in_status();
             $this->twiggy->set("active", $page);
         }
+    }
+    
+    /**
+     * Updates the checked in/out status in the twig variables
+     */
+    private function update_check_in_status() {		
+        $checked_in = $this->time_manager->is_user_checked_in($this->tank_auth->get_user_id());
+        $checked_in = $checked_in ? "checked_in" : "";
+        $this->twiggy->set("checked_in", $checked_in, $global = FALSE);
     }
 
     /**
@@ -88,7 +95,6 @@ class Manager extends CI_Controller {
         if ($this->input->post()) {
         	
         	$prevalidation = TRUE;
-            $is_new = FALSE;
         	$ids_to_delete = array();
             $checks_to_update = $checks_to_display;
             $checks_to_add = array();
@@ -102,6 +108,7 @@ class Manager extends CI_Controller {
                 $parts = explode("_", $field_name);
                 $key = NULL;
                 $delete = FALSE;
+                $is_new = FALSE;
             
                 /*
                  * Prevalidation and preformatting of the array in case of added punches
@@ -110,18 +117,28 @@ class Manager extends CI_Controller {
                 {
                     $prevalidation = FALSE;
                 }
-                else if ($this->is_new_check($parts, $checks_to_display))
+                else if ($this->is_new_check($parts, $checks_to_display, $checks_to_add))
                 {
+                    log_message('debug', 'New check : '.$field_name);
                     /*
                      * Cas d'un nouveau check
                      */
                     $is_new = TRUE;
                     $new_check = $checks_to_display[to_slash($parts[0])][$parts[2] - 1];
                     
+                    // If there isn't any new checks for the day yet ($parts[0] is the day)
+                    if (!isset($checks_to_add[to_slash($parts[0])])) {
+                        $checks_to_add[to_slash($parts[0])] = array();
+                    }
+                    
                     // Adds the check to the list only if it hasn't already been added
-                    if (!in_array($parts[2], array_keys($checks_to_add))) {
+                    if (!in_array($parts[2], array_keys($checks_to_add[to_slash($parts[0])]))) 
+                    {
+                        // Updates the check (makes sure check in follow check out etc.)
+                        $new_check['check_in'] = $new_check['check_in'] == 0 ? 1 : 0;
+                    
                         $checks_to_display[to_slash($parts[0])][$parts[2]]= $new_check;
-                        $checks_to_add[$parts[2]] = $new_check;
+                        $checks_to_add[to_slash($parts[0])][$parts[2]] = $new_check;
                     }
                 }
                 
@@ -150,7 +167,7 @@ class Manager extends CI_Controller {
                         $checks_to_display[to_slash($parts[0])][$parts[2]][$key] = $field_value; 
                         
                         if ($is_new) {
-                            $checks_to_add[$parts[2][$key] = $field_value;
+                            $checks_to_add[to_slash($parts[0])][$parts[2]][$key] = $field_value;
                         } else {
                             $checks_to_update[to_slash($parts[0])][$parts[2]][$key] = $field_value;
                         }
@@ -174,9 +191,14 @@ class Manager extends CI_Controller {
              * Validate and save the punches
              */
         	if ($this->form_validation->run() == TRUE && $prevalidation == TRUE) {
-                $this->time_manager->update_checks($checks_to_update, $checks_to_add, $ids_to_delete, $this->tank_auth->get_user_id());
+                $this->time_manager->update_checks($checks_to_update, $checks_to_add, 
+                    $ids_to_delete, $this->tank_auth->get_user_id());
                 $this->twiggy->set('success', TRUE);
         	}
+            
+            // Updates the check in status after the datas have been saved (in case a check in or check out 
+            // has been added for today)
+            $this->update_check_in_status();
         }
 
         $this->twiggy->set('checks', $checks_to_display, NULL);
@@ -201,10 +223,13 @@ class Manager extends CI_Controller {
      * @param array $checks the checks known
      * @return boolean true or false
      */
-    private function is_new_check($parts, $checks) {
-        return !(isset($checks[to_slash($parts[0])]) 
+    private function is_new_check($parts, $checks, $checks_to_add) {
+        // Either the check doesn't exists yet or it exists in the checks to add array
+        return (!(isset($checks[to_slash($parts[0])]) 
             and isset($checks[to_slash($parts[0])][$parts[2]])) 
-            and isset($checks[to_slash($parts[0])][$parts[2] - 1]);
+            and isset($checks[to_slash($parts[0])][$parts[2] - 1]))
+            or (isset($checks_to_add[to_slash($parts[0])])
+            and isset($checks_to_add[to_slash($parts[0])][$parts[2]]));
     }
 	
     /**

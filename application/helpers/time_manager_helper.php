@@ -116,23 +116,47 @@ function db_to_form_checks($checks) {
  * The same as db_to_form_checks but in reverse
  * @param unknown $checks
  */
-function form_to_db_checks($checks) {
+function form_to_db_checks($checks, $is_to_add=FALSE) {
 	
 	$rearranged = array();
 	
 	foreach ($checks as $day_checks) {
 		foreach ($day_checks as $check) {
-			$date = new DateTime($check['date']);
-			$date->setTime($check['hour'], $check['minute']);
-			$check['date'] = $date->format("Y-m-d H:i:s");
-			unset($check['hour']);
-			unset($check['minute']);
-			$rearranged[] = $check;
+            // If we're preparing the checks to add array the id can't be present
+            // (insert_batch won't work otherwise)
+            if ($is_to_add) {
+                unset($check['id']);
+            }
+			$rearranged[] = update_time($check);
 		}
 	}
 	
 	return $rearranged;
 }
+
+/**
+ * Prepares the checks to add for the insert in db (removes id and updates time)
+ * @param array the checks' array to update (db format)
+ */
+function prepare_checks_to_add_for_db($checks) {
+    log_message('debug', 'prepare_checks_to_add_for_db, checks_to_add : '.print_r($checks, TRUE));
+    $checks = form_to_db_checks($checks, TRUE);
+    return $checks;
+}
+
+/**
+ * Updates the time of the checks set in the form in case their hour / minute changed
+ * @param $check the check to update
+ */
+function update_time($check) {
+    $date = new DateTime($check['date']);
+    $date->setTime($check['hour'], $check['minute']);
+    $check['date'] = $date->format("Y-m-d H:i:s");
+    unset($check['hour']);
+    unset($check['minute']);
+    return $check;
+}
+
 /*
  * ---------------------------------------------------------------------------
  * 

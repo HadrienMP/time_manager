@@ -76,18 +76,24 @@ class Checks extends CI_Model
         return $result;
     }
     
-    function update_checks($checks, $ids_to_delete, $user_id) {
-        log_message('debug', 'update_checks, checks : '.print_r($checks, TRUE));
+    function update_checks($checks_to_update, $checks_to_add, $ids_to_delete, $user_id) {
+        log_message('debug', 'update_checks, checks_to_update : '.print_r($checks_to_update, TRUE));
+        log_message('debug', 'update_checks, checks_to_add : '.print_r($checks_to_add, TRUE));
         log_message('debug', 'update_checks, ids to delete : '.print_r($ids_to_delete, TRUE));
         
         // Delete
-        if (isset($ids_to_delete) && count($ids_to_delete)) {
+        if (isset($ids_to_delete) and count($ids_to_delete) > 0) {
             $this->db->where_in('id', $ids_to_delete);
             $this->db->delete(Checks::TABLE_NAME);
         }
         
+        // Insert
+        if (isset($checks_to_add) and count($checks_to_add) > 0) {
+            $this->db->insert_batch(Checks::TABLE_NAME, $checks_to_add);
+        }
+        
         // Update
-    	$this->db->update_batch(Checks::TABLE_NAME, $checks, 'id');
+    	$this->db->update_batch(Checks::TABLE_NAME, $checks_to_update, 'id');
     }
     function delete_checks($ids) {}
 
