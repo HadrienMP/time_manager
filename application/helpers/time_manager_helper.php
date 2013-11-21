@@ -203,22 +203,48 @@ function calculate_time_spent_today($checks) {
 function calculate_overtime($checks, $working_time) {
 	$total_time = 0;
 	$last_check_in_time = NULL;
-
+    $last_date = new DateTime($checks[0]['date']);
+    $i = 0;
+    $number_of_days = 0;
+    
 	foreach ($checks as $check) {
 		$time = strtotime($check['date']);
+        $date = new DateTime($checks['date']);
+        
+        /*
+         * Calculates the time spent yesterday in case the person forgot to check out
+         * TODO: Should the last check in be ignored plain and simple or should
+         * the overtime be calculated with midnight?
+         */
+        if ($date->diff($last_date, TRUE)->d > 0) {
+            // A new day has been detected, check if the last check was a 
+            // check in and consider a check out at midnight yesterday
+            if ($i > 0 and $checks[$i-1]['check_in']) {
+                $midnight = $last_date->setTime(23,59)->getTimestamp();
+                $total_time += $midnight - $last_check_in_time;
+            }
+            $last_date = $date;
+            $number_of_days++;
+        }
+        
 		// If the check is a check in, save the time
 		if ($check['check_in']) {
 			$last_check_in_time = $time;
 		}
-		else if ($last_check_in_time != NULL) {
-			// The total time is increased with the time difference between check in and check out
-			$total_time += $time - $last_check_in_time;
+		else {
+            if ($last_check_in_time != NULL) {
+                // The total time is increased with the time difference between check in and check out
+                $total_time += $time - $last_check_in_time;
+            }
+            $last_check_in_time = NULL;
 		}
+        
+        $i++;
 	}
 
 	// If the last check is a check in : calculate the current time
 	$number_of_checks = count($checks);
-	if ($number_of_checks > 0 && $checks[count($checks) - 1]['check_in']) {
+	if ($number_of_checks > 0 && $checks[$number_of_checks - 1]['check_in']) {
 		$total_time += time() - $last_check_in_time;
 	}
 
