@@ -19,7 +19,7 @@ class Checks extends CI_Model
      * @param $time_period
      * @return an array of checks
      */
-    function get_checks($user_id, $time_period = Periods::ALL_TIME) {
+    public function get_checks($user_id, $time_period = Periods::ALL_TIME) {
         $checks = NULL;
         if (!empty($user_id)) {
             $this->db->order_by("date", "asc");
@@ -36,11 +36,11 @@ class Checks extends CI_Model
     }
 
     /**
-     * Gets all the checks of a user for the present day
+     * Gets all the checks of a user for the present day (including yesterday if last punch was a check in) 
      * @param $user_id
      * @return an array of checks
      */
-    function get_todays_checks($user_id) {
+    public function get_todays_checks($user_id) {
         $checks = NULL;
         if (!empty($user_id)) {
             $this->db->order_by("date", "asc");
@@ -48,12 +48,28 @@ class Checks extends CI_Model
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
+            
+            // Handle the cas where the first check of the day is a check out
+            if (count($checks) > 0 && $checks[0]['check_in'] == 0) {
+           		$this->db->order_by("date", "desc");
+            	$this->db->where("date <", $checks[0]['date']);
+            	$query = $this->db->get(Checks::TABLE_NAME, 1, 0);
+            	array_unshift($checks,  $query->row_array());
+            
+            	if ($checks[0]['check_in'] == 0) {
+            		log_message('error', "Les checks de l'utilisateur $user_id sont erronés");
+            		return NULL;
+            	}
+            }
         }
         else {
             log_message('error', "User id vide");
         }
+        log_message('debug',"Checks d'aujourd'hui : ".print_r($checks, TRUE));
         return $checks;
     }
+    
+    
 
     /**
      * Returns the last check value
@@ -65,7 +81,6 @@ class Checks extends CI_Model
         if (!empty($user_id)) {
             $this->db->select('check_in');
             $this->db->order_by("date", "desc");
-            $this->db->where("date >=", $this->yesterday());
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME,1,0);
             if ($query->num_rows() == 1) $result = $query->row()->check_in;
