@@ -44,15 +44,25 @@ class Time_manager
      * @param integer user_id the user's id
      */
     public function calculate_stats($user_id) {
-        $checks = $this->ci->checks->get_todays_checks($user_id);
+        $todays_checks = $this->ci->checks->get_todays_checks($user_id);
+        $checks = $this->ci->checks->get_checks($user_id);
         $working_time = $this->ci->parameters->get_working_time($user_id);
         
         $stats = array();
-        $stats['time_spent_t'] = calculate_time_spent_today($checks);
+        // Today's stats
+        $stats['time_spent_t'] = calculate_time_spent($todays_checks);
         $stats['time_spent'] = duration_to_string($stats['time_spent_t']);
         $stats['time_left_t'] = calculate_time_left($stats['time_spent_t'], $working_time);
         $stats['time_left'] = duration_to_string($stats['time_left_t']);
         $stats['end_time'] = calculate_end_time($stats['time_left_t']);
+        
+        // Overtime stats
+        $stats['total_time_spent_t'] = calculate_time_spent($checks);
+        $stats['total_time_spent'] = duration_to_string($stats['total_time_spent_t']);
+        $stats['days_worked'] = count_days($checks);
+        $stats['overtime_t'] = calculate_overtime($stats['total_time_spent_t'], $working_time, $stats['days_worked']);
+        $stats['overtime'] = duration_to_string($stats['overtime_t'], $working_time);
+        
         return $stats;
     }
     

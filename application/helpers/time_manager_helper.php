@@ -43,7 +43,25 @@ function duration_to_preferences($duration) {
     }
 }
 
-function duration_to_string($timestamp) {
+/**
+ * Transforms a duration (number of seconds) into a well formated time string
+ * @param unknown $timestamp the duration to convert
+ * @param number $working_time optional the time to be worked for a day, 
+ * used to calculate the time string in work days
+ * @return string
+ */
+function duration_to_string($timestamp, $working_time = NULL) {
+	
+	$days = "";
+	if (isset($working_time)) {
+		$days = (int) ($timestamp / $working_time);
+		if ($days > 0) {
+			$days .= ' jours ';
+		} else {
+			$days = 'jour';
+		}
+		$timestamp -= $days * $working_time;
+	}
 	
 	$prefix = "";
 	if ($timestamp < 0) {
@@ -56,7 +74,7 @@ function duration_to_string($timestamp) {
     $hours = str_pad((int) ($minutes / 60), 2, "0", STR_PAD_LEFT);
     $seconds = str_pad($seconds - $minutes * 60 , 2, "0", STR_PAD_LEFT);
     $minutes = str_pad($minutes - $hours * 60, 2, "0", STR_PAD_LEFT);
-    return $prefix.$hours.':'.$minutes.':'.$seconds;
+    return $prefix.$days.$hours.':'.$minutes.':'.$seconds;
 }
 
 function mysql_to_php_date($date) {
@@ -177,7 +195,7 @@ function update_time($check) {
  * @param array $checks today's checks for the user
  * @return number the time spent in seconds
  */
-function calculate_time_spent_today($checks) {
+function calculate_time_spent($checks) {
     $total_time = 0;
     $last_check_in_time = NULL;
     
@@ -204,62 +222,33 @@ function calculate_time_spent_today($checks) {
 
 /**
  * Calculates the user's overtime
- * @param array $checks all the user's checks
+ * @param number $time_spent the time already spent in seconds
+ * @param number number $working_time total time to spend at work for a day
  * @return number the overtime in seconds
  */
-function calculate_overtime($checks, $working_time) {
-	$total_time = 0;
-	$last_check_in_time = NULL;
-    $last_date = new DateTime($checks[0]['date']);
-    $i = 0;
-    $number_of_days = 0;
-    
-	foreach ($checks as $check) {
-		$time = strtotime($check['date']);
-        $date = new DateTime($checks['date']);
-        
-        /*
-         * Calculates the time spent yesterday in case the person forgot to check out
-         * TODO: Should the last check in be ignored plain and simple or should
-         * the overtime be calculated with midnight?
-         */
-        if ($date->diff($last_date, TRUE)->d > 0) {
-            // A new day has been detected, check if the last check was a 
-            // check in and consider a check out at midnight yesterday
-            if ($i > 0 and $checks[$i-1]['check_in']) {
-                $midnight = $last_date->setTime(23,59)->getTimestamp();
-                $total_time += $midnight - $last_check_in_time;
-            }
-            $last_date = $date;
-            $number_of_days++;
-        }
-        
-		// If the check is a check in, save the time
-		if ($check['check_in']) {
-			$last_check_in_time = $time;
-		}
-		else {
-            if ($last_check_in_time != NULL) {
-                // The total time is increased with the time difference between check in and check out
-                $total_time += $time - $last_check_in_time;
-            }
-            $last_check_in_time = NULL;
-		}
-        
-        $i++;
-	}
-
-	// If the last check is a check in : calculate the current time
-	$number_of_checks = count($checks);
-	if ($number_of_checks > 0 && $checks[$number_of_checks - 1]['check_in']) {
-		$total_time += time() - $last_check_in_time;
-	}
-
-	return $total_time;
+function calculate_overtime($time_spent, $working_time, $days) {
+	$regular_total_worktime = $working_time * $days;
+	$overtime = $time_spent - $regular_total_worktime;
+	
+	return $overtime;
 }
 
-function calculate_time_spent() {
+/**
+ * Counts the number of days where at least one check occured
+ * @param unknown $checks the checks array (db format) to parse
+ */
+function count_days($checks) {
+	$days = 0;
+	$last_date = NULL;
+	foreach ($checks as $check) {
+		$date = explode(" ", $check['date']);
+		if (count($date) > 0 && $date[0] != $last_date) {
+			$last_date = $date[0];
+			$days++;
+		}
+	}
 	
+	return $days;
 }
 
 /**
