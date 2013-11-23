@@ -10,13 +10,13 @@
     background: url(../images/escheresque_ste.png) !important;
 }
 @mixin gradient-rounded-box {
-	border: 1px solid $border-color;
+    border: 1px solid $border-color;
     border-radius: 10px;
-	@include box-shadow(0px 6px 0px $border-color);
+    @include box-shadow(0px 6px 0px $border-color);
     //@include background(linear-gradient(bottom, $box-bottom-color 12%, $box-top-color 65%));
     //background: url(../images/metal-texture.jpg);
     cursor: pointer;
-    background: #ddd;
+    background: $box-background-color;
 }
 @mixin hover-effect {
 	@include text-shadow($light-color 0px 0px 10px);

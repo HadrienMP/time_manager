@@ -1,25 +1,32 @@
 /*
-Syntax error: Undefined variable: "$puncher-container-height".
-        on line 3 of /cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/puncher.scss, in `box-off'
-        from line 38 of /cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/puncher.scss
-
-1: /cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/puncher.scss
+Syntax error: Undefined variable: "$box-background-color".
+        on line 7 of /cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/screen/stats.scss
 
 Backtrace:
-/cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/puncher.scss:3:in `box-off'
-/cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/puncher.scss:38
+/cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/screen/stats.scss:7
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/script/variable.rb:49:in `_perform'
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/script/node.rb:40:in `perform'
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:268:in `block (3 levels) in visit_mixin'
-/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:268:in `map'
-/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:268:in `block (2 levels) in visit_mixin'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:268:in `block in visit_mixin'
-/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:70:in `perform_arguments'
-/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:263:in `visit_mixin'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+/usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
 /usr/lib/ruby/gems/1.9.1/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -72,4 +79,4 @@ Backtrace:
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$puncher-container-height\".\A         on line 3 of /cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/puncher.scss, in `box-off'\A         from line 38 of /cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/puncher.scss\A \A 1: /cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/puncher.scss"; }
+  content: "Syntax error: Undefined variable: \"$box-background-color\".\A         on line 7 of /cygdrive/d/Projets/Wampstack/apps/time_manager/htdocs/sass/screen/stats.scss"; }
