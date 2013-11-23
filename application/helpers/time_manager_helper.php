@@ -248,6 +248,14 @@ function count_days($checks) {
 		}
 	}
 	
+	if (count($checks) > 0) {
+	    $last_date = $checks[count($checks) -1]['date'];
+	    $last_date = explode(" ", $last_date);
+	    if (count($last_date) == 2 && $last_date != date("Y-m-d", strtotime("today"))) {
+	        $days++;
+	    }
+	}
+	
 	return $days;
 }
 
