@@ -44,12 +44,19 @@ function duration_to_preferences($duration) {
 }
 
 function duration_to_string($timestamp) {
+	
+	$prefix = "";
+	if ($timestamp < 0) {
+		$timestamp *= -1;
+		$prefix = "-";
+	}
+	
     $seconds = $timestamp;
     $minutes = (int) ($seconds / 60);
     $hours = str_pad((int) ($minutes / 60), 2, "0", STR_PAD_LEFT);
     $seconds = str_pad($seconds - $minutes * 60 , 2, "0", STR_PAD_LEFT);
     $minutes = str_pad($minutes - $hours * 60, 2, "0", STR_PAD_LEFT);
-    return $hours.':'.$minutes.':'.$seconds;
+    return $prefix.$hours.':'.$minutes.':'.$seconds;
 }
 
 function mysql_to_php_date($date) {

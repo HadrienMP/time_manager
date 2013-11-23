@@ -24,7 +24,7 @@ class Checks extends CI_Model
         if (!empty($user_id)) {
             $this->db->order_by("date", "asc");
             // TODO: Handle time period
-//             $this->db->where("date >=", $this->yesterday());
+//             $this->db->where("date >=", $this->today());
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
@@ -36,7 +36,7 @@ class Checks extends CI_Model
     }
 
     /**
-     * Gets all the checks of a user for the present day (including yesterday if last punch was a check in) 
+     * Gets all the checks of a user for the present day (including today if last punch was a check in) 
      * @param $user_id
      * @return an array of checks
      */
@@ -44,20 +44,26 @@ class Checks extends CI_Model
         $checks = NULL;
         if (!empty($user_id)) {
             $this->db->order_by("date", "asc");
-            $this->db->where("date >=", $this->yesterday());
+            $this->db->where("date >=", $this->today());
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
             
             // Handle the cas where the first check of the day is a check out
-            if (count($checks) > 0 && $checks[0]['check_in'] == 0) {
+            $where_date = $this->today();
+            if (count($checks) != 0) {
+            	$where_date = $checks[0]['check_in'];
+            }
+            
+            if (count($checks) == 0 || $checks[0]['check_in'] == 0) {            	
            		$this->db->order_by("date", "desc");
-            	$this->db->where("date <", $checks[0]['date']);
-            	$query = $this->db->get(Checks::TABLE_NAME, 1, 0);
+            	$this->db->where("date <", $where_date);
+            	$query = $this->db->get(Checks::TABLE_NAME,1,0);
             	array_unshift($checks,  $query->row_array());
             
             	if ($checks[0]['check_in'] == 0) {
             		log_message('error', "Les checks de l'utilisateur $user_id sont erronés");
+            		// TODO: Handle the null return upper in the chain
             		return NULL;
             	}
             }
@@ -136,8 +142,8 @@ class Checks extends CI_Model
     /** 
      * @return a mysql date for today at midnight
      */
-    private function yesterday() {
+    private function today() {
     	return date("Y-m-d H:i:s" ,strtotime('today midnight'));
-    } 
+    }
 }
 
