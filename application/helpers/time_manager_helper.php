@@ -251,8 +251,9 @@ function count_days($checks) {
 	if (count($checks) > 0) {
 	    $last_date = $checks[count($checks) -1]['date'];
 	    $last_date = explode(" ", $last_date);
-	    if (count($last_date) == 2 && $last_date != date("Y-m-d", strtotime("today"))) {
-	        $days++;
+	    if (count($last_date) == 2 && $last_date[0] != date("Y-m-d", strtotime("today"))) {
+	        $diff = strtotime("today") - strtotime($last_date[0]);
+	        $days += floor($diff/(60*60*24));
 	    }
 	}
 	
