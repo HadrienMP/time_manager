@@ -170,6 +170,54 @@ input {
   border-color: #eeeeee;
 }
 
+/* line 29, ../sass/general.scss */
+.multi-button {
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  box-shadow: 0px 6px 0px rgba(33, 33, 33, 0.2);
+  cursor: pointer;
+  background: #dddddd;
+  -webkit-box-shadow: inset 0 3px 2px #e9e9e9, inset 0 -1px 1px rgba(33, 33, 33, 0.2);
+  -moz-box-shadow: inset 0 3px 2px #e9e9e9, inset 0 -1px 1px rgba(33, 33, 33, 0.2);
+  box-shadow: inset 0 3px 2px #e9e9e9, inset 0 -1px 1px rgba(33, 33, 33, 0.2);
+  padding: 5px 10px;
+  text-decoration: none;
+  text-align: center;
+  padding: 4px 7px;
+  border-radius: 0;
+  margin: 0;
+  display: inline-block;
+  border-left-width: 0px;
+  color: #444444;
+}
+/* line 39, ../sass/general.scss */
+.multi-button:hover {
+  text-shadow: white 0px 0px 10px;
+  color: white;
+  -webkit-box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
+  -moz-box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
+  box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
+}
+/* line 42, ../sass/general.scss */
+.multi-button:first-child {
+  border-radius: 7px 0 0 7px;
+  border-left-width: 1px;
+}
+/* line 46, ../sass/general.scss */
+.multi-button:last-child {
+  border-radius: 0 7px 7px 0;
+}
+/* line 47, ../sass/general.scss */
+.multi-button.active {
+  text-shadow: white 0px 0px 10px;
+  color: white;
+  -webkit-box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
+  -moz-box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
+  box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
+}
+
 /*############################################################################
                                 STYLE
 ############################################################################*/
@@ -397,10 +445,27 @@ body {
 #content .stats tr:last-child td {
   padding-bottom: 10px;
 }
-/* line 10, ../sass/stats.scss */
-#content .stats thead th[colspan="2"] {
-  padding: 5px;
-  background: #eeeeee;
+/* line 8, ../sass/stats.scss */
+#content .stats thead {
+  background: linear-gradient(220deg, transparent 24px, #eeeeee 20px);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+/* line 12, ../sass/stats.scss */
+#content .stats thead th p {
+  padding: 8px 5px;
+  text-align: left;
+  float: left;
+}
+/* line 18, ../sass/stats.scss */
+#content .stats thead th div {
+  float: right;
+  padding-top: 3px;
+}
+/* line 29, ../sass/stats.scss */
+#content .stats thead:first-child {
+  background-size: 90% 100%;
 }
 /* line 47, ../sass/style.scss */
 #content form fieldset {

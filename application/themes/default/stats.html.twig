@@ -1,8 +1,11 @@
-{% extends _layout %} {% block content %}
+{% extends _layout %}
+{% block content %}
 <table class="stats">
 	<thead>
 		<tr>
-			<th colspan="2">Aujourd'hui</th>
+			<th colspan="2">
+				<p>Aujourd'hui</p>
+			</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -21,7 +24,14 @@
 	</tbody>
 	<thead>
 		<tr>
-			<th colspan="2">Statistiques de la période</th>
+			<th colspan="2">
+				<p>Statistiques du mois</p>
+				<div>
+					<a class="multi-button">Jour</a><!-- whitespace
+				 --><a class="multi-button">Semaine</a><!-- whitespace
+				 --><a class="multi-button active">Mois</a>
+				</div>
+			</th>
 		</tr>
 	</thead>
 	<tbody>

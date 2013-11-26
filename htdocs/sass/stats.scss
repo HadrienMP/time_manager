@@ -7,9 +7,27 @@
     tr:last-child td {padding-bottom: 10px;}
     thead {
         
-        th[colspan="2"] {
-            padding: 5px;
-            background: $background-color;
+        th { 
+            
+            p {
+                padding: 8px 5px ; 
+                text-align: left;
+                float: left;
+            }
+            
+            div {
+                float: right;
+                padding-top: 3px;
+            }
+        }        
+        
+        background:linear-gradient(220deg, transparent 24px, $background-color 20px);
+        background-size: 50% 100%;
+        background-repeat:no-repeat;
+        padding: 20px;
+        
+        &:first-child {
+            background-size: 90% 100%;
         }
     }
 }
