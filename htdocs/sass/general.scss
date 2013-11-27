@@ -48,3 +48,9 @@ input {
         @include button-hover-effect();
     }
 }
+
+.bevelled-bg {
+    background:linear-gradient(220deg, transparent 24px, $background-color 20px);
+    background-size: 90% 100%;
+    background-repeat:no-repeat;
+}

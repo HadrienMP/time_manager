@@ -1,0 +1,17 @@
+#preferences {
+    p { 
+        display: block; 
+        width: 100%;
+        padding: 8px 5px; 
+        margin-bottom: 10px;
+    }
+    input[type="text"] {
+        height: 23px;
+        margin-left: 10px;
+    }
+    input[type="submit"] {
+        display: block; 
+        float: right;
+        margin-top: -1px;
+    }
+}

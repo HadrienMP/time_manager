@@ -14,19 +14,17 @@
 {% endif %}
 
 <form id="preferences" method="post" action="/preferences">
-    <fieldset>
-        <legend>Heures / Jour</legend>
+    <p class="bevelled-bg">Heures / Jour</p>
         
-        <!-- HEURES -->
-        <input type="text" id="hours" name="hours" size="2" maxlength="2" 
-                value="{{ hours }}" class="{{ has_errors(form_error('hours')) }}" />
-        <label for="hours">h</label>
-        
-        <!-- MINUTES -->
-        <input type="text" id="minutes" name="minutes" size="2" maxlength="2" 
-                value="{{ minutes }}" class="{{ has_errors(form_error('minutes')) }}" />
-        <label for="hours">min</label>
-    </fieldset>
+    <!-- HEURES -->
+    <input type="text" id="hours" name="hours" size="2" maxlength="2" 
+            value="{{ hours }}" class="{{ has_errors(form_error('hours')) }}" />
+    <label for="hours">h</label>
+    
+    <!-- MINUTES -->
+    <input type="text" id="minutes" name="minutes" size="2" maxlength="2" 
+            value="{{ minutes }}" class="{{ has_errors(form_error('minutes')) }}" />
+    <label for="hours">min</label>
     <input type="submit" value="Enregistrer" />
 </form>
 {% endblock %}

@@ -1,4 +1,4 @@
-/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -216,6 +216,13 @@ input {
   -webkit-box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
   -moz-box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
   box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
+}
+
+/* line 52, ../sass/general.scss */
+.bevelled-bg {
+  background: linear-gradient(220deg, transparent 24px, #eeeeee 20px);
+  background-size: 90% 100%;
+  background-repeat: no-repeat;
 }
 
 /*############################################################################
@@ -452,37 +459,55 @@ body {
   background-repeat: no-repeat;
   padding: 20px;
 }
-/* line 12, ../sass/stats.scss */
+/* line 11, ../sass/stats.scss */
 #content .stats thead th p {
   padding: 8px 5px;
   text-align: left;
   float: left;
 }
-/* line 18, ../sass/stats.scss */
+/* line 17, ../sass/stats.scss */
 #content .stats thead th div {
   float: right;
   padding-top: 3px;
 }
-/* line 29, ../sass/stats.scss */
+/* line 28, ../sass/stats.scss */
 #content .stats thead:first-child {
   background-size: 90% 100%;
 }
-/* line 47, ../sass/style.scss */
+/* line 2, ../sass/preferences.scss */
+#content #preferences p {
+  display: block;
+  width: 100%;
+  padding: 8px 5px;
+  margin-bottom: 10px;
+}
+/* line 8, ../sass/preferences.scss */
+#content #preferences input[type="text"] {
+  height: 23px;
+  margin-left: 10px;
+}
+/* line 12, ../sass/preferences.scss */
+#content #preferences input[type="submit"] {
+  display: block;
+  float: right;
+  margin-top: -1px;
+}
+/* line 48, ../sass/style.scss */
 #content form fieldset {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
 }
-/* line 53, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 #content form fieldset legend {
   padding: 0 5px;
 }
-/* line 58, ../sass/style.scss */
+/* line 59, ../sass/style.scss */
 #content form input {
   text-align: center;
 }
-/* line 59, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 #content form input[type="submit"], #content form input[type="reset"] {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 10px;
@@ -498,7 +523,7 @@ body {
   text-decoration: none;
   text-align: center;
 }
-/* line 60, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 #content form input[type="submit"]:hover, #content form input[type="reset"]:hover {
   text-shadow: white 0px 0px 10px;
   color: white;
@@ -506,7 +531,7 @@ body {
   -moz-box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
   box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
 }
-/* line 65, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 #content #punches #checks-nav-button a, #content #punches #checks-nav-button a:visited, #content #punches #checks-nav-button a:focus {
   color: inherit;
   border: 1px solid rgba(33, 33, 33, 0.2);
@@ -527,12 +552,12 @@ body {
   border-radius: 0 10px 0 0;
   border-bottom: none;
 }
-/* line 73, ../sass/style.scss */
+/* line 74, ../sass/style.scss */
 #content #punches #checks-nav-button a:first-child {
   float: left;
   border-radius: 10px 0 0 0;
 }
-/* line 77, ../sass/style.scss */
+/* line 78, ../sass/style.scss */
 #content #punches #checks-nav-button a:hover {
   text-shadow: white 0px 0px 10px;
   color: white;
@@ -540,12 +565,12 @@ body {
   -moz-box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
   box-shadow: inset 0 2px 2px rgba(33, 33, 33, 0.2), inset 0 -1px 1px #e9e9e9;
 }
-/* line 80, ../sass/style.scss */
+/* line 81, ../sass/style.scss */
 #content #punches .day {
   border-radius: 10px 10px 0 0;
   border: 1px solid rgba(33, 33, 33, 0.2);
 }
-/* line 84, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 #content #punches .day p.check_date {
   border: 1px solid rgba(33, 33, 33, 0.2);
   border-radius: 10px;
@@ -566,39 +591,39 @@ body {
   border-radius: 10px 10px 0 0;
   border: none;
 }
-/* line 93, ../sass/style.scss */
+/* line 94, ../sass/style.scss */
 #content #punches .day .inputs_holder {
   min-height: 150px;
   max-height: 420px;
   overflow-y: scroll;
   width: 100%;
 }
-/* line 99, ../sass/style.scss */
+/* line 100, ../sass/style.scss */
 #content #punches .day .inputs_holder .inputs {
   text-align: left;
   width: 100%;
 }
-/* line 103, ../sass/style.scss */
+/* line 104, ../sass/style.scss */
 #content #punches .day .inputs_holder .inputs tr:nth-child(odd) {
   background-color: #eeeeee;
 }
-/* line 106, ../sass/style.scss */
+/* line 107, ../sass/style.scss */
 #content #punches .day .inputs_holder .inputs td {
   padding: 5px 0;
 }
-/* line 107, ../sass/style.scss */
+/* line 108, ../sass/style.scss */
 #content #punches .day .inputs_holder .inputs td:first-child {
   padding-left: 10px;
 }
-/* line 108, ../sass/style.scss */
+/* line 109, ../sass/style.scss */
 #content #punches .day .inputs_holder .inputs label {
   margin-right: 10px;
 }
-/* line 109, ../sass/style.scss */
+/* line 110, ../sass/style.scss */
 #content #punches .day .inputs_holder .inputs label:last-child {
   margin: 0;
 }
-/* line 111, ../sass/style.scss */
+/* line 112, ../sass/style.scss */
 #content #punches .day .inputs_holder .inputs a.button {
   text-align: center;
   display: block;
@@ -608,20 +633,20 @@ body {
   text-decoration: none;
   font-size: 1.3em;
 }
-/* line 124, ../sass/style.scss */
+/* line 125, ../sass/style.scss */
 #content #punches input[type="submit"], #content #punches input[type="reset"] {
   border-radius: 0 0 0 10px;
   width: 49%;
   margin: 0;
 }
-/* line 129, ../sass/style.scss */
+/* line 130, ../sass/style.scss */
 #content #punches input[type="submit"] {
   position: absolute;
   border-radius: 0 0 10px 0;
   right: 10px;
 }
 
-/* line 137, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 #navigation {
   position: absolute;
   top: 0px;
@@ -636,7 +661,7 @@ body {
   -moz-box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
   box-shadow: inset 0px -1px 3px rgba(33, 33, 33, 0.2);
 }
-/* line 147, ../sass/style.scss */
+/* line 148, ../sass/style.scss */
 #navigation li {
   display: inline-block;
 }
