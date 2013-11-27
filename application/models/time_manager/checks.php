@@ -52,9 +52,11 @@ class Checks extends CI_Model
             // Handle the cas where the first check of the day is a check out
             $where_date = $this->today();
             if (count($checks) != 0) {
-            	$where_date = $checks[0]['check_in'];
+            	$where_date = $checks[0]['date'];
             }
             
+            // TODO: Should the app calculate the time between last check in and first check out if
+            // the last check in was day(s) before?
             if (count($checks) == 0 || $checks[0]['check_in'] == 0) {            	
            		$this->db->order_by("date", "desc");
             	$this->db->where("date <", $where_date);
@@ -62,7 +64,7 @@ class Checks extends CI_Model
             	array_unshift($checks,  $query->row_array());
             
             	if ($checks[0]['check_in'] == 0) {
-            		log_message('error', "Les checks de l'utilisateur $user_id sont erronés");
+            		log_message('error', "Les checks de l'utilisateur $user_id sont erronés : ".print_r($query->result_array(), True));
             		// TODO: Handle the null return upper in the chain
             		return NULL;
             	}
