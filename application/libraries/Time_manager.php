@@ -57,6 +57,7 @@ class Time_manager
         $stats['end_time'] = calculate_end_time($stats['time_left_t']);
         
         // Overtime stats
+        $time_spent_on_periods = calculate_time_spent($checks, TRUE);
         $stats['total_time_spent_t'] = calculate_time_spent($checks);
         $stats['total_time_spent'] = duration_to_string($stats['total_time_spent_t']);
         $stats['days_worked'] = count_days($checks);

@@ -195,7 +195,7 @@ function update_time($check) {
  * @param array $checks today's checks for the user
  * @return number the time spent in seconds
  */
-function calculate_time_spent($checks) {
+function calculate_time_spent($checks, $multiple_periods = FALSE) {
     $total_time = 0;
     $last_check_in_time = NULL;
     

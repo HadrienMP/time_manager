@@ -39,19 +39,23 @@
 			</th>
 		</tr>
 	</thead>
-	<tbody>
-		<tr>
-			<td>Heures sup&nbsp;:</td>
-			<td>{{stats.overtime}}</td>
-		</tr>
-		<tr>
-			<td>Temps total passé&nbsp;:</td>
-			<td>{{stats.total_time_spent}}</td>
-		</tr>
-		<tr>
-			<td>Jours travaillés&nbsp;:</td>
-			<td>{{stats.days_worked}}</td>
-		</tr>
-	</tbody>
+	
+	{% for period in stats.periods %}
+		<tbody>
+			<tr>
+				<td>Heures sup&nbsp;:</td>
+				<td>{{period.overtime}}</td>
+			</tr>
+			<tr>
+				<td>Temps total passé&nbsp;:</td>
+				<td>{{period.total_time_spent}}</td>
+			</tr>
+			<tr>
+				<td>Jours travaillés&nbsp;:</td>
+				<td>{{period.days_worked}}</td>
+			</tr>
+		</tbody>
+	{% endfor %}
+	
 </table>
 {% endblock %}
