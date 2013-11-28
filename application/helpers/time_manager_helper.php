@@ -199,6 +199,7 @@ function calculate_time_spent($checks) {
     $total_time = 0;
     $last_check_in_time = NULL;
     
+    log_message('debug',print_r($checks, TRUE));
     foreach ($checks as $check) {
         $time = strtotime($check['date']);
         // If the check is a check in, save the time

@@ -43,31 +43,33 @@ class Checks extends CI_Model
     public function get_todays_checks($user_id) {
         $checks = NULL;
         if (!empty($user_id)) {
+        
+            $where_date = $this->today();
+            
             $this->db->order_by("date", "asc");
-            $this->db->where("date >=", $this->today());
+            $this->db->where("date >=", $where_date);
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
             
-            // Handle the cas where the first check of the day is a check out
-            $where_date = $this->today();
-            if (count($checks) != 0) {
-            	$where_date = $checks[0]['date'];
-            }
+            // Gets the last check of the day before in case there were no checks 
+            // today or if the user forgot to checkout the day before
+            $this->db->order_by("date", "desc");
+            $this->db->where("date <", $where_date);
+            $query = $this->db->get(Checks::TABLE_NAME,1,0);
+            $last_check = $query->row_array();
             
+            // Handle the case where the first check of the day is a check out
             // TODO: Should the app calculate the time between last check in and first check out if
             // the last check in was day(s) before?
-            if (count($checks) == 0 || $checks[0]['check_in'] == 0) {            	
-           		$this->db->order_by("date", "desc");
-            	$this->db->where("date <", $where_date);
-            	$query = $this->db->get(Checks::TABLE_NAME,1,0);
-            	array_unshift($checks,  $query->row_array());
-            
-            	if ($checks[0]['check_in'] == 0) {
-            		log_message('error', "Les checks de l'utilisateur $user_id sont erronés : ".print_r($query->result_array(), True));
-            		// TODO: Handle the null return upper in the chain
-            		return NULL;
-            	}
+            if (count($checks) > 0 && $checks[0]['check_in'] == 0 
+                && count($last_check) > 0) {
+                if ($last_check['check_in'] == 0) {
+                    log_message('error', "Les checks de l'utilisateur $user_id sont erronés : ".print_r($query->result_array(), True));
+                    // TODO: Handle the null return upper in the chain
+                } else {
+                    array_unshift($checks, $last_check);
+                }
             }
         }
         else {

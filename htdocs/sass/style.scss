@@ -24,7 +24,7 @@ body {
   @import "puncher.scss";
   @import "tools.scss";
     
-  a, a:visited, a:focus { text-decoration: none; color: #333;}
+  a, a:visited, a:focus { text-decoration: none; color: $disabled-color;}
   a:hover { @include hover-effect();}
 }
 

@@ -190,7 +190,7 @@ input {
   margin: 0;
   display: inline-block;
   border-left-width: 0px;
-  color: #444444;
+  color: #888888;
 }
 /* line 39, ../sass/general.scss */
 .multi-button:hover {
@@ -383,17 +383,18 @@ body {
   height: 100%;
   width: 100%;
   padding-top: 12px;
+  font-weight: bold;
 }
-/* line 28, ../sass/tools.scss */
+/* line 29, ../sass/tools.scss */
 #machine #tools-container ul li:first-child, #other-info #tools-container ul li:first-child, #other-info form .buttons-bar ul li:first-child {
   border: none;
   border-radius: 0 0 0 10px;
 }
-/* line 29, ../sass/tools.scss */
+/* line 30, ../sass/tools.scss */
 #machine #tools-container ul li:last-child, #other-info #tools-container ul li:last-child, #other-info form .buttons-bar ul li:last-child {
   border-radius: 0 0 10px 0;
 }
-/* line 30, ../sass/tools.scss */
+/* line 31, ../sass/tools.scss */
 #machine #tools-container ul li:hover, #other-info #tools-container ul li:hover, #other-info form .buttons-bar ul li:hover, #machine #tools-container ul li.active, #other-info #tools-container ul li.active, #other-info form .buttons-bar ul li.active {
   -webkit-box-shadow: inset 0px 2px 2px rgba(33, 33, 33, 0.2);
   -moz-box-shadow: inset 0px 2px 2px rgba(33, 33, 33, 0.2);
@@ -401,7 +402,7 @@ body {
   text-shadow: white 0px 0px 10px;
   color: white;
 }
-/* line 34, ../sass/tools.scss */
+/* line 35, ../sass/tools.scss */
 #machine #tools-container ul li.active a, #other-info #tools-container ul li.active a, #other-info form .buttons-bar ul li.active a {
   text-shadow: white 0px 0px 10px;
   color: white;
@@ -409,7 +410,7 @@ body {
 /* line 27, ../sass/style.scss */
 #machine a, #other-info a, #machine a:visited, #other-info a:visited, #machine a:focus, #other-info a:focus {
   text-decoration: none;
-  color: #333;
+  color: #888888;
 }
 /* line 28, ../sass/style.scss */
 #machine a:hover, #other-info a:hover {
