@@ -44,83 +44,44 @@ class Test extends CI_Controller {
 		$this->_map_tests();
 	}
 	
-	/**
-	 * *SAMPLE* test function
-	 * Here we are testing a model called User Model which has some basic
-	 * methods like create(username, password, email, name) and
-	 * update(id, array(key => value[, key => value])
-	 *
-	 * @return void
-	 **/
-	public function user_model()
+	public function time_manager_helper() 
 	{
-		$model_name = 'user_model';		
-		$this->load->model($model_name);
+		$this->load->helper('time_manager_helper');
+		$this->load->helper('unit_datasource_helper');
 		
-		// Insert
+		// 2 minutes
 		$this->benchmark->mark('start');
-		$test = $this->user_model->create('admin', 'admin', 'admin@somesite.com', 'Administrator');
-		$this->unit->run($test, TRUE, $model_name . '->create()');
-		$id = $this->db->insert_id(); // save insert id
+		$checks = get_checks_2();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run($time_spent, 120,'Time spent (2 minutes)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		
-		// ID exists
+		// 7h22
 		$this->benchmark->mark('start');
-		$test = $this->user_model->id_exists($id);
-		$this->unit->run($test, TRUE, $model_name . '->id_exists()');
+		$checks = get_checks_722();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run($time_spent, 7*3600 + 22*60,'Time spent (7h22)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		
-		// ID exists
+		// Over night
 		$this->benchmark->mark('start');
-		$test = $this->user_model->id_exists($id + 1);
-		$this->unit->run($test, FALSE, $model_name . '->id_exists()');
+		$checks = get_checks_overnight();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run($time_spent, (7+24)*3600 + 22*60,'Time spent (overnight)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		
-		// Username exists
+		// Over night
 		$this->benchmark->mark('start');
-		$test = $this->user_model->username_exists('admin');
-		$this->unit->run($test, TRUE, $model_name . '->username_exists()');
-		$this->benchmark->mark('end');
-		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
-		
-		// Username exists
-		$this->benchmark->mark('start');
-		$test = $this->user_model->username_exists('admin123');
-		$this->unit->run($test, FALSE, $model_name . '->username_exists()');
-		$this->benchmark->mark('end');
-		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
-		
-		// Email exists
-		$this->benchmark->mark('start');
-		$test = $this->user_model->email_exists('admin@somesite.com');
-		$this->unit->run($test, TRUE, $model_name . '->email_exists()');
-		$this->benchmark->mark('end');
-		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
-		
-		// Email exists
-		$this->benchmark->mark('start');
-		$test = $this->user_model->email_exists('test@somesite.com');
-		$this->unit->run($test, FALSE, $model_name . '->email_exists()');
-		$this->benchmark->mark('end');
-		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
-		
-		// Update
-		$this->benchmark->mark('start');
-		$test = $this->user_model->update($id, array('username' => 'admin2'));
-		$this->unit->run($test, TRUE, $model_name . '->update()');
-		$this->benchmark->mark('end');
-		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
-		
-		// Delete
-		$this->benchmark->mark('start');
-		$test = $this->user_model->delete($id);
-		$this->unit->run($test, TRUE, $model_name . '->delete()');
+		$checks = get_checks_2_days();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run($time_spent, 2*(7*3600 + 22*60),'Time spent (2 days)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 	}
+	
 	
 	/**
 	 * Remap function

@@ -44,6 +44,7 @@
 	<div class="summary <?=($totals['failed'] > 0) ? 'fail' : 'pass' ?>">
 		<?=$totals['passed']?> / <?=$totals['all']?> tests passed in <?=$total_time?> seconds
 	</div>
+	
 	<?php foreach($report as $key => $test) {
 		if (array_key_exists($key, $headings['types']))
 			echo "<h1>{$headings['types'][$key]}</h1>\n";

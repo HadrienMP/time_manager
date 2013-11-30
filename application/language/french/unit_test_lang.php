@@ -2,7 +2,9 @@
 
 $lang['ut_test_name']		= 'Test Name';
 $lang['ut_test_datatype']	= 'Test Datatype';
+$lang['ut_test_value']		= 'Test Value';
 $lang['ut_res_datatype']	= 'Expected Datatype';
+$lang['ut_res_value']		= 'Expected Value';
 $lang['ut_result']			= 'Result';
 $lang['ut_undefined']		= 'Undefined Test Name';
 $lang['ut_file']			= 'File Name';
@@ -18,8 +20,8 @@ $lang['ut_array']			= 'Array';
 $lang['ut_object']			= 'Object';
 $lang['ut_resource']		= 'Resource';
 $lang['ut_null']			= 'Null';
-$lang['ut_notes']			= 'Notes';
-
+$lang['ut_res_sql_error']	= 'SQL Error';
+$lang['ut_res_sql_query']	= 'SQL Query';
 
 /* End of file unit_test_lang.php */
-/* Location: ./system/language/french/unit_test_lang.php */
+/* Location: ./system/language/english/unit_test_lang.php */
