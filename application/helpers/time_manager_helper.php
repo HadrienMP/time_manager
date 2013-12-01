@@ -197,28 +197,50 @@ function update_time($check) {
  */
 function calculate_time_spent($checks, $multiple_periods = FALSE) {
     $total_time = 0;
-    $last_check_in_time = NULL;
+    $last_check_out_time = NULL;
+    $today = new DateTime();
+    $periods = array(
+    	'day' => NULL,
+    	'week' => NULL,
+    	'month' => NULL
+    );
     
-    log_message('debug',print_r($checks, TRUE));
+    // Reverses the array so we can count the time at the same time as we're calculating by period
+    $checks = array_reverse($checks);
+    
     foreach ($checks as $check) {
-        $time = strtotime($check['date']);
-        // If the check is a check in, save the time
-        if ($check['check_in']) {
-            $last_check_in_time = $time;
+    	
+    	// Checks if we've reached a period, then saves the total time spent for the period
+        $date = new DateTime($check['date']);
+        $diff = $today->diff($date);
+        
+        if (!$check['check_in']) {
+	        if ($diff->d >= 1 && $periods['day'] == NULL) {
+	        	$periods['day'] = $total_time;
+	        } else if (($diff->d >= 7 || $diff->m >= 1) && $periods['week'] == NULL) {
+	        	$periods['week'] = $total_time;
+	        }
         }
-        else if ($last_check_in_time != NULL) {
+        
+        $time = strtotime($check['date']);
+        // If the check is a check out, save the time
+        if (!$check['check_in']) {
+            $last_check_out_time = $time;
+        }
+        else if ($last_check_out_time != NULL) {
             // The total time is increased with the time difference between check in and check out
-            $total_time += $time - $last_check_in_time;
+            $total_time += $last_check_out_time - $time;
         }
     }
 
     // If the last check is a check in : calculate the current time
     $number_of_checks = count($checks);
-    if ($number_of_checks > 0 && $checks[count($checks) - 1]['check_in']) {
-        $total_time += time() - $last_check_in_time;
+    if ($number_of_checks > 0 && $checks[0]['check_in']) {
+        $total_time += time() - strtotime($checks[0]['date']);
     }
-
-    return $total_time;
+    
+    $periods['month'] = $total_time;
+    return $periods;
 }
 
 /**

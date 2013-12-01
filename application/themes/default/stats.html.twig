@@ -40,8 +40,8 @@
 		</tr>
 	</thead>
 	
-	{% for period in stats.periods %}
-		<tbody>
+	{% for period_name, period in stats.periods %}
+		<tbody class="{{ period_name }} period">
 			<tr>
 				<td>Heures sup&nbsp;:</td>
 				<td>{{period.overtime}}</td>

@@ -44,25 +44,27 @@ class Time_manager
      * @param integer user_id the user's id
      */
     public function calculate_stats($user_id) {
-        $todays_checks = $this->ci->checks->get_todays_checks($user_id);
         $checks = $this->ci->checks->get_checks($user_id);
         $working_time = $this->ci->parameters->get_working_time($user_id);
         
+        $time_spent = calculate_time_spent($checks);
+        
         $stats = array();
         // Today's stats
-        $stats['time_spent_t'] = calculate_time_spent($todays_checks);
+        $stats['time_spent_t'] = $time_spent['day'];
         $stats['time_spent'] = duration_to_string($stats['time_spent_t']);
         $stats['time_left_t'] = calculate_time_left($stats['time_spent_t'], $working_time);
         $stats['time_left'] = duration_to_string($stats['time_left_t']);
         $stats['end_time'] = calculate_end_time($stats['time_left_t']);
         
         // Overtime stats
-        $time_spent_on_periods = calculate_time_spent($checks, TRUE);
-        $stats['total_time_spent_t'] = calculate_time_spent($checks);
-        $stats['total_time_spent'] = duration_to_string($stats['total_time_spent_t']);
-        $stats['days_worked'] = count_days($checks);
-        $stats['overtime_t'] = calculate_overtime($stats['total_time_spent_t'], $working_time, $stats['days_worked']);
-        $stats['overtime'] = duration_to_string($stats['overtime_t'], $working_time);
+        foreach (array_keys($time_spent) as $period) {
+	        $stats['periods'][$period]['total_time_spent_t'] = $time_spent[$period];
+	        $stats['periods'][$period]['total_time_spent'] = duration_to_string($stats['periods'][$period]['total_time_spent_t']);
+	        $stats['periods'][$period]['days_worked'] = count_days($checks);
+	        $stats['periods'][$period]['overtime_t'] = calculate_overtime($stats['periods'][$period]['total_time_spent_t'], $working_time, $stats['periods'][$period]['days_worked']);
+	        $stats['periods'][$period]['overtime'] = duration_to_string($stats['periods'][$period]['overtime_t'], $working_time);
+        }
         
         return $stats;
     }

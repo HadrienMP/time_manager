@@ -49,11 +49,15 @@ class Test extends CI_Controller {
 		$this->load->helper('time_manager_helper');
 		$this->load->helper('unit_datasource_helper');
 		
+		/*
+		 * All time calculations
+		 */
+		
 		// 2 minutes
 		$this->benchmark->mark('start');
 		$checks = get_checks_2();
 		$time_spent = calculate_time_spent($checks);
-		$this->unit->run($time_spent, 120,'Time spent (2 minutes)');
+		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string(120),'Time spent (2 minutes)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		
@@ -61,7 +65,7 @@ class Test extends CI_Controller {
 		$this->benchmark->mark('start');
 		$checks = get_checks_722();
 		$time_spent = calculate_time_spent($checks);
-		$this->unit->run($time_spent, 7*3600 + 22*60,'Time spent (7h22)');
+		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string(7*3600 + 22*60),'Time spent (7h22)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		
@@ -69,15 +73,55 @@ class Test extends CI_Controller {
 		$this->benchmark->mark('start');
 		$checks = get_checks_overnight();
 		$time_spent = calculate_time_spent($checks);
-		$this->unit->run($time_spent, (7+24)*3600 + 22*60,'Time spent (overnight)');
+		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string((7+24)*3600 + 22*60),'Time spent (overnight)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$checks = get_checks_overnight();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['day']), duration_to_string((7+24)*3600 + 22*60 - 3*3600),'Time spent (overnight today)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		
-		// Over night
+		// 2 days
 		$this->benchmark->mark('start');
 		$checks = get_checks_2_days();
 		$time_spent = calculate_time_spent($checks);
-		$this->unit->run($time_spent, 2*(7*3600 + 22*60),'Time spent (2 days)');
+		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string(2*(7*3600 + 22*60)),'Time spent (2 days)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$this->benchmark->mark('start');
+		
+		/*
+		 * Today time calculations
+		 */
+		
+		// Over nights
+		$this->benchmark->mark('start');
+		$checks = get_checks_2_days();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['day']), duration_to_string(7*3600 + 22*60),'Time spent today (2 days)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		
+		/*
+		 * All periods
+		 */
+		$this->benchmark->mark('start');
+		$checks = get_checks_month();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['day']), duration_to_string(7*3600 + 22*60),'Time spent today (Month / day)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$this->benchmark->mark('start');
+		$checks = get_checks_month();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['week']), duration_to_string(2*(7*3600 + 22*60)),'Time spent today (Month / week)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$this->benchmark->mark('start');
+		$checks = get_checks_month();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string(3*(7*3600 + 22*60)),'Time spent today (Month / month)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 	}
