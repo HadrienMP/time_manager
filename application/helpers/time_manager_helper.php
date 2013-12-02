@@ -59,7 +59,7 @@ function duration_to_string($timestamp, $working_time = NULL) {
 	}
 
 	$days = "";
-	if (isset($working_time)) {
+	if (isset($working_time) && $working_time != 0) {
 		$days = (int) ($timestamp / $working_time);
 		$days .= ' jours ';
 		$timestamp -= $days * $working_time;
