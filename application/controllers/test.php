@@ -142,10 +142,15 @@ class Test extends CI_Controller {
 	public function duration_to_string_helper() {
 		$this->load->helper('time_manager_helper');
 		
-		//-159060
 		// -5 jours 07:21:00
 		$this->benchmark->mark('start');
 		$this->unit->run(duration_to_string(-159060, 26520), '-5 jours 07:21:00','Duration to string (minus)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		
+		// 00:00:00
+		$this->benchmark->mark('start');
+		$this->unit->run(duration_to_string(0, 26520), '00:00:00','Duration to string (minus)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		
