@@ -38,7 +38,7 @@ class Test extends CI_Controller {
 		
 		// Disable database debugging so we can test all units without stopping
 		// at the first SQL error
-// 		$this->db->db_debug = FALSE;
+		// $this->db->db_debug = FALSE;
 		
 		// Create list of tests
 		$this->_map_tests();
@@ -57,7 +57,19 @@ class Test extends CI_Controller {
 		$this->benchmark->mark('start');
 		$checks = get_checks_2();
 		$time_spent = calculate_time_spent($checks);
-		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string(120),'Time spent (2 minutes)');
+		$this->unit->run(duration_to_string($time_spent['day']), duration_to_string(0),'Time spent (2 minutes / day)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$this->benchmark->mark('start');
+		$checks = get_checks_2();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['week']), duration_to_string(120),'Time spent (2 minutes / week)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$this->benchmark->mark('start');
+		$checks = get_checks_2();
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string(120),'Time spent (2 minutes / month)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		

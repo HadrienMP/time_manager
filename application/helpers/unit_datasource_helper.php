@@ -5,25 +5,25 @@ function get_checks_2() {
 					'id' => 2,
 					'user_id' => 1,
 					'check_in' => 1,
-					'date' => '2013-11-22 19:11:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 09:00:00' ) ) 
 			),
 			Array (
 					'id' => 3,
 					'user_id' => 1,
 					'check_in' => 0,
-					'date' => '2013-11-22 19:12:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 09:01:00' ) ) 
 			),
 			Array (
 					'id' => 4,
 					'user_id' => 1,
 					'check_in' => 1,
-					'date' => '2013-11-22 19:13:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 09:02:00' ) ) 
 			),
 			Array (
-					'id' => 4,
+					'id' => 5,
 					'user_id' => 1,
 					'check_in' => 0,
-					'date' => '2013-11-22 19:14:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 09:03:00' ) ) 
 			) 
 	);
 }

@@ -195,6 +195,7 @@ function calculate_time_spent($checks, $multiple_periods = FALSE) {
     $total_time = 0;
     $last_check_out_time = NULL;
     $today = new DateTime();
+	// Reset to midnight to calculate accurately the difference between the dates
     $today->setTime(0, 0, 0);
     $periods = array(
     	'day' => NULL,
@@ -204,18 +205,28 @@ function calculate_time_spent($checks, $multiple_periods = FALSE) {
     
     // Reverses the array so we can count the time at the same time as we're calculating by period
     $checks = array_reverse($checks);
+	
+	// 2 booleans to determine if there were checks on those periods (used to populate th periods array)
+	$today_ok = FALSE;
+	$week_ok = FALSE;
     
     foreach ($checks as $check) {
     	
     	// Checks if we've reached a period, then saves the total time spent for the period
         $date = new DateTime($check['date']);
+		// Reset to midnight to calculate accurately the difference between the dates
         $date->setTime(0, 0, 0);
         $diff = $today->diff($date);
+		
+		if ($date === $today && !$today_ok) $today_ok = TRUE;
+		if ($diff->m === 0 && $diff->d >= 1 && !$week_ok) $week_ok = TRUE;
         
         if (!$check['check_in']) {
-	        if ($diff->d >= 1 && $periods['day'] == NULL) {
+	        if ($diff->d >= 1 && $periods['day'] === NULL && $today_ok) {
 	        	$periods['day'] = $total_time;
-	        } else if (($diff->d >= 7 || $diff->m >= 1) && $periods['week'] == NULL) {
+	        } else if (($diff->d >= 7 || $diff->m >= 1) 
+					&& $periods['week'] === NULL
+					&& $today_ok) {
 	        	$periods['week'] = $total_time;
 	        }
         }
