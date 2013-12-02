@@ -52,21 +52,17 @@ function duration_to_preferences($duration) {
  */
 function duration_to_string($timestamp, $working_time = NULL) {
 	
-	$days = "";
-	if (isset($working_time)) {
-		$days = (int) ($timestamp / $working_time);
-		if ($days > 0) {
-			$days .= ' jours ';
-		} else {
-			$days = 'jour';
-		}
-		$timestamp -= $days * $working_time;
-	}
-	
 	$prefix = "";
 	if ($timestamp < 0) {
 		$timestamp *= -1;
 		$prefix = "-";
+	}
+
+	$days = "";
+	if (isset($working_time)) {
+		$days = (int) ($timestamp / $working_time);
+		$days .= ' jours ';
+		$timestamp -= $days * $working_time;
 	}
 	
     $seconds = $timestamp;
@@ -199,6 +195,7 @@ function calculate_time_spent($checks, $multiple_periods = FALSE) {
     $total_time = 0;
     $last_check_out_time = NULL;
     $today = new DateTime();
+    $today->setTime(0, 0, 0);
     $periods = array(
     	'day' => NULL,
     	'week' => NULL,
@@ -212,6 +209,7 @@ function calculate_time_spent($checks, $multiple_periods = FALSE) {
     	
     	// Checks if we've reached a period, then saves the total time spent for the period
         $date = new DateTime($check['date']);
+        $date->setTime(0, 0, 0);
         $diff = $today->diff($date);
         
         if (!$check['check_in']) {

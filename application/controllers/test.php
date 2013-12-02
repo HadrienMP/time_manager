@@ -44,7 +44,7 @@ class Test extends CI_Controller {
 		$this->_map_tests();
 	}
 	
-	public function time_manager_helper() 
+	public function time_spent_helper() 
 	{
 		$this->load->helper('time_manager_helper');
 		$this->load->helper('unit_datasource_helper');
@@ -124,6 +124,18 @@ class Test extends CI_Controller {
 		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string(3*(7*3600 + 22*60)),'Time spent today (Month / month)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+	}
+	
+	public function duration_to_string_helper() {
+		$this->load->helper('time_manager_helper');
+		
+		//-159060
+		// -5 jours 07:21:00
+		$this->benchmark->mark('start');
+		$this->unit->run(duration_to_string(-159060, 26520), '-5 jours 07:21:00','Duration to string (minus)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		
 	}
 	
 	
