@@ -88,6 +88,7 @@ class Test extends CI_Controller {
 		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string((7+24)*3600 + 22*60),'Time spent (overnight)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$this->benchmark->mark('start');
 		$checks = get_checks_overnight();
 		$time_spent = calculate_time_spent($checks);
 		$this->unit->run(duration_to_string($time_spent['day']), duration_to_string((7+24)*3600 + 22*60 - 3*3600),'Time spent (overnight today)');

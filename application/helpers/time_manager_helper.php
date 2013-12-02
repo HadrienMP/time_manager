@@ -86,6 +86,10 @@ function mysql_date_to_time_array($date) {
 	);
 }
 
+function string_to_stripped_date($string) {
+	return date("Y-m-d",strtotime($string));
+}
+
 /*
  * ---------------------------------------------------------------------------
 *
@@ -186,70 +190,68 @@ function update_time($check) {
  * ----------------------------------------------------------------------------
  */
 
+
 /**
  * Calculates the time on work this day
  * @param array $checks today's checks for the user
  * @return number the time spent in seconds
  */
-function calculate_time_spent($checks, $multiple_periods = FALSE) {
-    $total_time = 0;
-    $last_check_out_time = NULL;
-    $today = new DateTime();
-	// Reset to midnight to calculate accurately the difference between the dates
-    $today->setTime(0, 0, 0);
-    $periods = array(
-    	'day' => NULL,
-    	'week' => NULL,
-    	'month' => NULL
-    );
-    
-    // Reverses the array so we can count the time at the same time as we're calculating by period
-    $checks = array_reverse($checks);
+function calculate_time_spent($checks) {
 	
-	// 2 booleans to determine if there were checks on those periods (used to populate th periods array)
-	$today_ok = FALSE;
-	$week_ok = FALSE;
-    
-    foreach ($checks as $check) {
-    	
-    	// Checks if we've reached a period, then saves the total time spent for the period
-        $date = new DateTime($check['date']);
-		// Reset to midnight to calculate accurately the difference between the dates
-        $date->setTime(0, 0, 0);
-        $diff = $today->diff($date);
+	// Reference dates
+	$today = string_to_stripped_date("today");
+	$a_week_ago = string_to_stripped_date("-1 week");
+	$a_month_ago = string_to_stripped_date("-1 month");
+	
+	// Times
+	$time_today = 0;
+	$time_week = 0;
+	$time_month = 0;
+	
+	// Utils variables
+	$last_check_out_time = strtotime('now');
+	
+	// The checks are run in reverse order, we calculate the time spent between a check out and a check in
+	$checks = array_reverse($checks);
+	foreach ($checks as $index => $check) {
 		
-		if ($date === $today && !$today_ok) $today_ok = TRUE;
-		if ($diff->m === 0 && $diff->d >= 1 && !$week_ok) $week_ok = TRUE;
-        
-        if (!$check['check_in']) {
-	        if ($diff->d >= 1 && $periods['day'] === NULL && $today_ok) {
-	        	$periods['day'] = $total_time;
-	        } else if (($diff->d >= 7 || $diff->m >= 1) 
-					&& $periods['week'] === NULL
-					&& $today_ok) {
-	        	$periods['week'] = $total_time;
-	        }
-        }
-        
-        $time = strtotime($check['date']);
-        // If the check is a check out, save the time
-        if (!$check['check_in']) {
-            $last_check_out_time = $time;
-        }
-        else if ($last_check_out_time != NULL) {
-            // The total time is increased with the time difference between check in and check out
-            $total_time += $last_check_out_time - $time;
-        }
-    }
-
-    // If the last check is a check in : calculate the current time
-    $number_of_checks = count($checks);
-    if ($number_of_checks > 0 && $checks[0]['check_in']) {
-        $total_time += time() - strtotime($checks[0]['date']);
-    }
-    
-    $periods['month'] = $total_time;
-    return $periods;
+		$time = strtotime($check['date']);
+		
+		if ($check['check_in'])
+		{
+			$diff = $last_check_out_time - $time;
+			$date = string_to_stripped_date($check['date']);
+			$last_date = $index > 0 ? string_to_stripped_date($checks[$index -1]['date']) : NULL;
+			$last_check_in = $index > 0 ? $checks[$index - 1]['check_in'] : NULL;
+			
+			// Calculates time spent based on the period
+			if ($date === $today 
+				|| ($last_date === $today && $last_check_in == FALSE) ) {
+				// Time for today or if the last check in was today and a check out (we calculate the time over night)
+				$time_today += $diff;
+			}
+			else if (($date < $today && $date >= $a_week_ago) 
+				|| ($last_date >= $a_week_ago && $last_check_in == FALSE)) {
+				// Time for the week or if the last check in was this week and a check out (we calculate the time over night)
+				$time_week += $diff;
+			}
+			else if (($date < $a_week_ago && $date >= $a_month_ago) 
+				|| ($last_date >= $a_month_ago && $last_check_in == FALSE)) {
+				$time_month += $diff;
+			}
+		} else {
+			$last_check_out_time = $time;
+		}
+	}
+	
+	$time_week += $time_today;
+	$time_month += $time_week;
+	
+	return array(
+		'day' => $time_today,
+		'week' => $time_week,
+		'month' => $time_month
+	);
 }
 
 /**

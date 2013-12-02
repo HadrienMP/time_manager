@@ -141,25 +141,25 @@ function get_checks_month() {
 					'id' => 2,
 					'user_id' => 1,
 					'check_in' => 1,
-					'date' => '2013-11-01 9:00:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( '-1 month 9:00:00' ) )
 			),
 			Array (
 					'id' => 3,
 					'user_id' => 1,
 					'check_in' => 0,
-					'date' => '2013-11-01 12:00:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( '-1 month 12:00:00' ) )
 			),
 			Array (
 					'id' => 4,
 					'user_id' => 1,
 					'check_in' => 1,
-					'date' => '2013-11-01 13:15:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( '-1 month 13:15:00' ) )
 			),
 			Array (
 					'id' => 5,
 					'user_id' => 1,
 					'check_in' => 0,
-					'date' => '2013-11-01 17:37:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( '-1 month 17:37:00' ) )
 			),
 			Array (
 					'id' => 2,
