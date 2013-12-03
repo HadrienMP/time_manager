@@ -48,6 +48,7 @@ class Time_manager
         $working_time = $this->ci->parameters->get_working_time($user_id);
         
         $time_spent = calculate_time_spent($checks);
+        $days = count_days($checks);
         
         $stats = array();
         // Today's stats
@@ -61,7 +62,7 @@ class Time_manager
         foreach (array_keys($time_spent) as $period) {
 	        $stats['periods'][$period]['total_time_spent_t'] = $time_spent[$period];
 	        $stats['periods'][$period]['total_time_spent'] = duration_to_string($stats['periods'][$period]['total_time_spent_t']);
-	        $stats['periods'][$period]['days_worked'] = count_days($checks);
+	        $stats['periods'][$period]['days_worked'] = $days[$period];
 	        $stats['periods'][$period]['overtime_t'] = calculate_overtime($stats['periods'][$period]['total_time_spent_t'], $working_time, $stats['periods'][$period]['days_worked']);
 	        $stats['periods'][$period]['overtime'] = duration_to_string($stats['periods'][$period]['overtime_t'], $working_time);
         }

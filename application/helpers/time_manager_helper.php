@@ -285,26 +285,52 @@ function calculate_overtime($time_spent, $working_time, $days) {
  * @param unknown $checks the checks array (db format) to parse
  */
 function count_days($checks) {
-	$days = 0;
+
+	// Reference dates
+	$today = string_to_stripped_date("today");
+	$a_week_ago = string_to_stripped_date("-1 week");
+	$a_month_ago = string_to_stripped_date("-1 month");
+    
+    $periods = array(
+        'day' => 0,
+        'week' => 0,
+        'month' => 0
+    );
+    
 	$last_date = NULL;
 	foreach ($checks as $check) {
 		$date = explode(" ", $check['date']);
+        
 		if (count($date) > 0 && $date[0] != $last_date) {
 			$last_date = $date[0];
-			$days++;
+            
+            // Calculates days worked based on the period
+            log_message('debug', $date[0]." : ".$today);
+            if ($date[0] == $today) {
+                $periods['day']++;
+            }
+            else if ($date[0] < $today && $date[0] >= $a_week_ago) {
+                $periods['week']++;
+            }
+            else if ($date[0] < $a_week_ago && $date[0] >= $a_month_ago) {
+                $periods['month']++;
+            }
 		}
 	}
+    
+    $periods['week'] += $periods['day'];
+    $periods['month'] += $periods['week'];
 	
-	if (count($checks) > 0) {
-	    $last_date = $checks[count($checks) -1]['date'];
-	    $last_date = explode(" ", $last_date);
-	    if (count($last_date) == 2 && $last_date[0] != date("Y-m-d", strtotime("today"))) {
-	        $diff = strtotime("today") - strtotime($last_date[0]);
-	        $days += floor($diff/(60*60*24));
-	    }
-	}
+	// if (count($checks) > 0) {
+	    // $last_date = $checks[count($checks) -1]['date'];
+	    // $last_date = explode(" ", $last_date);
+	    // if (count($last_date) == 2 && $last_date[0] != date("Y-m-d", strtotime("today"))) {
+	        // $diff = strtotime("today") - strtotime($last_date[0]);
+	        // $days += floor($diff/(60*60*24));
+	    // }
+	// }
 	
-	return $days;
+	return $periods;
 }
 
 /**

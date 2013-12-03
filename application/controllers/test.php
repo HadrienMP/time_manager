@@ -168,16 +168,68 @@ class Test extends CI_Controller {
 		
 		// -5 jours 07:21:00
 		$this->benchmark->mark('start');
-		$this->unit->run(duration_to_string(-159060, 26520), '-5 jours 07:21:00','Duration to string (minus)');
+		$this->unit->run(duration_to_string(-159060, 26520), '-5 jours 07:21:00','Minus');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 		
 		// 00:00:00
 		$this->benchmark->mark('start');
-		$this->unit->run(duration_to_string(0, 26520), '00:00:00','Duration to string (minus)');
+		$this->unit->run(duration_to_string(0, 26520), '00:00:00','0');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+	}
+	
+	public function overtime_helper() {
+		$this->load->helper('time_manager_helper');
+		$this->load->helper('unit_datasource_helper');
 		
+		// 2 minutes
+		$this->benchmark->mark('start');
+		$checks = get_checks_2();
+		$days = count_days($checks);
+		$this->unit->run(print_r($days, TRUE), print_r(array(
+                'day' => 0,
+                'week' => 1,
+                'month' => 1
+            ), TRUE),'Yesterday');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+        
+		// 2 minutes
+		$this->benchmark->mark('start');
+		$checks = get_checks_overnight();
+		$days = count_days($checks);
+		$this->unit->run(print_r($days, TRUE), print_r(array(
+                'day' => 1,
+                'week' => 2,
+                'month' => 2
+            ), TRUE),'Over night');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+        
+		// 2 minutes
+		$this->benchmark->mark('start');
+		$checks = get_checks_month();
+		$days = count_days($checks);
+		$this->unit->run(print_r($days, TRUE), print_r(array(
+                'day' => 1,
+                'week' => 2,
+                'month' => 3
+            ), TRUE),'Month');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+        
+		// 2 minutes
+		$this->benchmark->mark('start');
+		$checks = get_checks_month_no_checkout();
+		$days = count_days($checks);
+		$this->unit->run(print_r($days, TRUE), print_r(array(
+                'day' => 0,
+                'week' => 1,
+                'month' => 2
+            ), TRUE),'Month no checkout yesterday');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 	}
 	
 	
