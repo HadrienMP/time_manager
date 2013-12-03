@@ -214,8 +214,16 @@ function calculate_time_spent($checks) {
 	$time_month = 0;
 	
 	// Utils variables
-	$last_check_out_time = 0;
+	$last_check_out_time = strtotime('now');
 	
+	
+	if (count($checks) > 0 && $checks[0]['check_in']) {
+		array_push($checks, array(
+			'date' => date('Y-m-d H:i:s', strtotime('now')),
+			'check_in' => 0
+		));
+	}
+
 	// The checks are run in reverse order, we calculate the time spent between a check out and a check in
 	$checks = array_reverse($checks);
 	foreach ($checks as $index => $check) {
@@ -247,11 +255,6 @@ function calculate_time_spent($checks) {
 		} else {
 			$last_check_out_time = $time;
 		}
-	}
-	
-	// Adds time spent since last check in
-	if (count($checks) > 0 && $checks[0]['check_in']) {
-		$time_today += strtotime('now') - strtotime($checks[0]['date']);
 	}
 	
 	$time_week += $time_today;
