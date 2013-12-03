@@ -39,8 +39,9 @@ body {
     border-radius: 0 0 10px 10px;
     border: white-shadow(0.1) solid 1px;
     @include box-shadow(0px 3px 0px white-shadow(0.1));
-    background: white(1);
+    background: $background-content;
     position: relative;
+    color: white;
     z-index: 3;
     padding: 10px;
     

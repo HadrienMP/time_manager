@@ -49,6 +49,14 @@ input {
     }
 }
 
+a, a:focus, a:visited {
+	color: $disabled;
+	text-decoration: none;
+}
+a:hover {
+    @include hover-effect();
+}
+
 .bevelled-bg {
     background:linear-gradient(220deg, transparent 24px, $background-color 20px);
     background-size: 90% 100%;

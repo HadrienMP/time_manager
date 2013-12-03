@@ -3,8 +3,7 @@
 ############################################################################*/
 
 @mixin back {
-    background: url(../images/brushed_alu.png);
-    //background: $background-color;
+    background: url(../images/micro_carbon.png);
 }
 @mixin back-content {
     background: url(../images/escheresque_ste.png) !important;
@@ -13,8 +12,6 @@
     border: 1px solid $border-color;
     border-radius: 10px;
     @include box-shadow(0px 6px 0px $border-color);
-    //@include background(linear-gradient(bottom, $box-bottom-color 12%, $box-top-color 65%));
-    //background: url(../images/metal-texture.jpg);
     cursor: pointer;
     background: $box-background-color;
 }
