@@ -211,3 +211,50 @@ function get_checks_month() {
 			) 
 	);
 }
+    
+function get_checks_month_no_checkout() {
+	return Array (
+			Array (
+					'id' => 2,
+					'user_id' => 1,
+					'check_in' => 1,
+					'date' => date ( "Y-m-d H:i:s", strtotime ( '-1 month 9:00:00' ) )
+			),
+			Array (
+					'id' => 3,
+					'user_id' => 1,
+					'check_in' => 0,
+					'date' => date ( "Y-m-d H:i:s", strtotime ( '-1 month 12:00:00' ) )
+			),
+			Array (
+					'id' => 4,
+					'user_id' => 1,
+					'check_in' => 1,
+					'date' => date ( "Y-m-d H:i:s", strtotime ( '-1 month 13:15:00' ) )
+			),
+			Array (
+					'id' => 5,
+					'user_id' => 1,
+					'check_in' => 0,
+					'date' => date ( "Y-m-d H:i:s", strtotime ( '-1 month 17:37:00' ) )
+			),
+			Array (
+					'id' => 2,
+					'user_id' => 1,
+					'check_in' => 1,
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 9:00:00' ) ) 
+			),
+			Array (
+					'id' => 3,
+					'user_id' => 1,
+					'check_in' => 0,
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 12:00:00' ) ) 
+			),
+			Array (
+					'id' => 4,
+					'user_id' => 1,
+					'check_in' => 1,
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 13:15:00' ) ) 
+			)
+	);
+}

@@ -137,6 +137,30 @@ class Test extends CI_Controller {
 		$this->unit->run(duration_to_string($time_spent['month']), duration_to_string(3*(7*3600 + 22*60)),'Time spent today (Month / month)');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+        
+		$checks = get_checks_month_no_checkout();
+        $spent_today = strtotime('now') - strtotime($checks[count($checks) -1]['date']);
+		$this->benchmark->mark('start');
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['day']), 
+            duration_to_string($spent_today),
+            'Time spent no checkout yesterday (day)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$this->benchmark->mark('start');
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['week']), 
+            duration_to_string(3*3600 + $spent_today),
+            'Time spent no checkout yesterday (week)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		$this->benchmark->mark('start');
+		$time_spent = calculate_time_spent($checks);
+		$this->unit->run(duration_to_string($time_spent['month']), 
+            duration_to_string(10*3600 + 22*60 + $spent_today),
+            'Time spent no checkout yesterday (month)');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 	}
 	
 	public function duration_to_string_helper() {
