@@ -1,82 +1,50 @@
-/*############################################################################
-                                STYLE
-############################################################################*/
+$text-color: white;
+$text-light-color: white;
+$hover-color: white;
+$disabled: #ccc;
+$machine-width: 400px;
+$toolbar-height: 20px;
+$background-color: #333;
+$border-color: black;
 
-html {
-	font-family: "MS Shell Dlg";
-	font-size: 10pt;
-}
+body {
+	padding-top: 20px;
+	color: $text-color;
+	background: url(../images/micro_carbon.png);
 
-body { 
-    @include back();
-}
-#machine { 
-  width: $machine-width; 
-  margin: 50px auto 0;
-  height: $machine-height;
-  text-align: center;
-  border: 1px $border-color solid;
-  border-bottom: 0;
-  border-radius: 10px;
-  @include box-shadow(0px 6px 0px $border-color);
-  background: $box-background-color;
-        
-  @import "puncher.scss";
-  @import "tools.scss";
-    
-  a, a:visited, a:focus { text-decoration: none; color: $disabled-color;}
-  a:hover { @include hover-effect();}
-}
-
-#content {
-  
-    @import "stats.scss";
-    @import "punches.scss";
-    @import "preferences.scss";
-        
-    width: $content-width - 20px;
-    margin: 3px auto;
-    min-height: 150px;
-    border-radius: 0 0 10px 10px;
-    border: white-shadow(0.1) solid 1px;
-    @include box-shadow(0px 3px 0px white-shadow(0.1));
-    background: $background-content;
-    position: relative;
-    color: white;
-    z-index: 3;
-    padding: 10px;
-    
-    form {
-        fieldset {
-            border: 1px solid $border-color;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 10px;
-            
-            legend {
-                padding: 0 5px;
-            }
-        }
-        
-        input { text-align: center; }
-        input[type="submit"], input[type="reset"] { @include button() }
-        input[type="submit"]:hover, input[type="reset"]:hover { @include button-hover-effect();}
-    }
-}
-
-#navigation {
-	position: absolute;
-	top: 0px;
-	text-align: right;
-	width: 100%;
-	padding: 5px 0;
-	@include my-box-shadow();
-	background: $box-background-color;
-	@include box-shadow(inset 0px -1px 3px $border-color);
+	a, a:focus, a:visited {
+	    color: $disabled;
+	    text-decoration: none;
+	}
 	
-	li {
-		display: inline-block;
+	a:hover {
+	    color: $hover-color;
+	    @include text-shadow(0 0 3px $text-light-color);
+	}
+	
+	#machine {
+	   width: $machine-width;
+	   margin: auto;
+	}
+	#content {
+	   background: url(../images/escheresque_ste.png);
+	   width: $machine-width - 40px;
+       margin: auto;
+       padding: 10px;
+       
+       @import "stats.scss";
+	}
+	ul#navigation {
+		position: absolute;
+		bottom: 0;
+		background: $background-color;
+		width: 100%;
+		text-align: right;
+		
+		li {
+		    display: inline-block;
+		    border-left: $border-color 1px solid;
+		    padding: 5px 15px;
+	    }
 	}
 }
-  
-@import "other-info.scss";

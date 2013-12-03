@@ -1,80 +1,42 @@
-/*
-Syntax error: Undefined variable: "$background-color".
-        on line 23 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/stats.scss
-
-Backtrace:
-D:/Projets/Wampstack/apps/time_manager/htdocs/sass/stats.scss:23
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/variable.rb:49:in `_perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/node.rb:40:in `perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/list.rb:71:in `block in _perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/list.rb:71:in `map'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/list.rb:71:in `_perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/node.rb:40:in `perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/funcall.rb:99:in `block in _perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/funcall.rb:99:in `map'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/funcall.rb:99:in `_perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/script/node.rb:40:in `perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:298:in `visit_prop'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:128:in `visit_root'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:7:in `visit'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/root_node.rb:20:in `render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:315:in `_render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/engine.rb:262:in `render'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:140:in `block (2 levels) in compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:139:in `block in compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/logger.rb:45:in `red'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:138:in `compile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:118:in `compile_if_required'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:103:in `block (2 levels) in run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `each'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:101:in `block in run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:126:in `timed'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/compiler.rb:100:in `run'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:147:in `recompile'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/watch_project.rb:68:in `perform'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/base.rb:18:in `execute'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/commands/project_base.rb:19:in `execute'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:43:in `perform!'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/lib/compass/exec/sub_command_ui.rb:15:in `run!'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:30:in `block in <top (required)>'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `call'
-C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/bin/compass:44:in `<top (required)>'
-C:/Ruby200-x64/bin/compass:23:in `load'
-C:/Ruby200-x64/bin/compass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Undefined variable: \"$background-color\".\A         on line 23 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/stats.scss"; }
+/* line 1, ../sass/stats.scss */
+.stats {
+  width: 100%;
+}
+/* line 4, ../sass/stats.scss */
+.stats td {
+  padding: 2px 10px;
+}
+/* line 5, ../sass/stats.scss */
+.stats td:first-child {
+  width: 40%;
+}
+/* line 6, ../sass/stats.scss */
+.stats tr:first-child td {
+  padding-top: 5px;
+}
+/* line 7, ../sass/stats.scss */
+.stats tr:last-child td {
+  padding-bottom: 10px;
+}
+/* line 8, ../sass/stats.scss */
+.stats thead {
+  background: linear-gradient(220deg, transparent 26px, #000000 20px);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+/* line 11, ../sass/stats.scss */
+.stats thead th p {
+  padding: 8px 5px;
+  text-align: left;
+  float: left;
+}
+/* line 17, ../sass/stats.scss */
+.stats thead th div {
+  float: right;
+  padding-top: 3px;
+}
+/* line 28, ../sass/stats.scss */
+.stats thead:first-child {
+  background-size: 90% 100%;
+}

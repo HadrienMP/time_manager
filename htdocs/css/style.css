@@ -1,12 +1,22 @@
 /*
-Syntax error: Undefined mixin 'back'.
-        on line 11 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss, in `back'
-        from line 11 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss
+Syntax error: Undefined mixin 'text-shadow'.
+        on line 22 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss, in `text-shadow'
+        from line 22 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss
 
 Backtrace:
-D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss:11:in `back'
-D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss:11
+D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss:22:in `text-shadow'
+D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss:22
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:253:in `visit_mixin'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `map'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:109:in `block in visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:121:in `with_environment'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:108:in `visit_children'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `block in visit'
+C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:320:in `visit_rule'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:37:in `visit'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/perform.rb:100:in `visit'
 C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/sass-3.2.12/lib/sass/tree/visitors/base.rb:53:in `block in visit_children'
@@ -74,4 +84,4 @@ C:/Ruby200-x64/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'back'.\A         on line 11 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss, in `back'\A         from line 11 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss"; }
+  content: "Syntax error: Undefined mixin 'text-shadow'.\A         on line 22 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss, in `text-shadow'\A         from line 22 of D:/Projets/Wampstack/apps/time_manager/htdocs/sass/style.scss"; }

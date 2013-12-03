@@ -63,747 +63,87 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   display: block;
 }
 
-/*############################################################################
-                                MIXINS
-############################################################################*/
-/*############################################################################
-                                VARIABLES
-############################################################################*/
-/** Font-Face **/
-@font-face {
-  font-family: "FontAwesome";
-  src: url("../fonts/fontawesome-webfont.eot");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix") format("eot"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#FontAwesome") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-
-/* line 1, ../sass/general.scss */
-.box {
-  display: inline-block;
-  border: 1px solid black;
-  font-size: 65px;
-  text-decoration: none;
-  color: #eeeeee;
-  -webkit-box-shadow: 0px 5px 0px black;
-  -moz-box-shadow: 0px 5px 0px black;
-  box-shadow: 0px 5px 0px black;
-  background: -webkit-gradient(linear, 50% 100%, 50% 0%, color-stop(12%, #000000), color-stop(65%, #404040));
-  background: -webkit-linear-gradient(bottom, #000000 12%, #404040 65%);
-  background: -moz-linear-gradient(bottom, #000000 12%, #404040 65%);
-  background: -o-linear-gradient(bottom, #000000 12%, #404040 65%);
-  background: linear-gradient(bottom, #000000 12%, #404040 65%);
-}
-
-/* line 10, ../sass/general.scss */
-.box-active {
-  color: #fff;
-  -webkit-box-shadow: 0px 0px 30px white;
-  -moz-box-shadow: 0px 0px 30px white;
-  box-shadow: 0px 0px 30px white;
-}
-
-/* line 11, ../sass/general.scss */
-.over-time .box-active {
-  -webkit-box-shadow: 0px 0px 30px #ffba19;
-  -moz-box-shadow: 0px 0px 30px #ffba19;
-  box-shadow: 0px 0px 30px #ffba19;
-}
-
-/* line 12, ../sass/general.scss */
-.over-time-for-day .box-active {
-  -webkit-box-shadow: 0px 0px 30px #ff2e0a;
-  -moz-box-shadow: 0px 0px 30px #ff2e0a;
-  box-shadow: 0px 0px 30px #ff2e0a;
-}
-
-/* line 13, ../sass/general.scss */
-.corner-left {
-  border-radius: 30px 0 0 30px;
-}
-
-/* line 14, ../sass/general.scss */
-.corner-right {
-  border-radius: 0 30px 30px 0;
-}
-
-/* line 15, ../sass/general.scss */
-.progress-label {
-  text-align: center;
-  width: 100%;
-  float: left;
-  margin-top: 5px;
-  text-shadow: 1px 1px 0 black;
-}
-
-/* line 17, ../sass/general.scss */
-.hidden {
-  display: none;
-}
-
-/* line 19, ../sass/general.scss */
-.wrong {
-  color: red;
-  font-weight: bold;
-}
-
-/* line 20, ../sass/general.scss */
-input.wrong {
-  border-color: red;
-}
-
-/* line 21, ../sass/general.scss */
-div.wrong {
-  margin-bottom: 10px;
-}
-
-/* line 22, ../sass/general.scss */
-.success {
-  color: green;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-/* line 24, ../sass/general.scss */
-input {
-  border-radius: 10px;
-  border-color: #eeeeee;
-}
-
-/* line 29, ../sass/general.scss */
-.multi-button {
-  border: 1px solid black;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 6px 0px black;
-  -moz-box-shadow: 0px 6px 0px black;
-  box-shadow: 0px 6px 0px black;
-  cursor: pointer;
-  background: #333333;
-  -webkit-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-align: center;
-  color: #eeeeee;
-  padding: 4px 7px;
-  border-radius: 0;
-  margin: 0;
-  display: inline-block;
-  border-left-width: 0px;
-  color: #aaaaaa;
-}
-/* line 39, ../sass/general.scss */
-.multi-button:hover {
-  text-shadow: white 0px 0px 10px;
-  color: white;
-  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-}
-/* line 42, ../sass/general.scss */
-.multi-button:first-child {
-  border-radius: 7px 0 0 7px;
-  border-left-width: 1px;
-}
-/* line 46, ../sass/general.scss */
-.multi-button:last-child {
-  border-radius: 0 7px 7px 0;
-}
-/* line 47, ../sass/general.scss */
-.multi-button.active {
-  text-shadow: white 0px 0px 10px;
-  color: white;
-  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-}
-
-/* line 52, ../sass/general.scss */
-a, a:focus, a:visited {
-  color: #eeeeee;
-  text-decoration: none;
-}
-
-/* line 56, ../sass/general.scss */
-a:hover {
-  text-shadow: white 0px 0px 10px;
-  color: white;
-}
-
-/* line 60, ../sass/general.scss */
-.bevelled-bg {
-  background: linear-gradient(220deg, transparent 24px, #111111 20px);
-  background-size: 90% 100%;
-  background-repeat: no-repeat;
-}
-
-/*############################################################################
-                                STYLE
-############################################################################*/
-/* line 5, ../sass/style.scss */
-html {
-  font-family: "MS Shell Dlg";
-  font-size: 10pt;
-}
-
 /* line 10, ../sass/style.scss */
 body {
+  padding-top: 20px;
+  color: white;
   background: url(../images/micro_carbon.png);
 }
-
-/* line 13, ../sass/style.scss */
-#machine, #other-info {
-  width: 400px;
-  margin: 50px auto 0;
-  height: 170px;
-  text-align: center;
-  border: 1px black solid;
-  border-bottom: 0;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 6px 0px black;
-  -moz-box-shadow: 0px 6px 0px black;
-  box-shadow: 0px 6px 0px black;
-  background: #333333;
-}
-/* line 36, ../sass/puncher.scss */
-#machine #puncher-container, #other-info #puncher-container {
-  height: 124.5px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #555555;
-  -moz-box-shadow: inset 0px 3px 3px #555555;
-  box-shadow: inset 0px 3px 3px #555555;
-  border-bottom: 1px solid black;
-}
-/* line 41, ../sass/puncher.scss */
-#machine #puncher-container a, #other-info #puncher-container a {
-  display: block;
-  padding-top: 30px;
-  height: 100%;
-  width: 100%;
-  font-size: 80px;
-  font-family: "FontAwesome";
-  color: #eeeeee;
-  text-shadow: #555555 0px 3px 2px, black 0px -2px 1px;
-}
-/* line 44, ../sass/puncher.scss */
-.checked_in #machine #puncher-container a, .checked_in #other-info #puncher-container a {
-  display: block;
-  padding-top: 30px;
-  height: 100%;
-  width: 100%;
-  font-size: 80px;
-  font-family: "FontAwesome";
-  text-shadow: white 0px 0px 10px;
-  color: white;
-  padding-top: 35px;
-  text-shadow: white 0px 0px 15px;
-}
-/* line 47, ../sass/puncher.scss */
-.checked_in #machine #puncher-container a:hover, .checked_in #other-info #puncher-container a:hover {
-  display: block;
-  padding-top: 30px;
-  height: 100%;
-  width: 100%;
-  font-size: 80px;
-  font-family: "FontAwesome";
-  color: #eeeeee;
-  text-shadow: #555555 0px 3px 2px, black 0px -2px 1px;
-}
-/* line 52, ../sass/puncher.scss */
-#machine #puncher-container a:hover, #other-info #puncher-container a:hover {
-  display: block;
-  padding-top: 30px;
-  height: 100%;
-  width: 100%;
-  font-size: 80px;
-  font-family: "FontAwesome";
-  text-shadow: white 0px 0px 10px;
-  color: white;
-  padding-top: 35px;
-  text-shadow: white 0px 0px 15px;
-}
-/* line 57, ../sass/puncher.scss */
-.checked_in #machine #puncher-container, .checked_in #other-info #puncher-container {
-  height: 124.5px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #555555;
-  -moz-box-shadow: inset 0px 3px 3px #555555;
-  box-shadow: inset 0px 3px 3px #555555;
-  -webkit-box-shadow: inset 0px 3px 3px black;
-  -moz-box-shadow: inset 0px 3px 3px black;
-  box-shadow: inset 0px 3px 3px black;
-}
-/* line 59, ../sass/puncher.scss */
-.checked_in #machine #puncher-container:hover, .checked_in #other-info #puncher-container:hover {
-  height: 124.5px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #555555;
-  -moz-box-shadow: inset 0px 3px 3px #555555;
-  box-shadow: inset 0px 3px 3px #555555;
-}
-/* line 63, ../sass/puncher.scss */
-#machine #puncher-container:hover, #other-info #puncher-container:hover {
-  height: 124.5px;
-  width: 100%;
-  position: relative;
-  z-index: 1;
-  border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #555555;
-  -moz-box-shadow: inset 0px 3px 3px #555555;
-  box-shadow: inset 0px 3px 3px #555555;
-  -webkit-box-shadow: inset 0px 3px 3px black;
-  -moz-box-shadow: inset 0px 3px 3px black;
-  box-shadow: inset 0px 3px 3px black;
-}
-/* line 1, ../sass/tools.scss */
-#machine #tools-container, #other-info #tools-container, #other-info form .buttons-bar {
-  border-top: 1px solid black;
-  height: 38.5px;
-  overflow: hidden;
-  border-radius: 0 0 10px 10px;
-  position: relative;
-  z-index: 2;
-  margin-top: 5px;
-}
-/* line 10, ../sass/tools.scss */
-#machine #tools-container ul, #other-info #tools-container ul, #other-info form .buttons-bar ul {
-  height: 100%;
-}
-/* line 13, ../sass/tools.scss */
-#machine #tools-container ul li, #other-info #tools-container ul li, #other-info form .buttons-bar ul li {
-  height: 100%;
-  display: block;
-  float: left;
-  width: 100px;
-  text-align: center;
-  -webkit-box-shadow: inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 -1px 1px black;
-  box-shadow: inset 0 -1px 1px black;
-}
-/* line 21, ../sass/tools.scss */
-#machine #tools-container ul li a, #other-info #tools-container ul li a, #other-info form .buttons-bar ul li a {
-  display: block;
-  height: 100%;
-  width: 100%;
-  padding-top: 12px;
-  font-weight: bold;
-}
-/* line 29, ../sass/tools.scss */
-#machine #tools-container ul li:first-child, #other-info #tools-container ul li:first-child, #other-info form .buttons-bar ul li:first-child {
-  border: none;
-  border-radius: 0 0 0 10px;
-}
-/* line 30, ../sass/tools.scss */
-#machine #tools-container ul li:last-child, #other-info #tools-container ul li:last-child, #other-info form .buttons-bar ul li:last-child {
-  border-radius: 0 0 10px 0;
-}
-/* line 31, ../sass/tools.scss */
-#machine #tools-container ul li:hover, #other-info #tools-container ul li:hover, #other-info form .buttons-bar ul li:hover, #machine #tools-container ul li.active, #other-info #tools-container ul li.active, #other-info form .buttons-bar ul li.active {
-  -webkit-box-shadow: inset 0px 2px 2px black;
-  -moz-box-shadow: inset 0px 2px 2px black;
-  box-shadow: inset 0px 2px 2px black;
-  text-shadow: white 0px 0px 10px;
-  color: white;
-}
-/* line 35, ../sass/tools.scss */
-#machine #tools-container ul li.active a, #other-info #tools-container ul li.active a, #other-info form .buttons-bar ul li.active a {
-  text-shadow: white 0px 0px 10px;
-  color: white;
-}
-/* line 27, ../sass/style.scss */
-#machine a, #other-info a, #machine a:visited, #other-info a:visited, #machine a:focus, #other-info a:focus {
+/* line 15, ../sass/style.scss */
+body a, body a:focus, body a:visited {
+  color: #cccccc;
   text-decoration: none;
-  color: #aaaaaa;
 }
-/* line 28, ../sass/style.scss */
-#machine a:hover, #other-info a:hover {
-  text-shadow: white 0px 0px 10px;
+/* line 20, ../sass/style.scss */
+body a:hover {
   color: white;
+  text-shadow: 0 0 3px white;
 }
-
-/* line 31, ../sass/style.scss */
-#content {
-  width: 360px;
-  margin: 3px auto;
-  min-height: 150px;
-  border-radius: 0 0 10px 10px;
-  border: rgba(150, 150, 150, 0.1) solid 1px;
-  -webkit-box-shadow: 0px 3px 0px rgba(150, 150, 150, 0.1);
-  -moz-box-shadow: 0px 3px 0px rgba(150, 150, 150, 0.1);
-  box-shadow: 0px 3px 0px rgba(150, 150, 150, 0.1);
+/* line 25, ../sass/style.scss */
+body #machine {
+  width: 400px;
+  margin: auto;
+}
+/* line 29, ../sass/style.scss */
+body #content {
   background: url(../images/escheresque_ste.png);
-  position: relative;
-  color: white;
-  z-index: 3;
+  width: 360px;
+  margin: auto;
   padding: 10px;
 }
 /* line 1, ../sass/stats.scss */
-#content .stats {
+body #content .stats {
   width: 100%;
 }
 /* line 4, ../sass/stats.scss */
-#content .stats td {
+body #content .stats td {
   padding: 2px 10px;
 }
 /* line 5, ../sass/stats.scss */
-#content .stats td:first-child {
+body #content .stats td:first-child {
   width: 40%;
 }
 /* line 6, ../sass/stats.scss */
-#content .stats tr:first-child td {
+body #content .stats tr:first-child td {
   padding-top: 5px;
 }
 /* line 7, ../sass/stats.scss */
-#content .stats tr:last-child td {
+body #content .stats tr:last-child td {
   padding-bottom: 10px;
 }
 /* line 8, ../sass/stats.scss */
-#content .stats thead {
-  background: linear-gradient(220deg, transparent 24px, #111111 20px);
+body #content .stats thead {
+  background: linear-gradient(220deg, transparent 26px, #000000 20px);
   background-size: 50% 100%;
   background-repeat: no-repeat;
   padding: 20px;
 }
 /* line 11, ../sass/stats.scss */
-#content .stats thead th p {
+body #content .stats thead th p {
   padding: 8px 5px;
   text-align: left;
   float: left;
 }
 /* line 17, ../sass/stats.scss */
-#content .stats thead th div {
+body #content .stats thead th div {
   float: right;
   padding-top: 3px;
 }
 /* line 28, ../sass/stats.scss */
-#content .stats thead:first-child {
+body #content .stats thead:first-child {
   background-size: 90% 100%;
 }
-/* line 3, ../sass/punches.scss */
-#content #punches #checks-nav-button a, #content #punches #checks-nav-button a:visited, #content #punches #checks-nav-button a:focus {
-  color: inherit;
-  border: 1px solid black;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 6px 0px black;
-  -moz-box-shadow: 0px 6px 0px black;
-  box-shadow: 0px 6px 0px black;
-  cursor: pointer;
-  background: #333333;
-  -webkit-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-align: center;
-  color: #eeeeee;
-  float: right;
-  padding: 10px;
-  border-radius: 0 10px 0 0;
-  border-bottom: none;
-}
-/* line 11, ../sass/punches.scss */
-#content #punches #checks-nav-button a:first-child {
-  float: left;
-  border-radius: 10px 0 0 0;
-}
-/* line 15, ../sass/punches.scss */
-#content #punches #checks-nav-button a:hover {
-  text-shadow: white 0px 0px 10px;
-  color: white;
-  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-}
-/* line 18, ../sass/punches.scss */
-#content #punches .day {
-  border-radius: 10px 10px 0 0;
-  border: 1px solid black;
-}
-/* line 22, ../sass/punches.scss */
-#content #punches .day p.check_date {
-  border: 1px solid black;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 6px 0px black;
-  -moz-box-shadow: 0px 6px 0px black;
-  box-shadow: 0px 6px 0px black;
-  cursor: pointer;
-  background: #333333;
-  -webkit-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-align: center;
-  color: #eeeeee;
-  text-align: center;
-  padding: 10px 0;
-  background: #444;
-  border-radius: 10px 10px 0 0;
-  border: none;
-}
-/* line 31, ../sass/punches.scss */
-#content #punches .day .inputs_holder {
-  min-height: 150px;
-  max-height: 420px;
-  overflow-y: scroll;
-  width: 100%;
-}
-/* line 37, ../sass/punches.scss */
-#content #punches .day .inputs_holder .inputs {
-  text-align: left;
-  width: 100%;
-}
-/* line 41, ../sass/punches.scss */
-#content #punches .day .inputs_holder .inputs tr:nth-child(odd) {
-  background-color: #111111;
-}
-/* line 44, ../sass/punches.scss */
-#content #punches .day .inputs_holder .inputs td {
-  padding: 5px 0;
-}
-/* line 45, ../sass/punches.scss */
-#content #punches .day .inputs_holder .inputs td:first-child {
-  padding-left: 10px;
-}
-/* line 46, ../sass/punches.scss */
-#content #punches .day .inputs_holder .inputs label {
-  margin-right: 10px;
-}
-/* line 47, ../sass/punches.scss */
-#content #punches .day .inputs_holder .inputs label:last-child {
-  margin: 0;
-}
-/* line 49, ../sass/punches.scss */
-#content #punches .day .inputs_holder .inputs a.button {
-  text-align: center;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  padding: 5px 0;
-  text-decoration: none;
-  font-size: 1.3em;
-}
-/* line 62, ../sass/punches.scss */
-#content #punches input[type="submit"], #content #punches input[type="reset"] {
-  border-radius: 0 0 0 10px;
-  width: 49%;
-  margin: 0;
-}
-/* line 67, ../sass/punches.scss */
-#content #punches input[type="submit"] {
+/* line 37, ../sass/style.scss */
+body ul#navigation {
   position: absolute;
-  border-radius: 0 0 10px 0;
-  right: 10px;
-}
-/* line 2, ../sass/preferences.scss */
-#content #preferences p {
-  display: block;
-  width: 100%;
-  padding: 8px 5px;
-  margin-bottom: 10px;
-}
-/* line 8, ../sass/preferences.scss */
-#content #preferences input[type="text"] {
-  height: 23px;
-  margin-left: 10px;
-}
-/* line 12, ../sass/preferences.scss */
-#content #preferences input[type="submit"] {
-  display: block;
-  float: right;
-  margin-top: -1px;
-}
-/* line 50, ../sass/style.scss */
-#content form fieldset {
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-}
-/* line 56, ../sass/style.scss */
-#content form fieldset legend {
-  padding: 0 5px;
-}
-/* line 61, ../sass/style.scss */
-#content form input {
-  text-align: center;
-}
-/* line 62, ../sass/style.scss */
-#content form input[type="submit"], #content form input[type="reset"] {
-  border: 1px solid black;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 6px 0px black;
-  -moz-box-shadow: 0px 6px 0px black;
-  box-shadow: 0px 6px 0px black;
-  cursor: pointer;
+  bottom: 0;
   background: #333333;
-  -webkit-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-align: center;
-  color: #eeeeee;
-}
-/* line 63, ../sass/style.scss */
-#content form input[type="submit"]:hover, #content form input[type="reset"]:hover {
-  text-shadow: white 0px 0px 10px;
-  color: white;
-  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
-}
-
-/* line 67, ../sass/style.scss */
-#navigation {
-  position: absolute;
-  top: 0px;
+  width: 100%;
   text-align: right;
-  width: 100%;
-  padding: 5px 0;
-  -webkit-box-shadow: inset 0px 3px 3px #555555;
-  -moz-box-shadow: inset 0px 3px 3px #555555;
-  box-shadow: inset 0px 3px 3px #555555;
-  background: #333333;
-  -webkit-box-shadow: inset 0px -1px 3px black;
-  -moz-box-shadow: inset 0px -1px 3px black;
-  box-shadow: inset 0px -1px 3px black;
 }
-/* line 77, ../sass/style.scss */
-#navigation li {
+/* line 44, ../sass/style.scss */
+body ul#navigation li {
   display: inline-block;
-}
-
-/* line 1, ../sass/other-info.scss */
-#other-info {
-  height: auto;
-}
-/* line 5, ../sass/other-info.scss */
-#other-info form {
-  text-align: justify;
-}
-/* line 8, ../sass/other-info.scss */
-#other-info form .form-wrapper {
-  border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #555555;
-  -moz-box-shadow: inset 0px 3px 3px #555555;
-  box-shadow: inset 0px 3px 3px #555555;
-  padding: 15px;
-}
-/* line 13, ../sass/other-info.scss */
-#other-info form .form-wrapper table {
-  width: 100%;
-}
-/* line 15, ../sass/other-info.scss */
-#other-info form .form-wrapper table td {
-  padding-bottom: 8px;
-}
-/* line 17, ../sass/other-info.scss */
-#other-info form .form-wrapper table td input {
-  background: #111111;
-  padding-left: 2%;
-  width: 98%;
-}
-/* line 24, ../sass/other-info.scss */
-#other-info form .form-wrapper table td.error {
-  padding: 0;
-  color: red;
-  text-align: right;
-}
-/* line 31, ../sass/other-info.scss */
-#other-info form .form-wrapper p, #other-info form .form-wrapper ul {
-  display: block;
-}
-/* line 32, ../sass/other-info.scss */
-#other-info form .form-wrapper .left {
-  float: left;
-  text-align: left;
-}
-/* line 33, ../sass/other-info.scss */
-#other-info form .form-wrapper .right {
-  text-align: right;
-}
-/* line 35, ../sass/other-info.scss */
-#other-info form .form-wrapper .right li {
-  display: inline;
-}
-/* line 38, ../sass/other-info.scss */
-#other-info form .form-wrapper .right li:first-child:after {
-  content: " | ";
-}
-/* line 44, ../sass/other-info.scss */
-#other-info form .buttons-bar input {
-  -webkit-box-shadow: inset 0px 3px 3px #555555;
-  -moz-box-shadow: inset 0px 3px 3px #555555;
-  box-shadow: inset 0px 3px 3px #555555;
-  background: none;
-  border: none;
-  height: 38.5px;
-  display: block;
-  float: left;
-  width: 100%;
-  border-left: 1px solid black;
-  color: #333;
-  font-family: inherit;
-  font-size: inherit;
-  border-radius: 0px;
-}
-/* line 59, ../sass/other-info.scss */
-#other-info form .buttons-bar input:hover {
-  -webkit-box-shadow: inset 0px 3px 3px black, inset 0px 0px 0px black;
-  -moz-box-shadow: inset 0px 3px 3px black, inset 0px 0px 0px black;
-  box-shadow: inset 0px 3px 3px black, inset 0px 0px 0px black;
-  text-shadow: white 0px 0px 10px;
-  color: white;
-  cursor: pointer;
-}
-/* line 65, ../sass/other-info.scss */
-#other-info form .buttons-bar input:first-child {
-  border-left: none;
-}
-/* line 68, ../sass/other-info.scss */
-#other-info form #recaptcha_image {
-  border: inset 2px #eeeeee;
-  border-radius: 15px;
-  background: white;
-  padding: 5px;
-  float: left;
-}
-/* line 76, ../sass/other-info.scss */
-#other-info form #recaptcha-tools {
-  float: right;
-}
-/* line 79, ../sass/other-info.scss */
-#other-info form #recaptcha-tools a {
-  -webkit-box-shadow: inset 0px 3px 3px #555555;
-  -moz-box-shadow: inset 0px 3px 3px #555555;
-  box-shadow: inset 0px 3px 3px #555555;
-  display: block;
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px inset black;
-  margin-bottom: 5px;
-}
-/* line 87, ../sass/other-info.scss */
-#other-info form #recaptcha-tools a img {
-  width: 20px;
-  height: 20px;
-}
-/* line 93, ../sass/other-info.scss */
-#other-info form #recaptcha-tools a:hover {
-  -webkit-box-shadow: inset 0px 3px 3px black, inset 0px 0px 0px black;
-  -moz-box-shadow: inset 0px 3px 3px black, inset 0px 0px 0px black;
-  box-shadow: inset 0px 3px 3px black, inset 0px 0px 0px black;
-  text-shadow: white 0px 0px 10px;
-  color: white;
+  border-left: black 1px solid;
+  padding: 5px 15px;
 }
