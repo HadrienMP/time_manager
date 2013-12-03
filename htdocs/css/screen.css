@@ -179,12 +179,13 @@ input {
   box-shadow: 0px 6px 0px black;
   cursor: pointer;
   background: #333333;
-  -webkit-box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
+  -webkit-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  -moz-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
   padding: 5px 10px;
   text-decoration: none;
   text-align: center;
+  color: #eeeeee;
   padding: 4px 7px;
   border-radius: 0;
   margin: 0;
@@ -196,9 +197,9 @@ input {
 .multi-button:hover {
   text-shadow: white 0px 0px 10px;
   color: white;
-  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
+  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
 }
 /* line 42, ../sass/general.scss */
 .multi-button:first-child {
@@ -213,9 +214,9 @@ input {
 .multi-button.active {
   text-shadow: white 0px 0px 10px;
   color: white;
-  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
+  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
 }
 
 /* line 52, ../sass/general.scss */
@@ -272,9 +273,9 @@ body {
   position: relative;
   z-index: 1;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #666666;
-  -moz-box-shadow: inset 0px 3px 3px #666666;
-  box-shadow: inset 0px 3px 3px #666666;
+  -webkit-box-shadow: inset 0px 3px 3px #555555;
+  -moz-box-shadow: inset 0px 3px 3px #555555;
+  box-shadow: inset 0px 3px 3px #555555;
   border-bottom: 1px solid black;
 }
 /* line 41, ../sass/puncher.scss */
@@ -286,7 +287,7 @@ body {
   font-size: 80px;
   font-family: "FontAwesome";
   color: #eeeeee;
-  text-shadow: #666666 0px 3px 2px, black 0px -2px 1px;
+  text-shadow: #555555 0px 3px 2px, black 0px -2px 1px;
 }
 /* line 44, ../sass/puncher.scss */
 .checked_in #machine #puncher-container a, .checked_in #other-info #puncher-container a {
@@ -310,7 +311,7 @@ body {
   font-size: 80px;
   font-family: "FontAwesome";
   color: #eeeeee;
-  text-shadow: #666666 0px 3px 2px, black 0px -2px 1px;
+  text-shadow: #555555 0px 3px 2px, black 0px -2px 1px;
 }
 /* line 52, ../sass/puncher.scss */
 #machine #puncher-container a:hover, #other-info #puncher-container a:hover {
@@ -332,9 +333,9 @@ body {
   position: relative;
   z-index: 1;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #666666;
-  -moz-box-shadow: inset 0px 3px 3px #666666;
-  box-shadow: inset 0px 3px 3px #666666;
+  -webkit-box-shadow: inset 0px 3px 3px #555555;
+  -moz-box-shadow: inset 0px 3px 3px #555555;
+  box-shadow: inset 0px 3px 3px #555555;
   -webkit-box-shadow: inset 0px 3px 3px black;
   -moz-box-shadow: inset 0px 3px 3px black;
   box-shadow: inset 0px 3px 3px black;
@@ -346,9 +347,9 @@ body {
   position: relative;
   z-index: 1;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #666666;
-  -moz-box-shadow: inset 0px 3px 3px #666666;
-  box-shadow: inset 0px 3px 3px #666666;
+  -webkit-box-shadow: inset 0px 3px 3px #555555;
+  -moz-box-shadow: inset 0px 3px 3px #555555;
+  box-shadow: inset 0px 3px 3px #555555;
 }
 /* line 63, ../sass/puncher.scss */
 #machine #puncher-container:hover, #other-info #puncher-container:hover {
@@ -357,9 +358,9 @@ body {
   position: relative;
   z-index: 1;
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #666666;
-  -moz-box-shadow: inset 0px 3px 3px #666666;
-  box-shadow: inset 0px 3px 3px #666666;
+  -webkit-box-shadow: inset 0px 3px 3px #555555;
+  -moz-box-shadow: inset 0px 3px 3px #555555;
+  box-shadow: inset 0px 3px 3px #555555;
   -webkit-box-shadow: inset 0px 3px 3px black;
   -moz-box-shadow: inset 0px 3px 3px black;
   box-shadow: inset 0px 3px 3px black;
@@ -488,6 +489,122 @@ body {
 #content .stats thead:first-child {
   background-size: 90% 100%;
 }
+/* line 3, ../sass/punches.scss */
+#content #punches #checks-nav-button a, #content #punches #checks-nav-button a:visited, #content #punches #checks-nav-button a:focus {
+  color: inherit;
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 6px 0px black;
+  -moz-box-shadow: 0px 6px 0px black;
+  box-shadow: 0px 6px 0px black;
+  cursor: pointer;
+  background: #333333;
+  -webkit-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  -moz-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-align: center;
+  color: #eeeeee;
+  float: right;
+  padding: 10px;
+  border-radius: 0 10px 0 0;
+  border-bottom: none;
+}
+/* line 11, ../sass/punches.scss */
+#content #punches #checks-nav-button a:first-child {
+  float: left;
+  border-radius: 10px 0 0 0;
+}
+/* line 15, ../sass/punches.scss */
+#content #punches #checks-nav-button a:hover {
+  text-shadow: white 0px 0px 10px;
+  color: white;
+  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+}
+/* line 18, ../sass/punches.scss */
+#content #punches .day {
+  border-radius: 10px 10px 0 0;
+  border: 1px solid black;
+}
+/* line 22, ../sass/punches.scss */
+#content #punches .day p.check_date {
+  border: 1px solid black;
+  border-radius: 10px;
+  -webkit-box-shadow: 0px 6px 0px black;
+  -moz-box-shadow: 0px 6px 0px black;
+  box-shadow: 0px 6px 0px black;
+  cursor: pointer;
+  background: #333333;
+  -webkit-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  -moz-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  padding: 5px 10px;
+  text-decoration: none;
+  text-align: center;
+  color: #eeeeee;
+  text-align: center;
+  padding: 10px 0;
+  background: #444;
+  border-radius: 10px 10px 0 0;
+  border: none;
+}
+/* line 31, ../sass/punches.scss */
+#content #punches .day .inputs_holder {
+  min-height: 150px;
+  max-height: 420px;
+  overflow-y: scroll;
+  width: 100%;
+}
+/* line 37, ../sass/punches.scss */
+#content #punches .day .inputs_holder .inputs {
+  text-align: left;
+  width: 100%;
+}
+/* line 41, ../sass/punches.scss */
+#content #punches .day .inputs_holder .inputs tr:nth-child(odd) {
+  background-color: #111111;
+}
+/* line 44, ../sass/punches.scss */
+#content #punches .day .inputs_holder .inputs td {
+  padding: 5px 0;
+}
+/* line 45, ../sass/punches.scss */
+#content #punches .day .inputs_holder .inputs td:first-child {
+  padding-left: 10px;
+}
+/* line 46, ../sass/punches.scss */
+#content #punches .day .inputs_holder .inputs label {
+  margin-right: 10px;
+}
+/* line 47, ../sass/punches.scss */
+#content #punches .day .inputs_holder .inputs label:last-child {
+  margin: 0;
+}
+/* line 49, ../sass/punches.scss */
+#content #punches .day .inputs_holder .inputs a.button {
+  text-align: center;
+  display: block;
+  width: 100%;
+  cursor: pointer;
+  padding: 5px 0;
+  text-decoration: none;
+  font-size: 1.3em;
+}
+/* line 62, ../sass/punches.scss */
+#content #punches input[type="submit"], #content #punches input[type="reset"] {
+  border-radius: 0 0 0 10px;
+  width: 49%;
+  margin: 0;
+}
+/* line 67, ../sass/punches.scss */
+#content #punches input[type="submit"] {
+  position: absolute;
+  border-radius: 0 0 10px 0;
+  right: 10px;
+}
 /* line 2, ../sass/preferences.scss */
 #content #preferences p {
   display: block;
@@ -506,22 +623,22 @@ body {
   float: right;
   margin-top: -1px;
 }
-/* line 49, ../sass/style.scss */
+/* line 50, ../sass/style.scss */
 #content form fieldset {
   border: 1px solid black;
   border-radius: 5px;
   padding: 10px;
   margin-bottom: 10px;
 }
-/* line 55, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 #content form fieldset legend {
   padding: 0 5px;
 }
-/* line 60, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 #content form input {
   text-align: center;
 }
-/* line 61, ../sass/style.scss */
+/* line 62, ../sass/style.scss */
 #content form input[type="submit"], #content form input[type="reset"] {
   border: 1px solid black;
   border-radius: 10px;
@@ -530,152 +647,39 @@ body {
   box-shadow: 0px 6px 0px black;
   cursor: pointer;
   background: #333333;
-  -webkit-box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
+  -webkit-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  -moz-box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
+  box-shadow: inset 0 3px 2px #555555, inset 0 -1px 1px black;
   padding: 5px 10px;
   text-decoration: none;
   text-align: center;
+  color: #eeeeee;
 }
-/* line 62, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 #content form input[type="submit"]:hover, #content form input[type="reset"]:hover {
   text-shadow: white 0px 0px 10px;
   color: white;
-  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-}
-/* line 67, ../sass/style.scss */
-#content #punches #checks-nav-button a, #content #punches #checks-nav-button a:visited, #content #punches #checks-nav-button a:focus {
-  color: inherit;
-  border: 1px solid black;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 6px 0px black;
-  -moz-box-shadow: 0px 6px 0px black;
-  box-shadow: 0px 6px 0px black;
-  cursor: pointer;
-  background: #333333;
-  -webkit-box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-align: center;
-  float: right;
-  padding: 10px;
-  border-radius: 0 10px 0 0;
-  border-bottom: none;
-}
-/* line 75, ../sass/style.scss */
-#content #punches #checks-nav-button a:first-child {
-  float: left;
-  border-radius: 10px 0 0 0;
-}
-/* line 79, ../sass/style.scss */
-#content #punches #checks-nav-button a:hover {
-  text-shadow: white 0px 0px 10px;
-  color: white;
-  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #666666;
-}
-/* line 82, ../sass/style.scss */
-#content #punches .day {
-  border-radius: 10px 10px 0 0;
-  border: 1px solid black;
-}
-/* line 86, ../sass/style.scss */
-#content #punches .day p.check_date {
-  border: 1px solid black;
-  border-radius: 10px;
-  -webkit-box-shadow: 0px 6px 0px black;
-  -moz-box-shadow: 0px 6px 0px black;
-  box-shadow: 0px 6px 0px black;
-  cursor: pointer;
-  background: #333333;
-  -webkit-box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  -moz-box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  box-shadow: inset 0 3px 2px #666666, inset 0 -1px 1px black;
-  padding: 5px 10px;
-  text-decoration: none;
-  text-align: center;
-  text-align: center;
-  padding: 10px 0;
-  background: #111111;
-  border-radius: 10px 10px 0 0;
-  border: none;
-}
-/* line 95, ../sass/style.scss */
-#content #punches .day .inputs_holder {
-  min-height: 150px;
-  max-height: 420px;
-  overflow-y: scroll;
-  width: 100%;
-}
-/* line 101, ../sass/style.scss */
-#content #punches .day .inputs_holder .inputs {
-  text-align: left;
-  width: 100%;
-}
-/* line 105, ../sass/style.scss */
-#content #punches .day .inputs_holder .inputs tr:nth-child(odd) {
-  background-color: #111111;
-}
-/* line 108, ../sass/style.scss */
-#content #punches .day .inputs_holder .inputs td {
-  padding: 5px 0;
-}
-/* line 109, ../sass/style.scss */
-#content #punches .day .inputs_holder .inputs td:first-child {
-  padding-left: 10px;
-}
-/* line 110, ../sass/style.scss */
-#content #punches .day .inputs_holder .inputs label {
-  margin-right: 10px;
-}
-/* line 111, ../sass/style.scss */
-#content #punches .day .inputs_holder .inputs label:last-child {
-  margin: 0;
-}
-/* line 113, ../sass/style.scss */
-#content #punches .day .inputs_holder .inputs a.button {
-  text-align: center;
-  display: block;
-  width: 100%;
-  cursor: pointer;
-  padding: 5px 0;
-  text-decoration: none;
-  font-size: 1.3em;
-}
-/* line 126, ../sass/style.scss */
-#content #punches input[type="submit"], #content #punches input[type="reset"] {
-  border-radius: 0 0 0 10px;
-  width: 49%;
-  margin: 0;
-}
-/* line 131, ../sass/style.scss */
-#content #punches input[type="submit"] {
-  position: absolute;
-  border-radius: 0 0 10px 0;
-  right: 10px;
+  -webkit-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+  -moz-box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
+  box-shadow: inset 0 2px 2px black, inset 0 -1px 1px #555555;
 }
 
-/* line 139, ../sass/style.scss */
+/* line 67, ../sass/style.scss */
 #navigation {
   position: absolute;
   top: 0px;
   text-align: right;
   width: 100%;
   padding: 5px 0;
-  -webkit-box-shadow: inset 0px 3px 3px #666666;
-  -moz-box-shadow: inset 0px 3px 3px #666666;
-  box-shadow: inset 0px 3px 3px #666666;
+  -webkit-box-shadow: inset 0px 3px 3px #555555;
+  -moz-box-shadow: inset 0px 3px 3px #555555;
+  box-shadow: inset 0px 3px 3px #555555;
   background: #333333;
   -webkit-box-shadow: inset 0px -1px 3px black;
   -moz-box-shadow: inset 0px -1px 3px black;
   box-shadow: inset 0px -1px 3px black;
 }
-/* line 149, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 #navigation li {
   display: inline-block;
 }
@@ -691,9 +695,9 @@ body {
 /* line 8, ../sass/other-info.scss */
 #other-info form .form-wrapper {
   border-radius: 10px 10px 0 0;
-  -webkit-box-shadow: inset 0px 3px 3px #666666;
-  -moz-box-shadow: inset 0px 3px 3px #666666;
-  box-shadow: inset 0px 3px 3px #666666;
+  -webkit-box-shadow: inset 0px 3px 3px #555555;
+  -moz-box-shadow: inset 0px 3px 3px #555555;
+  box-shadow: inset 0px 3px 3px #555555;
   padding: 15px;
 }
 /* line 13, ../sass/other-info.scss */
@@ -739,9 +743,9 @@ body {
 }
 /* line 44, ../sass/other-info.scss */
 #other-info form .buttons-bar input {
-  -webkit-box-shadow: inset 0px 3px 3px #666666;
-  -moz-box-shadow: inset 0px 3px 3px #666666;
-  box-shadow: inset 0px 3px 3px #666666;
+  -webkit-box-shadow: inset 0px 3px 3px #555555;
+  -moz-box-shadow: inset 0px 3px 3px #555555;
+  box-shadow: inset 0px 3px 3px #555555;
   background: none;
   border: none;
   height: 38.5px;
@@ -781,9 +785,9 @@ body {
 }
 /* line 79, ../sass/other-info.scss */
 #other-info form #recaptcha-tools a {
-  -webkit-box-shadow: inset 0px 3px 3px #666666;
-  -moz-box-shadow: inset 0px 3px 3px #666666;
-  box-shadow: inset 0px 3px 3px #666666;
+  -webkit-box-shadow: inset 0px 3px 3px #555555;
+  -moz-box-shadow: inset 0px 3px 3px #555555;
+  box-shadow: inset 0px 3px 3px #555555;
   display: block;
   padding: 5px;
   border-radius: 5px;

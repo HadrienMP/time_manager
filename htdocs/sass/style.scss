@@ -31,6 +31,7 @@ body {
 #content {
   
     @import "stats.scss";
+    @import "punches.scss";
     @import "preferences.scss";
         
     width: $content-width - 20px;
@@ -60,79 +61,6 @@ body {
         input { text-align: center; }
         input[type="submit"], input[type="reset"] { @include button() }
         input[type="submit"]:hover, input[type="reset"]:hover { @include button-hover-effect();}
-    }
-    
-    #punches {
-        #checks-nav-button {
-            a, a:visited, a:focus { 
-                color: inherit;
-                @include button();
-                float: right;
-                padding: 10px;
-                border-radius: 0 10px 0 0; 
-                border-bottom: none;
-            }
-            a:first-child { 
-                float: left;
-                border-radius: 10px 0 0 0; 
-            }
-            a:hover { @include button-hover-effect(); }
-        }
-        
-        .day {
-            border-radius: 10px 10px 0 0;
-            border: 1px solid $border-color;
-            
-            p.check_date { 
-                @include button();
-                text-align: center; 
-                padding: 10px 0;
-                background: $background-color;
-                border-radius: 10px 10px 0 0;
-                border: none;
-            }
-            
-            .inputs_holder {
-                min-height: 150px;
-                max-height: 420px;
-                overflow-y: scroll;
-                width: 100%;
-            
-                .inputs {
-                    text-align: left;
-                    width: 100%;
-                    
-                    tr:nth-child(odd) {
-                        background-color: $background-color;
-                    }
-                    td {padding: 5px 0;}
-                    td:first-child {padding-left: 10px;}
-                    label {margin-right: 10px;}
-                    label:last-child {margin: 0;}
-                    
-                    a.button { 
-                        text-align: center;
-                        display: block; 
-                        width: 100%; 
-                        cursor: pointer; 
-                        padding: 5px 0;
-                        text-decoration: none;
-                        font-size: 1.3em;
-                    }
-                }
-            }
-        }
-        
-        input[type="submit"], input[type="reset"] {
-            border-radius: 0 0 0 10px;
-            width: 49%;
-            margin: 0;
-        }
-        input[type="submit"] {
-            position: absolute;
-            border-radius: 0 0 10px 0;
-            right: 10px;
-        }
     }
 }
 
