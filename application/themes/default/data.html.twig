@@ -1,0 +1,21 @@
+{% extends _layout %}
+
+{% block head %}
+  	<link rel="stylesheet" href="/css/ui-lightness/jquery-ui.min.css">
+  	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+  	<script type="text/javascript" src="/js/data.js"></script>
+{% endblock %}
+
+{% block content %}
+<table id="data">
+  <tr>
+    <td>Nombre de checks : </td>
+    <td>{{ data_info.number_of_checks }}</td>
+  </tr>
+  <tr>
+    <td>Pourcentage du mois terminé : </td>
+    <td><div id="progressbar"><div class="progress-label">{{ data_info.percent_month }}%</div></div></td>
+  </tr>
+</table>
+
+{% endblock %}

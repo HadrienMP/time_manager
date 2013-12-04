@@ -110,6 +110,20 @@ class Time_manager
         $duration = preferences_to_duration($preferences);
         $this->ci->parameters->set_parameters($duration, $user_id);
     }
+    
+    public function get_data_info($user_id) {
+    	$today = time("today 00:00:00");
+    	$beginning_month = strtotime(date('01-m-Y'));
+    	$end_of_month = strtotime(date('01-m-Y', strtotime("+1 month 00:00:00")));
+    	$diff = (int) (($today - $beginning_month) / (24*3600)) + 1;
+    	$total = (int) (($end_of_month - $beginning_month) / (24*3600));
+    	
+    	
+    	return array(
+    			'number_of_checks' => $this->ci->checks->count_checks($user_id),
+    			'percent_month' => (int) ( $diff *100 / $total),
+    	);
+    }
 }
 
 /* End of file Time_manager.php */

@@ -44,6 +44,7 @@ $route['404_override'] = '';
 $route['stats'] = "manager/stats";
 $route['preferences'] = "manager/preferences";
 $route['punches'] = "manager/punches";
+$route['data'] = "manager/data";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

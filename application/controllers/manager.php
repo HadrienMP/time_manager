@@ -253,4 +253,12 @@ class Manager extends CI_Controller {
         $this->time_manager->check($this->tank_auth->get_user_id());
         redirect($_SERVER['HTTP_REFERER']);
     }
+    
+    public function data() {
+        $this->_pre_action(__FUNCTION__);
+        
+    	$data_info = $this->time_manager->get_data_info($this->tank_auth->get_user_id());
+        $this->twiggy->set('data_info', $data_info, NULL);
+        $this->twiggy->template('data')->display();
+    }
 }

@@ -65,7 +65,7 @@ class Checks extends CI_Model
             if (count($checks) > 0 && $checks[0]['check_in'] == 0 
                 && count($last_check) > 0) {
                 if ($last_check['check_in'] == 0) {
-                    log_message('error', "Les checks de l'utilisateur $user_id sont erronés : ".print_r($query->result_array(), True));
+                    log_message('error', "Les checks de l'utilisateur $user_id sont erronï¿½s : ".print_r($query->result_array(), True));
                     // TODO: Handle the null return upper in the chain
                 } else {
                     array_unshift($checks, $last_check);
@@ -86,7 +86,7 @@ class Checks extends CI_Model
      * @param $user_id
      * @return boolean last check_in value (FALSE if none found)
      */
-    function get_last_check($user_id) {
+    public function get_last_check($user_id) {
         $result = FALSE;
         if (!empty($user_id)) {
             $this->db->select('check_in');
@@ -101,7 +101,7 @@ class Checks extends CI_Model
         return $result;
     }
     
-    function update_checks($checks_to_update, $checks_to_add, $ids_to_delete, $user_id) {
+    public function update_checks($checks_to_update, $checks_to_add, $ids_to_delete, $user_id) {
         log_message('debug', 'update_checks, checks_to_update : '.print_r($checks_to_update, TRUE));
         log_message('debug', 'update_checks, checks_to_add : '.print_r($checks_to_add, TRUE));
         log_message('debug', 'update_checks, ids to delete : '.print_r($ids_to_delete, TRUE));
@@ -120,14 +120,14 @@ class Checks extends CI_Model
         // Update
     	$this->db->update_batch(Checks::TABLE_NAME, $checks_to_update, 'id');
     }
-    function delete_checks($ids) {}
+    public function delete_checks($ids) {}
 
     /**
      * Creates a check in for the user specified
      * @param boolean $is_check_in true for in false for out
      * @param unknown $user_id the user's id
      */
-    function create($is_check_in, $user_id) {
+    public function create($is_check_in, $user_id) {
     
         if (!empty($user_id)) {
             $data = array(
@@ -141,6 +141,25 @@ class Checks extends CI_Model
         else {
             log_message('error', "User id vide");
         }
+    }
+    
+    /**
+     * Counts all the user's checks
+     * @param unknown $user_id
+     * @return number
+     */
+    public function count_checks($user_id) {
+    
+    	$number_of_checks = 0;
+        if (!empty($user_id)) {
+            $this->db->where("user_id", $user_id);
+        	$number_of_checks = $this->db->count_all_results(Checks::TABLE_NAME);
+        }
+        else {
+            log_message('error', "User id vide");
+        }
+        
+        return $number_of_checks;
     }
     
     /** 
