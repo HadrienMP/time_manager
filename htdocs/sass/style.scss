@@ -6,21 +6,15 @@ $machine-width: 400px;
 $toolbar-height: 20px;
 $background-color: #333;
 $border-color: black;
+$inner-shadow-color: rgba(0,0,0,0.5);
+$box-light-color: #0062A8;
 
 body {
+	font-family: sans-serif;
+	font-size: 0.9em;
 	padding-top: 20px;
 	color: $text-color;
 	background: url(../images/micro_carbon.png);
-
-	a, a:focus, a:visited {
-	    color: $disabled;
-	    text-decoration: none;
-	}
-	
-	a:hover {
-	    color: $hover-color;
-	    @include text-shadow(0 0 3px $text-light-color);
-	}
 	
 	#machine {
 	   width: $machine-width;
@@ -31,6 +25,7 @@ body {
 	   width: $machine-width - 40px;
        margin: auto;
        padding: 10px;
+       border-radius: 0 0 20px 20px;
        
        @import "stats.scss";
 	}
@@ -46,5 +41,45 @@ body {
 		    border-left: $border-color 1px solid;
 		    padding: 5px 15px;
 	    }
+	}
+}
+
+
+
+a, a:focus, a:visited {
+    color: $disabled;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover, a.active {
+    color: $hover-color;
+    @include text-shadow(0 0 3px $text-light-color);
+    background: #0062A8;
+}
+
+.multi-button {
+	padding: 5px 7px;
+	background: #666;
+	border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+	display: inline-block;
+	@include background-image(linear-gradient(top, #333, #111));
+	z-index: 0;
+	
+	&.active {
+        background: #0062A8;
+        @include box-shadow(inset 1px 1px 2px $inner-shadow-color, 0px 0px 6px $box-light-color);
+        z-index: 1;
+	}
+	
+	&:first-child {
+	   border-radius: 10px 0 0 10px;
+	   padding-left: 10px;
+	   border-left: 1px solid $border-color;
+	}
+	&:last-child {
+       border-radius: 0 10px 10px 0;
+       border-right: 1px solid $border-color;
 	}
 }

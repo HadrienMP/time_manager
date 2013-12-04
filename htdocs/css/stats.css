@@ -20,7 +20,7 @@
 }
 /* line 8, ../sass/stats.scss */
 .stats thead {
-  background: linear-gradient(220deg, transparent 26px, #000000 20px);
+  background: linear-gradient(220deg, transparent 26px, #00508a 20px);
   background-size: 50% 100%;
   background-repeat: no-repeat;
   padding: 20px;
@@ -39,4 +39,12 @@
 /* line 28, ../sass/stats.scss */
 .stats thead:first-child {
   background-size: 90% 100%;
+}
+/* line 32, ../sass/stats.scss */
+.stats thead .multi-button {
+  margin-top: -2px;
+}
+/* line 37, ../sass/stats.scss */
+.stats tbody tr:first-child td {
+  padding-top: 10px;
 }
