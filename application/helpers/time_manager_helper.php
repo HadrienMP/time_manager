@@ -189,8 +189,29 @@ function update_time($check) {
 
 /*
  * ---------------------------------------------------------------------------
+ *
+ * 									DATA
+ *
+ * ----------------------------------------------------------------------------
+ */
+
+function checks_to_csv($checks) {
+	$csv = array(array("Date", "Heure", "Type de check"));
+	$e = '"';
+	$s = ';';
+	foreach ($checks as $check) {
+		$date_parts = explode(" ", $check['date']);
+		$type = $check['check_in'] ? 'Check In' : 'Check Out';
+		$csv[] = array($date_parts[0],$date_parts[1],$type);
+	}
+	return $csv;
+}
+
+
+/*
+ * ---------------------------------------------------------------------------
  * 
- * 								STATS
+ * 									STATS
  * 
  * ----------------------------------------------------------------------------
  */
