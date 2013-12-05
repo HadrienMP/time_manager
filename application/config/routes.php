@@ -45,6 +45,7 @@ $route['stats'] = "manager/stats";
 $route['preferences'] = "manager/preferences";
 $route['punches'] = "manager/punches";
 $route['data'] = "manager/data";
+$route['export'] = "manager/export";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

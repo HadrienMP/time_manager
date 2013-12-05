@@ -79,6 +79,10 @@ class Time_manager
     	return db_to_form_checks($checks);
     }
     
+    public function get_db_checks($user_id) {
+    	return $this->ci->checks->get_checks($user_id);
+    }
+    
     public function update_checks($checks, $checks_to_add, $ids_to_delete, $user_id) {
         log_message('debug', 'Library : update_checks, checks : '.print_r($checks, TRUE));
         log_message('debug', 'Library : update_checks, ids to delete : '.print_r($ids_to_delete, TRUE));

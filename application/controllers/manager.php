@@ -261,4 +261,18 @@ class Manager extends CI_Controller {
         $this->twiggy->set('data_info', $data_info, NULL);
         $this->twiggy->template('data')->display();
     }
+    
+    public function export() {
+        $this->_pre_action(__FUNCTION__);
+        $checks = $this->time_manager->get_db_checks($this->tank_auth->get_user_id());
+        
+        if (count($checks) > 0) {
+        	$month = date('F-Y', strtotime($checks[count($checks) - 1]['date']));
+	        $this->load->helper('download');
+	        $data = 'Here is some text!';
+	        $name = $month.'.csv';
+        	force_download($name, $data);
+        }
+        
+    }
 }
