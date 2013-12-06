@@ -195,15 +195,46 @@ function update_time($check) {
  * ----------------------------------------------------------------------------
  */
 
+/**
+ * Transforms db checks to a human readable csv
+ * @param unknown $checks
+ * @return unkown either the csv as an array or false if the user's checks are corrputed
+ */
 function checks_to_csv($checks) {
-	$csv = array(array("Date", "Heure", "Type de check"));
+	$csv = array(array("Date de check in", "Date de check out", "Heure de check in", "Heure de check out", "temps passé"));
 	$e = '"';
 	$s = ';';
-	foreach ($checks as $check) {
-		$date_parts = explode(" ", $check['date']);
-		$type = $check['check_in'] ? 'Check In' : 'Check Out';
-		$csv[] = array($date_parts[0],$date_parts[1],$type);
+
+	if (count($checks) > 0 && $checks[0]['check_in']) {
+		array_push($checks, array(
+		'date' => date('Y-m-d H:i:s', strtotime('now')),
+		'check_in' => 0
+		));
+	} elseif (count($checks) > 0 && !$checks[0]['check_in']) {
+		
 	}
+	
+	// Checks to CSV
+	for ($i = 0; $i < count($checks) - 1; $i += 2) {
+		$first = $checks[$i];
+		$second = $checks[$i + 1];
+		
+		// If check ins aren't followed by check outs, the checks are corrupted, the treatment shouldn't go further
+		if ($first['check_in'] && !$second['check_in']) {
+
+			$date_parts_1 = explode(" ", $first['date']);
+			$date_parts_2 = explode(" ", $second['date']);
+			$time_spent = strtotime($second['date']) - strtotime($first['date']);
+			$time_spent = duration_to_string($time_spent);
+			
+			$csv[] = array($date_parts_1[0], $date_parts_2[0], $date_parts_1[1], $date_parts_2[1], $time_spent);
+			
+		} else {
+			log_message('error', 'Les pointages sont corrompus : ' + print_r($first, TRUE) + ' : ' + print_r($second, TRUE));
+			return FALSE;
+		}
+	}
+	
 	return $csv;
 }
 

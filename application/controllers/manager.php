@@ -268,7 +268,6 @@ class Manager extends CI_Controller {
         
         if (count($checks) > 0) {
         	$month = date('F-Y', strtotime($checks[count($checks) - 1]['date']));
-	        $this->load->helper('download');
 	        $data = checks_to_csv($checks);
 	        $name = $month.'.csv';
 
