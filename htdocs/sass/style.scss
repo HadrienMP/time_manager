@@ -1,19 +1,20 @@
-$text-color: white;
-$text-light-color: white;
-$hover-color: white;
-$disabled: #ccc;
-$machine-width: 450px;
-$machine-height: 200px;
-$machine-background-color: #111;
-$toolbar-height: 20px;
-$background-color: #333;
-$border-color: black;
-$inner-shadow-color: rgba(0,0,0,0.5);
-$inner-light-color: rgba(255,255,255,0.2);
-$box-light-color: #0062A8;
-$top-button-color: #333;
-$bottom-button-color: #111;
-$active-button-color: #0062A8;
+$text-color              : white;
+$text-light-color        : white;
+$hover-color             : white;
+$disabled                : #ccc;
+$machine-width           : 450px;
+$machine-height          : 200px;
+$machine-background-color: #333;
+$toolbar-height          : 20px;
+$background-color        : #333;
+$border-color            : black;
+$inner-shadow-color      : rgba(0,0,0,0.5);
+$inner-light-color       : rgba(255,255,255,0.2);
+$box-light-color         : #0062A8;
+$top-button-color        : #333;
+$bottom-button-color     : #111;
+$active-button-color     : #0062A8;
+$puncher-section-size    : 130px;
 
 /** Font-Face **/
 @font-face {
@@ -32,82 +33,127 @@ body {
 	font-size: 0.9em;
 	padding-top: 20px;
 	color: $text-color;
-	background: url(../images/micro_carbon.png);
+	background: url(../images/micro_carbon.png);	
+}
 	
-	#machine {
-        width: $machine-width;
-        height: $machine-height;
-        margin: auto;
-        background: $machine-background-color;
-        border-radius: 20px;
-        border: 1px solid $border-color;
-
-        #puncher-container {
-            height: $machine-height * 0.80 - 1px;
-            border-bottom: 1px solid $border-color;
-            font-family: "FontAwesome";
-        }
-        #tools-container {
-            
-            li {
-                display: inline-block;
-                border-left: 1px solid $border-color;
-                
-                a {
-                    width: $machine-width * 0.25 - 1px;
-                    height: $machine-height * 0.20 - 10px;
-                    display: block;
-                    text-align: center;
-                    padding-top: 10px;
-                }
-                
-                &:first-child {
-                    border: none;
-                }
-                &:first-child a {
-                    border-radius: 0 0 0 20px;
-                    width: $machine-width * 0.25;
-                }
-                &:last-child a {
-                    border-radius: 0 0 20px 0;
-                }
-            }
-        }
+#machine {
+	width: $machine-width;
+	height: $machine-height;
+	margin: 10px auto 0;
+	@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
+	border-radius: 20px;
+	border: 1px solid $border-color;
+	border-bottom-width: 5px;
+    @include box-shadow(0 0 30px $active-button-color);
+    z-index: 1000;
+	
+	#puncher-container {
+		height: $machine-height * 0.80 - 1px;
+		border-bottom: 1px solid $border-color;
+		font-family: "FontAwesome";
+		      
+		section#puncher-section {
+			background: url(../images/micro_carbon.png);
+			border-radius: 100px; 
+			border: 1px solid $border-color; 
+			height: $puncher-section-size; 
+			width: $puncher-section-size; 
+			@include box-shadow( inset 0px 3px 0px $border-color);
+			margin: auto;
+			position: relative;
+			top: 15px;
+			
+			canvas {margin: 2px 0 0 1px;}
+		}
+	
+		a#puncher-button { 
+			border-radius: 100px;
+			border: none; 
+			font-size: 6em;
+			display: block;
+			width: $puncher-section-size - 30px;
+			height: $puncher-section-size - 30px;
+			margin: 15px auto;
+			
+			&:hover, .checked_in & {
+			    @include text-shadow(0 0 10px $text-light-color);
+			    color: $hover-color;
+			    @include box-shadow(0 0 30px $active-button-color);
+			}
+			span {
+			    display: block;
+			    padding: 15px 19px;
+			}
+		}
 	}
-	#content {
-	   background: url(../images/escheresque_ste.png);
-	   width: $machine-width - 60px;
-       margin: auto;
-       padding: 10px;
-       border-radius: 0 0 20px 20px;
-       border: 1px solid $border-color;
-       border-top: none;
-       
-       @import "stats.scss";
-	}
-	ul#navigation {
-		position: absolute;
-		bottom: 0;
-		@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
-		width: 100%;
-		text-align: right;
-		
-		li {
-		    display: inline-block;
-		    border-left: $border-color 1px solid;
-            a {
-                padding: 5px 15px;
-                display: block;
-            }
-	    }
-	}
+	
+    #tools-container {
+         
+         li {
+             display: inline-block;
+             border-left: 1px solid $border-color;
+             font-size: 1.2em;
+             
+             a {
+                 width: $machine-width * 0.25 - 1px;
+                 height: $machine-height * 0.20 - 10px;
+                 display: block;
+                 text-align: center;
+                 padding-top: 10px;
+             }
+             
+             &:first-child {
+                 border: none;
+             }
+             &:first-child a {
+                 border-radius: 0 0 0 20px;
+                 width: $machine-width * 0.25;
+             }
+             &:last-child a {
+                 border-radius: 0 0 20px 0;
+             }
+         }
+     }
 }
 
+#content {
+	background: url(../images/escheresque_ste.png);
+	width: $machine-width - 60px;
+	margin: auto;
+	padding: 10px;
+	padding-top: 15px;
+	border-radius: 0 0 20px 20px;
+	border: 1px solid $border-color;
+	border-top: none;
+	color: $disabled;
+	
+	@import "stats.scss";
+}
+
+ul#navigation {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	text-align: right;
+	
+	li {
+	    display: inline-block;
+	    border-left: $border-color 1px solid;
+           a {
+               padding: 5px 15px;
+               display: block;
+               background: none !important; 
+           }
+    }
+}
+    
+#content a, #puncher-container a, #navigation {
+   @include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
+}
 a, a:focus, a:visited {
     color: $disabled;
     text-decoration: none;
     cursor: pointer;
-	@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
 }
 
 a:hover, a.active {
