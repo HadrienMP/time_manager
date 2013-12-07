@@ -15,23 +15,7 @@ Grâce à une série de check in et check out, time_manager calcule plusieurs in
 * Le nombre d'heures supplémentaires :
  * Aujourd'hui
  * Cette semaine
- * Ce mois
-* Le nombre moyen d'heures travaillées :
- *  Par jour
- *  Par semaine
-
-Through a serie of check in and check out, the website is able to calculate the following informations : 
-* How long you've worked today 
-* How long you still have to work today 
-* The estimated time you'll get out of work 
-* How much overtime you've worked for :
-  * The day
-  * The week
-  * The month
-* The average number of hours you work :
-  * Per day 
-  * Per week
-
+ * Ce mois 
 Export
 ------
 
