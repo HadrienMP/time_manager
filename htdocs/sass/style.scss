@@ -44,8 +44,11 @@ body {
 	border-radius: 20px;
 	border: 1px solid $border-color;
 	border-bottom-width: 5px;
-    @include box-shadow(0 0 30px $active-button-color);
     z-index: 1000;
+    
+    .checked_in & {
+        @include box-shadow(0 0 30px $active-button-color);
+    }
 	
 	#puncher-container {
 		height: $machine-height * 0.80 - 1px;
@@ -68,12 +71,14 @@ body {
 	
 		a#puncher-button { 
 			border-radius: 100px;
-			border: none; 
+			border: 1px solid $border-color; 
 			font-size: 6em;
 			display: block;
 			width: $puncher-section-size - 30px;
 			height: $puncher-section-size - 30px;
 			margin: 15px auto;
+			color: #888;
+            @include text-shadow($top-button-color 0px 3px 2px, $bottom-button-color 0px -2px 1px ); 
 			
 			&:hover, .checked_in & {
 			    @include text-shadow(0 0 10px $text-light-color);
@@ -142,7 +147,6 @@ ul#navigation {
            a {
                padding: 5px 15px;
                display: block;
-               background: none !important; 
            }
     }
 }
@@ -169,11 +173,11 @@ a:hover, a.active {
     border-bottom: 1px solid $border-color;
 	display: inline-block;
 	z-index: 0;
+	border-left: 1px solid $border-color;
 	
 	&:first-child {
 	   border-radius: 10px 0 0 10px;
 	   padding-left: 10px;
-	   border-left: 1px solid $border-color;
 	}
 	&:last-child {
        border-radius: 0 10px 10px 0;
