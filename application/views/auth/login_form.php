@@ -7,11 +7,11 @@ $login = array(
 	'size'	=> 30,
 );
 if ($login_by_username AND $login_by_email) {
-	$login_label = 'Email or login';
+	$login_label = $this->lang->line('Email or login');
 } else if ($login_by_username) {
-	$login_label = 'Login';
+	$login_label = $this->lang->line('Login');
 } else {
-	$login_label = 'Email';
+	$login_label = $this->lang->line('Email');
 }
 $password = array(
 	'name'	=> 'password',
@@ -51,7 +51,7 @@ $captcha = array(
 			</td>
 		</tr>
 		<tr>
-			<td><?php echo form_label('Password', $password['id']); ?></td>
+			<td><?php echo form_label($this->lang->line('Password'), $password['id']); ?></td>
 			<td>
 				<?php echo form_password($password); ?>
 			</td>
@@ -95,14 +95,14 @@ $captcha = array(
 	</table>
 	<p class="left">
 		<?php echo form_checkbox($remember); ?>
-		<?php echo form_label('Remember me', $remember['id']); ?>
+		<?php echo form_label($this->lang->line('Remember me'), $remember['id']); ?>
 	</p>
 	<div class="right">
-		<?php echo anchor('/auth/forgot_password/', 'Forgot password'); ?><!-- whitespace
-	 --><?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', 'Register'); ?>
+		<?php echo anchor('/auth/forgot_password/', $this->lang->line('Forgot password')); ?><!-- whitespace
+	 --><?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', $this->lang->line('Register')); ?>
 	</div>
 </div>
 <div class="buttons-bar">
-	<?php echo form_submit('submit', 'Let me in'); ?>
+	<?php echo form_submit('submit', $this->lang->line('Let me in')); ?>
 </div>
 <?php echo form_close(); ?>

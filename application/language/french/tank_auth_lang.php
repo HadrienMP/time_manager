@@ -35,6 +35,16 @@ $lang['auth_subject_forgot_password'] = 'Vous avez oublié votre mot de passe su
 $lang['auth_subject_reset_password'] = 'Votre nouveau mot de passe sur %s';
 $lang['auth_subject_change_email'] = 'Votre nouvelle adresse courriel sur %s';
 
+// Labels
+$lang['Remember me'] = 'Rester connecté';
+$lang['Forgot password'] = 'Mot de passe oublié';
+$lang['Register'] = 'S\'inscrire';
+$lang['Let me in'] = 'Connexion';
+$lang['Email or login'] = 'Email ou Login';
+$lang['Email'] = 'Email';
+$lang['Login'] = 'Login';
+$lang['Password'] = 'Mot de passe';
+
 
 /* End of file tank_auth_lang.php */
 /* Location: ./application/language/french/tank_auth_lang.php */
