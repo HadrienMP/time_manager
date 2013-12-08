@@ -12,6 +12,7 @@
                 padding: 8px 5px ; 
                 text-align: left;
                 float: left;
+                font-size: 1.1em;
             }
             
             div {
@@ -20,7 +21,7 @@
             }
         }        
         
-        background:linear-gradient(220deg, transparent 24px, $background-color 20px);
+        background:linear-gradient(220deg, transparent 26px, $active-button-color 20px);
         background-size: 50% 100%;
         background-repeat:no-repeat;
         padding: 20px;
@@ -28,5 +29,15 @@
         &:first-child {
             background-size: 90% 100%;
         }
+        
+        .multi-button {
+            margin-top: -2px;
+        }
     }
+    tbody {
+        tr:first-child td {
+            padding-top: 10px;
+        }
+    }
+    
 }

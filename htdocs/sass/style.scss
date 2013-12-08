@@ -1,153 +1,182 @@
-/*############################################################################
-                                STYLE
-############################################################################*/
+$text-color              : white;
+$text-light-color        : white;
+$hover-color             : white;
+$disabled                : #ccc;
+$machine-width           : 450px;
+$machine-height          : 200px;
+$machine-background-color: #333;
+$toolbar-height          : 20px;
+$background-color        : #333;
+$border-color            : black;
+$inner-shadow-color      : rgba(0,0,0,0.5);
+$inner-light-color       : rgba(255,255,255,0.2);
+$box-light-color         : #0062A8;
+$top-button-color        : #333;
+$bottom-button-color     : #111;
+$active-button-color     : #0062A8;
+$puncher-section-size    : 130px;
 
-html {
-	font-family: "MS Shell Dlg";
-	font-size: 10pt;
+/** Font-Face **/
+@font-face {
+  font-family: "FontAwesome";
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix") format('eot'),
+           url("../fonts/fontawesome-webfont.woff") format('woff'),
+           url("../fonts/fontawesome-webfont.ttf") format('truetype'),
+           url("../fonts/fontawesome-webfont.svg#FontAwesome") format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-body { 
-    @include back();
+body {
+	font-family: sans-serif;
+	font-size: 0.9em;
+	padding-top: 20px;
+	color: $text-color;
+	background: url(../images/micro_carbon.png);	
 }
-#machine { 
-  width: $machine-width; 
-  margin: 50px auto 0;
-  height: $machine-height;
-  text-align: center;
-  border: 1px $border-color solid;
-  border-bottom: 0;
-  border-radius: 10px;
-  @include box-shadow(0px 6px 0px $border-color);
-  background: $box-background-color;
-        
-  @import "puncher.scss";
-  @import "tools.scss";
-    
-  a, a:visited, a:focus { text-decoration: none; color: $disabled-color;}
-  a:hover { @include hover-effect();}
+	
+#machine {
+	width: $machine-width;
+	height: $machine-height;
+	margin: 10px auto 0;
+	@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
+	border-radius: 20px;
+	border: 1px solid $border-color;
+	border-bottom-width: 5px;
+    @include box-shadow(0 0 30px $active-button-color);
+    z-index: 1000;
+	
+	#puncher-container {
+		height: $machine-height * 0.80 - 1px;
+		border-bottom: 1px solid $border-color;
+		font-family: "FontAwesome";
+		      
+		section#puncher-section {
+			background: url(../images/micro_carbon.png);
+			border-radius: 100px; 
+			border: 1px solid $border-color; 
+			height: $puncher-section-size; 
+			width: $puncher-section-size; 
+			@include box-shadow( inset 0px 3px 0px $border-color);
+			margin: auto;
+			position: relative;
+			top: 15px;
+			
+			canvas {margin: 2px 0 0 1px;}
+		}
+	
+		a#puncher-button { 
+			border-radius: 100px;
+			border: none; 
+			font-size: 6em;
+			display: block;
+			width: $puncher-section-size - 30px;
+			height: $puncher-section-size - 30px;
+			margin: 15px auto;
+			
+			&:hover, .checked_in & {
+			    @include text-shadow(0 0 10px $text-light-color);
+			    color: $hover-color;
+			    @include box-shadow(0 0 30px $active-button-color);
+			}
+			span {
+			    display: block;
+			    padding: 15px 19px;
+			}
+		}
+	}
+	
+    #tools-container {
+         
+         li {
+             display: inline-block;
+             border-left: 1px solid $border-color;
+             font-size: 1.2em;
+             
+             a {
+                 width: $machine-width * 0.25 - 1px;
+                 height: $machine-height * 0.20 - 10px;
+                 display: block;
+                 text-align: center;
+                 padding-top: 10px;
+             }
+             
+             &:first-child {
+                 border: none;
+             }
+             &:first-child a {
+                 border-radius: 0 0 0 20px;
+                 width: $machine-width * 0.25;
+             }
+             &:last-child a {
+                 border-radius: 0 0 20px 0;
+             }
+         }
+     }
 }
 
 #content {
-  
-    @import "stats.scss";
-    @import "preferences.scss";
-        
-    width: $content-width - 20px;
-    margin: 3px auto;
-    min-height: 150px;
-    border-radius: 0 0 10px 10px;
-    border: white-shadow(0.1) solid 1px;
-    @include box-shadow(0px 3px 0px white-shadow(0.1));
-    background: white(1);
-    position: relative;
-    z-index: 3;
-    padding: 10px;
-    
-    form {
-        fieldset {
-            border: 1px solid $border-color;
-            border-radius: 5px;
-            padding: 10px;
-            margin-bottom: 10px;
-            
-            legend {
-                padding: 0 5px;
-            }
-        }
-        
-        input { text-align: center; }
-        input[type="submit"], input[type="reset"] { @include button() }
-        input[type="submit"]:hover, input[type="reset"]:hover { @include button-hover-effect();}
-    }
-    
-    #punches {
-        #checks-nav-button {
-            a, a:visited, a:focus { 
-                color: inherit;
-                @include button();
-                float: right;
-                padding: 10px;
-                border-radius: 0 10px 0 0; 
-                border-bottom: none;
-            }
-            a:first-child { 
-                float: left;
-                border-radius: 10px 0 0 0; 
-            }
-            a:hover { @include button-hover-effect(); }
-        }
-        
-        .day {
-            border-radius: 10px 10px 0 0;
-            border: 1px solid $border-color;
-            
-            p.check_date { 
-                @include button();
-                text-align: center; 
-                padding: 10px 0;
-                background: $background-color;
-                border-radius: 10px 10px 0 0;
-                border: none;
-            }
-            
-            .inputs_holder {
-                min-height: 150px;
-                max-height: 420px;
-                overflow-y: scroll;
-                width: 100%;
-            
-                .inputs {
-                    text-align: left;
-                    width: 100%;
-                    
-                    tr:nth-child(odd) {
-                        background-color: $background-color;
-                    }
-                    td {padding: 5px 0;}
-                    td:first-child {padding-left: 10px;}
-                    label {margin-right: 10px;}
-                    label:last-child {margin: 0;}
-                    
-                    a.button { 
-                        text-align: center;
-                        display: block; 
-                        width: 100%; 
-                        cursor: pointer; 
-                        padding: 5px 0;
-                        text-decoration: none;
-                        font-size: 1.3em;
-                    }
-                }
-            }
-        }
-        
-        input[type="submit"], input[type="reset"] {
-            border-radius: 0 0 0 10px;
-            width: 49%;
-            margin: 0;
-        }
-        input[type="submit"] {
-            position: absolute;
-            border-radius: 0 0 10px 0;
-            right: 10px;
-        }
-    }
+	background: url(../images/escheresque_ste.png);
+	width: $machine-width - 60px;
+	margin: auto;
+	padding: 10px;
+	padding-top: 15px;
+	border-radius: 0 0 20px 20px;
+	border: 1px solid $border-color;
+	border-top: none;
+	color: $disabled;
+	
+	@import "stats.scss";
 }
 
-#navigation {
+ul#navigation {
 	position: absolute;
-	top: 0px;
-	text-align: right;
+	bottom: 0;
 	width: 100%;
-	padding: 5px 0;
-	@include my-box-shadow();
-	background: $box-background-color;
-	@include box-shadow(inset 0px -1px 3px $border-color);
+	text-align: right;
 	
 	li {
-		display: inline-block;
+	    display: inline-block;
+	    border-left: $border-color 1px solid;
+           a {
+               padding: 5px 15px;
+               display: block;
+               background: none !important; 
+           }
+    }
+}
+    
+#content a, #puncher-container a, #navigation {
+   @include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
+}
+a, a:focus, a:visited {
+    color: $disabled;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+a:hover, a.active {
+    color: $hover-color;
+    @include text-shadow(0 0 5px $text-light-color);
+    background: $active-button-color !important;
+    @include box-shadow(inset 0 2px 3px $inner-shadow-color, inset 0 -2px 3px $inner-light-color);
+}
+
+.multi-button {
+	padding: 5px 7px;
+	border-top: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+	display: inline-block;
+	z-index: 0;
+	
+	&:first-child {
+	   border-radius: 10px 0 0 10px;
+	   padding-left: 10px;
+	   border-left: 1px solid $border-color;
+	}
+	&:last-child {
+       border-radius: 0 10px 10px 0;
+       border-right: 1px solid $border-color;
 	}
 }
-  
-@import "other-info.scss";
