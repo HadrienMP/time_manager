@@ -72,7 +72,7 @@ article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, 
   font-style: normal;
 }
 
-/* line 31, ../sass/style.scss */
+/* line 39, ../sass/style.scss */
 body {
   font-family: sans-serif;
   font-size: 0.9em;
@@ -81,7 +81,7 @@ body {
   background: url(../images/micro_carbon.png);
 }
 
-/* line 39, ../sass/style.scss */
+/* line 47, ../sass/style.scss */
 #machine, #other-info {
   width: 450px;
   margin: 10px auto 0;
@@ -95,7 +95,7 @@ body {
   border-bottom-width: 5px;
   z-index: 1000;
 }
-/* line 48, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 .checked_in #machine, .checked_in #other-info {
   -webkit-box-shadow: 0 0 30px #0062a8;
   -moz-box-shadow: 0 0 30px #0062a8;
@@ -145,28 +145,33 @@ body {
   border-radius: 0 0 20px 20px;
   font-size: 1.2em;
 }
-/* line 38, ../sass/other-info.scss */
+/* line 37, ../sass/other-info.scss */
+#machine .buttons-bar input[type="submit"], #machine .buttons-bar input[type="reset"], #other-info .buttons-bar input[type="submit"], #other-info .buttons-bar input[type="reset"] {
+  border: none;
+  background: none;
+}
+/* line 43, ../sass/other-info.scss */
 #machine p.message, #other-info p.message {
   margin: 20px;
   text-align: center;
 }
-/* line 42, ../sass/other-info.scss */
+/* line 47, ../sass/other-info.scss */
 #machine p.message a, #other-info p.message a {
   border-radius: 10px;
   padding: 5px 10px;
 }
 
-/* line 55, ../sass/style.scss */
+/* line 63, ../sass/style.scss */
 #machine {
   height: 200px;
 }
-/* line 58, ../sass/style.scss */
+/* line 66, ../sass/style.scss */
 #machine #puncher-container {
   height: 159px;
   border-bottom: 1px solid black;
   font-family: "FontAwesome";
 }
-/* line 63, ../sass/style.scss */
+/* line 71, ../sass/style.scss */
 #machine #puncher-container section#puncher-section {
   background: url(../images/micro_carbon.png);
   border-radius: 100px;
@@ -180,11 +185,11 @@ body {
   position: relative;
   top: 15px;
 }
-/* line 74, ../sass/style.scss */
+/* line 82, ../sass/style.scss */
 #machine #puncher-container section#puncher-section canvas {
   margin: 2px 0 0 1px;
 }
-/* line 77, ../sass/style.scss */
+/* line 85, ../sass/style.scss */
 #machine #puncher-container a#puncher-button {
   border-radius: 100px;
   border: 1px solid black;
@@ -197,7 +202,7 @@ body {
   background: #0062a8;
   text-shadow: #333333 0px 3px 2px, #111111 0px -2px 1px;
 }
-/* line 89, ../sass/style.scss */
+/* line 97, ../sass/style.scss */
 #machine #puncher-container a#puncher-button:hover, .checked_in #machine #puncher-container a#puncher-button {
   text-shadow: 0 0 10px white;
   color: white;
@@ -205,18 +210,18 @@ body {
   -moz-box-shadow: 0 0 30px #0062a8;
   box-shadow: 0 0 30px #0062a8;
 }
-/* line 94, ../sass/style.scss */
+/* line 102, ../sass/style.scss */
 #machine #puncher-container a#puncher-button span {
   display: block;
   padding: 15px 19px;
 }
-/* line 103, ../sass/style.scss */
+/* line 111, ../sass/style.scss */
 #machine #tools-container li {
   display: inline-block;
   border-left: 1px solid black;
   font-size: 1.2em;
 }
-/* line 108, ../sass/style.scss */
+/* line 116, ../sass/style.scss */
 #machine #tools-container li a {
   width: 111.5px;
   height: 30px;
@@ -224,21 +229,21 @@ body {
   text-align: center;
   padding-top: 10px;
 }
-/* line 116, ../sass/style.scss */
+/* line 124, ../sass/style.scss */
 #machine #tools-container li:first-child {
   border: none;
 }
-/* line 119, ../sass/style.scss */
+/* line 127, ../sass/style.scss */
 #machine #tools-container li:first-child a {
   border-radius: 0 0 0 20px;
   width: 112.5px;
 }
-/* line 123, ../sass/style.scss */
+/* line 131, ../sass/style.scss */
 #machine #tools-container li:last-child a {
   border-radius: 0 0 20px 0;
 }
 
-/* line 130, ../sass/style.scss */
+/* line 138, ../sass/style.scss */
 #content {
   background: url(../images/escheresque_ste.png);
   width: 390px;
@@ -277,53 +282,62 @@ body {
   background: linear-gradient(220deg, transparent 26px, #0062a8 20px);
   background-size: 50% 100%;
   background-repeat: no-repeat;
-  padding: 20px;
+  padding: 8px 5px;
+  color: white;
 }
-/* line 11, ../sass/stats.scss */
+/* line 13, ../sass/stats.scss */
 #content .stats thead th p, #content #data thead th p {
   padding: 8px 5px;
   text-align: left;
   float: left;
   color: white;
 }
-/* line 18, ../sass/stats.scss */
+/* line 20, ../sass/stats.scss */
 #content .stats thead th div, #content #data thead th div {
   float: right;
   padding-top: 3px;
 }
-/* line 29, ../sass/stats.scss */
+/* line 26, ../sass/stats.scss */
 #content .stats thead:first-child, #content #data thead:first-child {
   background-size: 90% 100%;
 }
-/* line 33, ../sass/stats.scss */
+/* line 30, ../sass/stats.scss */
 #content .stats thead .multi-button, #content .stats thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content .stats thead a, #content .stats thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content .stats thead a, #content #data thead .multi-button, #content #data thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content #data thead a, #content #data thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content #data thead a {
   margin-top: -2px;
 }
-/* line 38, ../sass/stats.scss */
+/* line 35, ../sass/stats.scss */
 #content .stats tbody tr:first-child td, #content #data tbody tr:first-child td {
   padding-top: 10px;
 }
+/* line 2, ../sass/preferences.scss */
+#content #preferences p.beveled-bg {
+  margin-bottom: 10px;
+}
+/* line 6, ../sass/preferences.scss */
+#content #preferences input {
+  margin-left: 10px;
+  text-align: center;
+  text-indent: 0;
+}
 
-/* line 146, ../sass/style.scss */
+/* line 155, ../sass/style.scss */
 ul#navigation {
-  position: absolute;
-  bottom: 0;
   width: 100%;
   text-align: right;
 }
-/* line 152, ../sass/style.scss */
+/* line 160, ../sass/style.scss */
 ul#navigation li {
   display: inline-block;
   border-left: black 1px solid;
 }
-/* line 155, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 ul#navigation li a {
   padding: 5px 15px;
   display: block;
 }
 
-/* line 162, ../sass/style.scss */
-#content a, #puncher-container a, #navigation, #other-info a {
+/* line 170, ../sass/style.scss */
+#content a, #puncher-container a, #navigation, #other-info a, input[type="submit"], input[type="reset"] {
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #111111));
   background-image: -webkit-linear-gradient(top, #333333, #111111);
   background-image: -moz-linear-gradient(top, #333333, #111111);
@@ -331,26 +345,26 @@ ul#navigation li a {
   background-image: linear-gradient(top, #333333, #111111);
 }
 
-/* line 165, ../sass/style.scss */
+/* line 173, ../sass/style.scss */
 a, a:focus, a:visited, input[type="submit"], input[type="reset"] {
   color: #cccccc;
   text-decoration: none;
   cursor: pointer;
 }
 
-/* line 171, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 input {
   border-radius: 10px;
   text-indent: 5px;
 }
 
-/* line 175, ../sass/style.scss */
+/* line 183, ../sass/style.scss */
 input[type="submit"], input[type="reset"] {
   border: none;
   background: none;
 }
 
-/* line 180, ../sass/style.scss */
+/* line 188, ../sass/style.scss */
 a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   color: white;
   text-shadow: 0 0 10px white;
@@ -360,7 +374,7 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5), inset 0 -2px 3px rgba(255, 255, 255, 0.2);
 }
 
-/* line 187, ../sass/style.scss */
+/* line 195, ../sass/style.scss */
 .multi-button, #machine .form-wrapper .right a, #other-info .form-wrapper .right a {
   padding: 5px 7px;
   border-top: 1px solid black;
@@ -369,13 +383,22 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   z-index: 0;
   border-left: 1px solid black;
 }
-/* line 195, ../sass/style.scss */
+/* line 203, ../sass/style.scss */
 .multi-button:first-child, #machine .form-wrapper .right a:first-child, #other-info .form-wrapper .right a:first-child {
   border-radius: 10px 0 0 10px;
   padding-left: 10px;
 }
-/* line 199, ../sass/style.scss */
+/* line 207, ../sass/style.scss */
 .multi-button:last-child, #machine .form-wrapper .right a:last-child, #other-info .form-wrapper .right a:last-child {
   border-radius: 0 10px 10px 0;
   border-right: 1px solid black;
+}
+
+/* line 213, ../sass/style.scss */
+.beveled-bg {
+  background: linear-gradient(220deg, transparent 26px, #0062a8 20px);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+  padding: 8px 5px;
+  color: white;
 }

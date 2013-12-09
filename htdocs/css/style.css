@@ -1,11 +1,11 @@
 /*
 Syntax error: Undefined mixin 'background-image'.
-        on line 42 of C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss, in `background-image'
-        from line 42 of C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss
+        on line 50 of C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss, in `background-image'
+        from line 50 of C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss
 
 Backtrace:
-C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss:42:in `background-image'
-C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss:42
+C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss:50:in `background-image'
+C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss:50
 C:/Dev/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:251:in `visit_mixin'
 C:/Dev/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.5/lib/sass/tree/visitors/base.rb:37:in `visit'
 C:/Dev/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.2.5/lib/sass/tree/visitors/perform.rb:98:in `visit'
@@ -74,4 +74,4 @@ C:/dev/Ruby193/bin/compass:23:in `<main>'
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Syntax error: Undefined mixin 'background-image'.\A         on line 42 of C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss, in `background-image'\A         from line 42 of C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss"; }
+  content: "Syntax error: Undefined mixin 'background-image'.\A         on line 50 of C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss, in `background-image'\A         from line 50 of C:/BitNami/wampstack-5.4.13-1/apps/time_manager/htdocs/sass/style.scss"; }

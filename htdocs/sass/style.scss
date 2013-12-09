@@ -16,6 +16,14 @@ $bottom-button-color     : #111;
 $active-button-color     : #0062A8;
 $puncher-section-size    : 130px;
 
+@mixin beveled {
+    background:linear-gradient(220deg, transparent 26px, $active-button-color 20px);
+    background-size: 50% 100%;
+    background-repeat:no-repeat;
+    padding: 8px 5px;
+    color: white;
+}
+
 /** Font-Face **/
 @font-face {
   font-family: "FontAwesome";
@@ -141,11 +149,11 @@ body {
     top: -2px;
 	
 	@import "stats.scss";
+	@import "preferences.scss";
 }
 
 ul#navigation {
-	position: absolute;
-	bottom: 0;
+
 	width: 100%;
 	text-align: right;
 	
@@ -159,7 +167,7 @@ ul#navigation {
     }
 }
     
-#content a, #puncher-container a, #navigation, #other-info a {
+#content a, #puncher-container a, #navigation, #other-info a, input[type="submit"], input[type="reset"] {
    @include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
 }
 a, a:focus, a:visited, input[type="submit"], input[type="reset"] {
@@ -200,4 +208,8 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
        border-radius: 0 10px 10px 0;
        border-right: 1px solid $border-color;
     }
+}
+
+.beveled-bg {
+    @include beveled();
 }

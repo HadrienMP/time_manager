@@ -1,0 +1,10 @@
+/* line 2, ../sass/preferences.scss */
+#preferences p.beveled-bg {
+  margin-bottom: 10px;
+}
+/* line 6, ../sass/preferences.scss */
+#preferences input {
+  margin-left: 10px;
+  text-align: center;
+  text-indent: 0;
+}
