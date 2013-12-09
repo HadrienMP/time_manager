@@ -13,12 +13,17 @@ if ($this->config->item('use_username', 'tank_auth')) {
 }
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
-<table>
-	<tr>
-		<td><?php echo form_label($login_label, $login['id']); ?></td>
-		<td><?php echo form_input($login); ?></td>
-		<td style="color: red;"><?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?></td>
-	</tr>
-</table>
-<?php echo form_submit('reset', 'Get a new password'); ?>
-<?php echo form_close(); ?>
+<div class="form-wrapper">
+	<table>
+		<tr>
+			<td><?php echo form_label($login_label, $login['id']); ?></td>
+			<td><?php echo form_input($login); ?></td>
+			<td style="color: red;"><?php echo form_error($login['name']); ?><?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?></td>
+		</tr>
+	</table>
+</div>
+
+<div class="buttons-bar">
+	<?php echo form_submit('reset', $this->lang->line('Get a new password')); ?>
+	<?php echo form_close(); ?>
+</div>

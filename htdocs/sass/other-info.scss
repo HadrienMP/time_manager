@@ -1,7 +1,6 @@
 .form-wrapper {
-	height: $machine-height * 0.75 - 1px - 20px;
-	border-bottom: 1px solid $border-color;
     padding: 0 20px;
+    margin-bottom: 20px;
 	
 	table { 
 	   width: 100%;
@@ -21,6 +20,7 @@
 }
 
 .buttons-bar {
+    border-top: 1px solid $border-color;
 	height: $machine-height * 0.25;
 	width: 100%;
 	
@@ -34,7 +34,7 @@
 }
 
 p.message {
-	padding-top: $machine-height * 0.5 - 10px;
+    margin: 20px;
 	text-align: center;
 	
 	a {

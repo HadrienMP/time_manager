@@ -44,6 +44,7 @@ $lang['Email or login'] = 'Email ou Login';
 $lang['Email'] = 'Email';
 $lang['Login'] = 'Login';
 $lang['Password'] = 'Mot de passe';
+$lang['Get a new password'] = 'Réinitialiser mon mot de passe';
 
 
 /* End of file tank_auth_lang.php */

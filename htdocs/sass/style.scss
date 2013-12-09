@@ -38,7 +38,6 @@ body {
 	
 #machine, #other-info {
 	width: $machine-width;
-	height: $machine-height;
 	margin: 10px auto 0;
 	@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
 	border-radius: 20px;
@@ -51,6 +50,10 @@ body {
     }
 	
 	@import "other-info.scss";
+	
+}
+#machine {
+    height: $machine-height;
 	
 	#puncher-container {
 		height: $machine-height * 0.80 - 1px;

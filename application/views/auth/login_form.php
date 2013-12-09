@@ -101,6 +101,7 @@ $captcha = array(
 		<?php echo anchor('/auth/forgot_password/', $this->lang->line('Forgot password')); ?><!-- whitespace
 	 --><?php if ($this->config->item('allow_registration', 'tank_auth')) echo anchor('/auth/register/', $this->lang->line('Register')); ?>
 	</div>
+	<div style="clear: both;"></div>
 </div>
 <div class="buttons-bar">
 	<?php echo form_submit('submit', $this->lang->line('Let me in')); ?>

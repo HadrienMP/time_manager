@@ -176,7 +176,7 @@ class Auth extends CI_Controller
 						}
 						unset($data['password']); // Clear password (just for any case)
 
-						$this->_show_message($this->lang->line('auth_message_registration_completed_2').' '.anchor('/auth/login/', 'Login'));
+						$this->_show_message($this->lang->line('auth_message_registration_completed_2'), anchor('/auth/login/', 'Login'));
 					}
 				} else {
 					$errors = $this->tank_auth->get_error_message();
@@ -247,7 +247,7 @@ class Auth extends CI_Controller
 		// Activate user
 		if ($this->tank_auth->activate_user($user_id, $new_email_key)) {		// success
 			$this->tank_auth->logout();
-			$this->_show_message($this->lang->line('auth_message_activation_completed').' '.anchor('/auth/login/', 'Login'));
+			$this->_show_message($this->lang->line('auth_message_activation_completed'), anchor('/auth/login/', 'Login'));
 
 		} else {																// fail
 			$this->_show_message($this->lang->line('auth_message_activation_failed'));
@@ -281,7 +281,7 @@ class Auth extends CI_Controller
 					// Send email with password activation link
 					$this->_send_email('forgot_password', $data['email'], $data);
 
-					$this->_show_message($this->lang->line('auth_message_new_password_sent'));
+					$this->_show_message($this->lang->line('auth_message_new_password_sent'), anchor('/auth/login/', 'Login'));
 
 				} else {
 					$errors = $this->tank_auth->get_error_message();
@@ -319,7 +319,7 @@ class Auth extends CI_Controller
 				// Send email with new password
 				$this->_send_email('reset_password', $data['email'], $data);
 
-				$this->_show_message($this->lang->line('auth_message_new_password_activated').' '.anchor('/auth/login/', 'Login'));
+				$this->_show_message($this->lang->line('auth_message_new_password_activated'), anchor('/auth/login/', 'Login'));
 
 			} else {														// fail
 				$this->_show_message($this->lang->line('auth_message_new_password_failed'));
@@ -421,7 +421,7 @@ class Auth extends CI_Controller
 		// Reset email
 		if ($this->tank_auth->activate_new_email($user_id, $new_email_key)) {	// success
 			$this->tank_auth->logout();
-			$this->_show_message($this->lang->line('auth_message_new_email_activated').' '.anchor('/auth/login/', 'Login'));
+			$this->_show_message($this->lang->line('auth_message_new_email_activated'), anchor('/auth/login/', 'Login'));
 
 		} else {																// fail
 			$this->_show_message($this->lang->line('auth_message_new_email_failed'));
@@ -463,9 +463,10 @@ class Auth extends CI_Controller
 	 * @param	string
 	 * @return	void
 	 */
-	function _show_message($message)
+	function _show_message($message, $button = NULL)
 	{
 		$this->session->set_flashdata('message', $message);
+		$this->session->set_flashdata('button', $button);
 		redirect('/auth/');
 	}
 
