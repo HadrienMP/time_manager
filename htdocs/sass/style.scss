@@ -83,6 +83,7 @@ body {
 			height: $puncher-section-size - 30px;
 			margin: 15px auto;
 			color: #888;
+            background: $active-button-color;
             @include text-shadow($top-button-color 0px 3px 2px, $bottom-button-color 0px -2px 1px ); 
 			
 			&:hover, .checked_in & {
@@ -136,6 +137,8 @@ body {
 	border: 1px solid $border-color;
 	border-top: none;
 	color: $disabled;
+    position: relative;
+    top: -2px;
 	
 	@import "stats.scss";
 }
