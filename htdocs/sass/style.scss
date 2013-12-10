@@ -18,7 +18,7 @@ $puncher-section-size    : 130px;
 
 @mixin beveled {
     background:linear-gradient(220deg, transparent 26px, $active-button-color 20px);
-    background-size: 50% 100%;
+    background-size: 90% 100%;
     background-repeat:no-repeat;
     padding: 8px 5px;
     color: white;
@@ -46,7 +46,7 @@ body {
 	
 #machine, #other-info {
 	width: $machine-width;
-	margin: 10px auto 0;
+	margin: 20px auto 0;
 	@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
 	border-radius: 20px;
 	border: 1px solid $border-color;
@@ -91,10 +91,10 @@ body {
 			height: $puncher-section-size - 30px;
 			margin: 15px auto;
 			color: #888;
-            background: $active-button-color;
             @include text-shadow($top-button-color 0px 3px 2px, $bottom-button-color 0px -2px 1px ); 
 			
 			&:hover, .checked_in & {
+                background: $active-button-color;
 			    @include text-shadow(0 0 10px $text-light-color);
 			    color: $hover-color;
 			    @include box-shadow(0 0 30px $active-button-color);
@@ -138,7 +138,8 @@ body {
 #content {
 	background: url(../images/escheresque_ste.png);
 	width: $machine-width - 60px;
-	margin: auto;
+	min-height: 200px;
+	margin: 0 auto 20px;
 	padding: 10px;
 	padding-top: 15px;
 	border-radius: 0 0 20px 20px;
@@ -150,10 +151,13 @@ body {
 	
 	@import "stats.scss";
 	@import "preferences.scss";
+    @import "punches.scss";
 }
 
 ul#navigation {
 
+	position: absolute;
+	top: 0px;
 	width: 100%;
 	text-align: right;
 	
@@ -168,7 +172,8 @@ ul#navigation {
 }
     
 #content a, #puncher-container a, #navigation, #other-info a, input[type="submit"], input[type="reset"] {
-   @include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
+    @include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
+    border: 1px solid $border-color;
 }
 a, a:focus, a:visited, input[type="submit"], input[type="reset"] {
     color: $disabled;
@@ -178,11 +183,11 @@ a, a:focus, a:visited, input[type="submit"], input[type="reset"] {
 
 input {
     border-radius: 10px;
-    text-indent: 5px;
+    text-align: center;
 }
+
 input[type="submit"], input[type="reset"] {
-    border: none;
-    background: none;
+	padding: 7px 9px;
 }
 
 a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
@@ -194,11 +199,9 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 
 .multi-button {
     padding: 5px 7px;
-    border-top: 1px solid $border-color;
-    border-bottom: 1px solid $border-color;
+    border-right: none !important;
     display: inline-block;
     z-index: 0;
-    border-left: 1px solid $border-color;
     
     &:first-child {
        border-radius: 10px 0 0 10px;

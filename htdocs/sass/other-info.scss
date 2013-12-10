@@ -8,7 +8,14 @@
 	   
 	   input {width: 100%;}
        
-       td {padding: 2px 0;}
+       td {
+            padding: 2px 0;
+            
+            input {
+                text-indent: 5px;
+                text-align: left;
+            }
+       }
     }
 	.left { float: left; }
 	.right {

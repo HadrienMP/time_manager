@@ -1,0 +1,23 @@
+#punches {
+	
+	#checks-nav-button {
+	   a#previous {float: left;}
+	   a#next {float: right;}
+	}
+	
+	.check_date {text-align: center;}
+	
+	table.inputs {
+	   width: 100%;
+	   
+	   td {
+	       padding: 5px;
+	   }
+	   td a.button.add {
+	       padding: 5px 0;
+	       width: 100%;
+	       display: block;
+	       text-align: center;
+	   }
+   }
+}

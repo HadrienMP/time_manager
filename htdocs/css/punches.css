@@ -1,0 +1,27 @@
+/* line 4, ../sass/punches.scss */
+#punches #checks-nav-button a#previous {
+  float: left;
+}
+/* line 5, ../sass/punches.scss */
+#punches #checks-nav-button a#next {
+  float: right;
+}
+/* line 8, ../sass/punches.scss */
+#punches .check_date {
+  text-align: center;
+}
+/* line 10, ../sass/punches.scss */
+#punches table.inputs {
+  width: 100%;
+}
+/* line 13, ../sass/punches.scss */
+#punches table.inputs td {
+  padding: 5px;
+}
+/* line 16, ../sass/punches.scss */
+#punches table.inputs td a.button.add {
+  padding: 5px 0;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
