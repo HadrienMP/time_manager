@@ -46,7 +46,7 @@ body {
 	
 #machine, #other-info {
 	width: $machine-width;
-	margin: 20px auto 0;
+	margin: 30px auto 0;
 	@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
 	border-radius: 20px;
 	border: 1px solid $border-color;

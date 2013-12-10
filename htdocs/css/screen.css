@@ -84,7 +84,7 @@ body {
 /* line 47, ../sass/style.scss */
 #machine, #other-info {
   width: 450px;
-  margin: 20px auto 0;
+  margin: 30px auto 0;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #111111));
   background-image: -webkit-linear-gradient(top, #333333, #111111);
   background-image: -moz-linear-gradient(top, #333333, #111111);
@@ -334,29 +334,74 @@ body {
 /* line 4, ../sass/punches.scss */
 #content #punches #checks-nav-button a#previous {
   float: left;
-}
-/* line 5, ../sass/punches.scss */
-#content #punches #checks-nav-button a#next {
-  float: right;
+  border-radius: 10px 0 0 0;
 }
 /* line 8, ../sass/punches.scss */
+#content #punches #checks-nav-button a#next {
+  float: right;
+  border-radius: 0 10px 0 0;
+}
+/* line 12, ../sass/punches.scss */
+#content #punches #checks-nav-button a {
+  padding: 10px;
+}
+/* line 15, ../sass/punches.scss */
 #content #punches .check_date {
   text-align: center;
+  padding: 10px 0;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #111111));
+  background-image: -webkit-linear-gradient(top, #333333, #111111);
+  background-image: -moz-linear-gradient(top, #333333, #111111);
+  background-image: -o-linear-gradient(top, #333333, #111111);
+  background-image: linear-gradient(top, #333333, #111111);
+  color: white;
+  border: 1px solid black;
+  border-radius: 10px 10px 0 0;
 }
-/* line 10, ../sass/punches.scss */
+/* line 24, ../sass/punches.scss */
 #content #punches table.inputs {
   width: 100%;
+  border: 1px solid black;
+  border-top: none;
+  border-bottom: none;
 }
-/* line 13, ../sass/punches.scss */
+/* line 30, ../sass/punches.scss */
+#content #punches table.inputs tr:nth-child(2n - 1) {
+  background: #111111;
+}
+/* line 34, ../sass/punches.scss */
+#content #punches table.inputs tr:hover {
+  background: #0062a8;
+}
+/* line 38, ../sass/punches.scss */
 #content #punches table.inputs td {
   padding: 5px;
 }
-/* line 16, ../sass/punches.scss */
+/* line 41, ../sass/punches.scss */
+#content #punches table.inputs td input {
+  margin-left: 10px;
+}
+/* line 45, ../sass/punches.scss */
 #content #punches table.inputs td a.button.add {
   padding: 5px 0;
   width: 100%;
   display: block;
   text-align: center;
+  border-width: 1px 0 1px 0;
+  background: none;
+}
+/* line 55, ../sass/punches.scss */
+#content #punches input[type="submit"], #content #punches input[type="reset"] {
+  margin: 0;
+  width: 50%;
+  float: left;
+  border-radius: 0 0 10px 0;
+  border-left: 0;
+}
+/* line 62, ../sass/punches.scss */
+#content #punches input[type="reset"] {
+  border-left: 1px solid black;
+  border-radius: 0 0 0 10px;
 }
 
 /* line 157, ../sass/style.scss */
