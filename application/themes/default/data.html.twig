@@ -2,29 +2,8 @@
 
 {% block head %}
   	<link rel="stylesheet" href="/css/dark-hive/jquery-ui.min.css">
-  	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-  	<script type="text/javascript" src="/js/jqplot/jquery.jqplot.min.js"></script>
-	<script type="text/javascript" src="/js/jqplot/jqplot.canvasTextRenderer.min.js"></script>
-	<script type="text/javascript" src="/js/jqplot/jqplot.canvasAxisLabelRenderer.min.js"></script>
-	<script type="text/javascript" src="/js/jqplot/jqplot.dateAxisRenderer.min.js"></script>
-	<link rel="stylesheet" type="text/css" hrf="/css/jqplot/jquery.jqplot.min.css" />
-	
+  	<script type="text/javascript" src="/js/jquery-ui.min.js"></script>	
   	<script type="text/javascript" src="/js/data.js"></script>
-	
-	<script type="text/javascript">
-		$(document).ready(function(){
-		  var line1 = {{ data_info.overtime }};    
-		  var plot1 = $.jqplot('chart1', [line1], {
-		    title:'Default Date Axis',
-		    axes:{
-		        xaxis:{
-		            renderer:$.jqplot.DateAxisRenderer
-		        }
-		    },
-		    series:[{lineWidth:4, markerOptions:{style:'square'}}]
-		  });
-		});
-	</script>
 {% endblock %}
 
 {% block content %}
@@ -40,7 +19,6 @@
 </table>
 
 <a href="/export" target="blank" id="export" class="button">Exporter les pointages du mois</a>
-<div id="chart1"></div>
 
 <div id="dialog-confirm" title="Vidage des pointages">
 	<p>
