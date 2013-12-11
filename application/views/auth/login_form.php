@@ -86,7 +86,7 @@ $captcha = array(
 			</td>
 		</tr>
 		<tr>
-			<td><?php echo form_label('Confirmation Code', $captcha['id']); ?></td>
+			<td><?php echo form_label($this->lang->line('Confirmation Code'), $captcha['id']); ?></td>
 			<td><?php echo form_input($captcha); ?></td>
 			<td style="color: red;"><?php echo form_error($captcha['name']); ?></td>
 		</tr>

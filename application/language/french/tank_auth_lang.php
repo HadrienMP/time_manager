@@ -42,9 +42,21 @@ $lang['Register'] = 'S\'inscrire';
 $lang['Let me in'] = 'Connexion';
 $lang['Email or login'] = 'Email ou Login';
 $lang['Email'] = 'Email';
+$lang['Username'] = 'Nom d\'utilisateur';
 $lang['Login'] = 'Login';
 $lang['Password'] = 'Mot de passe';
+$lang['Confirm Password'] = 'Mot de passe';
+$lang['Confirmation Code'] = 'Captcha';
+$lang['Old Password'] = 'Ancien mot de passe';
+$lang['New Password'] = 'Nouveau mot de passe';
+$lang['Confirm new Password'] = 'Nouveau mot de passe';
 $lang['Get a new password'] = 'Réinitialiser mon mot de passe';
+$lang['Connexion'] = 'Connexion';
+$lang['Change Password'] = 'Modifier mon mot de passe';
+$lang['Send'] = 'Envoyer';
+$lang['Delete account'] = 'Supprimmer mon compte';
+$lang['New email address'] = 'Nouvelle adresse email';
+$lang['Send confirmation email'] = 'Envoyer l\'email de confirmation';
 
 
 /* End of file tank_auth_lang.php */

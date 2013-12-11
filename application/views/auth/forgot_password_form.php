@@ -7,9 +7,9 @@ $login = array(
 	'size'	=> 30,
 );
 if ($this->config->item('use_username', 'tank_auth')) {
-	$login_label = 'Email or login';
+	$login_label = $this->lang->line('Email or login');
 } else {
-	$login_label = 'Email';
+	$login_label = $this->lang->line('Email');
 }
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>

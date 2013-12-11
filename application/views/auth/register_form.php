@@ -43,7 +43,7 @@ $captcha = array(
         <td class="error" colspan="2"><?php echo form_error($username['name']); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?></td>
     </tr>
 	<tr>
-		<td><?php echo form_label('Username', $username['id']); ?></td>
+		<td><?php echo form_label($this->lang->line('Username'), $username['id']); ?></td>
 		<td><?php echo form_input($username); ?></td>
 	</tr>
 	<?php } ?>
@@ -51,21 +51,21 @@ $captcha = array(
 		<td class="error" colspan="2"><?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?></td>
 	</tr>
     <tr>
-		<td><?php echo form_label('Email Address', $email['id']); ?></td>
+		<td><?php echo form_label($this->lang->line('Email'), $email['id']); ?></td>
 		<td><?php echo form_input($email); ?></td>
 	</tr>
 	<tr>
 		<td class="error" colspan="2"><?php echo form_error($password['name']); ?></td>
 	</tr>
 	<tr>
-		<td><?php echo form_label('Password', $password['id']); ?></td>
+		<td><?php echo form_label($this->lang->line('Password'), $password['id']); ?></td>
 		<td><?php echo form_password($password); ?></td>
 	</tr>
 	<tr>
 		<td class="error" colspan="2"><?php echo form_error($confirm_password['name']); ?></td>
 	</tr>
 	<tr>
-		<td><?php echo form_label('Confirm Password', $confirm_password['id']); ?></td>
+		<td><?php echo form_label($this->lang->line('Confirm Password'), $confirm_password['id']); ?></td>
 		<td><?php echo form_password($confirm_password); ?></td>
 	</tr>
 
@@ -113,7 +113,7 @@ $captcha = array(
 		<td class="error" colspan="2"><?php echo form_error($captcha['name']); ?></td>
 	</tr>
 	<tr>
-		<td><?php echo form_label('Confirmation Code', $captcha['id']); ?></td>
+		<td><?php echo form_label($this->lang->line('Confirmation Code'), $captcha['id']); ?></td>
 		<td><?php echo form_input($captcha); ?></td>
 	</tr>
 	<?php }
@@ -121,6 +121,6 @@ $captcha = array(
 </table>
 </div>
 <div class="buttons-bar">
-	<?php echo form_submit('register', 'Register'); ?>
+	<?php echo form_submit('register', $this->lang->line('Register')); ?>
 </div>
 <?php echo form_close(); ?>
