@@ -216,3 +216,7 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 .beveled-bg {
     @include beveled();
 }
+
+.charts-tooltip {
+    color: black;	
+}

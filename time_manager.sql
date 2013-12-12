@@ -110,12 +110,12 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
     CREATE  TABLE IF NOT EXISTS `time_manager`.`overtime` (
             `id` INT NOT NULL AUTO_INCREMENT ,
             `amount` INT NULL DEFAULT 0 ,
-            `users_id` INT(11) NOT NULL ,
+            `user_id` INT(11) NOT NULL ,
 			`date` DATE NOT NULL ,
             PRIMARY KEY (`id`) ,
-            INDEX `fk_overtime_users_idx` (`users_id` ASC) ,
+            INDEX `fk_overtime_user_idx` (`user_id` ASC) ,
             CONSTRAINT `fk_overtime_users`
-            FOREIGN KEY (`users_id` )
+            FOREIGN KEY (`user_id` )
             REFERENCES `time_manager`.`users` (`id` )
             ON DELETE NO ACTION
             ON UPDATE NO ACTION)

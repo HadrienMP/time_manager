@@ -486,3 +486,8 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   padding: 8px 5px;
   color: white;
 }
+
+/* line 220, ../sass/style.scss */
+.charts-tooltip {
+  color: black;
+}

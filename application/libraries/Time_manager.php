@@ -16,6 +16,7 @@ class Time_manager
         $this->ci =& get_instance();
         $this->ci->load->database();
         $this->ci->load->model('time_manager/checks');
+        $this->ci->load->model('time_manager/overtime');
         $this->ci->load->model('time_manager/parameters');
         $this->ci->load->helper('time_manager_helper');
     }
@@ -58,7 +59,7 @@ class Time_manager
         $stats['time_left'] = duration_to_string($stats['time_left_t']);
         $stats['end_time'] = calculate_end_time($stats['time_left_t']);
         
-        // Overtime stats
+        // Period stats
         foreach (array_keys($time_spent) as $period) {
 	        $stats['periods'][$period]['total_time_spent_t'] = $time_spent[$period];
 	        $stats['periods'][$period]['total_time_spent'] = duration_to_string($stats['periods'][$period]['total_time_spent_t']);
@@ -66,6 +67,9 @@ class Time_manager
 	        $stats['periods'][$period]['overtime_t'] = calculate_overtime($stats['periods'][$period]['total_time_spent_t'], $working_time, $stats['periods'][$period]['days_worked']);
 	        $stats['periods'][$period]['overtime'] = duration_to_string($stats['periods'][$period]['overtime_t'], $working_time);
         }
+        
+        // Overtime evolution
+        $stats['overtime_evolution'] = overtime_to_array($this->ci->overtime->get_overtime($user_id), $working_time);
         
         return $stats;
     }
@@ -125,8 +129,7 @@ class Time_manager
     	
     	return array(
     			'number_of_checks' => $this->ci->checks->count_checks($user_id),
-    			'percent_month' => (int) ( $diff *100 / $total),
-    			'overtime' => '[["'.date('Y-m-d H:i:s', strtotime('-1 month')).'",0],["'.date('Y-m-d H:i:s', strtotime('today')).'",3.5]]'
+    			'percent_month' => (int) ( $diff *100 / $total)
     	);
     }
 }

@@ -45,7 +45,7 @@ function duration_to_preferences($duration) {
 
 /**
  * Transforms a duration (number of seconds) into a well formated time string
- * @param unknown $timestamp the duration to convert
+ * @param number $timestamp the duration to convert
  * @param number $working_time optional the time to be worked for a day, 
  * used to calculate the time string in work days
  * @return string
@@ -76,6 +76,16 @@ function duration_to_string($timestamp, $working_time = NULL) {
     $seconds = str_pad($seconds - $minutes * 60 , 2, "0", STR_PAD_LEFT);
     $minutes = str_pad($minutes - $hours * 60, 2, "0", STR_PAD_LEFT);
     return $prefix.$days.$hours.':'.$minutes.':'.$seconds;
+}
+
+/**
+ * Transforms a duration into a float representing workdays
+ * @param number $timestamp the duration to convert
+ * @param number $working_time the time to be worked for a day, 
+ * used to calculate the time string in work days
+ */
+function duration_to_days($timestamp, $working_time) {
+	return ((int) ($timestamp*100 / $working_time*100)) / 100;
 }
 
 function mysql_to_php_date($date) {
@@ -401,4 +411,21 @@ function calculate_time_left($time_spent, $working_time) {
  */
 function calculate_end_time($time_left) {
     return date("H:i:s", time() + $time_left);
+}
+
+/**
+ * Transforms the DB retrieved overtime to a google chart readable array
+ * @param array $db_overtime
+ * @param number $working_time
+ */
+function overtime_to_array($db_overtime, $working_time) {
+	$overtime = NULL;
+	if (isset($db_overtime) && count($db_overtime) > 0) {
+		$overtime = array(array("Date", "Heures supplémentaires"));
+		
+		foreach($db_overtime as $row) {
+			$overtime[] = array(date('m-y', strtotime($row['date'])), duration_to_days($row['amount'], $working_time) );	
+		}
+	}
+	return $overtime;
 }
