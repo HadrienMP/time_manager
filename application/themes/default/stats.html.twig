@@ -17,7 +17,11 @@
 
         var options = {
           title: 'Company Performance',
-          backgroundColor: { fill:'transparent' }
+          backgroundColor: { fill:'transparent' },
+          hAxis: {textStyle: {color: '#FFF'}, baselineColor: '#FFF'},
+          vAxis: {textStyle: {color: '#FFF'}},
+          legend: {textStyle: {color: '#FFF'}},
+          titleTextStyle: {color: '#FFF'}
         };
 
         var chart = new google.visualization.LineChart(document.getElementById('chart_div'));
