@@ -1,8 +1,3 @@
-#navigation {
-	li {
-	   float: right;
-	}
-}
 
 #tools li {float: left;}
 
@@ -12,4 +7,19 @@
 	position: relative;
 	top: 30px;
 	margin-top: 0px !important;
+}
+
+#navigation {
+    background: orange;
+   
+    .left { 
+        float: left;
+        padding: 10px 15px;
+        color: white !important;
+    }
+    li {
+        float: right;
+        
+        a { color: white !important; }
+    }
 }
