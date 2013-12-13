@@ -13,10 +13,12 @@ $inner-light-color       : rgba(255,255,255,0.2);
 $box-light-color         : #0062A8;
 $top-button-color        : #333;
 $bottom-button-color     : #111;
+$button-color            : #222;
 $active-button-color     : #0062A8;
 $puncher-section-size    : 130px;
 
 @mixin beveled {
+	background-color: $active-button-color;
     background:linear-gradient(220deg, transparent 26px, $active-button-color 20px);
     background-size: 90% 100%;
     background-repeat:no-repeat;
@@ -46,7 +48,8 @@ body {
 	
 #machine, #other-info {
 	width: $machine-width;
-	margin: 30px auto 0;
+	margin: 35px auto 0;
+	background: $button-color;
 	@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
 	border-radius: 20px;
 	border: 1px solid $border-color;
@@ -144,6 +147,7 @@ body {
 	padding-top: 15px;
 	border-radius: 0 0 20px 20px;
 	border: 1px solid $border-color;
+	border-bottom-width: 3px;
 	border-top: none;
 	color: $disabled;
     position: relative;
@@ -160,18 +164,20 @@ ul#navigation {
 	top: 0px;
 	width: 100%;
 	text-align: right;
+	border-bottom: 2px solid $border-color;
 	
 	li {
 	    display: inline-block;
 	    border-left: $border-color 1px solid;
            a {
-               padding: 5px 15px;
+               padding: 10px 15px;
                display: block;
            }
     }
 }
     
 #content a, #puncher-container a, #navigation, #other-info a, input[type="submit"], input[type="reset"] {
+    background: $button-color;
     @include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
     border: 1px solid $border-color;
 }

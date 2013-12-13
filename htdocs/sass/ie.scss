@@ -1,0 +1,15 @@
+#navigation {
+	li {
+	   float: right;
+	}
+}
+
+#tools li {float: left;}
+
+#machine, #other-info {margin-top: 50px;}
+
+#puncher-button {
+	position: relative;
+	top: 30px;
+	margin-top: 0px !important;
+}

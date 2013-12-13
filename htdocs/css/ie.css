@@ -1,0 +1,21 @@
+/* line 2, ../sass/ie.scss */
+#navigation li {
+  float: right;
+}
+
+/* line 7, ../sass/ie.scss */
+#tools li {
+  float: left;
+}
+
+/* line 9, ../sass/ie.scss */
+#machine, #other-info {
+  margin-top: 50px;
+}
+
+/* line 11, ../sass/ie.scss */
+#puncher-button {
+  position: relative;
+  top: 30px;
+  margin-top: 0px !important;
+}

@@ -1,7 +1,7 @@
 $(function() { 
 
 	$("#progressbar").progressbar({
-		value : parseInt($(".progress-label").text()),
+		value : parseInt($(".progress-label").text())
 	});
 	
     $( "#dialog-confirm" ).dialog({
