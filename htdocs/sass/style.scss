@@ -1,30 +1,4 @@
-$text-color              : white;
-$text-light-color        : white;
-$hover-color             : white;
-$disabled                : #ccc;
-$machine-width           : 450px;
-$machine-height          : 200px;
-$machine-background-color: #333;
-$toolbar-height          : 20px;
-$background-color        : #333;
-$border-color            : black;
-$inner-shadow-color      : rgba(0,0,0,0.5);
-$inner-light-color       : rgba(255,255,255,0.2);
-$box-light-color         : #0062A8;
-$top-button-color        : #333;
-$bottom-button-color     : #111;
-$button-color            : #222;
-$active-button-color     : #0062A8;
-$puncher-section-size    : 130px;
-
-@mixin beveled {
-	background-color: $active-button-color;
-    background:linear-gradient(220deg, transparent 26px, $active-button-color 20px);
-    background-size: 90% 100%;
-    background-repeat:no-repeat;
-    padding: 8px 5px;
-    color: white;
-}
+@import "variables.scss";
 
 /** Font-Face **/
 @font-face {
@@ -57,7 +31,7 @@ body {
     z-index: 1000;
     
     .checked_in & {
-        @include box-shadow(0 0 30px $active-button-color);
+        @include box-shadow(0 0 30px #1D7FC4);
     }
 	
 	@import "other-info.scss";
@@ -100,7 +74,7 @@ body {
                 background: $active-button-color;
 			    @include text-shadow(0 0 10px $text-light-color);
 			    color: $hover-color;
-			    @include box-shadow(0 0 30px $active-button-color);
+			    @include box-shadow(0 0 30px #1D7FC4);
 			}
 			span {
 			    display: block;
@@ -156,6 +130,7 @@ body {
 	@import "stats.scss";
 	@import "preferences.scss";
     @import "punches.scss";
+    @import "data.scss";
 }
 
 ul#navigation {
@@ -225,4 +200,8 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 
 .charts-tooltip {
     color: black;	
+}
+
+strong {
+	font-weight: bold;
 }
