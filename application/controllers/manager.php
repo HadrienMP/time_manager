@@ -275,4 +275,9 @@ class Manager extends CI_Controller {
 	        array_to_csv($data, $name);
         }
     }
+    
+    public function account() {
+        $this->_pre_action(__FUNCTION__);
+        $this->twiggy->template('account')->display();
+    }
 }
