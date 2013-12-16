@@ -58,6 +58,7 @@ class Time_manager
         $stats['time_left_t'] = calculate_time_left($stats['time_spent_t'], $working_time);
         $stats['time_left'] = duration_to_string($stats['time_left_t']);
         $stats['end_time'] = calculate_end_time($stats['time_left_t']);
+        $stats['ratio'] = $stats['time_spent_t'] / $working_time;
         
         // Period stats
         foreach (array_keys($time_spent) as $period) {
