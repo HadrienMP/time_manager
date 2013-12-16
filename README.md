@@ -15,7 +15,9 @@ Grâce à une série de check in et check out, time_manager calcule plusieurs in
 * Le nombre d'heures supplémentaires :
  * Aujourd'hui
  * Cette semaine
- * Ce mois 
+ * Ce mois
+
+
 Export
 ------
 
