@@ -78,7 +78,7 @@ class Time_manager
         $stats['periods']['all']['overtime'] = duration_to_string($stats['periods']['all']['overtime_t'], $working_time);
         $stats['periods']['all']['time_spent_t'] += $overtime[count($overtime) -1]['amount'];
         $stats['periods']['all']['time_spent'] = duration_to_string($stats['periods']['all']['time_spent_t'], $working_time);
-        $stats['periods']['all']['end_time'] = calculate_end_time($stats['periods'][$period]['overtime_t']);
+        $stats['periods']['all']['end_time'] = calculate_end_time($stats['periods']['all']['overtime_t']);
         
         // Overtime evolution
         $stats['overtime_evolution'] = overtime_to_chart_array($overtime, $working_time);
