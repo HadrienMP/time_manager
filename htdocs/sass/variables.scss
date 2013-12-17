@@ -20,7 +20,7 @@ $puncher-section-size    : 130px;
 @mixin beveled {
     background-color: $active-button-color;
     background:linear-gradient(210deg, transparent 30px, $active-button-color 20px);
-    background-size: 90% 100%;
+    background-size: 95% 100%;
     background-repeat:no-repeat;
     padding: 8px 5px;
     color: white;

@@ -293,7 +293,7 @@ body {
 #content .stats thead, #content #data-table thead {
   background-color: #0062a8;
   background: linear-gradient(210deg, transparent 30px, #0062a8 20px);
-  background-size: 90% 100%;
+  background-size: 95% 100%;
   background-repeat: no-repeat;
   padding: 8px 5px;
   color: white;
@@ -312,7 +312,7 @@ body {
 }
 /* line 26, ../sass/stats.scss */
 #content .stats thead.small-bg, #content #data-table thead.small-bg {
-  background-size: 50% 100%;
+  background-size: 45% 100%;
 }
 /* line 30, ../sass/stats.scss */
 #content .stats thead .multi-button, #content .stats thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content .stats thead a, #content .stats thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content .stats thead a, #content #data-table thead .multi-button, #content #data-table thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content #data-table thead a, #content #data-table thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content #data-table thead a {
@@ -521,7 +521,7 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 .beveled-bg {
   background-color: #0062a8;
   background: linear-gradient(210deg, transparent 30px, #0062a8 20px);
-  background-size: 90% 100%;
+  background-size: 95% 100%;
   background-repeat: no-repeat;
   padding: 8px 5px;
   color: white;
