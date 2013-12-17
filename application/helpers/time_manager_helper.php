@@ -85,7 +85,7 @@ function duration_to_string($timestamp, $working_time = NULL) {
  * used to calculate the time string in work days
  */
 function duration_to_days($timestamp, $working_time) {
-	return ((int) ($timestamp*100 / $working_time*100)) / 100;
+	return ((int) ($timestamp*100 / $working_time)) / 100;
 }
 
 function mysql_to_php_date($date) {
@@ -424,7 +424,9 @@ function overtime_to_array($db_overtime, $working_time) {
 		$overtime = array(array("Date", "Heures supplémentaires"));
 		
 		foreach($db_overtime as $row) {
-			$overtime[] = array(date('m-y', strtotime($row['date'])), duration_to_days($row['amount'], $working_time) );	
+            log_message('debug', $row['amount']);
+            log_message('debug', $working_time);
+			$overtime[] = array(date('m-Y', strtotime($row['date'])), duration_to_days($row['amount'], $working_time) );	
 		}
 	}
 	return $overtime;
