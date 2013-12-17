@@ -62,11 +62,12 @@ class Time_manager
         
         // Period stats
         foreach (array_keys($time_spent) as $period) {
-	        $stats['periods'][$period]['total_time_spent_t'] = $time_spent[$period];
-	        $stats['periods'][$period]['total_time_spent'] = duration_to_string($stats['periods'][$period]['total_time_spent_t']);
+	        $stats['periods'][$period]['time_spent_t'] = $time_spent[$period];
+	        $stats['periods'][$period]['time_spent'] = duration_to_string($stats['periods'][$period]['time_spent_t'], $working_time);
 	        $stats['periods'][$period]['days_worked'] = $days[$period];
-	        $stats['periods'][$period]['overtime_t'] = calculate_overtime($stats['periods'][$period]['total_time_spent_t'], $working_time, $stats['periods'][$period]['days_worked']);
+	        $stats['periods'][$period]['overtime_t'] = calculate_overtime($stats['periods'][$period]['time_spent_t'], $working_time, $stats['periods'][$period]['days_worked']);
 	        $stats['periods'][$period]['overtime'] = duration_to_string($stats['periods'][$period]['overtime_t'], $working_time);
+            $stats['periods'][$period]['end_time'] = calculate_end_time($stats['periods'][$period]['overtime_t']);
         }
         
         // Adds an "all" period that includes overtime for the previous months
@@ -75,6 +76,9 @@ class Time_manager
         $stats['periods']['all'] = $stats['periods']['month'];
         $stats['periods']['all']['overtime_t'] += $overtime[count($overtime) -1]['amount'];
         $stats['periods']['all']['overtime'] = duration_to_string($stats['periods']['all']['overtime_t'], $working_time);
+        $stats['periods']['all']['time_spent_t'] += $overtime[count($overtime) -1]['amount'];
+        $stats['periods']['all']['time_spent'] = duration_to_string($stats['periods']['all']['time_spent_t'], $working_time);
+        $stats['periods']['all']['end_time'] = calculate_end_time($stats['periods'][$period]['overtime_t']);
         
         // Overtime evolution
         $stats['overtime_evolution'] = overtime_to_chart_array($overtime, $working_time);
