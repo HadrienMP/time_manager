@@ -69,8 +69,15 @@ class Time_manager
 	        $stats['periods'][$period]['overtime'] = duration_to_string($stats['periods'][$period]['overtime_t'], $working_time);
         }
         
+        // Adds an "all" period that includes overtime for the previous months
+        $overtime = $this->ci->overtime->get_overtime($user_id);
+        
+        $stats['periods']['all'] = $stats['periods']['month'];
+        $stats['periods']['all']['overtime_t'] += $overtime[count($overtime) -1]['amount'];
+        $stats['periods']['all']['overtime'] = duration_to_string($stats['periods']['all']['overtime_t'], $working_time);
+        
         // Overtime evolution
-        $stats['overtime_evolution'] = overtime_to_array($this->ci->overtime->get_overtime($user_id), $working_time);
+        $stats['overtime_evolution'] = overtime_to_chart_array($overtime, $working_time);
         
         return $stats;
     }

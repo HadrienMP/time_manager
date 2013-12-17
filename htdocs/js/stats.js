@@ -6,5 +6,6 @@ $(function() {
 		$('tbody.period').eq($(this).index()).show();
 	});
 	
-	$('tbody.day, tbody.week').hide();
+	$('tbody.period').hide();
+    $('tbody.period.all').show();
 });

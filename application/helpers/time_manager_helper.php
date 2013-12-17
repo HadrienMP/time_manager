@@ -418,7 +418,7 @@ function calculate_end_time($time_left) {
  * @param array $db_overtime
  * @param number $working_time
  */
-function overtime_to_array($db_overtime, $working_time) {
+function overtime_to_chart_array($db_overtime, $working_time) {
 	$overtime = NULL;
 	if (isset($db_overtime) && count($db_overtime) > 0) {
 		$overtime = array(array("Date", "Heures supplémentaires"));
