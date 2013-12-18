@@ -67,7 +67,7 @@ class Time_manager
 	        $stats['periods'][$period]['days_worked'] = $days[$period];
 	        $stats['periods'][$period]['overtime_t'] = calculate_overtime($stats['periods'][$period]['time_spent_t'], $working_time, $stats['periods'][$period]['days_worked']);
 	        $stats['periods'][$period]['overtime'] = duration_to_string($stats['periods'][$period]['overtime_t'], $working_time);
-            $stats['periods'][$period]['end_time'] = calculate_end_time(-$stats['periods'][$period]['overtime_t']);
+            $stats['periods'][$period]['end_time'] = calculate_end_time($stats['time_left_t'] - $stats['periods'][$period]['overtime_t']);
         }
         
         // Adds an "all" period that includes overtime for the previous months
@@ -82,7 +82,7 @@ class Time_manager
         $stats['periods']['all']['overtime'] = duration_to_string($stats['periods']['all']['overtime_t'], $working_time);
         $stats['periods']['all']['time_spent_t'] += $last_overtime;
         $stats['periods']['all']['time_spent'] = duration_to_string($stats['periods']['all']['time_spent_t'], $working_time);
-        $stats['periods']['all']['end_time'] = calculate_end_time(-$stats['periods']['all']['overtime_t']);
+        $stats['periods']['all']['end_time'] = calculate_end_time($stats['time_left_t'] - $stats['periods']['all']['overtime_t']);
         
         // Overtime evolution
         $stats['overtime_evolution'] = overtime_to_chart_array($overtime, $working_time);

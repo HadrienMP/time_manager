@@ -7,3 +7,4 @@
 .buildpath
 .settings
 log-*.php
+/test_db_exports
