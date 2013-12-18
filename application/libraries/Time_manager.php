@@ -72,11 +72,15 @@ class Time_manager
         
         // Adds an "all" period that includes overtime for the previous months
         $overtime = $this->ci->overtime->get_overtime($user_id);
+        $last_overtime = 0;
         
+        if (isset($overtime) && count($overtime) > 0) {
+        	$last_overtime = $overtime[count($overtime) -1]['amount'];
+        }
         $stats['periods']['all'] = $stats['periods']['month'];
-        $stats['periods']['all']['overtime_t'] += $overtime[count($overtime) -1]['amount'];
+        $stats['periods']['all']['overtime_t'] += $last_overtime;
         $stats['periods']['all']['overtime'] = duration_to_string($stats['periods']['all']['overtime_t'], $working_time);
-        $stats['periods']['all']['time_spent_t'] += $overtime[count($overtime) -1]['amount'];
+        $stats['periods']['all']['time_spent_t'] += $last_overtime;
         $stats['periods']['all']['time_spent'] = duration_to_string($stats['periods']['all']['time_spent_t'], $working_time);
         $stats['periods']['all']['end_time'] = calculate_end_time(-$stats['periods']['all']['overtime_t']);
         
