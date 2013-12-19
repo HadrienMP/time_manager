@@ -7,6 +7,11 @@
 {% endblock %}
 
 {% block content %}
+
+{% if export_needed %}
+	<p class="warning">Vous devez exporter vos pointages</p>
+{% endif %}
+
 <div id="data">
 	<p class="beveled-bg">Etat</p>
 	<table id="data-table">

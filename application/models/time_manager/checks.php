@@ -23,8 +23,6 @@ class Checks extends CI_Model
         $checks = NULL;
         if (!empty($user_id)) {
             $this->db->order_by("date", "asc");
-            // TODO: Handle time period
-//             $this->db->where("date >=", $this->today());
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME);
             $checks = $query->result_array();
@@ -84,16 +82,15 @@ class Checks extends CI_Model
     /**
      * Returns the last check value
      * @param $user_id
-     * @return boolean last check_in value (FALSE if none found)
+     * @return array last check (NULL if not found)
      */
     public function get_last_check($user_id) {
-        $result = FALSE;
+        $result = NULL;
         if (!empty($user_id)) {
-            $this->db->select('check_in');
             $this->db->order_by("date", "desc");
             $this->db->where("user_id", $user_id);
             $query = $this->db->get(Checks::TABLE_NAME,1,0);
-            if ($query->num_rows() == 1) $result = $query->row()->check_in;
+            if ($query->num_rows() == 1) $result = $query->result_array()[0];
         }
         else {
             log_message('error', "User id vide");

@@ -30,19 +30,15 @@ class Manager extends CI_Controller {
             redirect('/auth/login/');
         } 
         else {
-            // Determine whether the user checked in yet	
-            $this->update_check_in_status();
+            $data = $this->time_manager->all_pages_action($this->tank_auth->get_user_id());
+	        $checked_in = $data['is_user_checked_in'] ? "checked_in" : "";
+	        $this->twiggy->set("checked_in", $checked_in, $global = FALSE);
             $this->twiggy->set("active", $page);
+            
+	        if ($data['is_export_needed'] && $page != "data" && $page != "export") {
+	        	redirect('/data/export_needed');
+	        }
         }
-    }
-    
-    /**
-     * Updates the checked in/out status in the twig variables
-     */
-    private function update_check_in_status() {		
-        $checked_in = $this->time_manager->is_user_checked_in($this->tank_auth->get_user_id());
-        $checked_in = $checked_in ? "checked_in" : "";
-        $this->twiggy->set("checked_in", $checked_in, $global = FALSE);
     }
 
     /**
@@ -254,8 +250,12 @@ class Manager extends CI_Controller {
         redirect($_SERVER['HTTP_REFERER']);
     }
     
-    public function data() {
+    public function data($export_needed = NULL) {
         $this->_pre_action(__FUNCTION__);
+        
+        if (isset($export_needed)) {
+        	$this->twiggy->set('export_needed', $export_needed, NULL);
+        }
         
     	$data_info = $this->time_manager->get_data_info($this->tank_auth->get_user_id());
         $this->twiggy->set('data_info', $data_info, NULL);

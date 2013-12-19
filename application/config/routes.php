@@ -44,6 +44,7 @@ $route['404_override'] = '';
 $route['stats'] = "manager/stats";
 $route['preferences'] = "manager/preferences";
 $route['punches'] = "manager/punches";
+$route['data/(:any)'] = "manager/data/$1";
 $route['data'] = "manager/data";
 $route['export'] = "manager/export";
 $route['account'] = "manager/account";
