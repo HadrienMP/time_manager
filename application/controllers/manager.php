@@ -30,17 +30,21 @@ class Manager extends CI_Controller {
             redirect('/auth/login/');
         } 
         else {
-            $data = $this->time_manager->all_pages_action($this->tank_auth->get_user_id());
-	        $checked_in = $data['is_user_checked_in'] ? "checked_in" : "";
-	        $this->twiggy->set("checked_in", $checked_in, $global = FALSE);
+        	$this->all_pages_action();
             $this->twiggy->set("active", $page);
-            
-	        if ($data['is_export_needed'] && $page != "data" && $page != "export") {
-	        	redirect('/data/export_needed');
-	        }
         }
     }
 
+    private function all_pages_action() {
+		$data = $this->time_manager->all_pages_action($this->tank_auth->get_user_id());
+		$checked_in = $data['is_user_checked_in'] ? "checked_in" : "";
+		$this->twiggy->set("checked_in", $checked_in, $global = FALSE);
+		
+		if ($data['is_export_needed'] && $page != "data" && $page != "export") {
+			redirect('/data/export_needed');
+		}
+    }
+    
     /**
      * Stats screen
      */
@@ -195,7 +199,7 @@ class Manager extends CI_Controller {
             
             // Updates the check in status after the datas have been saved (in case a check in or check out 
             // has been added for today)
-            $this->update_check_in_status();
+        	$this->all_pages_action();
         }
 
         $this->twiggy->set('checks', $checks_to_display, NULL);
