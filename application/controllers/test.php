@@ -194,6 +194,18 @@ class Test extends CI_Controller {
             ), TRUE),'Yesterday');
 		$this->benchmark->mark('end');
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		
+		
+		$this->benchmark->mark('start');
+		$checks = get_checks_722();
+		$days = count_days($checks);
+		$this->unit->run(print_r($days, TRUE), print_r(array(
+                'day' => 1,
+                'week' => 1,
+                'month' => 1
+            ), TRUE),'7h22 Today');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
         
 		// 2 minutes
 		$this->benchmark->mark('start');
@@ -232,6 +244,109 @@ class Test extends CI_Controller {
 		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
 	}
 	
+	
+	public function time_manager_library() {
+        $this->load->library('time_manager');
+		$this->load->helper('unit_datasource_helper');
+		
+		$working_time = 7*60*60 + 22*60;
+
+		// No overtime, no time left
+        $checks = get_checks_722();
+		$this->benchmark->mark('start');
+		$stats = $this->time_manager->_calculate_stats($checks, NULL, $working_time);
+		$this->unit->run(isset($stats), TRUE,'Time to calculate easy stats');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		
+		$this->benchmark->mark('start');
+		$this->unit->run(print_r($stats['periods'], TRUE), print_r(array(
+		        'day' => array(
+        	        'time_spent_t' => $working_time,
+                    'days_worked' => 1,
+                    'overtime_t' => 0,
+                    'end_time' => $stats['end_time'],
+                    'time_spent' => '1 jours 00:00:00',
+                    'overtime' => '00:00:00',
+                ),
+		        'week' => array(
+        	        'time_spent_t' => $working_time,
+                    'days_worked' => 1,
+                    'overtime_t' => 0,
+                    'end_time' => $stats['end_time'],
+                    'time_spent' => '1 jours 00:00:00',
+                    'overtime' => '00:00:00',
+                ),
+		        'month' => array(
+        	        'time_spent_t' => $working_time,
+                    'days_worked' => 1,
+                    'overtime_t' => 0,
+                    'end_time' => $stats['end_time'],
+                    'time_spent' => '1 jours 00:00:00',
+                    'overtime' => '00:00:00',
+                ),
+		        'all' => array(
+        	        'time_spent_t' => $working_time,
+                    'days_worked' => 1,
+                    'overtime_t' => 0,
+                    'end_time' => $stats['end_time'],
+                    'time_spent' => '1 jours 00:00:00',
+                    'overtime' => '00:00:00',
+                ),
+		), TRUE),'Periods calculations');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		
+        // 7h22 with overtime
+		$overtime = array(
+		        array('id' => '1','amount' => '3600','user_id' => '1','date' => '2013-10-01'),
+		        array('id' => '2','amount' => '7200','user_id' => '1','date' => '2013-11-01')
+		);
+		$this->benchmark->mark('start');
+		$stats = $this->time_manager->_calculate_stats($checks, $overtime, $working_time);
+		$this->unit->run(isset($stats), TRUE,'Time to calculate easy stats');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+		
+		$this->benchmark->mark('start');
+		$this->unit->run(print_r($stats['periods'], TRUE), print_r(array(
+		        'day' => array(
+		                'time_spent_t' => $working_time,
+		                'days_worked' => 1,
+		                'overtime_t' => 0,
+		                'end_time' => $stats['end_time'],
+		                'time_spent' => '1 jours 00:00:00',
+		                'overtime' => '00:00:00',
+		        ),
+		        'week' => array(
+		                'time_spent_t' => $working_time,
+		                'days_worked' => 1,
+		                'overtime_t' => 0,
+		                'end_time' => $stats['end_time'],
+		                'time_spent' => '1 jours 00:00:00',
+		                'overtime' => '00:00:00',
+		        ),
+		        'month' => array(
+		                'time_spent_t' => $working_time,
+		                'days_worked' => 1,
+		                'overtime_t' => 0,
+		                'end_time' => $stats['end_time'],
+		                'time_spent' => '1 jours 00:00:00',
+		                'overtime' => '00:00:00',
+		        ),
+		        'all' => array(
+		                'time_spent_t' => $working_time + 7200,
+		                'days_worked' => 1,
+		                'overtime_t' => 7200,
+		                'end_time' => date('H:i:s',strtotime($stats['end_time']) - 7200),
+		                'time_spent' => '1 jours 02:00:00',
+		                'overtime' => '02:00:00',
+		        ),
+		), TRUE),'Periods calculations');
+		$this->benchmark->mark('end');
+		$this->timings[] = $this->benchmark->elapsed_time('start', 'end');
+        
+	}
 	
 	/**
 	 * Remap function

@@ -62,10 +62,23 @@ class Time_manager {
      * Calculates the statistics of the user based on his punches
      *
      * @param integer user_id the user's id
+     * @return array the stats array
      */
     public function calculate_stats($user_id) {
         $checks = $this->ci->checks->get_checks ( $user_id );
         $working_time = $this->ci->parameters->get_working_time ( $user_id );
+        $overtime = $this->ci->overtime->get_overtime ( $user_id );
+        return _calculate_stats($checks, $overtime, $working_time);
+    }
+    
+    /**
+     * Subfunction of calculate_stats, added for unit testing 
+     * @param array $checks user's checks
+     * @param array $overtime user's overtime of other months
+     * @param integer $working_time user's work day length
+     * @return array the stats array
+     */
+    public function _calculate_stats($checks, $overtime, $working_time) {
         
         $time_spent = calculate_time_spent ( $checks );
         $days = count_days ( $checks );
@@ -102,7 +115,6 @@ class Time_manager {
         }
         
         // Adds an "all" period that includes overtime for the previous months
-        $overtime = $this->ci->overtime->get_overtime ( $user_id );
         $last_overtime = 0;
         
         if (isset ( $overtime ) && count ( $overtime ) > 0) {
@@ -110,7 +122,7 @@ class Time_manager {
         }
         /*
          * Calulations
-         */
+        */
         $stats['periods']['all'] = $stats['periods']['month'];
         $stats['periods']['all']['overtime_t'] += $last_overtime;
         $stats['periods']['all']['time_spent_t'] += $last_overtime;
@@ -118,10 +130,10 @@ class Time_manager {
         
         /*
          * To string operations
-         */
-        $stats['periods']['all']['overtime'] = duration_to_string ( $stats['periods']['all']['overtime_t'], 
+        */
+        $stats['periods']['all']['overtime'] = duration_to_string ( $stats['periods']['all']['overtime_t'],
                 $working_time );
-        $stats['periods']['all']['time_spent'] = duration_to_string ( $stats['periods']['all']['time_spent_t'], 
+        $stats['periods']['all']['time_spent'] = duration_to_string ( $stats['periods']['all']['time_spent_t'],
                 $working_time );
         
         // Overtime evolution
