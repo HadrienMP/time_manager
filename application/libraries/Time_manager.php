@@ -68,7 +68,7 @@ class Time_manager {
         $checks = $this->ci->checks->get_checks ( $user_id );
         $working_time = $this->ci->parameters->get_working_time ( $user_id );
         $overtime = $this->ci->overtime->get_overtime ( $user_id );
-        return _calculate_stats($checks, $overtime, $working_time);
+        return $this->_calculate_stats($checks, $overtime, $working_time);
     }
     
     /**
