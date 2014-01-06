@@ -209,3 +209,11 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 strong {
 	font-weight: bold;
 }
+
+.success {
+	border-radius: 5px;
+	margin: 0 0 15px;
+	padding: 10px;
+	background: rgba(0,90,0,0.5);
+	color: green;
+}
