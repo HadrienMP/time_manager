@@ -213,8 +213,10 @@ class Time_manager {
      */
     public function all_pages_action($user_id) {
         $last_check = $this->ci->checks->get_last_check ( $user_id );
+        $working_time = $this->ci->overtime->get_overtime( $user_id );
         return array ('is_user_checked_in' => $last_check['check_in'] ? TRUE : FALSE,
-                'is_export_needed' => $this->is_export_needed ( $last_check ) 
+                'is_export_needed' => $this->is_export_needed ( $last_check ), 
+                'is_overtime_filled' => $working_time != NULL && $working_time > 0 ? TRUE : FALSE
         );
     }
 }

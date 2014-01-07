@@ -30,18 +30,21 @@ class Manager extends CI_Controller {
             redirect('/auth/login/');
         } 
         else {
-        	$this->all_pages_action();
+        	$this->all_pages_action($page);
             $this->twiggy->set("active", $page);
         }
     }
 
-    private function all_pages_action() {
+    private function all_pages_action($page) {
 		$data = $this->time_manager->all_pages_action($this->tank_auth->get_user_id());
 		$checked_in = $data['is_user_checked_in'] ? "checked_in" : "";
 		$this->twiggy->set("checked_in", $checked_in, $global = FALSE);
 		
 		if ($data['is_export_needed'] && $page != "data" && $page != "export") {
 			redirect('/data/export_needed');
+		}
+		if (!$data['is_overtime_filled'] && $page != "preferences") {
+		    redirect('/preferences/fill');
 		}
     }
     
@@ -60,10 +63,14 @@ class Manager extends CI_Controller {
     /**
      * Preferences screen
      */
-    public function preferences()
+    public function preferences( $fill = NULL)
     {
         $this->_pre_action(__FUNCTION__);
 
+        if (isset($fill)) {
+            $this->twiggy->set('must_fill', $fill, NULL);
+        }
+        
         if ($this->input->post()) {
             $this->load->helper(array('form', 'url'));
 

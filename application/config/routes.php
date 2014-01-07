@@ -42,7 +42,7 @@ $route['default_controller'] = "manager/stats";
 $route['404_override'] = '';
 
 $route['stats'] = "manager/stats";
-$route['preferences'] = "manager/preferences";
+$route['preferences/(:any)'] = "manager/preferences/$1";
 $route['punches'] = "manager/punches";
 $route['data/(:any)'] = "manager/data/$1";
 $route['data'] = "manager/data";
