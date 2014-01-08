@@ -206,7 +206,7 @@ class Manager extends CI_Controller {
             
             // Updates the check in status after the datas have been saved (in case a check in or check out 
             // has been added for today)
-        	$this->all_pages_action();
+        	$this->all_pages_action(__FUNCTION__);
         }
 
         $this->twiggy->set('checks', $checks_to_display, NULL);
