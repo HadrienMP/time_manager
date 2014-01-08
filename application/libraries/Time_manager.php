@@ -27,7 +27,7 @@ class Time_manager {
      * @return boolean true if last check is a check in false otherwise
      */
     public function is_user_checked_in($user_id) {
-        return $this->ci->checks->get_last_check ( $user_id );
+        return $this->ci->checks->get_last_check ( $user_id )['check_in'];
     }
     
     /**
