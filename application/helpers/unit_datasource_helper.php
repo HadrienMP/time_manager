@@ -89,25 +89,25 @@ function get_checks_2_days() {
 					'id' => 2,
 					'user_id' => 1,
 					'check_in' => 1,
-					'date' => '2013-11-22 9:00:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 9:00:00' ))
 			),
 			Array (
 					'id' => 3,
 					'user_id' => 1,
 					'check_in' => 0,
-					'date' => '2013-11-22 12:00:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 12:00:00' ))
 			),
 			Array (
 					'id' => 4,
 					'user_id' => 1,
 					'check_in' => 1,
-					'date' => '2013-11-22 13:15:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 13:15:00' ))
 			),
 			Array (
 					'id' => 5,
 					'user_id' => 1,
 					'check_in' => 0,
-					'date' => '2013-11-22 17:37:00' 
+					'date' => date ( "Y-m-d H:i:s", strtotime ( 'yesterday 17:37:00' ))
 			),
 			Array (
 					'id' => 2,

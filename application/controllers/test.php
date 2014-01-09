@@ -335,11 +335,11 @@ class Test extends CI_Controller {
 		                'overtime' => '00:00:00',
 		        ),
 		        'all' => array(
-		                'time_spent_t' => $working_time + 7200,
+		                'time_spent_t' => $working_time,
 		                'days_worked' => 1,
 		                'overtime_t' => 7200,
 		                'end_time' => date('H:i:s',strtotime($stats['end_time']) - 7200),
-		                'time_spent' => '1 jours 02:00:00',
+		                'time_spent' => '1 jours 00:00:00',
 		                'overtime' => '02:00:00',
 		        ),
 		), TRUE),'Periods calculations');

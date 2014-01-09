@@ -327,6 +327,9 @@ function calculate_time_spent($checks) {
 function calculate_overtime($time_spent, $working_time, $days) {
     $regular_total_worktime = $working_time * $days;
     $overtime = $time_spent - $regular_total_worktime;    
+    if ($days == 0) {
+        $overtime = 0;
+    }
     return $overtime;
 }
 
@@ -363,7 +366,8 @@ function count_days($checks) {
             }
         }
     }
-    
+    // if ($periods['day'] === 0)
+        // $periods['day'] = 1;
     $periods['week'] += $periods['day'];
     $periods['month'] += $periods['week'];    
 

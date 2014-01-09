@@ -102,12 +102,23 @@ class Time_manager {
              * Calulations
              */
             $stats['periods'][$period]['time_spent_t'] = $time_spent[$period];
+            $time_spent_cheated = $time_spent[$period];
+            $days_worked_cheated = $days[$period];
+            if ($period != 'day') {
+                $time_spent_cheated += $stats['time_left_t'];
+            } else {
+                $days_worked_cheated = 1;
+            }
+            
             $stats['periods'][$period]['days_worked'] = $days[$period];
             $stats['periods'][$period]['overtime_t'] = calculate_overtime ( 
-                    $stats['periods'][$period]['time_spent_t'], $working_time, 
-                    $stats['periods'][$period]['days_worked'] );
-            $stats['periods'][$period]['end_time'] = calculate_end_time ( 
+                    $time_spent_cheated, $working_time, $days_worked_cheated );
+            if ($period == 'day') {
+                $stats['periods'][$period]['end_time'] = calculate_end_time ( 
                     - $stats['periods'][$period]['overtime_t'] );
+            } else {
+                $stats['periods'][$period]['end_time'] = date("H:i:s", strtotime($stats['end_time']) - $stats['periods'][$period]['overtime_t']);
+            }
             
             /*
              * To string operations
@@ -129,8 +140,7 @@ class Time_manager {
         */
         $stats['periods']['all'] = $stats['periods']['month'];
         $stats['periods']['all']['overtime_t'] += $last_overtime;
-        $stats['periods']['all']['time_spent_t'] += $last_overtime;
-        $stats['periods']['all']['end_time'] = calculate_end_time ( - $stats['periods']['all']['overtime_t'] );
+        $stats['periods']['all']['end_time'] = date("H:i:s", strtotime($stats['end_time']) - $stats['periods']['all']['overtime_t']);
         
         /*
          * To string operations
