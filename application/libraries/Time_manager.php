@@ -62,9 +62,10 @@ class Time_manager {
      * Calculates the statistics of the user based on his punches
      *
      * @param integer user_id the user's id
+     * @param boolean $minimal True if the stats are ment to be calculated for the 'all page action'
      * @return array the stats array
      */
-    public function calculate_stats($user_id) {
+    public function calculate_stats($user_id, $minimal = FALSE) {
         $checks = $this->ci->checks->get_checks ( $user_id );
         $working_time = $this->ci->parameters->get_working_time ( $user_id );
         $overtime = $this->ci->overtime->get_overtime ( $user_id );
@@ -73,12 +74,14 @@ class Time_manager {
     
     /**
      * Subfunction of calculate_stats, added for unit testing 
+     *
      * @param array $checks user's checks
      * @param array $overtime user's overtime of other months
      * @param integer $working_time user's work day length
+     * @param boolean $minimal True if the stats are ment to be calculated for the 'all page action'
      * @return array the stats array
      */
-    public function _calculate_stats($checks, $overtime, $working_time) {
+    public function _calculate_stats($checks, $overtime, $working_time, $minimal = FALSE) {
         
         $time_spent = calculate_time_spent ( $checks );
         $days = count_days ( $checks );
@@ -86,14 +89,16 @@ class Time_manager {
         $stats = array ();
         // Today's stats
         $stats['time_spent_t'] = $time_spent['day'];
-        $stats['time_spent'] = duration_to_string ( $stats['time_spent_t'] );
         $stats['time_left_t'] = calculate_time_left ( $stats['time_spent_t'], $working_time );
-        $stats['time_left'] = duration_to_string ( $stats['time_left_t'] );
         $stats['end_time'] = calculate_end_time ( $stats['time_left_t'] );
-        if ($working_time != 0) {
-            $stats['ratio'] = $stats['time_spent_t'] / $working_time;
-        } else {
-            $stats['ratio'] = 0;
+        $stats['ratio'] = $working_time > 0 ? $stats['time_spent_t'] / $working_time : 0;
+        
+        $stats['time_left'] = duration_to_string ( $stats['time_left_t'] );
+        $stats['time_spent'] = duration_to_string ( $stats['time_spent_t'] );
+        
+        if ($minimal) {
+            unset($time_spent['week']);
+            unset($time_spent['day']);
         }
         
         // Period stats
@@ -225,9 +230,18 @@ class Time_manager {
         $last_check = $this->ci->checks->get_last_check ( $user_id );
         $working_time = $this->ci->parameters->get_working_time( $user_id );
         log_message('debug', 'Working time : '.print_r($working_time, TRUE));
+        
+        // Minimal calculation of the stats
+        $stats = $this->calculate_stats($user_id, TRUE);
+        $overtime = strtotime($stats['periods']['all']['end_time']) < time();
+        $overtime_absolute = $working_time > 0 ? $stats['time_spent_t'] > $working_time : FALSE;
+        
         return array ('is_user_checked_in' => $last_check['check_in'] ? TRUE : FALSE,
                 'is_export_needed' => $this->is_export_needed ( $last_check ), 
-                'is_overtime_filled' => $working_time != NULL && count($working_time) > 0 ? TRUE : FALSE
+                'is_overtime_filled' => $working_time != NULL && count($working_time) > 0 ? TRUE : FALSE,
+                'ratio' => $stats['ratio'] * 100,
+                'overtime' => $overtime,
+                'overtime_absolute' => $overtime_absolute
         );
     }
 }

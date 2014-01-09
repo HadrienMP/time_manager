@@ -96,12 +96,6 @@ body {
   border-bottom-width: 5px;
   z-index: 1000;
 }
-/* line 33, ../sass/style.scss */
-.checked_in #machine, .checked_in #other-info {
-  -webkit-box-shadow: 0 0 30px #0095ff;
-  -moz-box-shadow: 0 0 30px #0095ff;
-  box-shadow: 0 0 30px #0095ff;
-}
 /* line 1, ../sass/other-info.scss */
 #machine .form-wrapper, #other-info .form-wrapper {
   padding: 0 20px;
@@ -167,17 +161,17 @@ body {
   padding: 5px 10px;
 }
 
-/* line 40, ../sass/style.scss */
+/* line 35, ../sass/style.scss */
 #machine {
   height: 200px;
 }
-/* line 43, ../sass/style.scss */
+/* line 38, ../sass/style.scss */
 #machine #puncher-container {
   height: 159px;
   border-bottom: 1px solid black;
   font-family: "FontAwesome";
 }
-/* line 48, ../sass/style.scss */
+/* line 43, ../sass/style.scss */
 #machine #puncher-container section#puncher-section {
   background: url(../images/micro_carbon.png);
   border-radius: 100px;
@@ -191,15 +185,15 @@ body {
   position: relative;
   top: 15px;
 }
-/* line 59, ../sass/style.scss */
+/* line 54, ../sass/style.scss */
 #machine #puncher-container section#puncher-section #knob-wrapper {
   position: absolute;
 }
-/* line 62, ../sass/style.scss */
+/* line 57, ../sass/style.scss */
 #machine #puncher-container section#puncher-section canvas {
   margin: 1px 0;
 }
-/* line 65, ../sass/style.scss */
+/* line 60, ../sass/style.scss */
 #machine #puncher-container a#puncher-button {
   border-radius: 100px;
   border: 1px solid black;
@@ -212,26 +206,23 @@ body {
   text-shadow: #333333 0px 3px 2px, #111111 0px -2px 1px;
   position: absolute;
 }
-/* line 77, ../sass/style.scss */
+/* line 72, ../sass/style.scss */
 #machine #puncher-container a#puncher-button:hover, .checked_in #machine #puncher-container a#puncher-button {
   text-shadow: 0 0 10px white;
   color: white;
-  -webkit-box-shadow: 0 0 30px #0095ff;
-  -moz-box-shadow: 0 0 30px #0095ff;
-  box-shadow: 0 0 30px #0095ff;
 }
-/* line 83, ../sass/style.scss */
+/* line 77, ../sass/style.scss */
 #machine #puncher-container a#puncher-button span {
   display: block;
   padding: 15px 19px;
 }
-/* line 92, ../sass/style.scss */
+/* line 86, ../sass/style.scss */
 #machine #tools-container li {
   display: inline-block;
   border-left: 1px solid black;
   font-size: 1.2em;
 }
-/* line 97, ../sass/style.scss */
+/* line 91, ../sass/style.scss */
 #machine #tools-container li a {
   width: 111.5px;
   height: 30px;
@@ -239,21 +230,21 @@ body {
   text-align: center;
   padding-top: 10px;
 }
-/* line 105, ../sass/style.scss */
+/* line 99, ../sass/style.scss */
 #machine #tools-container li:first-child {
   border: none;
 }
-/* line 108, ../sass/style.scss */
+/* line 102, ../sass/style.scss */
 #machine #tools-container li:first-child a {
   border-radius: 0 0 0 20px;
   width: 112.5px;
 }
-/* line 112, ../sass/style.scss */
+/* line 106, ../sass/style.scss */
 #machine #tools-container li:last-child a {
   border-radius: 0 0 20px 0;
 }
 
-/* line 119, ../sass/style.scss */
+/* line 113, ../sass/style.scss */
 #content {
   background: url(../images/escheresque_ste.png);
   width: 390px;
@@ -441,7 +432,7 @@ body {
   margin-bottom: 10px;
 }
 
-/* line 140, ../sass/style.scss */
+/* line 134, ../sass/style.scss */
 ul#navigation {
   position: absolute;
   top: 0px;
@@ -449,18 +440,18 @@ ul#navigation {
   text-align: right;
   border-bottom: 2px solid black;
 }
-/* line 148, ../sass/style.scss */
+/* line 142, ../sass/style.scss */
 ul#navigation li {
   display: inline-block;
   border-left: black 1px solid;
 }
-/* line 151, ../sass/style.scss */
+/* line 145, ../sass/style.scss */
 ul#navigation li a {
   padding: 10px 15px;
   display: block;
 }
 
-/* line 158, ../sass/style.scss */
+/* line 152, ../sass/style.scss */
 #content a, #puncher-container a, #navigation, #other-info a, input[type="submit"], input[type="reset"] {
   background: #222222;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #111111));
@@ -471,25 +462,25 @@ ul#navigation li a {
   border: 1px solid black;
 }
 
-/* line 163, ../sass/style.scss */
+/* line 157, ../sass/style.scss */
 a, a:focus, a:visited, input[type="submit"], input[type="reset"] {
   color: #cccccc;
   text-decoration: none;
   cursor: pointer;
 }
 
-/* line 169, ../sass/style.scss */
+/* line 163, ../sass/style.scss */
 input {
   border-radius: 10px;
   text-align: center;
 }
 
-/* line 174, ../sass/style.scss */
+/* line 168, ../sass/style.scss */
 input[type="submit"], input[type="reset"] {
   padding: 7px 9px;
 }
 
-/* line 178, ../sass/style.scss */
+/* line 172, ../sass/style.scss */
 a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   color: white;
   text-shadow: 0 0 10px white;
@@ -499,25 +490,25 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5), inset 0 -2px 3px rgba(255, 255, 255, 0.2);
 }
 
-/* line 185, ../sass/style.scss */
+/* line 179, ../sass/style.scss */
 .multi-button, #machine .form-wrapper .right a, #other-info .form-wrapper .right a {
   padding: 5px 7px;
   border-right: none !important;
   display: inline-block;
   z-index: 0;
 }
-/* line 191, ../sass/style.scss */
+/* line 185, ../sass/style.scss */
 .multi-button:first-child, #machine .form-wrapper .right a:first-child, #other-info .form-wrapper .right a:first-child {
   border-radius: 10px 0 0 10px;
   padding-left: 10px;
 }
-/* line 195, ../sass/style.scss */
+/* line 189, ../sass/style.scss */
 .multi-button:last-child, #machine .form-wrapper .right a:last-child, #other-info .form-wrapper .right a:last-child {
   border-radius: 0 10px 10px 0;
   border-right: 1px solid black;
 }
 
-/* line 201, ../sass/style.scss */
+/* line 195, ../sass/style.scss */
 .beveled-bg {
   background-color: #0062a8;
   background: linear-gradient(210deg, transparent 30px, #0062a8 20px);
@@ -526,22 +517,62 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   padding: 8px 5px;
   color: white;
 }
+/* line 202, ../sass/style.scss */
+.overtime.checked_in .beveled-bg {
+  background: linear-gradient(210deg, transparent 30px, #ff9500 20px);
+}
+/* line 203, ../sass/style.scss */
+.overtime_absolute.checked_in .beveled-bg {
+  background: linear-gradient(210deg, transparent 30px, #ff0000 20px);
+}
 
-/* line 205, ../sass/style.scss */
+/* line 206, ../sass/style.scss */
 .charts-tooltip {
   color: black;
 }
 
-/* line 209, ../sass/style.scss */
+/* line 210, ../sass/style.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 213, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 .success {
   border-radius: 5px;
   margin: 0 0 15px;
   padding: 10px;
   background: rgba(0, 90, 0, 0.5);
   color: green;
+}
+
+/* line 223, ../sass/style.scss */
+.checked_in .has_light {
+  -webkit-box-shadow: 0 0 30px #0095ff;
+  -moz-box-shadow: 0 0 30px #0095ff;
+  box-shadow: 0 0 30px #0095ff;
+}
+/* line 224, ../sass/style.scss */
+.overtime.checked_in .has_light {
+  -webkit-box-shadow: 0 0 30px #ff9500;
+  -moz-box-shadow: 0 0 30px #ff9500;
+  box-shadow: 0 0 30px #ff9500;
+}
+/* line 225, ../sass/style.scss */
+.overtime_absolute.checked_in .has_light {
+  -webkit-box-shadow: 0 0 30px red;
+  -moz-box-shadow: 0 0 30px red;
+  box-shadow: 0 0 30px red;
+}
+
+/* line 228, ../sass/style.scss */
+.checked_in .has_back {
+  background-color: #0095FF;
+}
+/* line 229, ../sass/style.scss */
+.overtime.checked_in .has_back {
+  background-color: #FF9500;
+}
+/* line 230, ../sass/style.scss */
+.overtime_absolute.checked_in .has_back {
+  background-color: #FF0000;
 }

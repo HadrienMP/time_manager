@@ -36,16 +36,21 @@ class Manager extends CI_Controller {
     }
 
     private function all_pages_action($page) {
-		$data = $this->time_manager->all_pages_action($this->tank_auth->get_user_id());
-		$checked_in = $data['is_user_checked_in'] ? "checked_in" : "";
-		$this->twiggy->set("checked_in", $checked_in, $global = FALSE);
-		
+		$data = $this->time_manager->all_pages_action($this->tank_auth->get_user_id());		
 		if ($data['is_export_needed'] && $page != "data" && $page != "export") {
 			redirect('/data/export_needed');
 		}
 		if (!$data['is_overtime_filled'] && $page != "preferences") {
 		    redirect('/preferences/fill');
 		}
+        
+		$checked_in = $data['is_user_checked_in'] ? "checked_in" : "";
+        $overtime = $data['overtime'] ? "overtime" : "";
+        $overtime_absolute = $data['overtime_absolute'] ? "overtime_absolute" : "";
+		$this->twiggy->set("checked_in", $checked_in, $global = FALSE);
+		$this->twiggy->set("ratio", $data['ratio'], $global = FALSE);
+		$this->twiggy->set("overtime", $overtime, $global = FALSE);
+		$this->twiggy->set("overtime_absolute", $overtime_absolute, $global = FALSE);
     }
     
     /**

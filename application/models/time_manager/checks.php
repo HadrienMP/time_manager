@@ -63,7 +63,7 @@ class Checks extends CI_Model
             if (count($checks) > 0 && $checks[0]['check_in'] == 0 
                 && count($last_check) > 0) {
                 if ($last_check['check_in'] == 0) {
-                    log_message('error', "Les checks de l'utilisateur $user_id sont erron�s : ".print_r($query->result_array(), True));
+                    log_message('error', "Les checks de l'utilisateur $user_id sont erronés : ".print_r($query->result_array(), True));
                     // TODO: Handle the null return upper in the chain
                 } else {
                     array_unshift($checks, $last_check);
