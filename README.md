@@ -3,8 +3,6 @@ time_manager
 
 Ce site web vous permet de suivre votre temps de travail.
 
-This website holds a tool that allows you to follow your worktime. 
-
 Stats
 -----
 
@@ -18,9 +16,10 @@ Grâce à une série de check in et check out, time_manager calcule plusieurs in
  * Ce mois
 
 
-
 Export
 ------
+
+Tous les mois, vous pourrez exporter tous vos pointages et statistiques dans un fichier CSV (Excel). Le site ne gardera que le nombre d'heures supplémentaires que vous aurez travaillé.
 
 Every month (or any time you want), you'll be able to export all you checks and stats to a CSV (Excel) file. The website will still keep track of your overtime after the export.
 
