@@ -201,8 +201,8 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
     padding: 8px 5px;
     color: white;
     
-    .overtime.checked_in & { background:linear-gradient(210deg, transparent 30px, #FF9500 20px);}
-    .overtime_absolute.checked_in & { background:linear-gradient(210deg, transparent 30px, #FF0000 20px);}
+    .overtime.checked_in & { background:linear-gradient(210deg, transparent 30px, #DD7000 20px);}
+    .overtime_absolute.checked_in & { background:linear-gradient(210deg, transparent 30px, #BB0000 20px);}
 }
 
 .charts-tooltip {
@@ -229,6 +229,6 @@ strong {
 .has_back {
     background: #0062A8 !important;
     .checked_in & { background: #0062A8 !important;}
-    .overtime.checked_in & { background: #FF9500 !important;}
-    .overtime_absolute.checked_in & { background: #FF0000 !important;}
+    .overtime.checked_in & { background: #DD7000 !important;}
+    .overtime_absolute.checked_in & { background: #BB0000 !important;}
 }

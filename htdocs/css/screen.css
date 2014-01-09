@@ -502,11 +502,11 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 }
 /* line 204, ../sass/style.scss */
 .overtime.checked_in .beveled-bg {
-  background: linear-gradient(210deg, transparent 30px, #ff9500 20px);
+  background: linear-gradient(210deg, transparent 30px, #dd7000 20px);
 }
 /* line 205, ../sass/style.scss */
 .overtime_absolute.checked_in .beveled-bg {
-  background: linear-gradient(210deg, transparent 30px, #ff0000 20px);
+  background: linear-gradient(210deg, transparent 30px, #bb0000 20px);
 }
 
 /* line 208, ../sass/style.scss */
@@ -557,9 +557,9 @@ strong {
 }
 /* line 232, ../sass/style.scss */
 .overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
-  background: #FF9500 !important;
+  background: #DD7000 !important;
 }
 /* line 233, ../sass/style.scss */
 .overtime_absolute.checked_in .has_back, .overtime_absolute.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in a:hover, .overtime_absolute.checked_in a.active, .overtime_absolute.checked_in input[type="submit"]:hover, .overtime_absolute.checked_in input[type="reset"]:hover {
-  background: #FF0000 !important;
+  background: #BB0000 !important;
 }
