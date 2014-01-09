@@ -239,7 +239,7 @@ class Time_manager {
         return array ('is_user_checked_in' => $last_check['check_in'] ? TRUE : FALSE,
                 'is_export_needed' => $this->is_export_needed ( $last_check ), 
                 'is_overtime_filled' => $working_time != NULL && count($working_time) > 0 ? TRUE : FALSE,
-                'ratio' => $stats['ratio'] * 100,
+                'ratio' => $stats['ratio'] < 1 ? $stats['ratio'] * 100 : ($stats['ratio'] - 1) * 100,
                 'overtime' => $overtime,
                 'overtime_absolute' => $overtime_absolute
         );
