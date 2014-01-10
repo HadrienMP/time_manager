@@ -233,7 +233,7 @@ class Time_manager {
         
         // Minimal calculation of the stats
         $stats = $this->calculate_stats($user_id, TRUE);
-        $overtime = $stats['time_left_t'] > 0 ? FALSE : TRUE;
+        $overtime = $stats['time_left_t'] - $stats['periods']['all']['overtime_t'] > 0 ? FALSE : TRUE;
         $overtime_absolute = $working_time > 0 ? $stats['time_spent_t'] > $working_time : FALSE;
         
         return array ('is_user_checked_in' => $last_check['check_in'] ? TRUE : FALSE,
