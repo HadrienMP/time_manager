@@ -7,24 +7,19 @@
     tr:last-child td {padding-bottom: 10px;}
     thead {
         
-        @include beveled();
-        
         th { 
             p {
                 padding: 8px 5px ; 
                 text-align: left;
                 float: left;
                 color: white;
+                width: 170px;
             }
             
             div {
                 float: right;
                 padding-top: 3px;
             }
-        }
-        
-        &.small-bg {
-            background-size: 45% 100%;
         }
         
         .multi-button {

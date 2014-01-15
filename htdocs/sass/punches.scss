@@ -33,7 +33,7 @@
        }
        
        tr:hover {
-           background: $active-button-color;
+            @extend .has_back;
        }
        
 	   td {

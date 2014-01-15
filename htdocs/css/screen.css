@@ -1,4 +1,4 @@
-/* line 17, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -280,36 +280,24 @@ body {
 #content .stats tr:last-child td, #content #data-table tr:last-child td {
   padding-bottom: 10px;
 }
-/* line 8, ../sass/stats.scss */
-#content .stats thead, #content #data-table thead {
-  background-color: #0062a8;
-  background: linear-gradient(210deg, transparent 30px, #0062a8 20px);
-  background-size: 95% 100%;
-  background-repeat: no-repeat;
-  padding: 8px 5px;
-  color: white;
-}
-/* line 13, ../sass/stats.scss */
+/* line 11, ../sass/stats.scss */
 #content .stats thead th p, #content #data-table thead th p {
   padding: 8px 5px;
   text-align: left;
   float: left;
   color: white;
+  width: 170px;
 }
-/* line 20, ../sass/stats.scss */
+/* line 19, ../sass/stats.scss */
 #content .stats thead th div, #content #data-table thead th div {
   float: right;
   padding-top: 3px;
 }
-/* line 26, ../sass/stats.scss */
-#content .stats thead.small-bg, #content #data-table thead.small-bg {
-  background-size: 45% 100%;
-}
-/* line 30, ../sass/stats.scss */
+/* line 25, ../sass/stats.scss */
 #content .stats thead .multi-button, #content .stats thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content .stats thead a, #content .stats thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content .stats thead a, #content #data-table thead .multi-button, #content #data-table thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content #data-table thead a, #content #data-table thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content #data-table thead a {
   margin-top: -2px;
 }
-/* line 35, ../sass/stats.scss */
+/* line 30, ../sass/stats.scss */
 #content .stats tbody tr:first-child td, #content #data-table tbody tr:first-child td {
   padding-top: 10px;
 }
@@ -367,10 +355,6 @@ body {
 /* line 31, ../sass/punches.scss */
 #content #punches table.inputs tr:nth-child(2n - 1) {
   background: #111111;
-}
-/* line 35, ../sass/punches.scss */
-#content #punches table.inputs tr:hover {
-  background: #0062a8;
 }
 /* line 39, ../sass/punches.scss */
 #content #punches table.inputs td {
@@ -484,31 +468,30 @@ input[type="submit"], input[type="reset"] {
 a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   color: white;
   text-shadow: 0 0 10px white;
-  background: #0062a8 !important;
   -webkit-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5), inset 0 -2px 3px rgba(255, 255, 255, 0.2);
   -moz-box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5), inset 0 -2px 3px rgba(255, 255, 255, 0.2);
   box-shadow: inset 0 2px 3px rgba(0, 0, 0, 0.5), inset 0 -2px 3px rgba(255, 255, 255, 0.2);
 }
 
-/* line 179, ../sass/style.scss */
+/* line 180, ../sass/style.scss */
 .multi-button, #machine .form-wrapper .right a, #other-info .form-wrapper .right a {
   padding: 5px 7px;
   border-right: none !important;
   display: inline-block;
   z-index: 0;
 }
-/* line 185, ../sass/style.scss */
+/* line 186, ../sass/style.scss */
 .multi-button:first-child, #machine .form-wrapper .right a:first-child, #other-info .form-wrapper .right a:first-child {
   border-radius: 10px 0 0 10px;
   padding-left: 10px;
 }
-/* line 189, ../sass/style.scss */
+/* line 190, ../sass/style.scss */
 .multi-button:last-child, #machine .form-wrapper .right a:last-child, #other-info .form-wrapper .right a:last-child {
   border-radius: 0 10px 10px 0;
   border-right: 1px solid black;
 }
 
-/* line 195, ../sass/style.scss */
+/* line 196, ../sass/style.scss */
 .beveled-bg {
   background-color: #0062a8;
   background: linear-gradient(210deg, transparent 30px, #0062a8 20px);
@@ -517,26 +500,26 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   padding: 8px 5px;
   color: white;
 }
-/* line 202, ../sass/style.scss */
+/* line 204, ../sass/style.scss */
 .overtime.checked_in .beveled-bg {
-  background: linear-gradient(210deg, transparent 30px, #ff9500 20px);
+  background: linear-gradient(210deg, transparent 30px, #cc6000 20px);
 }
-/* line 203, ../sass/style.scss */
+/* line 205, ../sass/style.scss */
 .overtime_absolute.checked_in .beveled-bg {
-  background: linear-gradient(210deg, transparent 30px, #ff0000 20px);
+  background: linear-gradient(210deg, transparent 30px, #bb0000 20px);
 }
 
-/* line 206, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
 .charts-tooltip {
   color: black;
 }
 
-/* line 210, ../sass/style.scss */
+/* line 212, ../sass/style.scss */
 strong {
   font-weight: bold;
 }
 
-/* line 214, ../sass/style.scss */
+/* line 216, ../sass/style.scss */
 .success {
   border-radius: 5px;
   margin: 0 0 15px;
@@ -545,34 +528,38 @@ strong {
   color: green;
 }
 
-/* line 223, ../sass/style.scss */
+/* line 225, ../sass/style.scss */
 .checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #0095ff;
   -moz-box-shadow: 0 0 30px #0095ff;
   box-shadow: 0 0 30px #0095ff;
 }
-/* line 224, ../sass/style.scss */
+/* line 226, ../sass/style.scss */
 .overtime.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #ff9500;
   -moz-box-shadow: 0 0 30px #ff9500;
   box-shadow: 0 0 30px #ff9500;
 }
-/* line 225, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 .overtime_absolute.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px red;
   -moz-box-shadow: 0 0 30px red;
   box-shadow: 0 0 30px red;
 }
 
-/* line 228, ../sass/style.scss */
-.checked_in .has_back {
-  background-color: #0095FF;
-}
 /* line 229, ../sass/style.scss */
-.overtime.checked_in .has_back {
-  background-color: #FF9500;
+.has_back, #content #punches table.inputs tr:hover, a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
+  background: #0062A8 !important;
 }
-/* line 230, ../sass/style.scss */
-.overtime_absolute.checked_in .has_back {
-  background-color: #FF0000;
+/* line 231, ../sass/style.scss */
+.checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
+  background: #0062A8 !important;
+}
+/* line 232, ../sass/style.scss */
+.overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
+  background: #CC6000 !important;
+}
+/* line 233, ../sass/style.scss */
+.overtime_absolute.checked_in .has_back, .overtime_absolute.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in a:hover, .overtime_absolute.checked_in a.active, .overtime_absolute.checked_in input[type="submit"]:hover, .overtime_absolute.checked_in input[type="reset"]:hover {
+  background: #BB0000 !important;
 }

@@ -233,13 +233,13 @@ class Time_manager {
         
         // Minimal calculation of the stats
         $stats = $this->calculate_stats($user_id, TRUE);
-        $overtime = strtotime($stats['periods']['all']['end_time']) < time();
+        $overtime = $stats['time_left_t'] - $stats['periods']['all']['overtime_t'] > 0 ? FALSE : TRUE;
         $overtime_absolute = $working_time > 0 ? $stats['time_spent_t'] > $working_time : FALSE;
         
         return array ('is_user_checked_in' => $last_check['check_in'] ? TRUE : FALSE,
                 'is_export_needed' => $this->is_export_needed ( $last_check ), 
                 'is_overtime_filled' => $working_time != NULL && count($working_time) > 0 ? TRUE : FALSE,
-                'ratio' => $stats['ratio'] * 100,
+                'ratio' => $stats['ratio'] < 1 ? $stats['ratio'] * 100 : ($stats['ratio'] - 1) * 100,
                 'overtime' => $overtime,
                 'overtime_absolute' => $overtime_absolute
         );
