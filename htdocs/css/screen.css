@@ -1,4 +1,4 @@
-/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -491,7 +491,7 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   border-right: 1px solid black;
 }
 
-/* line 196, ../sass/style.scss */
+/* line 199, ../sass/style.scss */
 .beveled-bg {
   background-color: #0062a8;
   background: linear-gradient(210deg, transparent 30px, #0062a8 20px);
@@ -500,26 +500,35 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   padding: 8px 5px;
   color: white;
 }
-/* line 204, ../sass/style.scss */
+/* line 207, ../sass/style.scss */
 .overtime.checked_in .beveled-bg {
-  background: linear-gradient(210deg, transparent 30px, #cc6000 20px);
+  background: linear-gradient(210deg, transparent 30px, #dc7000 20px);
 }
-/* line 205, ../sass/style.scss */
+/* line 208, ../sass/style.scss */
 .overtime_absolute.checked_in .beveled-bg {
-  background: linear-gradient(210deg, transparent 30px, #bb0000 20px);
+  background: linear-gradient(210deg, transparent 30px, #cb0000 20px);
 }
 
-/* line 208, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 .charts-tooltip {
   color: black;
 }
 
-/* line 212, ../sass/style.scss */
+/* line 215, ../sass/style.scss */
 strong {
   font-weight: bold;
+  color: #0095FF;
+}
+/* line 218, ../sass/style.scss */
+.overtime.checked_in strong {
+  color: #ff9500 !important;
+}
+/* line 219, ../sass/style.scss */
+.overtime_absolute.checked_in strong {
+  color: red !important;
 }
 
-/* line 216, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 .success {
   border-radius: 5px;
   margin: 0 0 15px;
@@ -528,38 +537,38 @@ strong {
   color: green;
 }
 
-/* line 225, ../sass/style.scss */
+/* line 231, ../sass/style.scss */
 .checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #0095ff;
   -moz-box-shadow: 0 0 30px #0095ff;
   box-shadow: 0 0 30px #0095ff;
 }
-/* line 226, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
 .overtime.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #ff9500;
   -moz-box-shadow: 0 0 30px #ff9500;
   box-shadow: 0 0 30px #ff9500;
 }
-/* line 227, ../sass/style.scss */
+/* line 233, ../sass/style.scss */
 .overtime_absolute.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px red;
   -moz-box-shadow: 0 0 30px red;
   box-shadow: 0 0 30px red;
 }
 
-/* line 229, ../sass/style.scss */
+/* line 235, ../sass/style.scss */
 .has_back, #content #punches table.inputs tr:hover, a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
-  background: #0062A8 !important;
+  background: #0062a8 !important;
 }
-/* line 231, ../sass/style.scss */
+/* line 237, ../sass/style.scss */
 .checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
-  background: #0062A8 !important;
+  background: #0062a8 !important;
 }
-/* line 232, ../sass/style.scss */
+/* line 238, ../sass/style.scss */
 .overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
-  background: #CC6000 !important;
+  background: #dc7000 !important;
 }
-/* line 233, ../sass/style.scss */
+/* line 239, ../sass/style.scss */
 .overtime_absolute.checked_in .has_back, .overtime_absolute.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in a:hover, .overtime_absolute.checked_in a.active, .overtime_absolute.checked_in input[type="submit"]:hover, .overtime_absolute.checked_in input[type="reset"]:hover {
-  background: #BB0000 !important;
+  background: #cb0000 !important;
 }

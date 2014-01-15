@@ -47,7 +47,7 @@ function duration_to_string($timestamp, $working_time = NULL) {
     $prefix = "";
     if ($timestamp < 0) {
         $timestamp *= - 1;
-        $prefix = "-";
+        $prefix = "- ";
     }
     
     $days = "";

@@ -193,6 +193,9 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
     }
 }
 
+$bg-orange: #DC7000;
+$bg-red: #CB0000;
+
 .beveled-bg {
     background-color: $active-button-color;
     background:linear-gradient(210deg, transparent 30px, $active-button-color 20px);
@@ -201,8 +204,8 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
     padding: 8px 5px;
     color: white;
     
-    .overtime.checked_in & { background:linear-gradient(210deg, transparent 30px, #CC6000 20px);}
-    .overtime_absolute.checked_in & { background:linear-gradient(210deg, transparent 30px, #BB0000 20px);}
+    .overtime.checked_in & { background:linear-gradient(210deg, transparent 30px, $bg-orange 20px);}
+    .overtime_absolute.checked_in & { background:linear-gradient(210deg, transparent 30px, $bg-red 20px);}
 }
 
 .charts-tooltip {
@@ -211,6 +214,9 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 
 strong {
 	font-weight: bold;
+    color: #0095FF;
+    .overtime.checked_in & { color: #FF9500 !important;}
+    .overtime_absolute.checked_in & { color: #FF0000 !important;}
 }
 
 .success {
@@ -229,6 +235,6 @@ strong {
 .has_back {
     background: #0062A8 !important;
     .checked_in & { background: #0062A8 !important;}
-    .overtime.checked_in & { background: #CC6000 !important;}
-    .overtime_absolute.checked_in & { background: #BB0000 !important;}
+    .overtime.checked_in & { background: $bg-orange !important;}
+    .overtime_absolute.checked_in & { background: $bg-red !important;}
 }
