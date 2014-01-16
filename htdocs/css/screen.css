@@ -281,23 +281,21 @@ body {
   padding-bottom: 10px;
 }
 /* line 11, ../sass/stats.scss */
-#content .stats thead th p, #content #data-table thead th p {
-  padding: 8px 5px;
+#content .stats thead th p.left, #content #data-table thead th p.left {
   text-align: left;
   float: left;
-  color: white;
-  width: 170px;
+  width: 165px;
 }
-/* line 19, ../sass/stats.scss */
+/* line 17, ../sass/stats.scss */
 #content .stats thead th div, #content #data-table thead th div {
   float: right;
   padding-top: 3px;
 }
-/* line 25, ../sass/stats.scss */
+/* line 23, ../sass/stats.scss */
 #content .stats thead .multi-button, #content .stats thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content .stats thead a, #content .stats thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content .stats thead a, #content #data-table thead .multi-button, #content #data-table thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content #data-table thead a, #content #data-table thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content #data-table thead a {
   margin-top: -2px;
 }
-/* line 30, ../sass/stats.scss */
+/* line 28, ../sass/stats.scss */
 #content .stats tbody tr:first-child td, #content #data-table tbody tr:first-child td {
   padding-top: 10px;
 }
@@ -409,9 +407,8 @@ body {
 #content #data p.beveled-bg {
   margin: 0;
   margin-bottom: 10px;
-  padding: 8px 5px;
 }
-/* line 26, ../sass/data.scss */
+/* line 25, ../sass/data.scss */
 #content #data #data-table {
   margin-bottom: 10px;
 }
@@ -493,42 +490,43 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 
 /* line 199, ../sass/style.scss */
 .beveled-bg {
-  background-color: #0062a8;
-  background: linear-gradient(210deg, transparent 30px, #0062a8 20px);
+  background-color: #1C1C1C;
+  background: linear-gradient(210deg, transparent 30px, #1c1c1c 20px);
   background-size: 95% 100%;
   background-repeat: no-repeat;
-  padding: 8px 5px;
+  padding: 8px;
   color: white;
+  border-left: 4px solid #0062a8;
 }
-/* line 207, ../sass/style.scss */
+/* line 211, ../sass/style.scss */
 .overtime.checked_in .beveled-bg {
-  background: linear-gradient(210deg, transparent 30px, #dc7000 20px);
+  border-left: 4px solid #dc7000;
 }
-/* line 208, ../sass/style.scss */
+/* line 213, ../sass/style.scss */
 .overtime_absolute.checked_in .beveled-bg {
-  background: linear-gradient(210deg, transparent 30px, #cb0000 20px);
+  border-left: 4px solid #cb0000;
 }
 
-/* line 211, ../sass/style.scss */
+/* line 216, ../sass/style.scss */
 .charts-tooltip {
   color: black;
 }
 
-/* line 215, ../sass/style.scss */
+/* line 220, ../sass/style.scss */
 strong {
   font-weight: bold;
   color: #0095FF;
 }
-/* line 218, ../sass/style.scss */
+/* line 223, ../sass/style.scss */
 .overtime.checked_in strong {
   color: #ff9500 !important;
 }
-/* line 219, ../sass/style.scss */
+/* line 224, ../sass/style.scss */
 .overtime_absolute.checked_in strong {
   color: red !important;
 }
 
-/* line 222, ../sass/style.scss */
+/* line 227, ../sass/style.scss */
 .success {
   border-radius: 5px;
   margin: 0 0 15px;
@@ -537,38 +535,38 @@ strong {
   color: green;
 }
 
-/* line 231, ../sass/style.scss */
+/* line 236, ../sass/style.scss */
 .checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #0095ff;
   -moz-box-shadow: 0 0 30px #0095ff;
   box-shadow: 0 0 30px #0095ff;
 }
-/* line 232, ../sass/style.scss */
+/* line 237, ../sass/style.scss */
 .overtime.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #ff9500;
   -moz-box-shadow: 0 0 30px #ff9500;
   box-shadow: 0 0 30px #ff9500;
 }
-/* line 233, ../sass/style.scss */
+/* line 238, ../sass/style.scss */
 .overtime_absolute.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px red;
   -moz-box-shadow: 0 0 30px red;
   box-shadow: 0 0 30px red;
 }
 
-/* line 235, ../sass/style.scss */
+/* line 240, ../sass/style.scss */
 .has_back, #content #punches table.inputs tr:hover, a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   background: #0062a8 !important;
 }
-/* line 237, ../sass/style.scss */
+/* line 242, ../sass/style.scss */
 .checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
   background: #0062a8 !important;
 }
-/* line 238, ../sass/style.scss */
+/* line 243, ../sass/style.scss */
 .overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
   background: #dc7000 !important;
 }
-/* line 239, ../sass/style.scss */
+/* line 244, ../sass/style.scss */
 .overtime_absolute.checked_in .has_back, .overtime_absolute.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in a:hover, .overtime_absolute.checked_in a.active, .overtime_absolute.checked_in input[type="submit"]:hover, .overtime_absolute.checked_in input[type="reset"]:hover {
   background: #cb0000 !important;
 }

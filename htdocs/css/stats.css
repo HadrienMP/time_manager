@@ -19,23 +19,21 @@
   padding-bottom: 10px;
 }
 /* line 11, ../sass/stats.scss */
-.stats thead th p, #data-table thead th p {
-  padding: 8px 5px;
+.stats thead th p.left, #data-table thead th p.left {
   text-align: left;
   float: left;
-  color: white;
-  width: 170px;
+  width: 165px;
 }
-/* line 19, ../sass/stats.scss */
+/* line 17, ../sass/stats.scss */
 .stats thead th div, #data-table thead th div {
   float: right;
   padding-top: 3px;
 }
-/* line 25, ../sass/stats.scss */
+/* line 23, ../sass/stats.scss */
 .stats thead .multi-button, #data-table thead .multi-button {
   margin-top: -2px;
 }
-/* line 30, ../sass/stats.scss */
+/* line 28, ../sass/stats.scss */
 .stats tbody tr:first-child td, #data-table tbody tr:first-child td {
   padding-top: 10px;
 }

@@ -197,15 +197,20 @@ $bg-orange: #DC7000;
 $bg-red: #CB0000;
 
 .beveled-bg {
-    background-color: $active-button-color;
-    background:linear-gradient(210deg, transparent 30px, $active-button-color 20px);
+    // background-color: $active-button-color;
+    background-color: #1C1C1C;
+    // background:linear-gradient(210deg, transparent 30px, $active-button-color 20px);
+    background:linear-gradient(210deg, transparent 30px, #1C1C1C 20px);
     background-size: 95% 100%;
     background-repeat:no-repeat;
-    padding: 8px 5px;
+    padding: 8px;
     color: white;
+    border-left: 4px solid $active-button-color;
     
-    .overtime.checked_in & { background:linear-gradient(210deg, transparent 30px, $bg-orange 20px);}
-    .overtime_absolute.checked_in & { background:linear-gradient(210deg, transparent 30px, $bg-red 20px);}
+    // .overtime.checked_in & { background:linear-gradient(210deg, transparent 30px, $bg-orange 20px);}
+    .overtime.checked_in & { border-left: 4px solid $bg-orange;}
+    // .overtime_absolute.checked_in & { background:linear-gradient(210deg, transparent 30px, $bg-red 20px);}
+    .overtime_absolute.checked_in & { border-left: 4px solid $bg-red;}
 }
 
 .charts-tooltip {
