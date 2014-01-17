@@ -217,8 +217,11 @@ strong {
 	border-radius: 5px;
 	margin: 0 0 15px;
 	padding: 10px;
-	background: rgba(0,90,0,0.5);
-	color: green;
+	background: url(/images/Alarm-Tick-icon.png) no-repeat 10px center;
+/*     background: #77CC00; */
+	padding-left: 40px;
+	color: white;
+	border: 1px solid #77CC00;
 }
 
 .has_light {
