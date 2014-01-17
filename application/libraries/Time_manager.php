@@ -244,6 +244,27 @@ class Time_manager {
                 'overtime_absolute' => $overtime_absolute
         );
     }
+    
+    public function get_csv_export($user_id) {
+        $checks = $this->ci->checks->get_checks ( $user_id );
+        
+        if (count($checks) > 0) {
+            $stats = $this->calculate_stats($user_id, TRUE);
+            
+        	$month = date('F-Y', strtotime($checks[count($checks) - 1]['date']));
+            
+            $data = checks_to_csv($checks, $stats);
+	        $name = $month.'.csv';
+            
+            return array(
+                'name' => $name,
+                'data' => $data
+            );
+        }
+        else {
+            return NULL;
+        }
+    }
 }
 
 /* End of file Time_manager.php */

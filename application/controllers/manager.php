@@ -20,6 +20,7 @@ class Manager extends CI_Controller {
         $this->twiggy->register_function('has_errors');
         $this->twiggy->register_function('no_slash');
         $this->twiggy->register_function('phpinfo');
+        $this->twiggy->register_function('floor');
     }
 
     /**
@@ -280,15 +281,15 @@ class Manager extends CI_Controller {
     
     public function export() {
         $this->_pre_action(__FUNCTION__);
-        $checks = $this->time_manager->get_db_checks($this->tank_auth->get_user_id());
-        
-        if (count($checks) > 0) {
-        	$month = date('F-Y', strtotime($checks[count($checks) - 1]['date']));
-	        $data = checks_to_csv($checks);
-	        $name = $month.'.csv';
-
+        $export = $this->time_manager->get_csv_export($this->tank_auth->get_user_id());
+            
+        if ($export != NULL) {
 	        $this->load->helper('csv');
-	        array_to_csv($data, $name);
+	        array_to_csv($export['data'], $export['name']);
+        }
+        else {
+            log_message('error', "L'export des pointages a échoué pour l'utilisateur " + 
+                $this->tank_auth->get_user_id());
         }
     }
     

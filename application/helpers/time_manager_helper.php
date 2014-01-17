@@ -200,9 +200,10 @@ function update_time($check) {
  * Transforms db checks to a human readable csv
  * 
  * @param unknown $checks
+ * @param array $stats
  * @return unkown either the csv as an array or false if the user's checks are corrputed
  */
-function checks_to_csv($checks) {
+function checks_to_csv($checks, $stats) {
     $csv = array (
             array ("Date de check in","Date de check out","Heure de check in","Heure de check out",
                     "temps passé" 
@@ -240,6 +241,15 @@ function checks_to_csv($checks) {
             return FALSE;
         }
     }
+    
+    $csv[] = array('','','Jours travaillés','Heures supplémentaires', 'Temps passé');
+    $csv[] = array(
+        '',
+        '',
+        $stats['periods']['month']['days_worked'],
+        $stats['periods']['month']['overtime'], 
+        $stats['periods']['month']['time_spent']
+    );
     
     return $csv;
 }
