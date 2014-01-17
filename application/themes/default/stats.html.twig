@@ -30,10 +30,10 @@
 
 {% block content %}
 <table class="stats">
-	<thead class="beveled-bg">
+	<thead>
 		<tr>
 			<th colspan="2">
-				<p>Aujourd'hui</p>
+				<p class="beveled-bg">Aujourd'hui</p>
 			</th>
 		</tr>
 	</thead>
@@ -43,8 +43,8 @@
 			<td>{{stats.time_spent}}</td>
 		</tr>
 		<tr>
-			<td>Temps Restant&nbsp;:</td>
-			<td>{{stats.time_left}}</td>
+			<td><strong>Temps Restant&nbsp;:</strong></td>
+			<td><strong>{{stats.time_left}}</strong></td>
 		</tr>
 		<tr>
 			<td>Heure de fin&nbsp;:</td>
@@ -54,7 +54,7 @@
 	<thead>
 		<tr>
 			<th colspan="2">
-				<p class="beveled-bg">Par période</p>
+				<p class="beveled-bg left">Par période</p>
 				<div>
 					<a class="multi-button">Jour</a><!-- whitespace
 				 --><a class="multi-button">Semaine</a><!-- whitespace
@@ -76,8 +76,8 @@
 				<td>{{period.time_spent}}</td>
 			</tr>
 			<tr>
-				<td>Heure de fin&nbsp;:</td>
-				<td>{{period.end_time}}</td>
+				<td><strong>Heure de fin&nbsp;:</strong></td>
+				<td><strong>{{period.end_time}}</strong></td>
 			</tr>
 			<tr>
 				<td>Jours travaillés&nbsp;:</td>

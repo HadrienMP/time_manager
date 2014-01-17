@@ -30,7 +30,7 @@ body {
 	border-bottom-width: 5px;
     z-index: 1000;	
 	@import "other-info.scss";
-	
+	 
 }
 #machine {
     height: $machine-height;
@@ -193,16 +193,20 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
     }
 }
 
+$bg-orange: #DC7000;
+$bg-red: #CB0000;
+
 .beveled-bg {
-    background-color: $active-button-color;
-    background:linear-gradient(210deg, transparent 30px, $active-button-color 20px);
+    background-color: #1C1C1C;
+    background:linear-gradient(210deg, transparent 30px, #1C1C1C 20px);
     background-size: 95% 100%;
     background-repeat:no-repeat;
-    padding: 8px 5px;
+    padding: 8px;
     color: white;
+    border-left: 4px solid $active-button-color;
     
-    .overtime.checked_in & { background:linear-gradient(210deg, transparent 30px, #CC6000 20px);}
-    .overtime_absolute.checked_in & { background:linear-gradient(210deg, transparent 30px, #BB0000 20px);}
+    .overtime.checked_in & { border-left: 4px solid $bg-orange;}
+    .overtime_absolute.checked_in & { border-left: 4px solid $bg-red;} 
 }
 
 .charts-tooltip {
@@ -211,6 +215,9 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 
 strong {
 	font-weight: bold;
+    color: #0095FF;
+    .overtime.checked_in & { color: #FF9500 !important;}
+    .overtime_absolute.checked_in & { color: #FF0000 !important;}
 }
 
 .success {
@@ -218,7 +225,6 @@ strong {
 	margin: 0 0 15px;
 	padding: 10px;
 	background: url(/images/Alarm-Tick-icon.png) no-repeat 10px center;
-/*     background: #77CC00; */
 	padding-left: 40px;
 	color: white;
 	border: 1px solid #77CC00;
@@ -232,6 +238,6 @@ strong {
 .has_back {
     background: #0062A8 !important;
     .checked_in & { background: #0062A8 !important;}
-    .overtime.checked_in & { background: #CC6000 !important;}
-    .overtime_absolute.checked_in & { background: #BB0000 !important;}
+    .overtime.checked_in & { background: $bg-orange !important;}
+    .overtime_absolute.checked_in & { background: $bg-red !important;}
 }
