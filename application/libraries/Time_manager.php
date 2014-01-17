@@ -109,10 +109,10 @@ class Time_manager {
             $stats['periods'][$period]['time_spent_t'] = $time_spent[$period];
             $time_spent_cheated = $time_spent[$period];
             $days_worked_cheated = $days[$period];
-            if ($period != 'day') {
-                $time_spent_cheated += $stats['time_left_t'];
-            } else {
+            if ($period == 'day') {
                 $days_worked_cheated = 1;
+            } else if ($time_spent['day'] != 0) {
+                $time_spent_cheated += $stats['time_left_t'];
             }
             
             $stats['periods'][$period]['days_worked'] = $days[$period];
@@ -229,7 +229,6 @@ class Time_manager {
     public function all_pages_action($user_id) {
         $last_check = $this->ci->checks->get_last_check ( $user_id );
         $working_time = $this->ci->parameters->get_working_time( $user_id );
-        log_message('debug', 'Working time : '.print_r($working_time, TRUE));
         
         // Minimal calculation of the stats
         $stats = $this->calculate_stats($user_id, TRUE);

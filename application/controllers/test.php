@@ -25,8 +25,6 @@ class Test extends CI_Controller {
 		// Set time marker for the start of the test suite
 		$this->benchmark->mark('first');
 		
-		log_message('debug', 'Test Controller Initialized');
-		
 		// Load the unit test library
 		$this->load->library('unit_test');
 		

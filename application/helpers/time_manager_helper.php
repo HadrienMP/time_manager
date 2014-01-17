@@ -336,7 +336,9 @@ function calculate_time_spent($checks) {
  */
 function calculate_overtime($time_spent, $working_time, $days) {
     $regular_total_worktime = $working_time * $days;
+    log_message('debug', 'Temps de travail normal : '.$regular_total_worktime." ($working_time * $days)");
     $overtime = $time_spent - $regular_total_worktime;    
+    log_message('debug', 'Heures supp : '.$overtime." ($time_spent - $regular_total_worktime)");
     if ($days == 0) {
         $overtime = 0;
     }
@@ -355,8 +357,7 @@ function count_days($checks) {
     $a_week_ago = string_to_stripped_date ( "-1 week" );
     $a_month_ago = string_to_stripped_date ( "-1 month" );
     
-    $periods = array ('day' => 0,'week' => 0,'month' => 0 
-    );
+    $periods = array ('day' => 0,'week' => 0,'month' => 0);
     
     $last_date = NULL;
     foreach ( $checks as $check ) {
@@ -366,18 +367,17 @@ function count_days($checks) {
             $last_date = $date[0];
             
             // Calculates days worked based on the period
-            log_message ( 'debug', $date[0] . " : " . $today );
             if ($date[0] == $today) {
                 $periods['day'] ++;
             } else if ($date[0] < $today && $date[0] >= $a_week_ago) {
                 $periods['week'] ++;
+                log_message('debug', 'Week days : '.$periods['week']);
             } else if ($date[0] < $a_week_ago && $date[0] >= $a_month_ago) {
                 $periods['month'] ++;
             }
         }
     }
-    // if ($periods['day'] === 0)
-        // $periods['day'] = 1;
+    
     $periods['week'] += $periods['day'];
     $periods['month'] += $periods['week'];    
 

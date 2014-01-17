@@ -133,7 +133,6 @@ class Manager extends CI_Controller {
                 }
                 else if ($this->is_new_check($parts, $checks_to_display, $checks_to_add))
                 {
-                    log_message('debug', 'New check : '.$field_name);
                     /*
                      * Cas d'un nouveau check
                      */

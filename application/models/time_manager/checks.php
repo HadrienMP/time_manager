@@ -73,7 +73,6 @@ class Checks extends CI_Model
         else {
             log_message('error', "User id vide");
         }
-        log_message('debug',"Checks d'aujourd'hui : ".print_r($checks, TRUE));
         return $checks;
     }
     
@@ -99,9 +98,6 @@ class Checks extends CI_Model
     }
     
     public function update_checks($checks_to_update, $checks_to_add, $ids_to_delete, $user_id) {
-        log_message('debug', 'update_checks, checks_to_update : '.print_r($checks_to_update, TRUE));
-        log_message('debug', 'update_checks, checks_to_add : '.print_r($checks_to_add, TRUE));
-        log_message('debug', 'update_checks, ids to delete : '.print_r($ids_to_delete, TRUE));
         
         // Delete
         if (isset($ids_to_delete) and count($ids_to_delete) > 0) {
