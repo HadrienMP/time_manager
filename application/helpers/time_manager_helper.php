@@ -89,8 +89,9 @@ function mysql_date_to_time_array($date) {
     return array ('hour' => date ( "H", $new ),'minute' => date ( "i", $new ) 
     );
 }
-function string_to_stripped_date($string) {
-    return date ( "Y-m-d", strtotime ( $string ) );
+function string_to_stripped_date($string, $timestamp = NULL) {
+    $timestamp = $timestamp == NULL ? time() : $timestamp;
+    return date ( "Y-m-d", strtotime ( $string, $timestamp) );
 }
 
 /*
@@ -272,8 +273,9 @@ function calculate_time_spent($checks) {
     
     // Reference dates
     $today = string_to_stripped_date ( "today" );
-    $a_week_ago = string_to_stripped_date ( "-1 week" );
-    $a_month_ago = string_to_stripped_date ( "-1 month" );
+    $a_week_ago = string_to_stripped_date ( "last monday", strtotime('tomorrow') );
+    $a_month_ago = string_to_stripped_date ( "first day of this month" );
+    log_message('debug', 'Premier jour du mois : '.$a_month_ago);
     
     // Times
     $time_today = 0;
@@ -354,8 +356,9 @@ function count_days($checks) {
     
     // Reference dates
     $today = string_to_stripped_date ( "today" );
-    $a_week_ago = string_to_stripped_date ( "-1 week" );
-    $a_month_ago = string_to_stripped_date ( "-1 month" );
+    $a_week_ago = string_to_stripped_date ( "last monday", strtotime('tomorrow') );
+    $a_month_ago = string_to_stripped_date ( "first day of this month" );
+    log_message('debug', 'Premier jour du mois : '.$a_month_ago);
     
     $periods = array ('day' => 0,'week' => 0,'month' => 0);
     
