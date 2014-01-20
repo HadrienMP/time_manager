@@ -198,15 +198,17 @@ $bg-red: #CB0000;
 
 .beveled-bg {
     background-color: #1C1C1C;
-    background:linear-gradient(210deg, transparent 30px, #1C1C1C 20px);
-    background-size: 95% 100%;
+    background:linear-gradient(210deg, transparent 26px, #1C1C1C 20px);
+    background-size: 100% 100%;
     background-repeat:no-repeat;
     padding: 8px;
     color: white;
     border-left: 4px solid $active-button-color;
+    border-bottom: 1px solid $active-button-color;
+    line-height: 1em !important;
     
-    .overtime.checked_in & { border-left: 4px solid $bg-orange;}
-    .overtime_absolute.checked_in & { border-left: 4px solid $bg-red;} 
+    .overtime.checked_in & { border-color: $bg-orange;}
+    .overtime_absolute.checked_in & { border-color: $bg-red;} 
 }
 
 .charts-tooltip {
@@ -221,13 +223,25 @@ strong {
 }
 
 .success {
-	border-radius: 5px;
+	@extend .beveled-bg;
 	margin: 0 0 15px;
-	padding: 10px;
-	background: url(/images/Alarm-Tick-icon.png) no-repeat 10px center;
-	padding-left: 40px;
-	color: white;
-	border: 1px solid #77CC00;
+	border-color: #0C0;
+    background: #1C1C1C;
+}
+
+.wrong {
+	@extend .success;
+    border-color: #C00;
+}
+
+input.wrong {
+	margin: 0; 
+	padding: 2px 1px; 
+	background: white; 
+	color: red; 
+	border-color: red;
+	font-weight: bold;
+	border-style: solid;
 }
 
 .has_light {
@@ -240,4 +254,17 @@ strong {
     .checked_in & { background: #0062A8 !important;}
     .overtime.checked_in & { background: $bg-orange !important;}
     .overtime_absolute.checked_in & { background: $bg-red !important;}
+}
+
+
+/*##############################################################*/
+
+.error {
+	td {
+	    color: red;
+	    padding: 10px 0 5px !important;
+	    &:first-child {
+            padding: 0 0 5px !important;
+	    }
+	}
 }

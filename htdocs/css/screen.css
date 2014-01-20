@@ -132,12 +132,29 @@ body {
   margin-top: -5px;
 }
 /* line 31, ../sass/other-info.scss */
+#machine #puncher-button, #other-info #puncher-button {
+  font-family: sans-serif;
+  font-size: 3em;
+  font-style: italic;
+  margin: auto;
+  display: block;
+  text-align: center;
+  padding-top: 20px;
+  border-radius: 20px;
+}
+/* line 32, ../sass/other-info.scss */
+#machine #puncher-button span, #other-info #puncher-button span {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-size: 3em;
+}
+/* line 47, ../sass/other-info.scss */
 #machine .buttons-bar, #other-info .buttons-bar {
   border-top: 1px solid black;
   height: 50px;
   width: 100%;
 }
-/* line 36, ../sass/other-info.scss */
+/* line 52, ../sass/other-info.scss */
 #machine .buttons-bar input, #other-info .buttons-bar input {
   display: block;
   width: 100%;
@@ -145,17 +162,17 @@ body {
   border-radius: 0 0 20px 20px;
   font-size: 1.2em;
 }
-/* line 44, ../sass/other-info.scss */
+/* line 60, ../sass/other-info.scss */
 #machine .buttons-bar input[type="submit"], #machine .buttons-bar input[type="reset"], #other-info .buttons-bar input[type="submit"], #other-info .buttons-bar input[type="reset"] {
   border: none;
   background: none;
 }
-/* line 50, ../sass/other-info.scss */
+/* line 66, ../sass/other-info.scss */
 #machine p.message, #other-info p.message {
   margin: 20px;
   text-align: center;
 }
-/* line 54, ../sass/other-info.scss */
+/* line 70, ../sass/other-info.scss */
 #machine p.message a, #other-info p.message a {
   border-radius: 10px;
   padding: 5px 10px;
@@ -300,7 +317,7 @@ body {
   padding-top: 10px;
 }
 /* line 2, ../sass/preferences.scss */
-#content #preferences p.beveled-bg {
+#content #preferences p.beveled-bg, #content #preferences p.success, #content #preferences p.wrong {
   margin-bottom: 15px;
 }
 /* line 6, ../sass/preferences.scss */
@@ -352,7 +369,7 @@ body {
 }
 /* line 31, ../sass/punches.scss */
 #content #punches table.inputs tr:nth-child(2n - 1) {
-  background: #111111;
+  background: #1C1C1C;
 }
 /* line 39, ../sass/punches.scss */
 #content #punches table.inputs td {
@@ -404,7 +421,7 @@ body {
   line-height: 1.2em;
 }
 /* line 20, ../sass/data.scss */
-#content #data p.beveled-bg {
+#content #data p.beveled-bg, #content #data p.success, #content #data p.wrong {
   margin: 0;
   margin-bottom: 10px;
 }
@@ -489,86 +506,111 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 }
 
 /* line 199, ../sass/style.scss */
-.beveled-bg {
+.beveled-bg, .success, .wrong {
   background-color: #1C1C1C;
-  background: linear-gradient(210deg, transparent 30px, #1c1c1c 20px);
-  background-size: 95% 100%;
+  background: linear-gradient(210deg, transparent 26px, #1c1c1c 20px);
+  background-size: 100% 100%;
   background-repeat: no-repeat;
   padding: 8px;
   color: white;
   border-left: 4px solid #0062a8;
+  border-bottom: 1px solid #0062a8;
+  line-height: 1em !important;
 }
-/* line 208, ../sass/style.scss */
-.overtime.checked_in .beveled-bg {
-  border-left: 4px solid #dc7000;
+/* line 210, ../sass/style.scss */
+.overtime.checked_in .beveled-bg, .overtime.checked_in .success, .overtime.checked_in .wrong {
+  border-color: #dc7000;
 }
-/* line 209, ../sass/style.scss */
-.overtime_absolute.checked_in .beveled-bg {
-  border-left: 4px solid #cb0000;
+/* line 211, ../sass/style.scss */
+.overtime_absolute.checked_in .beveled-bg, .overtime_absolute.checked_in .success, .overtime_absolute.checked_in .wrong {
+  border-color: #cb0000;
 }
 
-/* line 212, ../sass/style.scss */
+/* line 214, ../sass/style.scss */
 .charts-tooltip {
   color: black;
 }
 
-/* line 216, ../sass/style.scss */
+/* line 218, ../sass/style.scss */
 strong {
   font-weight: bold;
   color: #0095FF;
 }
-/* line 219, ../sass/style.scss */
+/* line 221, ../sass/style.scss */
 .overtime.checked_in strong {
   color: #FF9500 !important;
 }
-/* line 220, ../sass/style.scss */
+/* line 222, ../sass/style.scss */
 .overtime_absolute.checked_in strong {
   color: #FF0000 !important;
 }
 
-/* line 223, ../sass/style.scss */
-.success {
-  border-radius: 5px;
+/* line 225, ../sass/style.scss */
+.success, .wrong {
   margin: 0 0 15px;
-  padding: 10px;
-  background: url(/images/Alarm-Tick-icon.png) no-repeat 10px center;
-  padding-left: 40px;
-  color: white;
-  border: 1px solid #77CC00;
+  border-color: #0C0;
+  background: #1C1C1C;
 }
 
-/* line 234, ../sass/style.scss */
+/* line 232, ../sass/style.scss */
+.wrong {
+  border-color: #C00;
+}
+
+/* line 237, ../sass/style.scss */
+input.wrong {
+  margin: 0;
+  padding: 2px 1px;
+  background: white;
+  color: red;
+  border-color: red;
+  font-weight: bold;
+  border-style: solid;
+}
+
+/* line 248, ../sass/style.scss */
 .checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #0095ff;
   -moz-box-shadow: 0 0 30px #0095ff;
   box-shadow: 0 0 30px #0095ff;
 }
-/* line 235, ../sass/style.scss */
+/* line 249, ../sass/style.scss */
 .overtime.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #ff9500;
   -moz-box-shadow: 0 0 30px #ff9500;
   box-shadow: 0 0 30px #ff9500;
 }
-/* line 236, ../sass/style.scss */
+/* line 250, ../sass/style.scss */
 .overtime_absolute.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px red;
   -moz-box-shadow: 0 0 30px red;
   box-shadow: 0 0 30px red;
 }
 
-/* line 238, ../sass/style.scss */
+/* line 252, ../sass/style.scss */
 .has_back, #content #punches table.inputs tr:hover, a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   background: #0062A8 !important;
 }
-/* line 240, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 .checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
   background: #0062A8 !important;
 }
-/* line 241, ../sass/style.scss */
+/* line 255, ../sass/style.scss */
 .overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
   background: #dc7000 !important;
 }
-/* line 242, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 .overtime_absolute.checked_in .has_back, .overtime_absolute.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in a:hover, .overtime_absolute.checked_in a.active, .overtime_absolute.checked_in input[type="submit"]:hover, .overtime_absolute.checked_in input[type="reset"]:hover {
   background: #cb0000 !important;
+}
+
+/*##############################################################*/
+/* line 263, ../sass/style.scss */
+.error td {
+  color: red;
+  padding: 10px 0 5px !important;
+}
+/* line 266, ../sass/style.scss */
+.error td:first-child {
+  padding: 0 0 5px !important;
 }
