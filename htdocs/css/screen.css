@@ -82,7 +82,7 @@ body {
 }
 
 /* line 23, ../sass/style.scss */
-#machine, #other-info {
+#machine, #oi-machine {
   width: 450px;
   margin: 35px auto 0;
   background: #222222;
@@ -96,43 +96,44 @@ body {
   border-bottom-width: 5px;
   z-index: 1000;
 }
-/* line 1, ../sass/other-info.scss */
-#machine .form-wrapper, #other-info .form-wrapper {
+
+/* line 3, ../sass/other-info.scss */
+.other-info .form-wrapper {
   padding: 0 20px;
   margin-bottom: 20px;
 }
-/* line 5, ../sass/other-info.scss */
-#machine .form-wrapper table, #other-info .form-wrapper table {
+/* line 7, ../sass/other-info.scss */
+.other-info .form-wrapper table {
   width: 100%;
   margin: 20px 0;
 }
-/* line 9, ../sass/other-info.scss */
-#machine .form-wrapper table input, #other-info .form-wrapper table input {
+/* line 11, ../sass/other-info.scss */
+.other-info .form-wrapper table input {
   width: 100%;
 }
-/* line 11, ../sass/other-info.scss */
-#machine .form-wrapper table td, #other-info .form-wrapper table td {
+/* line 13, ../sass/other-info.scss */
+.other-info .form-wrapper table td {
   padding: 2px 0;
 }
-/* line 14, ../sass/other-info.scss */
-#machine .form-wrapper table td input, #other-info .form-wrapper table td input {
+/* line 16, ../sass/other-info.scss */
+.other-info .form-wrapper table td input {
   text-indent: 5px;
   text-align: left;
 }
-/* line 20, ../sass/other-info.scss */
-#machine .form-wrapper .left, #other-info .form-wrapper .left {
+/* line 22, ../sass/other-info.scss */
+.other-info .form-wrapper .left {
   float: left;
 }
-/* line 21, ../sass/other-info.scss */
-#machine .form-wrapper .right, #other-info .form-wrapper .right {
+/* line 23, ../sass/other-info.scss */
+.other-info .form-wrapper .right {
   float: right;
 }
-/* line 24, ../sass/other-info.scss */
-#machine .form-wrapper .right a, #other-info .form-wrapper .right a {
+/* line 26, ../sass/other-info.scss */
+.other-info .form-wrapper .right a {
   margin-top: -5px;
 }
-/* line 31, ../sass/other-info.scss */
-#machine #puncher-button, #other-info #puncher-button {
+/* line 33, ../sass/other-info.scss */
+.other-info #puncher-button {
   font-family: sans-serif;
   font-size: 3em;
   font-style: italic;
@@ -142,38 +143,34 @@ body {
   padding-top: 20px;
   border-radius: 20px;
 }
-/* line 32, ../sass/other-info.scss */
-#machine #puncher-button span, #other-info #puncher-button span {
+/* line 34, ../sass/other-info.scss */
+.other-info #puncher-button:hover {
+  box-shadow: none;
+  background: none !important;
+}
+/* line 38, ../sass/other-info.scss */
+.other-info #puncher-button span {
   font-family: "FontAwesome";
   font-style: normal;
   font-size: 3em;
 }
-/* line 47, ../sass/other-info.scss */
-#machine .buttons-bar, #other-info .buttons-bar {
-  border-top: 1px solid black;
-  height: 50px;
+/* line 53, ../sass/other-info.scss */
+.other-info .buttons-bar {
   width: 100%;
 }
-/* line 52, ../sass/other-info.scss */
-#machine .buttons-bar input, #other-info .buttons-bar input {
+/* line 56, ../sass/other-info.scss */
+.other-info .buttons-bar input {
   display: block;
   width: 100%;
   height: 100%;
-  border-radius: 0 0 20px 20px;
-  font-size: 1.2em;
 }
-/* line 60, ../sass/other-info.scss */
-#machine .buttons-bar input[type="submit"], #machine .buttons-bar input[type="reset"], #other-info .buttons-bar input[type="submit"], #other-info .buttons-bar input[type="reset"] {
-  border: none;
-  background: none;
-}
-/* line 66, ../sass/other-info.scss */
-#machine p.message, #other-info p.message {
+/* line 63, ../sass/other-info.scss */
+.other-info p.message {
   margin: 20px;
   text-align: center;
 }
-/* line 70, ../sass/other-info.scss */
-#machine p.message a, #other-info p.message a {
+/* line 67, ../sass/other-info.scss */
+.other-info p.message a {
   border-radius: 10px;
   padding: 5px 10px;
 }
@@ -262,7 +259,7 @@ body {
 }
 
 /* line 113, ../sass/style.scss */
-#content {
+#content, #oi-content {
   background: url(../images/escheresque_ste.png);
   width: 390px;
   min-height: 200px;
@@ -278,76 +275,76 @@ body {
   top: -2px;
 }
 /* line 1, ../sass/stats.scss */
-#content .stats, #content #data-table {
+#content .stats, #content #data-table, #oi-content .stats, #oi-content #data-table {
   width: 100%;
 }
 /* line 4, ../sass/stats.scss */
-#content .stats td, #content #data-table td {
+#content .stats td, #content #data-table td, #oi-content .stats td, #oi-content #data-table td {
   padding: 2px 10px;
 }
 /* line 5, ../sass/stats.scss */
-#content .stats td:first-child, #content #data-table td:first-child {
+#content .stats td:first-child, #content #data-table td:first-child, #oi-content .stats td:first-child, #oi-content #data-table td:first-child {
   width: 40%;
 }
 /* line 6, ../sass/stats.scss */
-#content .stats tr:first-child td, #content #data-table tr:first-child td {
+#content .stats tr:first-child td, #content #data-table tr:first-child td, #oi-content .stats tr:first-child td, #oi-content #data-table tr:first-child td {
   padding-top: 5px;
 }
 /* line 7, ../sass/stats.scss */
-#content .stats tr:last-child td, #content #data-table tr:last-child td {
+#content .stats tr:last-child td, #content #data-table tr:last-child td, #oi-content .stats tr:last-child td, #oi-content #data-table tr:last-child td {
   padding-bottom: 10px;
 }
 /* line 11, ../sass/stats.scss */
-#content .stats thead th p.left, #content #data-table thead th p.left {
+#content .stats thead th p.left, #content #data-table thead th p.left, #oi-content .stats thead th p.left, #oi-content #data-table thead th p.left {
   text-align: left;
   float: left;
   width: 165px;
 }
 /* line 17, ../sass/stats.scss */
-#content .stats thead th div, #content #data-table thead th div {
+#content .stats thead th div, #content #data-table thead th div, #oi-content .stats thead th div, #oi-content #data-table thead th div {
   float: right;
   padding-top: 3px;
 }
 /* line 23, ../sass/stats.scss */
-#content .stats thead .multi-button, #content .stats thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content .stats thead a, #content .stats thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content .stats thead a, #content #data-table thead .multi-button, #content #data-table thead #machine .form-wrapper .right a, #machine .form-wrapper .right #content #data-table thead a, #content #data-table thead #other-info .form-wrapper .right a, #other-info .form-wrapper .right #content #data-table thead a {
+#content .stats thead .multi-button, #content .stats thead .other-info .form-wrapper .right a, .other-info .form-wrapper .right #content .stats thead a, #content #data-table thead .multi-button, #content #data-table thead .other-info .form-wrapper .right a, .other-info .form-wrapper .right #content #data-table thead a, #oi-content .stats thead .multi-button, #oi-content .stats thead .other-info .form-wrapper .right a, .other-info .form-wrapper .right #oi-content .stats thead a, #oi-content #data-table thead .multi-button, #oi-content #data-table thead .other-info .form-wrapper .right a, .other-info .form-wrapper .right #oi-content #data-table thead a {
   margin-top: -2px;
 }
 /* line 28, ../sass/stats.scss */
-#content .stats tbody tr:first-child td, #content #data-table tbody tr:first-child td {
+#content .stats tbody tr:first-child td, #content #data-table tbody tr:first-child td, #oi-content .stats tbody tr:first-child td, #oi-content #data-table tbody tr:first-child td {
   padding-top: 10px;
 }
 /* line 2, ../sass/preferences.scss */
-#content #preferences p.beveled-bg, #content #preferences p.success, #content #preferences p.wrong {
+#content #preferences p.beveled-bg, #content #preferences p.success, #content #preferences p.wrong, #oi-content #preferences p.beveled-bg, #oi-content #preferences p.success, #oi-content #preferences p.wrong {
   margin-bottom: 15px;
 }
 /* line 6, ../sass/preferences.scss */
-#content #preferences input {
+#content #preferences input, #oi-content #preferences input {
   margin-left: 10px;
   text-align: center;
   text-indent: 0;
 }
 /* line 11, ../sass/preferences.scss */
-#content #preferences input[type="submit"] {
+#content #preferences input[type="submit"], #oi-content #preferences input[type="submit"] {
   float: right;
   margin-top: -5px;
   font-size: 1em;
 }
 /* line 4, ../sass/punches.scss */
-#content #punches #checks-nav-button a#previous {
+#content #punches #checks-nav-button a#previous, #oi-content #punches #checks-nav-button a#previous {
   float: left;
   border-radius: 10px 0 0 0;
 }
 /* line 8, ../sass/punches.scss */
-#content #punches #checks-nav-button a#next {
+#content #punches #checks-nav-button a#next, #oi-content #punches #checks-nav-button a#next {
   float: right;
   border-radius: 0 10px 0 0;
 }
 /* line 12, ../sass/punches.scss */
-#content #punches #checks-nav-button a {
+#content #punches #checks-nav-button a, #oi-content #punches #checks-nav-button a {
   padding: 10px;
 }
 /* line 15, ../sass/punches.scss */
-#content #punches .check_date {
+#content #punches .check_date, #oi-content #punches .check_date {
   text-align: center;
   padding: 10px 0;
   background: #222222;
@@ -361,26 +358,26 @@ body {
   border-radius: 10px 10px 0 0;
 }
 /* line 25, ../sass/punches.scss */
-#content #punches table.inputs {
+#content #punches table.inputs, #oi-content #punches table.inputs {
   width: 100%;
   border: 1px solid black;
   border-top: none;
   border-bottom: none;
 }
 /* line 31, ../sass/punches.scss */
-#content #punches table.inputs tr:nth-child(2n - 1) {
+#content #punches table.inputs tr:nth-child(2n - 1), #oi-content #punches table.inputs tr:nth-child(2n - 1) {
   background: #1C1C1C;
 }
 /* line 39, ../sass/punches.scss */
-#content #punches table.inputs td {
+#content #punches table.inputs td, #oi-content #punches table.inputs td {
   padding: 5px;
 }
 /* line 42, ../sass/punches.scss */
-#content #punches table.inputs td input {
+#content #punches table.inputs td input, #oi-content #punches table.inputs td input {
   margin-left: 10px;
 }
 /* line 46, ../sass/punches.scss */
-#content #punches table.inputs td a.button.add {
+#content #punches table.inputs td a.button.add, #oi-content #punches table.inputs td a.button.add {
   padding: 5px 0;
   width: 100%;
   display: block;
@@ -389,7 +386,7 @@ body {
   background: none;
 }
 /* line 56, ../sass/punches.scss */
-#content #punches input[type="submit"], #content #punches input[type="reset"] {
+#content #punches input[type="submit"], #content #punches input[type="reset"], #oi-content #punches input[type="submit"], #oi-content #punches input[type="reset"] {
   margin: 0;
   width: 50%;
   float: left;
@@ -397,12 +394,12 @@ body {
   border-left: 0;
 }
 /* line 63, ../sass/punches.scss */
-#content #punches input[type="reset"] {
+#content #punches input[type="reset"], #oi-content #punches input[type="reset"] {
   border-left: 1px solid black;
   border-radius: 0 0 0 10px;
 }
 /* line 2, ../sass/data.scss */
-#content #data #export {
+#content #data #export, #oi-content #data #export {
   margin: 10px;
   margin-top: 20px;
   padding: 10px;
@@ -411,22 +408,22 @@ body {
   border-radius: 10px;
 }
 /* line 11, ../sass/data.scss */
-#content #data td:first-child {
+#content #data td:first-child, #oi-content #data td:first-child {
   width: 45% !important;
 }
 /* line 15, ../sass/data.scss */
-#content #data p {
+#content #data p, #oi-content #data p {
   margin: 15px 10px;
   text-align: justify;
   line-height: 1.2em;
 }
 /* line 20, ../sass/data.scss */
-#content #data p.beveled-bg, #content #data p.success, #content #data p.wrong {
+#content #data p.beveled-bg, #content #data p.success, #content #data p.wrong, #oi-content #data p.beveled-bg, #oi-content #data p.success, #oi-content #data p.wrong {
   margin: 0;
   margin-bottom: 10px;
 }
 /* line 25, ../sass/data.scss */
-#content #data #data-table {
+#content #data #data-table, #oi-content #data #data-table {
   margin-bottom: 10px;
 }
 
@@ -450,7 +447,7 @@ ul#navigation li a {
 }
 
 /* line 152, ../sass/style.scss */
-#content a, #puncher-container a, #navigation, #other-info a, input[type="submit"], input[type="reset"] {
+#content a, #puncher-container a, #navigation, .other-info a, input[type="submit"], input[type="reset"] {
   background: #222222;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #111111));
   background-image: -webkit-linear-gradient(top, #333333, #111111);
@@ -488,19 +485,19 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 }
 
 /* line 180, ../sass/style.scss */
-.multi-button, #machine .form-wrapper .right a, #other-info .form-wrapper .right a {
+.multi-button, .other-info .form-wrapper .right a {
   padding: 5px 7px;
   border-right: none !important;
   display: inline-block;
   z-index: 0;
 }
 /* line 186, ../sass/style.scss */
-.multi-button:first-child, #machine .form-wrapper .right a:first-child, #other-info .form-wrapper .right a:first-child {
+.multi-button:first-child, .other-info .form-wrapper .right a:first-child {
   border-radius: 10px 0 0 10px;
   padding-left: 10px;
 }
 /* line 190, ../sass/style.scss */
-.multi-button:last-child, #machine .form-wrapper .right a:last-child, #other-info .form-wrapper .right a:last-child {
+.multi-button:last-child, .other-info .form-wrapper .right a:last-child {
   border-radius: 0 10px 10px 0;
   border-right: 1px solid black;
 }
@@ -588,19 +585,19 @@ input.wrong {
 }
 
 /* line 252, ../sass/style.scss */
-.has_back, #content #punches table.inputs tr:hover, a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
+.has_back, #content #punches table.inputs tr:hover, #oi-content #punches table.inputs tr:hover, a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   background: #0062A8 !important;
 }
 /* line 254, ../sass/style.scss */
-.checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
+.checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
   background: #0062A8 !important;
 }
 /* line 255, ../sass/style.scss */
-.overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
+.overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
   background: #dc7000 !important;
 }
 /* line 256, ../sass/style.scss */
-.overtime_absolute.checked_in .has_back, .overtime_absolute.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in a:hover, .overtime_absolute.checked_in a.active, .overtime_absolute.checked_in input[type="submit"]:hover, .overtime_absolute.checked_in input[type="reset"]:hover {
+.overtime_absolute.checked_in .has_back, .overtime_absolute.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in a:hover, .overtime_absolute.checked_in a.active, .overtime_absolute.checked_in input[type="submit"]:hover, .overtime_absolute.checked_in input[type="reset"]:hover {
   background: #cb0000 !important;
 }
 

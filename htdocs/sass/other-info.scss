@@ -1,74 +1,72 @@
-.form-wrapper {
-    padding: 0 20px;
-    margin-bottom: 20px;
+.other-info {
 	
-	table { 
-	   width: 100%;
-	   margin: 20px 0;
-	   
-	   input {width: 100%;}
-       
-       td {
-            padding: 2px 0;
-            
-            input {
-                text-indent: 5px;
-                text-align: left;
-            }
-       }
-    }
-	.left { float: left; }
-	.right {
-	   float: right;	       
-	   
-       a {
-           @extend .multi-button;
-           margin-top: -5px;
-       }
+	.form-wrapper {
+	    padding: 0 20px;
+	    margin-bottom: 20px;
+	    
+	    table { 
+	       width: 100%;
+	       margin: 20px 0;
+	       
+	       input {width: 100%;}
+	       
+	       td {
+	            padding: 2px 0;
+	            
+	            input {
+	                text-indent: 5px;
+	                text-align: left;
+	            }
+	       }
+	    }
+	    .left { float: left; }
+	    .right {
+	       float: right;           
+	       
+	       a {
+	           @extend .multi-button;
+	           margin-top: -5px;
+	       }
+	    }
 	}
-}
-
-#puncher-button {
-	span {
-        font-family: "FontAwesome";
-        font-style: normal;
-        font-size: 3em;
-	}
-	font-family: sans-serif;
-	font-size: 3em;
-    font-style: italic;
-    margin: auto;
-    display: block;
-    text-align: center; 
-    padding-top: 20px;
-    border-radius: 20px;
-}
-
-.buttons-bar {
-    border-top: 1px solid $border-color;
-	height: $machine-height * 0.25;
-	width: 100%;
 	
-	input {
-	   display: block;
-	   width: 100%;
-	   height: 100%;
-	   border-radius: 0 0 20px 20px;
-       font-size: 1.2em;
+	#puncher-button {
+		&:hover {
+		    box-shadow: none;
+		    background: none !important;
+		}
+	    span {
+	        font-family: "FontAwesome";
+	        font-style: normal;
+	        font-size: 3em;
+	    }
+	    font-family: sans-serif;
+	    font-size: 3em;
+	    font-style: italic;
+	    margin: auto;
+	    display: block;
+	    text-align: center; 
+	    padding-top: 20px;
+	    border-radius: 20px;
 	}
-    
-    input[type="submit"], input[type="reset"] {
-        border: none;
-        background: none;
-    }
-}
-
-p.message {
-    margin: 20px;
-	text-align: center;
 	
-	a {
-	   border-radius: 10px;
-	   padding: 5px 10px;
+	.buttons-bar {
+	    width: 100%;
+	    
+	    input {
+	       display: block;
+	       width: 100%;
+	       height: 100%;
+	    }
+	}
+	
+	p.message {
+	    margin: 20px;
+	    text-align: center;
+	    
+	    a {
+	       border-radius: 10px;
+	       padding: 5px 10px;
+	    }
 	}
 }
