@@ -20,7 +20,12 @@
 	</head>
 	<body>
 		<div id="wrapper" class="{{checked_in}}">
-            <div id="other-info" class="has_light">
+            <div id="oi-machine" class="other-info has_light">
+                <a id="puncher-button" href="/" title="Accueil">
+                    <span>&#xF011;</span> Puncher !
+                </a>
+            </div>
+            <div id="oi-content">
                 {% block content %}
                 {% endblock %}
             </div>
