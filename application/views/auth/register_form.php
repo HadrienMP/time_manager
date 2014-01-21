@@ -39,34 +39,30 @@ $captcha = array(
 <div class="form-wrapper">
 <table>
 	<?php if ($use_username) { ?>
-    <tr>
-        <td class="error" colspan="2"><?php echo form_error($username['name']); ?><?php echo isset($errors[$username['name']])?$errors[$username['name']]:''; ?></td>
-    </tr>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Username'), $username['id']); ?></td>
-		<td><?php echo form_input($username); ?></td>
+		<td class="<?php echo form_error($username['name']) != "" || isset($errors[$username['name']]) ? "wrong" : "" ?>">
+            <?php echo form_input($username); ?>
+        </td>
 	</tr>
 	<?php } ?>
     <tr>
-		<td class="error" colspan="2"><?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?></td>
-	</tr>
-    <tr>
 		<td><?php echo form_label($this->lang->line('Email'), $email['id']); ?></td>
-		<td><?php echo form_input($email); ?></td>
-	</tr>
-	<tr>
-		<td class="error" colspan="2"><?php echo form_error($password['name']); ?></td>
+		<td class="<?php echo form_error($email['name']) != "" || isset($errors[$email['name']]) ? "wrong" : "" ?>">
+            <?php echo form_input($email); ?>
+        </td>
 	</tr>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Password'), $password['id']); ?></td>
-		<td><?php echo form_password($password); ?></td>
-	</tr>
-	<tr>
-		<td class="error" colspan="2"><?php echo form_error($confirm_password['name']); ?></td>
+		<td class="<?php echo form_error($confirm_password['name']) != "" || isset($errors[$confirm_password['name']]) ? "wrong" : "" ?>">
+            <?php echo form_password($password); ?>
+        </td>
 	</tr>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Confirm Password'), $confirm_password['id']); ?></td>
-		<td><?php echo form_password($confirm_password); ?></td>
+		<td class="<?php echo form_error($confirm_password['name']) != "" || isset($errors[$confirm_password['name']]) ? "wrong" : "" ?>">
+            <?php echo form_password($confirm_password); ?>
+        </td>
 	</tr>
 
 	<?php if ($captcha_registration) {
@@ -92,14 +88,13 @@ $captcha = array(
 		</td>
 	</tr>
 	<tr>
-        <td class="error" colspan="2"><?php echo form_error('recaptcha_response_field'); ?></td>
-	</tr>
-	<tr>
 		<td>
 			<div class="recaptcha_only_if_image">Enter the words above</div>
 			<div class="recaptcha_only_if_audio">Enter the numbers you hear</div>
 		</td>
-		<td><input type="text" id="recaptcha_response_field" name="recaptcha_response_field" /></td>
+		<td>
+            <input type="text" id="recaptcha_response_field" name="recaptcha_response_field" />
+        </td>
 		<?php echo $recaptcha_html; ?>
 	</tr>
 	<?php } else { ?>
@@ -110,11 +105,10 @@ $captcha = array(
 		</td>
 	</tr>
 	<tr>
-		<td class="error" colspan="2"><?php echo form_error($captcha['name']); ?></td>
-	</tr>
-	<tr>
 		<td><?php echo form_label($this->lang->line('Confirmation Code'), $captcha['id']); ?></td>
-		<td><?php echo form_input($captcha); ?></td>
+		<td class="<?php echo form_error($captcha['name']) != "" || isset($errors[$captcha['name']]) ? "wrong" : "" ?>">
+            <?php echo form_input($captcha); ?>
+        </td>
 	</tr>
 	<?php }
 	} ?>

@@ -31,28 +31,19 @@ $captcha = array(
 	'maxlength'	=> 8,
 );
 ?>
+
 <?php echo form_open($this->uri->uri_string()); ?>
 <div class="form-wrapper">
 	<table>
-		<tr class="error" >
-			<tdcolspan="2">
-				<?php echo form_error($login['name']); ?>
-				<?php echo isset($errors[$login['name']])?$errors[$login['name']]:''; ?>
-			</td>
-		</tr>
 		<tr>
 			<td><?php echo form_label($login_label, $login['id']); ?></td>
-			<td><?php echo form_input($login); ?></td>
-		</tr>
-		<tr class="error">
-			<td colspan="2">
-				<?php echo form_error($password['name']); ?>
-				<?php echo isset($errors[$password['name']])?$errors[$password['name']]:''; ?>
-			</td>
+			<td class="<?php echo form_error($login['name']) != "" || isset($errors[$login['name']]) ? "wrong" : "" ?>">
+                <?php echo form_input($login); ?>
+            </td>
 		</tr>
 		<tr>
 			<td><?php echo form_label($this->lang->line('Password'), $password['id']); ?></td>
-			<td>
+			<td class="<?php echo form_error($password['name']) != "" || isset($errors[$password['name']]) ? "wrong" : "" ?>">
 				<?php echo form_password($password); ?>
 			</td>
 		</tr>

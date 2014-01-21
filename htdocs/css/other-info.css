@@ -21,19 +21,24 @@
   text-indent: 5px;
   text-align: left;
 }
-/* line 22, ../sass/other-info.scss */
+/* line 21, ../sass/other-info.scss */
+.other-info .form-wrapper table td.wrong {
+  background: none;
+  border: none;
+}
+/* line 30, ../sass/other-info.scss */
 .other-info .form-wrapper .left {
   float: left;
 }
-/* line 23, ../sass/other-info.scss */
+/* line 31, ../sass/other-info.scss */
 .other-info .form-wrapper .right {
   float: right;
 }
-/* line 26, ../sass/other-info.scss */
+/* line 34, ../sass/other-info.scss */
 .other-info .form-wrapper .right a {
   margin-top: -5px;
 }
-/* line 33, ../sass/other-info.scss */
+/* line 41, ../sass/other-info.scss */
 .other-info #puncher-button {
   font-family: sans-serif;
   font-size: 3em;
@@ -43,34 +48,36 @@
   text-align: center;
   padding-top: 20px;
   border-radius: 20px;
+  background: none !important;
+  border: none;
 }
-/* line 34, ../sass/other-info.scss */
+/* line 42, ../sass/other-info.scss */
 .other-info #puncher-button:hover {
   box-shadow: none;
   background: none !important;
 }
-/* line 38, ../sass/other-info.scss */
+/* line 46, ../sass/other-info.scss */
 .other-info #puncher-button span {
   font-family: "FontAwesome";
   font-style: normal;
   font-size: 3em;
 }
-/* line 53, ../sass/other-info.scss */
+/* line 63, ../sass/other-info.scss */
 .other-info .buttons-bar {
   width: 100%;
 }
-/* line 56, ../sass/other-info.scss */
+/* line 66, ../sass/other-info.scss */
 .other-info .buttons-bar input {
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 63, ../sass/other-info.scss */
+/* line 73, ../sass/other-info.scss */
 .other-info p.message {
   margin: 20px;
   text-align: center;
 }
-/* line 67, ../sass/other-info.scss */
+/* line 77, ../sass/other-info.scss */
 .other-info p.message a {
   border-radius: 10px;
   padding: 5px 10px;

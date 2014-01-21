@@ -11,8 +11,9 @@ $email = array(
 <table>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Email'), $email['id']); ?></td>
-		<td><?php echo form_input($email); ?></td>
-		<td style="color: red;"><?php echo form_error($email['name']); ?><?php echo isset($errors[$email['name']])?$errors[$email['name']]:''; ?></td>
+		<td class="<?php echo form_error($email['name']) != "" || isset($errors[$email['name']]) ? "wrong" : "" ?>">
+            <?php echo form_input($email); ?>
+        </td>
 	</tr>
 </table>
 <?php echo form_submit('send', $this->lang->line('Send')); ?>

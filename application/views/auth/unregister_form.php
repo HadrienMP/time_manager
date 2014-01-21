@@ -9,8 +9,9 @@ $password = array(
 <table>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Password'), $password['id']); ?></td>
-		<td><?php echo form_password($password); ?></td>
-		<td style="color: red;"><?php echo form_error($password['name']); ?><?php echo isset($errors[$password['name']])?$errors[$password['name']]:''; ?></td>
+		<td class="<?php echo form_error($password['name']) != "" || isset($errors[$password['name']]) ? "wrong" : "" ?>">
+            <?php echo form_password($password); ?>
+        </td>
 	</tr>
 </table>
 <?php echo form_submit('cancel', $this->lang->line('Delete account')); ?>

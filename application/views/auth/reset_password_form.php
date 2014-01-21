@@ -16,13 +16,16 @@ $confirm_new_password = array(
 <table>
 	<tr>
 		<td><?php echo form_label($this->lang->line('New Password'), $new_password['id']); ?></td>
-		<td><?php echo form_password($new_password); ?></td>
-		<td style="color: red;"><?php echo form_error($new_password['name']); ?><?php echo isset($errors[$new_password['name']])?$errors[$new_password['name']]:''; ?></td>
+		<td class="<?php echo form_error($new_password['name']) != "" || isset($errors[$new_password['name']]) ? "wrong" : "" ?>">
+            <?php echo form_password($new_password); ?>
+        </td>
 	</tr>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Confirm New Password'), $confirm_new_password['id']); ?></td>
-		<td><?php echo form_password($confirm_new_password); ?></td>
-		<td style="color: red;"><?php echo form_error($confirm_new_password['name']); ?><?php echo isset($errors[$confirm_new_password['name']])?$errors[$confirm_new_password['name']]:''; ?></td>
+		<td class="<?php echo form_error($confirm_new_password['name']) != "" || isset($errors[$confirm_new_password['name']]) ? "wrong" : "" ?>">
+            <?php echo form_password($confirm_new_password); ?>
+        </td>
+		
 	</tr>
 </table>
 <?php echo form_submit('change', $this->lang->line('Change Password')); ?>

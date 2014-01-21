@@ -1,4 +1,4 @@
-/* line 17, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 17, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -20,45 +20,45 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
-/* line 22, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 22, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 html {
   line-height: 1;
 }
 
-/* line 24, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 24, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 ol, ul {
   list-style: none;
 }
 
-/* line 26, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 26, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 table {
   border-collapse: collapse;
   border-spacing: 0;
 }
 
-/* line 28, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 28, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 caption, th, td {
   text-align: left;
   font-weight: normal;
   vertical-align: middle;
 }
 
-/* line 30, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 30, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q, blockquote {
   quotes: none;
 }
-/* line 103, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 103, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 q:before, q:after, blockquote:before, blockquote:after {
   content: "";
   content: none;
 }
 
-/* line 32, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 32, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 a img {
   border: none;
 }
 
-/* line 116, C:/Ruby200-x64/lib/ruby/gems/2.0.0/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+/* line 116, ../../../../../../Dev/Ruby193/lib/ruby/gems/1.9.1/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
   display: block;
 }
@@ -120,19 +120,24 @@ body {
   text-indent: 5px;
   text-align: left;
 }
-/* line 22, ../sass/other-info.scss */
+/* line 21, ../sass/other-info.scss */
+.other-info .form-wrapper table td.wrong {
+  background: none;
+  border: none;
+}
+/* line 30, ../sass/other-info.scss */
 .other-info .form-wrapper .left {
   float: left;
 }
-/* line 23, ../sass/other-info.scss */
+/* line 31, ../sass/other-info.scss */
 .other-info .form-wrapper .right {
   float: right;
 }
-/* line 26, ../sass/other-info.scss */
+/* line 34, ../sass/other-info.scss */
 .other-info .form-wrapper .right a {
   margin-top: -5px;
 }
-/* line 33, ../sass/other-info.scss */
+/* line 41, ../sass/other-info.scss */
 .other-info #puncher-button {
   font-family: sans-serif;
   font-size: 3em;
@@ -142,34 +147,36 @@ body {
   text-align: center;
   padding-top: 20px;
   border-radius: 20px;
+  background: none !important;
+  border: none;
 }
-/* line 34, ../sass/other-info.scss */
+/* line 42, ../sass/other-info.scss */
 .other-info #puncher-button:hover {
   box-shadow: none;
   background: none !important;
 }
-/* line 38, ../sass/other-info.scss */
+/* line 46, ../sass/other-info.scss */
 .other-info #puncher-button span {
   font-family: "FontAwesome";
   font-style: normal;
   font-size: 3em;
 }
-/* line 53, ../sass/other-info.scss */
+/* line 63, ../sass/other-info.scss */
 .other-info .buttons-bar {
   width: 100%;
 }
-/* line 56, ../sass/other-info.scss */
+/* line 66, ../sass/other-info.scss */
 .other-info .buttons-bar input {
   display: block;
   width: 100%;
   height: 100%;
 }
-/* line 63, ../sass/other-info.scss */
+/* line 73, ../sass/other-info.scss */
 .other-info p.message {
   margin: 20px;
   text-align: center;
 }
-/* line 67, ../sass/other-info.scss */
+/* line 77, ../sass/other-info.scss */
 .other-info p.message a {
   border-radius: 10px;
   padding: 5px 10px;
@@ -535,11 +542,11 @@ strong {
 }
 /* line 221, ../sass/style.scss */
 .overtime.checked_in strong {
-  color: #FF9500 !important;
+  color: #ff9500 !important;
 }
 /* line 222, ../sass/style.scss */
 .overtime_absolute.checked_in strong {
-  color: #FF0000 !important;
+  color: red !important;
 }
 
 /* line 225, ../sass/style.scss */
@@ -555,7 +562,7 @@ strong {
 }
 
 /* line 237, ../sass/style.scss */
-input.wrong {
+input.wrong, .other-info .form-wrapper table td.wrong input {
   margin: 0;
   padding: 2px 1px;
   background: white;
@@ -586,11 +593,11 @@ input.wrong {
 
 /* line 252, ../sass/style.scss */
 .has_back, #content #punches table.inputs tr:hover, #oi-content #punches table.inputs tr:hover, a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
-  background: #0062A8 !important;
+  background: #0062a8 !important;
 }
 /* line 254, ../sass/style.scss */
 .checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
-  background: #0062A8 !important;
+  background: #0062a8 !important;
 }
 /* line 255, ../sass/style.scss */
 .overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
