@@ -297,4 +297,8 @@ class Manager extends CI_Controller {
         $this->_pre_action(__FUNCTION__);
         $this->twiggy->template('account')->display();
     }
+    
+    public function info() {
+        $this->twiggy->template('info')->display();
+    }
 }

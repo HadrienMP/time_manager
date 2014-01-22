@@ -3,7 +3,7 @@ html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
+small, strike, strong, .other-info h2, sub, sup, tt, var,
 b, u, i, center,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
@@ -98,46 +98,74 @@ body {
 }
 
 /* line 3, ../sass/other-info.scss */
+.other-info h1 {
+  margin: 1em 0 1em;
+}
+/* line 6, ../sass/other-info.scss */
+.other-info h1:first-child {
+  margin-top: 0;
+}
+/* line 8, ../sass/other-info.scss */
+.other-info h2 {
+  margin: 1em 0.7em 0.5em;
+}
+/* line 12, ../sass/other-info.scss */
+.other-info ul {
+  margin: 0 0 0 2em;
+}
+/* line 15, ../sass/other-info.scss */
+.other-info ul li {
+  list-style: disc;
+  margin-bottom: 0.3em;
+}
+/* line 21, ../sass/other-info.scss */
+.other-info a.no-button, .other-info a.no-button:hover {
+  border: none !important;
+  background: none !important;
+  text-decoration: underline !important;
+  box-shadow: none !important;
+}
+/* line 28, ../sass/other-info.scss */
 .other-info .form-wrapper {
   padding: 0 20px;
   margin-bottom: 20px;
 }
-/* line 7, ../sass/other-info.scss */
+/* line 32, ../sass/other-info.scss */
 .other-info .form-wrapper table {
   width: 100%;
   margin: 20px 0;
 }
-/* line 11, ../sass/other-info.scss */
+/* line 36, ../sass/other-info.scss */
 .other-info .form-wrapper table input {
   width: 100%;
 }
-/* line 13, ../sass/other-info.scss */
+/* line 38, ../sass/other-info.scss */
 .other-info .form-wrapper table td {
   padding: 2px 0;
 }
-/* line 16, ../sass/other-info.scss */
+/* line 41, ../sass/other-info.scss */
 .other-info .form-wrapper table td input {
   text-indent: 5px;
   text-align: left;
 }
-/* line 21, ../sass/other-info.scss */
+/* line 46, ../sass/other-info.scss */
 .other-info .form-wrapper table td.wrong {
   background: none;
   border: none;
 }
-/* line 30, ../sass/other-info.scss */
+/* line 55, ../sass/other-info.scss */
 .other-info .form-wrapper .left {
   float: left;
 }
-/* line 31, ../sass/other-info.scss */
+/* line 56, ../sass/other-info.scss */
 .other-info .form-wrapper .right {
   float: right;
 }
-/* line 34, ../sass/other-info.scss */
+/* line 59, ../sass/other-info.scss */
 .other-info .form-wrapper .right a {
   margin-top: -5px;
 }
-/* line 41, ../sass/other-info.scss */
+/* line 66, ../sass/other-info.scss */
 .other-info #puncher-button {
   font-family: sans-serif;
   font-size: 3em;
@@ -150,36 +178,26 @@ body {
   background: none !important;
   border: none;
 }
-/* line 42, ../sass/other-info.scss */
+/* line 67, ../sass/other-info.scss */
 .other-info #puncher-button:hover {
   box-shadow: none;
   background: none !important;
 }
-/* line 46, ../sass/other-info.scss */
+/* line 71, ../sass/other-info.scss */
 .other-info #puncher-button span {
   font-family: "FontAwesome";
   font-style: normal;
   font-size: 3em;
 }
-/* line 63, ../sass/other-info.scss */
+/* line 88, ../sass/other-info.scss */
 .other-info .buttons-bar {
   width: 100%;
 }
-/* line 66, ../sass/other-info.scss */
+/* line 91, ../sass/other-info.scss */
 .other-info .buttons-bar input {
   display: block;
   width: 100%;
   height: 100%;
-}
-/* line 73, ../sass/other-info.scss */
-.other-info p.message {
-  margin: 20px;
-  text-align: center;
-}
-/* line 77, ../sass/other-info.scss */
-.other-info p.message a {
-  border-radius: 10px;
-  padding: 5px 10px;
 }
 
 /* line 35, ../sass/style.scss */
@@ -321,7 +339,7 @@ body {
   padding-top: 10px;
 }
 /* line 2, ../sass/preferences.scss */
-#content #preferences p.beveled-bg, #content #preferences p.success, #content #preferences p.wrong, #oi-content #preferences p.beveled-bg, #oi-content #preferences p.success, #oi-content #preferences p.wrong {
+#content #preferences p.beveled-bg, #content #preferences p.success, #content #preferences p.wrong, #content #preferences p.message, #oi-content #preferences p.beveled-bg, #oi-content #preferences p.success, #oi-content #preferences p.wrong, #oi-content #preferences p.message {
   margin-bottom: 15px;
 }
 /* line 6, ../sass/preferences.scss */
@@ -425,7 +443,7 @@ body {
   line-height: 1.2em;
 }
 /* line 20, ../sass/data.scss */
-#content #data p.beveled-bg, #content #data p.success, #content #data p.wrong, #oi-content #data p.beveled-bg, #oi-content #data p.success, #oi-content #data p.wrong {
+#content #data p.beveled-bg, #content #data p.success, #content #data p.wrong, #content #data p.message, #oi-content #data p.beveled-bg, #oi-content #data p.success, #oi-content #data p.wrong, #oi-content #data p.message {
   margin: 0;
   margin-bottom: 10px;
 }
@@ -510,7 +528,7 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 }
 
 /* line 199, ../sass/style.scss */
-.beveled-bg, .success, .wrong {
+.beveled-bg, .other-info h1, .success, .wrong, .message {
   background-color: #1C1C1C;
   background: linear-gradient(210deg, transparent 26px, #1c1c1c 20px);
   background-size: 100% 100%;
@@ -522,11 +540,11 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   line-height: 1em !important;
 }
 /* line 210, ../sass/style.scss */
-.overtime.checked_in .beveled-bg, .overtime.checked_in .success, .overtime.checked_in .wrong {
+.overtime.checked_in .beveled-bg, .overtime.checked_in .other-info h1, .other-info .overtime.checked_in h1, .overtime.checked_in .success, .overtime.checked_in .wrong, .overtime.checked_in .message {
   border-color: #dc7000;
 }
 /* line 211, ../sass/style.scss */
-.overtime_absolute.checked_in .beveled-bg, .overtime_absolute.checked_in .success, .overtime_absolute.checked_in .wrong {
+.overtime_absolute.checked_in .beveled-bg, .overtime_absolute.checked_in .other-info h1, .other-info .overtime_absolute.checked_in h1, .overtime_absolute.checked_in .success, .overtime_absolute.checked_in .wrong, .overtime_absolute.checked_in .message {
   border-color: #cb0000;
 }
 
@@ -536,21 +554,21 @@ a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
 }
 
 /* line 218, ../sass/style.scss */
-strong {
+strong, .other-info h2 {
   font-weight: bold;
   color: #0095FF;
 }
 /* line 221, ../sass/style.scss */
-.overtime.checked_in strong {
+.overtime.checked_in strong, .overtime.checked_in .other-info h2, .other-info .overtime.checked_in h2 {
   color: #ff9500 !important;
 }
 /* line 222, ../sass/style.scss */
-.overtime_absolute.checked_in strong {
+.overtime_absolute.checked_in strong, .overtime_absolute.checked_in .other-info h2, .other-info .overtime_absolute.checked_in h2 {
   color: red !important;
 }
 
 /* line 225, ../sass/style.scss */
-.success, .wrong {
+.success, .wrong, .message {
   margin: 0 0 15px;
   border-color: #0C0;
   background: #1C1C1C;
@@ -562,6 +580,15 @@ strong {
 }
 
 /* line 237, ../sass/style.scss */
+.message {
+  border-color: #F90;
+}
+/* line 240, ../sass/style.scss */
+.message:first-child {
+  margin-top: 0px;
+}
+
+/* line 243, ../sass/style.scss */
 input.wrong, .other-info .form-wrapper table td.wrong input {
   margin: 0;
   padding: 2px 1px;
@@ -572,49 +599,49 @@ input.wrong, .other-info .form-wrapper table td.wrong input {
   border-style: solid;
 }
 
-/* line 248, ../sass/style.scss */
+/* line 254, ../sass/style.scss */
 .checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #0095ff;
   -moz-box-shadow: 0 0 30px #0095ff;
   box-shadow: 0 0 30px #0095ff;
 }
-/* line 249, ../sass/style.scss */
+/* line 255, ../sass/style.scss */
 .overtime.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px #ff9500;
   -moz-box-shadow: 0 0 30px #ff9500;
   box-shadow: 0 0 30px #ff9500;
 }
-/* line 250, ../sass/style.scss */
+/* line 256, ../sass/style.scss */
 .overtime_absolute.checked_in .has_light {
   -webkit-box-shadow: 0 0 30px red;
   -moz-box-shadow: 0 0 30px red;
   box-shadow: 0 0 30px red;
 }
 
-/* line 252, ../sass/style.scss */
+/* line 258, ../sass/style.scss */
 .has_back, #content #punches table.inputs tr:hover, #oi-content #punches table.inputs tr:hover, a:hover, a.active, input[type="submit"]:hover, input[type="reset"]:hover {
   background: #0062a8 !important;
 }
-/* line 254, ../sass/style.scss */
+/* line 260, ../sass/style.scss */
 .checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
   background: #0062a8 !important;
 }
-/* line 255, ../sass/style.scss */
+/* line 261, ../sass/style.scss */
 .overtime.checked_in .has_back, .overtime.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .overtime.checked_in tr:hover, .overtime.checked_in a:hover, .overtime.checked_in a.active, .overtime.checked_in input[type="submit"]:hover, .overtime.checked_in input[type="reset"]:hover {
   background: #dc7000 !important;
 }
-/* line 256, ../sass/style.scss */
+/* line 262, ../sass/style.scss */
 .overtime_absolute.checked_in .has_back, .overtime_absolute.checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .overtime_absolute.checked_in tr:hover, .overtime_absolute.checked_in a:hover, .overtime_absolute.checked_in a.active, .overtime_absolute.checked_in input[type="submit"]:hover, .overtime_absolute.checked_in input[type="reset"]:hover {
   background: #cb0000 !important;
 }
 
 /*##############################################################*/
-/* line 263, ../sass/style.scss */
+/* line 269, ../sass/style.scss */
 .error td {
   color: red;
   padding: 10px 0 5px !important;
 }
-/* line 266, ../sass/style.scss */
+/* line 272, ../sass/style.scss */
 .error td:first-child {
   padding: 0 0 5px !important;
 }

@@ -49,6 +49,7 @@ $route['data/(:any)'] = "manager/data/$1";
 $route['data'] = "manager/data";
 $route['export'] = "manager/export";
 $route['account'] = "manager/account";
+$route['info'] = "manager/info";
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */

@@ -35,6 +35,11 @@ $captcha = array(
 	'maxlength'	=> 8,
 );
 ?>
+
+<p class="message">
+    Avant de vous inscrire, jetez un oeil à <a href="/info" class="no-button" title="Informations sur le site">notre politique de protection de l'anonymat et de vos données.</a>
+</p>
+
 <?php echo form_open($this->uri->uri_string()); ?>
 <div class="form-wrapper">
 <table>

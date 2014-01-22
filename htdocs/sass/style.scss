@@ -234,6 +234,12 @@ strong {
     border-color: #C00;
 }
 
+.message {
+	@extend .success;
+    border-color: #F90;
+    &:first-child { margin-top: 0px;}
+}
+
 input.wrong {
 	margin: 0; 
 	padding: 2px 1px; 

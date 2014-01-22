@@ -1,44 +1,72 @@
 /* line 3, ../sass/other-info.scss */
+.other-info h1 {
+  margin: 1em 0 1em;
+}
+/* line 6, ../sass/other-info.scss */
+.other-info h1:first-child {
+  margin-top: 0;
+}
+/* line 8, ../sass/other-info.scss */
+.other-info h2 {
+  margin: 1em 0.7em 0.5em;
+}
+/* line 12, ../sass/other-info.scss */
+.other-info ul {
+  margin: 0 0 0 2em;
+}
+/* line 15, ../sass/other-info.scss */
+.other-info ul li {
+  list-style: disc;
+  margin-bottom: 0.3em;
+}
+/* line 21, ../sass/other-info.scss */
+.other-info a.no-button, .other-info a.no-button:hover {
+  border: none !important;
+  background: none !important;
+  text-decoration: underline !important;
+  box-shadow: none !important;
+}
+/* line 28, ../sass/other-info.scss */
 .other-info .form-wrapper {
   padding: 0 20px;
   margin-bottom: 20px;
 }
-/* line 7, ../sass/other-info.scss */
+/* line 32, ../sass/other-info.scss */
 .other-info .form-wrapper table {
   width: 100%;
   margin: 20px 0;
 }
-/* line 11, ../sass/other-info.scss */
+/* line 36, ../sass/other-info.scss */
 .other-info .form-wrapper table input {
   width: 100%;
 }
-/* line 13, ../sass/other-info.scss */
+/* line 38, ../sass/other-info.scss */
 .other-info .form-wrapper table td {
   padding: 2px 0;
 }
-/* line 16, ../sass/other-info.scss */
+/* line 41, ../sass/other-info.scss */
 .other-info .form-wrapper table td input {
   text-indent: 5px;
   text-align: left;
 }
-/* line 21, ../sass/other-info.scss */
+/* line 46, ../sass/other-info.scss */
 .other-info .form-wrapper table td.wrong {
   background: none;
   border: none;
 }
-/* line 30, ../sass/other-info.scss */
+/* line 55, ../sass/other-info.scss */
 .other-info .form-wrapper .left {
   float: left;
 }
-/* line 31, ../sass/other-info.scss */
+/* line 56, ../sass/other-info.scss */
 .other-info .form-wrapper .right {
   float: right;
 }
-/* line 34, ../sass/other-info.scss */
+/* line 59, ../sass/other-info.scss */
 .other-info .form-wrapper .right a {
   margin-top: -5px;
 }
-/* line 41, ../sass/other-info.scss */
+/* line 66, ../sass/other-info.scss */
 .other-info #puncher-button {
   font-family: sans-serif;
   font-size: 3em;
@@ -51,34 +79,24 @@
   background: none !important;
   border: none;
 }
-/* line 42, ../sass/other-info.scss */
+/* line 67, ../sass/other-info.scss */
 .other-info #puncher-button:hover {
   box-shadow: none;
   background: none !important;
 }
-/* line 46, ../sass/other-info.scss */
+/* line 71, ../sass/other-info.scss */
 .other-info #puncher-button span {
   font-family: "FontAwesome";
   font-style: normal;
   font-size: 3em;
 }
-/* line 63, ../sass/other-info.scss */
+/* line 88, ../sass/other-info.scss */
 .other-info .buttons-bar {
   width: 100%;
 }
-/* line 66, ../sass/other-info.scss */
+/* line 91, ../sass/other-info.scss */
 .other-info .buttons-bar input {
   display: block;
   width: 100%;
   height: 100%;
-}
-/* line 73, ../sass/other-info.scss */
-.other-info p.message {
-  margin: 20px;
-  text-align: center;
-}
-/* line 77, ../sass/other-info.scss */
-.other-info p.message a {
-  border-radius: 10px;
-  padding: 5px 10px;
 }
