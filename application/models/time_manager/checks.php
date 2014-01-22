@@ -161,5 +161,16 @@ class Checks extends CI_Model
     private function today() {
     	return date("Y-m-d H:i:s" ,strtotime('today midnight'));
     }
+    
+    public function clean_checks($user_id) {
+    
+        if (!empty($user_id)) {
+            $this->db->where("user_id", $user_id);
+            $this->db->delete(Checks::TABLE_NAME); 
+        }
+        else {
+            log_message('error', "User id vide");
+        }
+    }
 }
 

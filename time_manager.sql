@@ -113,6 +113,7 @@ ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
             `user_id` INT(11) NOT NULL ,
 			`date` DATE NOT NULL ,
             PRIMARY KEY (`id`) ,
+            UNIQUE KEY (`date`),
             INDEX `fk_overtime_user_idx` (`user_id` ASC) ,
             CONSTRAINT `fk_overtime_users`
             FOREIGN KEY (`user_id` )

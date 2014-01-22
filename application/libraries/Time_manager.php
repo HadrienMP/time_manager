@@ -250,6 +250,10 @@ class Time_manager {
         if (count($checks) > 0) {
             $stats = $this->calculate_stats($user_id, TRUE);
             
+            // Here we save the overtime amount in the db right away to prevent 
+            // calculation of the stats elsewhere
+            $this->ci->overtime->set_overtime($stats['periods']['all']['overtime_t'], $user_id, $checks[count($checks) - 1]['date']);
+            
         	$month = date('F-Y', strtotime($checks[count($checks) - 1]['date']));
             
             $data = checks_to_csv($checks, $stats);
@@ -263,6 +267,10 @@ class Time_manager {
         else {
             return NULL;
         }
+    }
+    
+    public function clean_after_export($user_id) {
+        $checks = $this->ci->checks->clean_checks ( $user_id );
     }
 }
 

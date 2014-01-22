@@ -283,6 +283,7 @@ class Manager extends CI_Controller {
         $export = $this->time_manager->get_csv_export($this->tank_auth->get_user_id());
             
         if ($export != NULL) {
+            $this->time_manager->clean_after_export($this->tank_auth->get_user_id());
 	        $this->load->helper('csv');
 	        array_to_csv($export['data'], $export['name']);
         }
