@@ -21,7 +21,7 @@ body {
 }
 	
 #machine, #oi-machine {
-	width: $machine-width;
+	max-width: $machine-width;
 	margin: 35px auto 0;
 	background: $button-color;
 	@include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
@@ -82,37 +82,34 @@ body {
 	}
 	
     #tools-container {
-         
-         li {
-             display: inline-block;
-             border-left: 1px solid $border-color;
-             font-size: 1.2em;
-             
-             a {
-                 width: $machine-width * 0.25 - 1px;
-                 height: $machine-height * 0.20 - 10px;
-                 display: block;
-                 text-align: center;
-                 padding-top: 10px;
-             }
-             
-             &:first-child {
-                 border: none;
-             }
-             &:first-child a {
-                 border-radius: 0 0 0 20px;
-                 width: $machine-width * 0.25;
-             }
-             &:last-child a {
-                 border-radius: 0 0 20px 0;
-             }
-         }
-     }
+		display: table;
+		width: 100%;
+		
+		#tools {
+		    display: table-row;
+        
+	        li {
+	            display: table-cell;
+	            font-size: 1.2em;
+	            
+	            a {
+	                height: $machine-height * 0.20 - 10px;
+	                display: block;
+	                text-align: center;
+	                padding-top: 10px;
+                    border-left: 1px solid $border-color;
+	            }
+	            
+                &:first-child a {border-radius: 0 0 0 15px;}
+                &:last-child a {border-radius: 0 0 15px 0;}
+	        }
+		}
+	}
 }
 
 #content, #oi-content {
 	background: url(../images/escheresque_ste.png);
-	width: $machine-width - 60px;
+	max-width: $machine-width - 60px;
 	min-height: 200px;
 	margin: 0 auto 20px;
 	padding: 10px;
@@ -150,7 +147,7 @@ ul#navigation {
 }
     
 #content a, #puncher-container a, #navigation, .other-info a, input[type="submit"], input[type="reset"] {
-    background: $button-color;
+    background-color: $button-color;
     @include background-image(linear-gradient(top, $top-button-color, $bottom-button-color));
     border: 1px solid $border-color;
 }
@@ -256,10 +253,10 @@ input.wrong {
     .overtime_absolute.checked_in & { @include box-shadow(0 0 30px #FF0000);}
 }
 .has_back {
-    background: #0062A8 !important;
-    .checked_in & { background: #0062A8 !important;}
-    .overtime.checked_in & { background: $bg-orange !important;}
-    .overtime_absolute.checked_in & { background: $bg-red !important;}
+    background-color: #0062A8 !important;
+    .checked_in & { background-color: #0062A8 !important; background-image: none !important;}
+    .overtime.checked_in & { background-color: $bg-orange !important;}
+    .overtime_absolute.checked_in & { background-color: $bg-red !important;}
 }
 
 

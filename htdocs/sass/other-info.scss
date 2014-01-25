@@ -52,13 +52,16 @@
                 }
 	       }
 	    }
-	    .left { float: left; }
+	    .left { 
+	       float: left;
+	       margin: 5px 0 10px; 
+        }
 	    .right {
-	       float: right;           
-	       
+/* 	       float: right;            */
+	       text-align: right;
 	       a {
 	           @extend .multi-button;
-	           margin-top: -5px;
+/* 	           margin-top: 5px; */
 	       }
 	    }
 	}

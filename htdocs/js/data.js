@@ -6,7 +6,6 @@ $(function() {
 	
     $( "#dialog-confirm" ).dialog({
     	autoOpen: false,
-    	width: 500,
 		resizable: false,
 		modal: true
     });
