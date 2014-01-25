@@ -475,7 +475,7 @@ ul#navigation li a {
 }
 
 /* line 149, ../sass/style.scss */
-#content a, #puncher-container a, #navigation, .other-info a, input[type="submit"], input[type="reset"] {
+#content a, #oi-content a, #puncher-container a, #navigation, .other-info a, input[type="submit"], input[type="reset"] {
   background-color: #222222;
   background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #333333), color-stop(100%, #111111));
   background-image: -webkit-linear-gradient(top, #333333, #111111);
@@ -626,7 +626,7 @@ input.wrong, .other-info .form-wrapper table td.wrong input {
   background-color: #0062A8 !important;
 }
 /* line 257, ../sass/style.scss */
-.checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover {
+.checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover, .has_back:hover, #content #punches table.inputs tr:hover, #oi-content #punches table.inputs tr:hover, a:hover, input[type="submit"]:hover, input[type="reset"]:hover {
   background-color: #0062A8 !important;
   background-image: none !important;
 }
