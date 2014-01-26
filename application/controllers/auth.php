@@ -1,5 +1,7 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
 
+require_once("navItems.php");
+
 class Auth extends CI_Controller
 {
 	function __construct()
@@ -15,7 +17,11 @@ class Auth extends CI_Controller
     
     function my_display($template_name, $data) {
         $content = $this->load->view($template_name, $data, true);
-        $this->load->view('layout/layout', array('content' => $content, 'title' => $this->lang->line('Connexion')));
+        $this->load->view('layout/layout', array(
+                'content' => $content, 
+                'title' => $this->lang->line('Connexion'),
+                'navigation_items' => NavItems::NotLoggedIn()
+        ));
     }
 
 	function index()

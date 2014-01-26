@@ -1,5 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
+require_once("navItems.php");
+
 class Manager extends CI_Controller {
 
     public function __construct() {
@@ -33,6 +35,7 @@ class Manager extends CI_Controller {
         else {
         	$this->all_pages_action($page);
             $this->twiggy->set("active", $page);
+            $this->twiggy->set("navigation_items", NavItems::LoggedIn());
         }
     }
 
@@ -299,6 +302,11 @@ class Manager extends CI_Controller {
     }
     
     public function info() {
+        if (!$this->tank_auth->is_logged_in()) {
+            $this->twiggy->set("navigation_items", NavItems::NotLoggedIn());
+        } else {
+            $this->twiggy->set("navigation_items", NavItems::LoggedIn());
+        }
         $this->twiggy->template('info')->display();
     }
 }

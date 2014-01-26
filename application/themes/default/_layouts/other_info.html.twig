@@ -29,6 +29,18 @@
                 {% block content %}
                 {% endblock %}
             </div>
+            
+            <ul id="navigation">        
+	            <!--[if lt IE 10]>
+				<li class="left" style="float: left; padding: 10px; color: #CCC">
+					L'auteur de ce site vous déconseille l'utilisation d'internet explorer en version inférieure à 10.
+				</li>
+				<![endif]--><!-- whitespace
+				{% for url, name in navigation_items %}
+                    --><li><a href="{{ url }}">{{ name }}</a></li><!-- whitespace
+                {% endfor %}
+                -->
+            </ul>
         </div>
 	</body>
 </html>

@@ -1,70 +1,75 @@
 .other-info {
-
-    h1 {
-        @extend .beveled-bg;
-        margin: 1em 0 1em;
-        &:first-child { margin-top: 0;}
-    }
-    h2 {
-        @extend strong;
-        margin: 1em 0.7em 0.5em;
-    }
-    ul { 
-        margin: 0 0 0 2em;
-        
-        li {
-            list-style: disc;
-            margin-bottom: 0.3em;
-        }
-    }
-    
-    a.no-button, a.no-button:hover {
-        border: none !important;
-        background: none !important;
-        text-decoration: underline !important;
-        box-shadow: none !important;
-    }
 	
-	.form-wrapper {
-	    padding: 0 20px;
-	    margin-bottom: 20px;
-	    
-	    table { 
-	       width: 100%;
-	       margin: 20px 0;
-	       
-	       input {width: 100%;}
-	       
-	       td {
-	            padding: 2px 0;
-	            
-	            input {
-	                text-indent: 5px;
-	                text-align: left;
-	            }
-                
-                &.wrong {
-                    background: none;
-                    border: none;
-                    input {
-                        @extend input.wrong;
-                    }
-                }
-	       }
+	#oi-content {
+	    h1 {
+	        @extend .beveled-bg;
+	        margin: 1em 0 1em;
+	        &:first-child { margin-top: 0;}
 	    }
-	    .left { 
-	       float: left;
-	       margin: 5px 0 10px; 
-        }
-	    .right {
-/* 	       float: right;            */
-	       text-align: right;
-	       a {
-	           @extend .multi-button;
-/* 	           margin-top: 5px; */
-	       }
+	    h2 {
+	        @extend strong;
+	        margin: 1em 0.7em 0.5em;
+	    }
+	    
+	    ul { 
+	        margin: 0 0 0 2em;
+	        
+	        li {
+	            list-style: disc;
+	            margin-bottom: 0.3em;
+	        }
+	    }
+	    
+	    a.no-button, a.no-button:hover {
+	        border: none !important;
+	        background: none !important;
+	        text-decoration: underline !important;
+	        box-shadow: none !important;
+	    }
+	    
+	    .form-wrapper {
+	        padding: 0 20px;
+	        margin-bottom: 20px;
+	        
+	        table { 
+	           width: 100%;
+	           margin: 20px 0;
+	           
+	           input {width: 100%;}
+	           
+	           td {
+	                padding: 2px 0;
+	                
+	                input {
+	                    text-indent: 5px;
+	                    text-align: left;
+	                }
+	                
+	                &.wrong {
+	                    background: none;
+	                    border: none;
+	                    input {
+	                        @extend input.wrong;
+	                    }
+	                }
+	           }
+	        }
+	        .left { 
+	           float: left;
+	           margin: 5px 0 10px; 
+	        }
+	        .right {
+	/*         float: right;            */
+	           text-align: right;
+	           a {
+	               @extend .multi-button;
+	/*             margin-top: 5px; */
+	           }
+	        }
 	    }
 	}
+
+
 	
 	#puncher-button {
 		&:hover {
@@ -97,14 +102,4 @@
 	       height: 100%;
 	    }
 	}
-	
-	// p.message {
-	    // margin: 20px;
-	    // text-align: center;
-	    
-	    // a {
-	       // border-radius: 10px;
-	       // padding: 5px 10px;
-	    // }
-	// }
 }
