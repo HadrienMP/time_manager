@@ -626,7 +626,7 @@ input.wrong, .other-info #oi-content .form-wrapper table td.wrong input {
   background-color: #0062A8 !important;
 }
 /* line 257, ../sass/style.scss */
-.checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover, .has_back:hover, #content #punches table.inputs tr:hover, #oi-content #punches table.inputs tr:hover, a:hover, input[type="submit"]:hover, input[type="reset"]:hover {
+.checked_in .has_back, .checked_in #content #punches table.inputs tr:hover, #content #punches table.inputs .checked_in tr:hover, .checked_in #oi-content #punches table.inputs tr:hover, #oi-content #punches table.inputs .checked_in tr:hover, .checked_in a:hover, .checked_in a.active, .checked_in input[type="submit"]:hover, .checked_in input[type="reset"]:hover, .has_back.active, #content #punches table.inputs tr.active:hover, #oi-content #punches table.inputs tr.active:hover, a.active, input.active[type="submit"]:hover, input.active[type="reset"]:hover, .has_back:hover, #content #punches table.inputs tr:hover, #oi-content #punches table.inputs tr:hover, a:hover, input[type="submit"]:hover, input[type="reset"]:hover {
   background-color: #0062A8 !important;
   background-image: none !important;
 }

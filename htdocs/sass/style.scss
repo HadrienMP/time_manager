@@ -254,7 +254,7 @@ input.wrong {
 }
 .has_back {
     background-color: #0062A8 !important;
-    .checked_in &, &:hover { background-color: #0062A8 !important; background-image: none !important;}
+    .checked_in &, &.active, &:hover { background-color: #0062A8 !important; background-image: none !important;}
     .overtime.checked_in & { background-color: $bg-orange !important;}
     .overtime_absolute.checked_in & { background-color: $bg-red !important;}
 }
