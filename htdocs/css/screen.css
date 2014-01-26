@@ -737,9 +737,14 @@ input.wrong, .other-info #oi-content .form-wrapper table td.wrong input {
     width: 23%;
     padding: 7px 0 !important;
   }
+
+  /* line 48, ../sass/screen.scss */
+  #navigation a {
+    padding: 10px 5px !important;
+  }
 }
 @media only screen and (min-width: 450px) {
-  /* line 50, ../sass/screen.scss */
+  /* line 52, ../sass/screen.scss */
   #machine #tools-container #tools li:first-child a {
     border-left: none;
   }
