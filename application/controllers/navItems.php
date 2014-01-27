@@ -4,7 +4,7 @@ class NavItems {
 	
 	public static function LoggedIn() {
 	    return array(
-    		'/' => 'Accueil',
+    		'/' => 'Pointeuse',
             '/account' => 'Compte',
             '/info' => 'Informations',
             '/auth/logout/' => 'Déconnexion'
@@ -12,7 +12,7 @@ class NavItems {
 	}
 	public static function NotLoggedIn() {
 	    return array(
-    		'/auth/login' => 'Login',
+    		'/auth/login' => 'Connexion',
             '/info' => 'Informations'
     	);
 	}
