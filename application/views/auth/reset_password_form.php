@@ -13,6 +13,7 @@ $confirm_new_password = array(
 );
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
+<div class="form-wrapper">
 <table>
 	<tr>
 		<td><?php echo form_label($this->lang->line('New Password'), $new_password['id']); ?></td>
@@ -28,5 +29,8 @@ $confirm_new_password = array(
 		
 	</tr>
 </table>
+</div>
+<div class="buttons-bar">
 <?php echo form_submit('change', $this->lang->line('Change Password')); ?>
+</div>
 <?php echo form_close(); ?>

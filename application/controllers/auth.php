@@ -17,10 +17,11 @@ class Auth extends CI_Controller
     
     function my_display($template_name, $data) {
         $content = $this->load->view($template_name, $data, true);
+        $navitems = $this->tank_auth->is_logged_in() ? NavItems::LoggedIn() : NavItems::NotLoggedIn();
         $this->load->view('layout/layout', array(
                 'content' => $content, 
                 'title' => $this->lang->line('Connexion'),
-                'navigation_items' => NavItems::NotLoggedIn()
+                'navigation_items' => $navitems
         ));
     }
 

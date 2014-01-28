@@ -8,6 +8,7 @@ $email = array(
 );
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
+<div class="form-wrapper">
 <table>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Email'), $email['id']); ?></td>
@@ -16,5 +17,8 @@ $email = array(
         </td>
 	</tr>
 </table>
+</div>
+<div class="buttons-bar">
 <?php echo form_submit('send', $this->lang->line('Send')); ?>
+</div>
 <?php echo form_close(); ?>

@@ -6,6 +6,7 @@ $password = array(
 );
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
+<div class="form-wrapper">
 <table>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Password'), $password['id']); ?></td>
@@ -14,5 +15,8 @@ $password = array(
         </td>
 	</tr>
 </table>
+</div>
+<div class="buttons-bar">
 <?php echo form_submit('cancel', $this->lang->line('Delete account')); ?>
+</div>
 <?php echo form_close(); ?>

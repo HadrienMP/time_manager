@@ -19,6 +19,7 @@ $confirm_new_password = array(
 );
 ?>
 <?php echo form_open($this->uri->uri_string()); ?>
+<div class="form-wrapper">
 <table>
 	<tr>
 		<td><?php echo form_label($this->lang->line('Old Password'), $old_password['id']); ?></td>
@@ -33,11 +34,14 @@ $confirm_new_password = array(
         </td>
 	</tr>
 	<tr>
-		<td><?php echo form_label($this->lang->line('Confirm New Password'), $confirm_new_password['id']); ?></td>
+		<td><?php echo form_label($this->lang->line('New Password'), $confirm_new_password['id']); ?></td>
 		<td class="<?php echo form_error($confirm_new_password['name']) != "" || isset($errors[$confirm_new_password['name']]) ? "wrong" : "" ?>">
             <?php echo form_password($confirm_new_password); ?>
         </td>  
 	</tr>
 </table>
+</div>
+<div class="buttons-bar">
 <?php echo form_submit('change', $this->lang->line('Change Password')); ?>
+</div>
 <?php echo form_close(); ?>
